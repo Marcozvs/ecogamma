@@ -1,0 +1,12 @@
+@import '../variaveis.scss';
+@import '../base/base.scss';
+
+.mensagem{
+    .mensagem-dado{
+        display: flex;
+        align-items: center;
+        h3{
+            margin-left: 20px;
+        }
+    }
+}

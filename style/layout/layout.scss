@@ -1,0 +1,73 @@
+@import '../variaveis.scss';
+@import '../base/base.scss';
+
+//botoes
+
+.botoes-horizontal{
+    display: flex;
+    justify-content: space-around;
+}
+
+.botao, .botao-secundario{
+    width: 40vw;
+    margin: 20px 1vw;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+.botao-secundario{
+    color: $azul;
+}
+
+.botao{
+    color: $branco;
+    background: $azul;
+    border: none;
+}
+
+.botao-centralizado{
+    margin: 0% 25%;
+}
+
+//images
+
+.logo{
+    width: 100%;
+    margin: 20px 0px;
+}
+
+.imagem-larguraCompleta{
+    width: 100%;
+}
+
+//Formulário
+
+.checkbox{
+    input{
+        width: 25%;
+        box-shadow: none;
+        margin: 20px 20px 20px 0px
+    }
+    label{
+        margin: 0px;
+        width: 75%;
+        p{
+            width: 75%;
+            margin: 20px 0px;
+        }
+    }
+}
+
+//Textos
+
+.texto-centralizado, .titulo-centralizado{
+    text-align: center;
+}
+
+.texto-alternativo{
+    color: $roxo;
+}
+
+.titulo-alternativo{
+    color: $azul;
+}
