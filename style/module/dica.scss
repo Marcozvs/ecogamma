@@ -1,0 +1,13 @@
+@import '../variaveis.scss';
+@import '../base/base.scss';
+
+.dica-titulo{
+    display: flex;
+    align-items: center;
+}
+
+.dica-conteudo{
+    img{
+        width: 100%;
+    }
+}
