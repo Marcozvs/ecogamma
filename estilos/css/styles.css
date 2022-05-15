@@ -28,4 +28,29 @@ h3 {
   text-align: center;
 }
 
+img {
+  width: 100%;
+}
+
+i {
+  color: #5570FF;
+}
+
+.header {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  width: 40%;
+}
+
+.header__navagacao {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+
 /*# sourceMappingURL=styles.css.map */
