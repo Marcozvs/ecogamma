@@ -213,4 +213,9 @@ label {
   width: 50%;
 }
 
+.dicas__titulo {
+  display: flex;
+  align-items: center;
+}
+
 /*# sourceMappingURL=styles.css.map */
