@@ -134,6 +134,17 @@ label {
   padding: 1rem;
 }
 
+.menuLateral {
+  width: 70vw;
+  margin-left: 30vw;
+  padding: 1rem;
+  position: absolute;
+  top: 0px;
+  background-color: #5570FF;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
 .header__logo {
   width: 40%;
 }
@@ -216,6 +227,19 @@ label {
 .dicas__titulo {
   display: flex;
   align-items: center;
+}
+
+.menuLateral__lista {
+  box-sizing: border-box;
+  width: 100%;
+}
+.menuLateral__lista i, .menuLateral__lista li {
+  color: #fefefe;
+  margin: 1rem 0rem;
+  text-align: right;
+  width: 100%;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
