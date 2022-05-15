@@ -23,14 +23,26 @@
 <body>
     <header class="header">
         <div class="header__logo">
-            <img src="./imagens/logo.png" alt="Logo Ecogomma">
+            <a href="./index.html"><img src="./imagens/logo.png" alt="Logo Ecogomma"></a>
         </div>
         <div class="header__navagacao">
-            <a href="#"><i class="fa-solid fa-user"></i></a>
-            <a href="#"><i class="fa-solid fa-comments"></i></a>
-            <a href="#"><i class="fa-solid fa-bars"></i></a>
+            <a href="./perfil.html"><i class="fa-solid fa-user"></i></a>
+            <a href="./chat.html"><i class="fa-solid fa-comments"></i></a>
+            <i class="fa-solid fa-bars" onclick="menuLateralOpen()"></i>
         </div>
     </header>
+    <div class="menuLateral" id="menuLateral">
+        <ul class="menuLateral__lista">
+            <i class="fa-solid fa-bars" onclick="menuLateralClose()"></i>
+            <a href="./index.html"><li>Feed</li></a>
+            <a href="./chat.html"><li>Chat</li></a>
+            <a href="./perfil.html"><li>Perfil</li></a>
+            <a href="./noticias.html"><li>Notícias</li></a>
+            <a href="./eventos.html"><li>Eventos</li></a>
+            <a href="./dicas.html"><li>Dicas</li></a>
+            <a href="./coleta.html"><li>Pontos de Coleta</li></a>
+        </ul>
+    </div>
     <main>
         <section class="dicas">
             <h1>Notícias</h1>
@@ -61,5 +73,6 @@
             </div>
         </section>
     </main>
+    <script src="./javascript/menu-lateral.js"></script>
 </body>
 </html>
