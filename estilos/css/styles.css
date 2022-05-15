@@ -124,6 +124,8 @@ label {
 }
 
 .footer {
+  position: absolute;
+  bottom: 0px;
   background-color: #5570FF;
   display: flex;
   align-items: center;
