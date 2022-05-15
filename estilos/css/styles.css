@@ -15,9 +15,10 @@ p, label {
   color: #171717;
   line-height: 1.5rem;
   text-align: justify;
+  margin-top: 1rem;
 }
 
-h1, h2, h3 {
+h1, h2, h3, label {
   color: #5570FF;
   text-align: center;
   font-size: 2rem;
@@ -30,9 +31,13 @@ h2 {
   font-size: 1.5rem;
 }
 
-h3 {
+h3, label {
   color: #8325E0;
   font-size: 1.25rem;
+}
+
+a {
+  text-decoration: none;
 }
 
 img {
@@ -63,9 +68,29 @@ input, button {
   width: 100%;
 }
 
+label {
+  text-align: justify;
+}
+
 .btn-secundario {
   background-color: #5570FF;
   color: #fefefe;
+}
+
+.texto-corSecundaria {
+  color: #34B132;
+}
+
+.texto-branco {
+  color: #fefefe;
+}
+
+.texto-negrito {
+  font-weight: 700;
+}
+
+.texto-centralizado {
+  text-align: center;
 }
 
 .perfil__nome, .perfil__cargo {
@@ -96,6 +121,15 @@ input, button {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.footer {
+  background-color: #5570FF;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 1rem;
 }
 
 .header__logo {
@@ -171,6 +205,10 @@ input, button {
   border: 2px solid #5570FF;
   border-radius: 50%;
   margin-bottom: 1rem;
+}
+
+.footer img {
+  width: 50%;
 }
 
 /*# sourceMappingURL=styles.css.map */
