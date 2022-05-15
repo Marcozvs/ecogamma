@@ -68,6 +68,15 @@ input, button {
   color: #fefefe;
 }
 
+.perfil__nome, .perfil__cargo {
+  color: #5570FF;
+  font-weight: 700;
+}
+
+.perfil__cargo {
+  color: #34B132;
+}
+
 .header {
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -81,6 +90,12 @@ input, button {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+}
+
+.perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .header__logo {
@@ -125,13 +140,6 @@ input, button {
   justify-content: center;
   width: 60%;
 }
-.perfil__informacoes .perfil__nome, .perfil__informacoes .perfil__cargo {
-  color: #5570FF;
-  font-weight: 700;
-}
-.perfil__informacoes .perfil__cargo {
-  color: #34B132;
-}
 
 .feed__interacoes {
   box-sizing: border-box;
@@ -154,6 +162,15 @@ input, button {
 .feed_comentario {
   width: 90%;
   margin: 0 auto;
+}
+
+.perfil img {
+  width: 50%;
+  height: 150px;
+  margin: 0 auto;
+  border: 2px solid #5570FF;
+  border-radius: 50%;
+  margin-bottom: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
