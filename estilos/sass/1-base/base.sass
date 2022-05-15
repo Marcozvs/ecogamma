@@ -12,7 +12,6 @@ main
 section
     margin-top: 1rem
 
-
 //Texto
 
 p, label
@@ -26,7 +25,7 @@ h1, h2, h3
     font-size: 2rem
     font-weight: 700
     margin-top: 1rem
-    
+
 h2
     color: variables.$segunda-cor
     font-size: 1.5rem
@@ -38,6 +37,7 @@ h3
 //imagens
 
 img
+    margin-top: 1rem
     width: 100%
 
 //Ícones
@@ -49,17 +49,17 @@ i
 //Formulários
 
 form
-    margin: 1rem
     display: flex
     flex-direction: column
+    margin: 1rem
 
 input, button
-    width: 100%
-    padding: 1rem
-    box-sizing: border-box
+    border-radius: 5px
     border: 5px solid variables.$primeira-cor
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
-    border-radius: 5px
-    margin-top: 1rem
-    font-weight: 700
+    box-sizing: border-box
     color: variables.$primeira-cor
+    font-weight: 700
+    margin-top: 1rem
+    padding: 1rem
+    width: 100%
