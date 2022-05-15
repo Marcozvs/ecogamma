@@ -67,6 +67,12 @@ input, button {
   padding: 1rem;
   width: 100%;
 }
+input:hover, button:hover {
+  border-color: #34B132;
+  color: #34B132;
+  cursor: pointer;
+  transition: 0.25s;
+}
 
 label {
   text-align: justify;
@@ -89,6 +95,12 @@ label {
 .btn-secundario {
   background-color: #5570FF;
   color: #fefefe;
+}
+.btn-secundario:hover {
+  background-color: #34B132;
+  color: #fefefe;
+  transition: 0.25s;
+  cursor: pointer;
 }
 
 .texto-corSecundaria {
@@ -248,6 +260,10 @@ label {
     height: 100px;
     align-items: center;
   }
+  .header__navagacao a i:hover {
+    color: #34B132;
+    transition: 0.25s;
+  }
 }
 .post__botoes {
   display: flex;
@@ -354,6 +370,10 @@ label {
   }
   .menuDesktop__lista a {
     color: #5570FF;
+  }
+  .menuDesktop__lista a:hover {
+    color: #34B132;
+    transition: 0.25s;
   }
 }
 
