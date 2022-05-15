@@ -7,25 +7,32 @@ main {
   width: 90vw;
 }
 
+section {
+  margin-top: 1rem;
+}
+
 p, label {
   color: #171717;
   line-height: 1.5rem;
   text-align: justify;
 }
 
-h1 {
+h1, h2, h3 {
   color: #5570FF;
   text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 1rem;
 }
 
 h2 {
   color: #34B132;
-  text-align: center;
+  font-size: 1.5rem;
 }
 
 h3 {
   color: #8325E0;
-  text-align: center;
+  font-size: 1.25rem;
 }
 
 img {
@@ -35,6 +42,29 @@ img {
 i {
   color: #5570FF;
   font-size: 1.5rem;
+}
+
+form {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+input, button {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  border: 5px solid #5570FF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  margin-top: 1rem;
+  font-weight: 700;
+  color: #5570FF;
+}
+
+.btn-secundario {
+  background-color: #5570FF;
+  color: #fefefe;
 }
 
 .header {
@@ -54,6 +84,14 @@ i {
   display: flex;
   justify-content: space-around;
   width: 40%;
+}
+
+.post__botoes {
+  display: flex;
+  justify-content: space-between;
+}
+.post__botoes input, .post__botoes button {
+  width: 45%;
 }
 
 /*# sourceMappingURL=styles.css.map */
