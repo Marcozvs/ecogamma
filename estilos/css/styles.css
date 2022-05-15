@@ -72,6 +72,15 @@ label {
   text-align: justify;
 }
 
+@media screen and (min-width: 768px) {
+  main {
+    position: absolute;
+    width: 80vw;
+    left: 17.5vw;
+    right: 2.5vw;
+    margin-top: 0px;
+  }
+}
 .btn-secundario {
   background-color: #5570FF;
   color: #fefefe;
@@ -116,6 +125,14 @@ label {
   top: 0rem;
 }
 
+@media screen and (min-width: 768px) {
+  .header {
+    flex-direction: column;
+    width: 15vw;
+    height: 100vh;
+    justify-content: space-between;
+  }
+}
 .feed {
   box-sizing: border-box;
   display: flex;
@@ -144,14 +161,21 @@ label {
   width: 70vw;
   margin-left: 30vw;
   padding: 1rem;
-  position: absolute;
+  position: fixed;
   top: 0px;
   background-color: #5570FF;
   height: 100vh;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 2;
 }
 
+@media screen and (min-width: 768px) {
+  .menuLateral {
+    margin-left: 0vw;
+    margin-right: 30vw;
+  }
+}
 .header__logo {
   width: 40%;
   box-sizing: border-box;
@@ -161,12 +185,24 @@ label {
   margin: auto 0;
 }
 
+@media screen and (min-width: 768px) {
+  .header__logo {
+    width: 100%;
+    height: 25vh;
+  }
+}
 .header__navagacao {
   display: flex;
   justify-content: space-around;
   width: 40%;
 }
 
+@media screen and (min-width: 768px) {
+  .header__navagacao {
+    flex-direction: column;
+    height: 75vh;
+  }
+}
 .post__botoes {
   display: flex;
   justify-content: space-between;
@@ -252,6 +288,12 @@ label {
   width: 100%;
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .menuLateral__lista i, .menuLateral__lista li {
+    text-align: left;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
