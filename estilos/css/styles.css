@@ -76,6 +76,11 @@ input, button {
   padding: 1rem;
 }
 
+.feed {
+  display: flex;
+  box-sizing: border-box;
+}
+
 .header__logo {
   width: 40%;
 }
@@ -92,6 +97,36 @@ input, button {
 }
 .post__botoes input, .post__botoes button {
   width: 45%;
+}
+
+.feed__perfil {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  height: 100px;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.perfil__imagem {
+  width: 30%;
+  height: 70%;
+  border: 2px solid #5570FF;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.perfil__informacoes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.perfil__informacoes .perfil__nome, .perfil__informacoes .perfil__cargo {
+  font-weight: 700;
+  color: #5570FF;
+}
+.perfil__informacoes .perfil__cargo {
+  color: #34B132;
 }
 
 /*# sourceMappingURL=styles.css.map */
