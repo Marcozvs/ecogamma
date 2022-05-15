@@ -3,7 +3,7 @@ html {
 }
 
 main {
-  margin: 0 auto;
+  margin: 125px auto;
   width: 90vw;
 }
 
@@ -110,6 +110,10 @@ label {
   justify-content: space-between;
   padding: 1rem;
   box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  background-color: #fefefe;
+  top: 0rem;
 }
 
 .feed {
