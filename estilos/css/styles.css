@@ -116,12 +116,14 @@ input, button {
   box-sizing: border-box;
   height: 70%;
   width: 30%;
+  margin: auto 0;
 }
 
 .perfil__informacoes {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 60%;
 }
 .perfil__informacoes .perfil__nome, .perfil__informacoes .perfil__cargo {
   color: #5570FF;
@@ -143,9 +145,15 @@ input, button {
 }
 
 .feed__post {
+  margin-top: 2rem;
   border-left: 1px solid #c8c8c8;
   box-sizing: border-box;
   padding: 0.5rem;
+}
+
+.feed_comentario {
+  width: 90%;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=styles.css.map */
