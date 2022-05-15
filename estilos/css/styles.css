@@ -109,6 +109,7 @@ label {
   height: 100px;
   justify-content: space-between;
   padding: 1rem;
+  box-sizing: border-box;
 }
 
 .feed {
@@ -149,6 +150,11 @@ label {
 
 .header__logo {
   width: 40%;
+  box-sizing: border-box;
+}
+.header__logo a, .header__logo .logo {
+  height: calc(100px - 1rem);
+  margin: auto 0;
 }
 
 .header__navagacao {
