@@ -81,6 +81,11 @@ label {
     margin-top: 0px;
   }
 }
+@media screen and (min-width: 1024px) {
+  main {
+    top: 125px;
+  }
+}
 .btn-secundario {
   background-color: #5570FF;
   color: #fefefe;
@@ -123,6 +128,7 @@ label {
   width: 100%;
   background-color: #fefefe;
   top: 0rem;
+  z-index: 2;
 }
 
 @media screen and (min-width: 768px) {
@@ -131,6 +137,17 @@ label {
     width: 15vw;
     height: 100vh;
     justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    flex-direction: row;
+    width: 100vw;
+    height: 100px;
+  }
+
+  #menu {
+    display: none;
   }
 }
 .feed {
@@ -176,6 +193,22 @@ label {
     margin-right: 30vw;
   }
 }
+.menuDesktop {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .menuDesktop {
+    display: flex;
+    width: 16.5vw;
+    position: fixed;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 100vh;
+    margin-top: 100px;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+}
 .header__logo {
   width: 40%;
   box-sizing: border-box;
@@ -191,6 +224,12 @@ label {
     height: 25vh;
   }
 }
+@media screen and (min-width: 1024px) {
+  .header__logo {
+    width: 15%;
+    height: 100px;
+  }
+}
 .header__navagacao {
   display: flex;
   justify-content: space-around;
@@ -201,6 +240,13 @@ label {
   .header__navagacao {
     flex-direction: column;
     height: 75vh;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header__navagacao {
+    flex-direction: row;
+    height: 100px;
+    align-items: center;
   }
 }
 .post__botoes {
@@ -293,6 +339,21 @@ label {
 @media screen and (min-width: 768px) {
   .menuLateral__lista i, .menuLateral__lista li {
     text-align: left;
+  }
+}
+.menuDesktop__lista {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .menuDesktop__lista {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    line-height: 3rem;
+  }
+  .menuDesktop__lista a {
+    color: #5570FF;
   }
 }
 

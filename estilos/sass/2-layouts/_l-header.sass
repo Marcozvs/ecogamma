@@ -14,6 +14,7 @@
     width: 100%
     background-color: variables.$branco
     top: 0rem
+    z-index: 2
 
 @media screen and (min-width:768px)
 
@@ -23,3 +24,10 @@
         height: 100vh
         justify-content: space-between
         
+@media screen and (min-width:1024px)
+    .header
+        flex-direction: row
+        width: 100vw
+        height: 100px
+    #menu
+        display: none
