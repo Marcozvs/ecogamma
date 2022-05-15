@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecogamma | Login</title>
+    <title>Ecogamma | Cadastro</title>
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,14 +26,20 @@
     <main>
         <img src="./imagens/logo.png" alt="Logo da Ecogamma">
         <h1>Login</h1>
-        <form action="#">
-            <label for="email">Email</label>
-            <input type="email" placeholder="Digite seu email" id="email" name="email">
+        <form action="">
+            <label for="Nome">Nome</label>
+            <input type="text" id="nome" class="nome" placeholder="Digite seu nome...">
+            <label for="Email">Email</label>
+            <input type="email" id="email" class="email" placeholder="Digite seu email...">
             <label for="senha">Senha</label>
-            <input type="password" placeholder="Digite sua senha" id="senha" name="senha">
-            <input type="submit" value="Entrar"  class="btn-secundario">
-            <a href="#"><p class="texto-corSecundaria texto-negrito texto-centralizado">Cadastre-se</p></a>
-            <a href="#"><p class="texto-corSecundaria texto-negrito texto-centralizado">Esqueci a senha</p></a>
+            <input type="password" id="senha" class="senha" placeholder="Digite seu senha...">
+            <label for="confirmarSenha">Senha confirmação</label>
+            <input type="password" id="confirmarSenha" class="confirmarSenha" placeholder="Digite sua senha novamente...">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" class="telefone" placeholder="Digite seu telefone...">
+            <label for="nascimento">Data de Nascimento</label>
+            <input type="date" id="nascimento" class="nascimento">
+            <input type="submit" value="Confirmar" class="btn-secundario">
         </form>
     </main>
     <footer class="footer">
