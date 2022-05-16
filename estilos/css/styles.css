@@ -81,9 +81,9 @@ label {
 @media screen and (min-width: 768px) {
   main {
     position: absolute;
-    width: 80vw;
+    width: 60vw;
     left: 17.5vw;
-    right: 2.5vw;
+    right: 22.5vw;
     margin-top: 0px;
   }
 }
@@ -277,11 +277,17 @@ label {
   align-items: center;
   box-sizing: border-box;
   display: flex;
+  align-items: center;
   height: 100px;
   justify-content: space-between;
   width: 70%;
 }
 
+@media screen and (min-width: 1024px) {
+  .feed__perfil {
+    width: 70%;
+  }
+}
 .perfil__imagem {
   border-radius: 50%;
   border: 2px solid #5570FF;
@@ -291,6 +297,11 @@ label {
   margin: auto 0;
 }
 
+@media screen and (min-width: 1024px) {
+  .perfil__imagem {
+    width: 15%;
+  }
+}
 .perfil__informacoes {
   display: flex;
   flex-direction: column;
@@ -298,6 +309,11 @@ label {
   width: 60%;
 }
 
+@media screen and (min-width: 1024px) {
+  .perfil__informacoes {
+    width: 80%;
+  }
+}
 .feed__interacoes {
   box-sizing: border-box;
   display: flex;
@@ -308,7 +324,17 @@ label {
 .feed__interacoes i {
   font-size: 1.25rem;
 }
+.feed__interacoes i:hover {
+  transition: 0.25rem;
+  color: #34B132;
+  cursor: pointer;
+}
 
+@media screen and (min-width: 1024px) {
+  .feed__interacoes {
+    width: 25%;
+  }
+}
 .feed__post {
   margin-top: 2rem;
   border-left: 1px solid #c8c8c8;
