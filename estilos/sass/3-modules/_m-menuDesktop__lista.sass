@@ -1,0 +1,16 @@
+@use '../variables'
+
+.menuDesktop__lista
+    display: none
+
+@media screen and (min-width:1024px)
+    .menuDesktop__lista
+        width: 100%
+        display: flex
+        flex-direction: column
+        line-height: 3rem
+        a
+            color: variables.$primeira-cor
+            &:hover
+                color: variables.$segunda-cor
+                transition: 0.25s

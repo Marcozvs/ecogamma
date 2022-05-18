@@ -1,0 +1,406 @@
+html {
+  font-family: "Roboto";
+}
+
+main {
+  margin: 125px auto;
+  width: 90vw;
+}
+
+section {
+  margin-top: 1rem;
+}
+
+p, label {
+  color: #171717;
+  line-height: 1.5rem;
+  text-align: justify;
+  margin-top: 1rem;
+}
+
+h1, h2, h3, label {
+  color: #5570FF;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+h2 {
+  color: #34B132;
+  font-size: 1.5rem;
+}
+
+h3, label {
+  color: #8325E0;
+  font-size: 1.25rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+i {
+  color: #5570FF;
+  font-size: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+input, button {
+  border-radius: 5px;
+  border: 5px solid #5570FF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  color: #5570FF;
+  font-weight: 700;
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+input:hover, button:hover {
+  border-color: #34B132;
+  color: #34B132;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+label {
+  text-align: justify;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    position: absolute;
+    width: 60vw;
+    left: 17.5vw;
+    right: 22.5vw;
+    margin-top: 0px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main {
+    top: 125px;
+  }
+}
+.btn-secundario {
+  background-color: #5570FF;
+  color: #fefefe;
+}
+.btn-secundario:hover {
+  background-color: #34B132;
+  color: #fefefe;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.texto-corSecundaria {
+  color: #34B132;
+}
+
+.texto-branco {
+  color: #fefefe;
+}
+
+.texto-negrito {
+  font-weight: 700;
+}
+
+.texto-centralizado {
+  text-align: center;
+}
+
+.perfil__nome, .perfil__cargo {
+  color: #5570FF;
+  font-weight: 700;
+}
+
+.perfil__cargo {
+  color: #34B132;
+}
+
+.header {
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  padding: 1rem;
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  background-color: #fefefe;
+  top: 0rem;
+  z-index: 2;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    flex-direction: column;
+    width: 15vw;
+    height: 100vh;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    flex-direction: row;
+    width: 100vw;
+    height: 100px;
+  }
+
+  #menu {
+    display: none;
+  }
+}
+.feed {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0px;
+  background-color: #5570FF;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.menuLateral {
+  display: none;
+  width: 70vw;
+  margin-left: 30vw;
+  padding: 1rem;
+  position: fixed;
+  top: 0px;
+  background-color: #5570FF;
+  height: 100vh;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+@media screen and (min-width: 768px) {
+  .menuLateral {
+    margin-left: 0vw;
+    margin-right: 30vw;
+  }
+}
+.menuDesktop {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .menuDesktop {
+    display: flex;
+    width: 16.5vw;
+    position: fixed;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 100vh;
+    margin-top: 100px;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+}
+.header__logo {
+  width: 40%;
+  box-sizing: border-box;
+}
+.header__logo a, .header__logo .logo {
+  height: calc(100px - 1rem);
+  margin: auto 0;
+}
+
+@media screen and (min-width: 768px) {
+  .header__logo {
+    width: 100%;
+    height: 25vh;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header__logo {
+    width: 15%;
+    height: 100px;
+  }
+}
+.header__navagacao {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+
+@media screen and (min-width: 768px) {
+  .header__navagacao {
+    flex-direction: column;
+    height: 75vh;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header__navagacao {
+    flex-direction: row;
+    height: 100px;
+    align-items: center;
+  }
+  .header__navagacao a i:hover {
+    color: #34B132;
+    transition: 0.25s;
+  }
+}
+.post__botoes {
+  display: flex;
+  justify-content: space-between;
+}
+.post__botoes input, .post__botoes button {
+  width: 45%;
+}
+
+.feed__perfil {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  justify-content: space-between;
+  width: 70%;
+}
+
+@media screen and (min-width: 1024px) {
+  .feed__perfil {
+    width: 70%;
+  }
+}
+.perfil__imagem {
+  border-radius: 50%;
+  border: 2px solid #5570FF;
+  box-sizing: border-box;
+  height: 70%;
+  width: 30%;
+  margin: auto 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .perfil__imagem {
+    width: 15%;
+  }
+}
+.perfil__informacoes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+}
+
+@media screen and (min-width: 1024px) {
+  .perfil__informacoes {
+    width: 80%;
+  }
+}
+.feed__interacoes {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  width: 40%;
+}
+.feed__interacoes i {
+  font-size: 1.25rem;
+}
+.feed__interacoes i:hover {
+  transition: 0.25rem;
+  color: #34B132;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+  .feed__interacoes {
+    width: 25%;
+  }
+}
+.feed__post {
+  margin-top: 2rem;
+  border-left: 1px solid #c8c8c8;
+  box-sizing: border-box;
+  padding: 0.5rem;
+}
+
+.feed_comentario {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.perfil img {
+  width: 50%;
+  height: 150px;
+  margin: 0 auto;
+  border: 2px solid #5570FF;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.footer img {
+  width: 50%;
+}
+
+.dicas__titulo {
+  display: flex;
+  align-items: center;
+}
+
+.menuLateral__lista {
+  box-sizing: border-box;
+  width: 100%;
+}
+.menuLateral__lista i, .menuLateral__lista li {
+  color: #fefefe;
+  margin: 1rem 0rem;
+  text-align: right;
+  width: 100%;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .menuLateral__lista i, .menuLateral__lista li {
+    text-align: left;
+  }
+}
+.menuDesktop__lista {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .menuDesktop__lista {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    line-height: 3rem;
+  }
+  .menuDesktop__lista a {
+    color: #5570FF;
+  }
+  .menuDesktop__lista a:hover {
+    color: #34B132;
+    transition: 0.25s;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
