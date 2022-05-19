@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecogamma | Feed</title>
+    <title>Ecogamma | Dicas</title>
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,9 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <!--Ícones-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <!--Reset CSS-->
     <link rel="stylesheet" href="./estilos/css/reset.css">
     <!--CSS-->
@@ -50,27 +48,14 @@
             <a href="./index.html"><li  class="fa-solid fa-earth-americas"> Feed</li></a>
             <a href="./chat.html"><li class="fa-regular fa-comments"> Chat</li></a>
             <a href="./perfil.html"><li class="fa-regular fa-user"> Perfil</li></a>
-            <a href="./perfil.html"><li class="fa-regular fa-bell"> Notificação</li></a>
-            <a href="./perfil.html"><li class="fa-regular fa-floppy-disk"> Posts Salvos</li></a>
             <a href="./noticias.html"><li class="fa-regular fa-newspaper"> Notícias</li></a>
             <a href="./eventos.html"><li class="fa-regular fa-calendar"> Eventos</li></a>
-            <a href="./eventos.html"><li class="fa-regular fa-bookmark"> Eventos Salvos</li></a>
             <a href="./dicas.html"><li class="fa-solid fa-circle-info"> Dicas</li></a>
             <a href="./coleta.html"><li class="fa-regular fa-compass"> Pontos de Coleta</li></a>
-            <a href="./coleta.html"><li class="fa-regular fa-wrench"> Configuração</li></a>
         </ul>
     </section>
     <main>
-        <section class="post">
-            <h1>Postagem</h1>
-            <form action="./php/postagem.php" class="post__formulario">
-                <input type="text" placeholder="Escreva sua mensagem aqui..." required >
-                <div class="post__botoes">
-                    <button class="btn-secundario">Importar</button>
-                    <input type="submit" value="Postar" id="mensagem" name="mensagem"></form>
-                </div>
-        </section>
-        <hr>
+        <h1>Posts Salvos</h1>
         <section class="feed">
             <div class="feed__post">
                 <div class="feed__perfil">
@@ -112,7 +97,5 @@
         </section>
     </main>
     <script src="./javascript/menu-lateral.js"></script>
-    <script src="./javascript/feed-interacoes.js"></script>
 </body>
-
 </html>
