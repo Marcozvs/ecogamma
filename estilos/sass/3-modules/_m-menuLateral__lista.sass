@@ -3,13 +3,22 @@
 .menuLateral__lista
     box-sizing: border-box
     width: 100%
-    i, li
-        color: variables.$branco
-        margin: 1rem 0rem
-        text-align: right
-        width: 100%
-        font-size: 1.5rem
-        line-height: 2rem
+    display: flex
+    flex-direction: column
+    li
+        display: flex
+        margin-bottom: 1.25rem
+        .menuBar
+            color: variables.$branco
+        a
+            display: flex
+            color: variables.$branco
+            width: 100%
+            font-size: 2rem
+            align-items: center
+            i
+                color: variables.$branco
+                margin-right: 1rem
 
 @media screen and (min-width:768px)
     .menuLateral__lista
