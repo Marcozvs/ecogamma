@@ -27,10 +27,16 @@
         <div class="header__logo">
             <a href="./index.html"><img src="./imagens/logo.png" alt="Logo Ecogomma" class="logo"></a>
         </div>
+        <div class="header__pesquisa">
+            <form action="#">
+                <input type="search" required class="header__pesquisa__campo"  placeholder="Pesquinar no Ecogamma">
+                <input type="submit" class="header__pesquisa__submit">
+            </form>
+        </div>
         <div class="header__navagacao">
             <a href="./perfil.html"><i class="fa-regular fa-user"></i></a>
             <a href="./chat.html"><i class="fa-regular fa-comments"></i></a>
-            <i class="fa-solid fa-bars" onclick="menuLateralOpen()"></i>
+            <i class="fa-solid fa-bars menu" onclick="menuLateralOpen()"></i>
         </div>
     </header>
     <div class="menuLateral" id="menuLateral">
@@ -81,8 +87,44 @@
                     <input type="submit" value="Postar" id="mensagem" name="mensagem"></form>
                 </div>
         </section>
-        <hr>
         <section class="feed">
+            <div class="feed__post">
+                <div class="feed__perfil">
+                    <img src="./imagens/Roberto.jpg" alt="Imagem do Perfil" class="perfil__imagem">
+                    <div class="perfil__informacoes">
+                        <p class="perfil__nome">Roberto</p>
+                        <p class="perfil__cargo">Engenheiro Ambiental</p>
+                    </div>
+                </div>
+                <div class="feed__conteudo">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, aspernatur! Assumenda quisquam labore tenetur molestias ab blanditiis id alias magni, eos quas dolorum optio. Facere pariatur quibusdam deserunt eaque recusandae.</p>
+                    <img src="./imagens/policiaFederal.png" alt="Imagem do conteúdo">
+                </div>
+                <div class="feed__interacoes">
+                    <i class="fa-regular fa-heart" onclick="curtir()" id="botaoCurtir"> 35</i>
+                    <i class="fa-regular fa-comment"  onclick="comentar()" id="botaoComentar"> 4</i>
+                    <i class="fa-solid fa-share"></i>
+                </div>
+                <h2>Comentários</h2>
+                <div class="feed_comentario">
+                    <div class="feed__perfil">
+                        <img src="./imagens/Roberta.jpg" alt="Imagem do Perfil" class="perfil__imagem">
+                        <div class="perfil__informacoes">
+                            <p class="perfil__nome">Roberta</p>
+                            <p class="perfil__cargo">Economista</p>
+                        </div>
+                    </div>
+                    <div class="feed__conteudo">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, aspernatur! Assumenda quisquam labore tenetur molestias ab blanditiis id alias magni, eos quas dolorum optio. Facere pariatur quibusdam deserunt eaque recusandae.</p>
+                        <img src="./imagens/policiaFederal.png" alt="Imagem do conteúdo">
+                    </div>
+                    <div class="feed__interacoes">
+                        <i class="fa-regular fa-heart"> 35</i>
+                        <i class="fa-regular fa-comment"> 4</i>
+                        <i class="fa-solid fa-share"></i>
+                    </div>
+                </div>
+            </div>
             <div class="feed__post">
                 <div class="feed__perfil">
                     <img src="./imagens/Roberto.jpg" alt="Imagem do Perfil" class="perfil__imagem">
@@ -122,6 +164,98 @@
             </div>
         </section>
     </main>
+    <section class="patrocinios">
+        <h2>Patrocínio</h2>
+        <ul>
+            <a href="https://www.microsoft.com/pt-br">
+                <div class="pratrocinio__patrocinador">
+                    <div class="patrocinador__logo">
+                        <img src="./imagens/logoMicrosoft.png" alt="Logo do patrocinador">
+                    </div>
+                    <h3  class="patrocinador__titulo">Microsoft</h3>
+                </div>
+            </a>
+            <a href="https://www.oracle.com/br/index.html">
+                <div class="pratrocinio__patrocinador">
+                    <div class="patrocinador__logo">
+                        <img src="./imagens/logoOracle.png" alt="Logo do patrocinador">
+                    </div>
+                    <h3  class="patrocinador__titulo">Oracle</h3>
+                </div>
+            </a>
+            <a href="https://www.apple.com/br/?afid=p238%7CsikJb1MHC-dc_mtid_1870765e38482_pcrid_592523020789_pgrid_17049243418_&cid=aos-br-kwgo-brand--slid---product-">
+                <div class="pratrocinio__patrocinador">
+                    <div class="patrocinador__logo">
+                        <img src="./imagens/logoApple.png" alt="Logo do patrocinador">
+                    </div>
+                    <h3  class="patrocinador__titulo">Apple</h3>
+                </div>
+            </a>
+            <a href="https://petrobras.com.br/pt/">
+                <div class="pratrocinio__patrocinador">
+                    <div class="patrocinador__logo">
+                        <img src="./imagens/logoPetrobras.png" alt="Logo do patrocinador">
+                    </div>
+                    <h3  class="patrocinador__titulo">Petrobras</h3>
+                </div>
+            </a>
+            <a href="https://www.amazon.com.br/?&tag=hydrbrabk-20&ref=pd_sl_7rwd1q78df_e&adgrpid=79547423725&hvpone=&hvptwo=&hvadid=591863875878&hvpos=&hvnetw=g&hvrand=15627377287176860983&hvqmt=e&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1001773&hvtargid=kwd-10573980&hydadcr=26346_11691057&gclid=Cj0KCQjw-JyUBhCuARIsANUqQ_L6aJeC7tCZo_HMLpDoVbB2p6yQ1mw1r8IlXSEmnqnzTex3Wa6S52AaArQyEALw_wcB">
+                <div class="pratrocinio__patrocinador">
+                    <div class="patrocinador__logo">
+                        <img src="./imagens/logoAmazon.png" alt="Logo do patrocinador">
+                    </div>
+                    <h3  class="patrocinador__titulo">Amazon</h3>
+                </div>
+            </a>
+            <a href="https://www.itau.com.br/">
+                <div class="pratrocinio__patrocinador">
+                    <div class="patrocinador__logo">
+                        <img src="./imagens/logoItau.png" alt="Logo do patrocinador">
+                    </div>
+                    <h3  class="patrocinador__titulo">Itaú</h3>
+                </div>
+            </a>
+            <a href="https://www.c6bank.com.br/?utm_source=google&utm_medium=pi-cpc&utm_campaign=aquisicao-pf_consideration_marca_google&utm_term=as-18mais_2nd-busca-masterbrand&utm_content=20210801_aquisicao-pf_consideration_marca_google_as-18mais_search_pi-cpc_2nd-busca-masterbrand_google_abra-sua-conta_na_lp-c6_bdt-acq&gclid=Cj0KCQjw-JyUBhCuARIsANUqQ_IsnbK460miMCtcEqTRCnmUqF1rRmyMhZW1MhneNW_98N0gWon4XzAaAs6hEALw_wcB&gclsrc=aw.ds&">
+                <div class="pratrocinio__patrocinador">
+                    <div class="patrocinador__logo">
+                        <img src="./imagens/logoC6.png" alt="Logo do patrocinador">
+                    </div>
+                    <h3  class="patrocinador__titulo">C6 Bank</h3>
+                </div>
+            </a>
+            <a href="https://www.cptm.sp.gov.br/Pages/Home.aspx">
+                <div class="pratrocinio__patrocinador">
+                    <div class="patrocinador__logo">
+                        <img src="./imagens/logoCptm.png" alt="Logo do patrocinador">
+                    </div>
+                    <h3  class="patrocinador__titulo">CPTM</h3>
+                </div>
+            </a>
+            <a href="https://shop.samsung.com/br/?utm_source=google&utm_medium=ppc&utm_campaign=br_paid_ppc_google_multi_ecommerce_cad3-a0009_text_institutional_multi_paid-cdm-samsung&utm_content={ad-group}&utm_term=samsung&cid=br_paid_ppc_google_multi_ecommerce_cad3-a0009_text_institutional_multi_paid-cdm-samsung&keeplink=true">
+                <div class="pratrocinio__patrocinador">
+                    <div class="patrocinador__logo">
+                        <img src="./imagens/logoSamsung.png" alt="Logo do patrocinador">
+                    </div>
+                    <h3  class="patrocinador__titulo">Samsung</h3>
+                </div>
+            </a>
+        </ul>
+    </section>
+    <section class="eventosNoticias">
+        <h2>Eventos e Notícias</h2>
+        <ul class="eventosNoticias__lista">
+            <li><a href="./eventos.html"><i class="fa-solid fa-circle-info"></i></i>título da notícia ou evento exemplo</a></li>
+            <li><a href="./eventos.html"><i class="fa-solid fa-circle-info"></i></i>título da notícia ou evento exemplo</a></li>
+            <li><a href="./eventos.html"><i class="fa-solid fa-circle-info"></i></i>título da notícia ou evento exemplo</a></li>
+            <li><a href="./eventos.html"><i class="fa-solid fa-circle-info"></i></i>título da notícia ou evento exemplo</a></li>
+            <li><a href="./eventos.html"><i class="fa-solid fa-circle-info"></i></i>título da notícia ou evento exemplo</a></li>
+            <li><a href="./eventos.html"><i class="fa-solid fa-circle-info"></i></i>título da notícia ou evento exemplo</a></li>
+            <li><a href="./eventos.html"><i class="fa-solid fa-circle-info"></i></i>título da notícia ou evento exemplo</a></li>
+            <li><a href="./eventos.html"><i class="fa-solid fa-circle-info"></i></i>título da notícia ou evento exemplo</a></li>
+            <li><a href="./eventos.html"><i class="fa-solid fa-circle-info"></i></i>título da notícia ou evento exemplo</a></li>
+            <li><a href="./eventos.html"><i class="fa-solid fa-circle-info"></i></i>título da notícia ou evento exemplo</a></li>
+        </ul>
+    </section>
     <script src="./javascript/menu-lateral.js"></script>
     <script src="./javascript/feed-interacoes.js"></script>
 </body>

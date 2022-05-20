@@ -1,0 +1,25 @@
+@use '../variables'
+    
+.eventosNoticias__lista
+    display: flex
+    flex-direction: column
+    box-sizing: border-box
+    overflow-y: scroll
+    li
+        display: flex
+        align-items: center
+        box-sizing: border-box
+        margin: 1rem
+        a
+            color: variables.$cinza
+            display: flex
+            align-items: center
+            i
+                margin-right: 1rem
+                color: variables.$cinza 
+            &:hover
+                margin-left: 2rem
+                transition: 0.5s
+                color: variables.$terceira-cor
+                i
+                    color: variables.$terceira-cor 
