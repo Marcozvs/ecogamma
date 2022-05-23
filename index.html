@@ -20,15 +20,11 @@
         <div class="container">
             <header class="cabecalho">
                 <div class="cabecalho__logo">
-                    <img src="./imagens/logo.png" alt="Logo da Ecogamma">
+                    <img src="./imagens/logo.png" alt="Logo Ecogamma">
                 </div>
                 <div class="cabecalho__pesquisa">
-                    <form action="#">
-                        <input type="search" class="cabecalho__pesquisa__entrada" placeholder="Pesquise no Ecogamma">
-                        <input type="submit" value="Entrar" class="cabecalho__pesquisa__subir">
-                    </form>
                 </div>
-                <nav class="cabecalho__navegacao">
+                <div class="cabecalho__navegacao">
                     <ul>
                         <a href="#">
                             <li>
@@ -44,10 +40,9 @@
                             <li>
                                 <span class="material-symbols-outlined">menu</span>
                             </li>
-                        </a>                
+                        </a>
                     </ul>
-                </nav>
-            
+                </div>
             </header>
             <section id="menuLateral">
                 <ul>
@@ -127,90 +122,16 @@
                 </ul>
             </section>
             <aside class="menuDesktop">
-                <ul>
-                    <span class="material-symbols-outlined menuBar" onclick="menuLateralClose()">
-                        menu
-                    </span>
-                    <a href="#">
-                        <li><span class="material-symbols-outlined">
-                            public
-                            </span>Feed</li>
-                    </a>
-                    <a href="#">
-                        <li><span class="material-symbols-outlined">
-                            account_circle
-                            </span>Perfil</li>
-                    </a>
-                    <a href="#">
-                        <li><span class="material-symbols-outlined">
-                            notifications
-                            </span>Notificações</li>
-                    </a>
-                    <a href="#">
-                        <li><span class="material-symbols-outlined">
-                            local_fire_department
-                            </span>Ecotrends</li>
-                    </a>
-                    <a href="#">
-                        <li><span class="material-symbols-outlined">
-                            chat
-                            </span>Chat</li>
-                    </a>
-                    <a href="#">
-                        <li><span class="material-symbols-outlined">
-                            bookmark
-                            </span>Salvos</li>
-                    </a>
-                    <a href="#">
-                        <li><span class="material-symbols-outlined">
-                            newspaper
-                            </span>Notícias</li>
-                    </a>
-                    <a href="#">
-                        <li><span class="material-symbols-outlined">
-                            calendar_month
-                            </span>Eventos</li>
-                    </a>
-                    <a href="#">
-                        <li><span class="material-symbols-outlined">
-                            emoji_objects
-                            </span>Dicas</li>
-                    </a>
-                    <a href="#">
-                        <li><span class="material-symbols-outlined">
-                            volunteer_activism
-                            </span>Doação</li>
-                    </a>
-                    <a href="#">
-                        <li><span class="material-symbols-outlined">
-                            pin_drop
-                            </span>Pontos de Coleta</li>
-                    </a>
-                    <a href="#">
-                        <li><span class="material-symbols-outlined">
-                            smart_toy
-                            </span>Bot de Ajuda</li>
-                    </a>
-                    <a href="#">
-                        <li><span class="material-symbols-outlined">
-                            settings
-                            </span>Configurações</li>
-                    </a>
-                    <a href="#">
-                        <li><span class="material-symbols-outlined">
-                            help
-                            </span>Ajuda e Suporte</li>
-                    </a>
-                </ul>
-            </aside> 
-            <main>
-                <section class="postagem">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui officiis explicabo voluptate expedita minus porro aperiam, ab, harum, saepe ipsa officia fugiat dolore vel est blanditiis eveniet! Voluptate, pariatur ea!</p>
+            </aside>
+            <main class="principal">
+                <section class="principal__postagem">
                     <h1>Postagem</h1>
-                    <form action="#">
-                        <textarea cols="30" rows="5" placeholder="Escreva seu post aqui..." maxlength="200" minlength="1"></textarea>
-                        <div class="postagem__botoes">
-                            <label for="imagem" class="labelArquivos">Enviar imagem</label>
-                            <input type="file" accept="image/*" id="imagem" class="inputArquivos">
+                    <form action="#" class="principal__postagem__formulario">
+                        <textarea cols="15" rows="4" placeholder="Escreva seu post aqui..." maxlength="200" minlength="1"></textarea>
+                        <div class="principal__postagem__formulario__botoes">
+                            <label for="imagem" class="postagem__formulario__botoes__labelArquivo">Enviar imagem</label>
+                            <input type="file" accept="image/*" id="imagem" class="postagem__formulario__botoes__inputArquivo">
                             <input type="submit" value="Postar">
                         </div>
                     </form>
@@ -276,12 +197,12 @@
                 </section>
             </main>
             <aside class="patrocinio">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui officiis explicabo voluptate expedita minus porro aperiam, ab, harum, saepe ipsa officia fugiat dolore vel est blanditiis eveniet! Voluptate, pariatur ea!</p>
             </aside>
-            <aside class="eventosNoticias">
+            <aside class="eventoNoticias">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui officiis explicabo voluptate expedita minus porro aperiam, ab, harum, saepe ipsa officia fugiat dolore vel est blanditiis eveniet! Voluptate, pariatur ea!</p>
             </aside>
         </div>
         <script src="./javascript/menuLateral.js"></script>
-        <script src="./javascript/curtir.js"></script>
-        <script src="./javascript/comentar.js"></script>
     </body>
 </html>
