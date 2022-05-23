@@ -1,0 +1,60 @@
+@use '../variaveis'
+.post__perfil
+    display: flex
+    justify-content: space-between
+    height: 100px
+    box-sizing: border-box
+    align-items: center
+    .post__perfil__foto
+        width: 25%
+        img
+            width: 100%
+            height: 65px
+            border-radius: 50%
+            border: 2px solid variaveis.$primeira-cor
+    .post__perfil__dados
+        width: 65%
+        .post__perfil__dados__nome
+            color: variaveis.$segunda-cor
+            font-weight: 700
+        .post__perfil__dados__cargo
+            color: variaveis.$terceira-cor
+            font-weight: 700
+.post__interacoes
+    width: 50%
+    margin-top: 1rem
+    ul
+        width: 100%
+        display: flex
+        justify-content: space-between
+        box-sizing: border-box
+        li
+            display: flex
+            align-items: center
+            font-weight: 700
+            box-sizing: border-box
+            margin-right: 1rem
+            color: variaveis.$primeira-cor
+            span
+                margin-right: 1rem
+.post__comentarios
+    width: 80%
+    margin: 0 10%
+    .post__perfil__foto-comentario
+        width: 25%
+        img
+            width: 100%
+            height: 50px
+    .post__perfil__dados
+        .post__perfil__dados__nome
+            font-size: 0.8rem
+        .post__perfil__dados__cargo
+            font-size: 0.8rem
+
+@media screen and (min-width: 768px)
+    .post__perfil
+        .post__perfil__foto
+            img
+                width: 50%
+        .post__perfil__dados
+            width: 100%

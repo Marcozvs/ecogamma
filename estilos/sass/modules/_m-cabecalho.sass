@@ -1,0 +1,57 @@
+@use '../variaveis'
+.cabecalho__logo
+    width: 25%
+    img
+        width: 100%
+.cabecalho__pesquisa
+    display: none
+.cabecalho__navegacao
+    display: flex 
+    width: 50%
+    ul
+        display: flex
+        align-items: center
+        justify-content: space-between
+        width: 100%
+        a
+            color: variaveis.$primeira-cor
+            li
+                span
+                    font-size: 30px
+                    
+@media screen and (min-width: 768px)
+    .cabecalho__logo
+        width: 100%
+    .cabecalho__navegacao
+        width: 100%
+        height: 75%
+        ul
+            flex-direction: column
+
+@media screen and (min-width: 1024px)
+    .cabecalho__logo
+        width: 25%
+        img
+            width: 50%
+    .cabecalho__navegacao
+        width: 15%
+        ul
+            flex-direction: row
+            .menubar
+                display: none
+    .cabecalho__pesquisa
+        display: flex
+        width: 50%
+        form
+            display: flex
+            flex-direction: row
+            width: 100%
+            margin: 0
+            .cabecalho__pesquisa__entrada
+                background: variaveis.$branco
+                width: 80%
+                margin: 0
+                text-align: justify
+            .cabecalho__pesquisa__subir
+                margin: 0
+

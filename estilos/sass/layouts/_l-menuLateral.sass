@@ -1,0 +1,15 @@
+@use '../variaveis'
+#menuLateral
+    display: none
+    background-color: variaveis.$primeira-cor
+    position: fixed
+    width: 75vw
+    left: 25vw
+    height: 100vh
+    padding: 25px
+    box-sizing: border-box
+@media screen and (min-width: 768px)
+    #menuLateral
+        left: 0vw
+        width: 50vw
+        height: 120vh
