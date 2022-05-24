@@ -18,6 +18,14 @@ h1 {
   margin-top: 1rem;
 }
 
+h2 {
+  color: #34B132;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
 textarea {
   border: 5px solid #5570FF;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -57,6 +65,9 @@ p {
   box-sizing: border-box;
   justify-content: space-between;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  position: sticky;
+  top: 0;
+  background-color: #fefefe;
 }
 .cabecalho .cabecalho__logo {
   width: 25%;
@@ -76,9 +87,78 @@ p {
   justify-content: space-between;
 }
 
+@media screen and (min-width: 768px) {
+  .cabecalho {
+    flex-direction: column;
+    height: 100vh;
+    position: sticky;
+    top: 0px;
+  }
+  .cabecalho .cabecalho__logo {
+    width: 100%;
+  }
+  .cabecalho .cabecalho__logo img {
+    width: 100%;
+  }
+  .cabecalho .cabecalho__navegacao {
+    height: 85%;
+  }
+  .cabecalho .cabecalho__navegacao ul {
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .cabecalho {
+    flex-direction: row;
+    height: 20vh;
+    position: sticky;
+    top: 0px;
+  }
+  .cabecalho .cabecalho__logo {
+    width: 25%;
+  }
+  .cabecalho .cabecalho__logo img {
+    width: 50%;
+  }
+  .cabecalho .cabecalho__pesquisa {
+    display: flex;
+    width: 45%;
+  }
+  .cabecalho .cabecalho__pesquisa .cabecalho__pesquisa__formulario {
+    width: 100%;
+  }
+  .cabecalho .cabecalho__pesquisa .cabecalho__pesquisa__formulario input {
+    margin: 0;
+  }
+  .cabecalho .cabecalho__pesquisa .cabecalho__pesquisa__formulario .cabecalho__pesquisa__formulario__search {
+    width: 75%;
+    margin-right: 4%;
+  }
+  .cabecalho .cabecalho__pesquisa .cabecalho__pesquisa__formulario .cabecalho__pesquisa__formulario__submit {
+    width: 20%;
+    text-align: center;
+  }
+  .cabecalho .cabecalho__navegacao {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .cabecalho .cabecalho__navegacao ul {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+  .cabecalho .cabecalho__navegacao ul .menubar {
+    display: none;
+  }
+}
 #menuLateral {
   background-color: #5570FF;
-  position: absolute;
+  position: fixed;
   top: 0px;
   padding: 1rem;
   box-sizing: border-box;
@@ -86,10 +166,21 @@ p {
   left: 25%;
   display: none;
   height: 100vh;
+  overflow-y: auto;
 }
 #menuLateral .menuBar {
+  background-color: #5570FF;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 25%;
+  height: 4rem;
+}
+#menuLateral .menuBar span {
+  position: fixed;
+  left: 88%;
+  top: 2rem;
   color: #fefefe;
-  text-align: right;
 }
 #menuLateral ul {
   display: flex;
@@ -97,6 +188,7 @@ p {
   justify-content: space-between;
   width: 100%;
   box-sizing: border-box;
+  margin-top: 4rem;
 }
 #menuLateral ul a {
   color: #fefefe;
@@ -112,6 +204,22 @@ p {
   color: #fefefe;
 }
 
+@media screen and (min-width: 768px) {
+  #menuLateral {
+    left: 0px;
+    right: 25%;
+  }
+  #menuLateral .menuBar {
+    left: 0px;
+    right: 25%;
+    width: 75%;
+  }
+  #menuLateral .menuBar span {
+    left: 1rem;
+    top: 2rem;
+    color: #fefefe;
+  }
+}
 .principal__postagem .principal__postagem__formulario {
   margin: 0 auto;
   box-sizing: border-box;
@@ -213,11 +321,19 @@ p {
   font-size: 0.8rem;
 }
 @media screen and (min-width: 768px) {
+  .post .post__perfil .post__perfil__foto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .post .post__perfil .post__perfil__foto img {
-    width: 50%;
+    width: 60%;
   }
   .post .post__perfil .post__perfil__dados {
     width: 100%;
+  }
+  .post .post__interacoes {
+    width: 30%;
   }
 }
 
@@ -263,6 +379,10 @@ p {
   .container .principal {
     grid-column: 2/3;
     grid-row: 1/2;
+    margin: 0;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
   }
 }
 @media screen and (min-width: 1024px) {

@@ -23,6 +23,10 @@
                     <img src="./imagens/logo.png" alt="Logo Ecogamma">
                 </div>
                 <div class="cabecalho__pesquisa">
+                    <form action="#" class="cabecalho__pesquisa__formulario">
+                        <input type="search" class="cabecalho__pesquisa__formulario__search" placeholder="Pesquise no Ecogamma" maxlength="30" minlength="1">
+                        <input type="submit" class="cabecalho__pesquisa__formulario__submit">
+                    </form>
                 </div>
                 <div class="cabecalho__navegacao">
                     <ul>
@@ -45,10 +49,12 @@
                 </div>
             </header>
             <section id="menuLateral">
-                <ul>
-                    <span class="material-symbols-outlined menuBar" onclick="menuLateralClose()">
-                        menu
+                <div class="menuBar">
+                    <span class="material-symbols-outlined" onclick="menuLateralClose()">
+                            menu
                     </span>
+                </div>
+                <ul>
                     <a href="#">
                         <li><span class="material-symbols-outlined">
                             public
