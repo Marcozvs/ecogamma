@@ -380,7 +380,6 @@ p {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 1rem;
     box-sizing: border-box;
     border-left: 2px solid #c4c4c4;
     overflow-y: scroll;
@@ -393,29 +392,81 @@ p {
   }
   .patrocinio .patrocinio__titulo {
     color: #c4c4c4;
+    margin-top: 1rem;
   }
   .patrocinio .patrocinio__link {
     display: flex;
     align-items: center;
     margin-top: 1rem;
+    padding-left: 1rem;
   }
   .patrocinio .patrocinio__link .patrocinio__link__logoPatrocinador {
-    width: 25%;
+    width: 15%;
     display: flex;
     align-items: center;
+    justify-content: center;
+    border: 2px solid #c4c4c4;
+    height: 50px;
+    border-radius: 100%;
   }
   .patrocinio .patrocinio__link .patrocinio__link__logoPatrocinador img {
-    border-radius: 100%;
-    width: 100%;
+    width: 50%;
+    opacity: 50%;
   }
   .patrocinio .patrocinio__link .patrocinio__link__nomePatrocinador {
     margin-left: 1rem;
     color: #c4c4c4;
+    font-weight: 700;
+  }
+  .patrocinio .patrocinio__link:hover {
+    padding-left: 1rem;
+    border-left: 5px solid #34B132;
   }
   .patrocinio .patrocinio__link:hover .patrocinio__link__nomePatrocinador {
     color: #8325E0;
   }
+  .patrocinio .patrocinio__link:hover .patrocinio__link__logoPatrocinador img {
+    opacity: 100%;
+  }
 }
+.eventoNoticias {
+  display: flex;
+  flex-direction: column;
+}
+.eventoNoticias .eventoNoticias__lista {
+  margin-top: 1rem;
+  border-left: 2px solid #c4c4c4;
+  overflow-y: scroll;
+}
+.eventoNoticias .eventoNoticias__lista:hover {
+  border-left: 2px solid #34B132;
+}
+.eventoNoticias .eventoNoticias__lista .eventoNoticias__lista__link {
+  margin-top: 1rem;
+  line-height: 3rem;
+}
+.eventoNoticias .eventoNoticias__lista .eventoNoticias__lista__link .eventoNoticias__lista__link__item {
+  color: #c4c4c4;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+}
+.eventoNoticias .eventoNoticias__lista .eventoNoticias__lista__link .eventoNoticias__lista__link__item:hover {
+  border-left: 3px solid #34B132;
+}
+.eventoNoticias .eventoNoticias__lista .eventoNoticias__lista__link .eventoNoticias__lista__link__item span {
+  margin-right: 1rem;
+  opacity: 50%;
+}
+.eventoNoticias .eventoNoticias__lista .eventoNoticias__lista__link:hover .eventoNoticias__lista__link__item {
+  color: #34B132;
+  padding-left: 1rem;
+}
+.eventoNoticias .eventoNoticias__lista .eventoNoticias__lista__link:hover .eventoNoticias__lista__link__item span {
+  opacity: 100%;
+}
+
 @media screen and (min-width: 320px) {
   .container {
     display: grid;
@@ -442,7 +493,6 @@ p {
   }
   .container .eventoNoticias {
     display: none;
-    background-color: #ff6600;
   }
 }
 @media screen and (min-width: 768px) {
