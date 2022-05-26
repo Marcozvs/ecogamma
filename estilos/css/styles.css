@@ -68,6 +68,7 @@ p {
   position: sticky;
   top: 0;
   background-color: #fefefe;
+  z-index: 3;
 }
 .cabecalho .cabecalho__logo {
   width: 25%;
@@ -168,6 +169,7 @@ p {
   display: none;
   height: 100vh;
   overflow-y: auto;
+  z-index: 4;
 }
 #menuLateral .menuBar {
   background-color: #5570FF;
@@ -467,6 +469,95 @@ p {
   opacity: 100%;
 }
 
+@media screen and (min-width: 320px) {
+  .perfil {
+    display: flex;
+    flex-direction: column;
+  }
+  .perfil .perfil__dados__capaDeFundo {
+    position: relative;
+    left: -5vw;
+    width: 100vw;
+    z-index: 1;
+  }
+  .perfil .perfil__dados__fotoPerfil {
+    position: relative;
+    top: -75px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+  }
+  .perfil .perfil__dados__fotoPerfil img {
+    height: 150px;
+    width: 60%;
+    border-radius: 50%;
+    border: 5px solid #5570FF;
+  }
+  .perfil hr {
+    top: -75px;
+    position: relative;
+  }
+  .perfil .perfil__dados__informacoesPerfil {
+    position: relative;
+    top: -75px;
+  }
+  .perfil .perfil__dados__informacoesPerfil ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .perfil .perfil__dados__informacoesPerfil ul li {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: #5570FF;
+    padding: 0.5rem 0rem;
+  }
+  .perfil .perfil__dados__informacoesPerfil ul li p {
+    margin-left: 1rem;
+    color: #c4c4c4;
+  }
+  .perfil .principal__postagem {
+    position: relative;
+    top: -75px;
+  }
+  .perfil .post {
+    position: relative;
+    top: -75px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .perfil .perfil__dados__capaDeFundo {
+    left: -5vw;
+    width: 82.75vw;
+    height: 200px;
+  }
+  .perfil .perfil__dados__capaDeFundo img {
+    height: 200px;
+  }
+  .perfil .perfil__dados__fotoPerfil {
+    justify-content: left;
+  }
+  .perfil .perfil__dados__fotoPerfil img {
+    width: 30%;
+    margin-left: 1rem;
+  }
+  .perfil .perfil__dados__informacoesPerfil ul {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .perfil .perfil__dados__capaDeFundo {
+    left: 0vw;
+    width: 100%;
+  }
+  .perfil .perfil__dados__fotoPerfil img {
+    width: 20%;
+  }
+  .perfil .perfil__dados__informacoesPerfil ul {
+    width: 60%;
+  }
+}
 @media screen and (min-width: 320px) {
   .container {
     display: grid;

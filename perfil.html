@@ -203,18 +203,99 @@
             </aside>
             <main class="principal">
                 <div class="perfil">
-                    <section class="perfil__foto">
-                        <img src="./imagens/Roberto.jpg" alt="Foto do perfil">
-                    </section>
                     <section class="perfil__dados">
-                        <ul>
-                            <li>Nome: </li>
-                            <li>Descrição: </li>
-                            <li>Amigos: </li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
+                        <div class="perfil__dados__capaDeFundo">
+                            <img src="./imagens/capaPerfil.jpg" alt="Capa de fundo do perfil">
+                        </div>
+                        <div class="perfil__dados__fotoPerfil">
+                            <img src="./imagens/Roberto.jpg" alt="Foto do perfil">
+                        </div>
+                        <div class="perfil__dados__informacoesPerfil">
+                            <ul>
+                                <div class=".informacoesPerfil__colunaUm">
+                                    <li>Nome: <p>Roberto</p></li>
+                                    <li>Descrição: <p>Amo natureza</p></li>
+                                    <li>Idade: <p>28 anos</p></li>
+                                    <li>Relacionamento: <p>Solteiro</p></li>
+                                </div>
+                                <div class=".informacoesPerfil__colunaDois">
+                                    <li>Ofício: <p>Engenheiro Ambiental</p></li>
+                                    <li>Amigos: <p>462 amigos</p></li>
+                                    <li>Ver mais informações</li>
+                                </div>
+                            </ul>
+                        </div>
+                        <hr>
+                    </section>
+                    <section class="principal__postagem">
+                        <h1>Postagem</h1>
+                        <form action="#" class="principal__postagem__formulario">
+                            <textarea cols="15" rows="4" placeholder="Escreva seu post aqui..." maxlength="200" minlength="1"></textarea>
+                            <div class="principal__postagem__formulario__botoes">
+                                <label for="imagem" class="postagem__formulario__botoes__labelArquivo">Enviar imagem</label>
+                                <input type="file" accept="image/*" id="imagem" class="postagem__formulario__botoes__inputArquivo">
+                                <input type="submit" value="Postar">
+                            </div>
+                        </form>
+                    </section>
+                    <section class="post">
+                        <div class="post__perfil">
+                            <div class="post__perfil__foto">
+                                <img src="./imagens/Roberto.jpg" alt="Imagem do Perfil">
+                            </div>
+                            <div class="post__perfil__dados">
+                                <p class="post__perfil__dados__nome">Roberto</p>
+                                <p class="post__perfil__dados__cargo">Engenheiro Ambiental</p>
+                            </div>
+                        </div>
+                        <div class="post__conteudo">
+                            <p class="post__conteudo__texto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos dolor ab qui temporibus, cupiditate animi nesciunt praesentium dolorum soluta quas nihil vitae ullam facilis ut iusto pariatur perspiciatis at explicabo?</p>
+                            <img src="./imagens/policiaFederal.png" alt="imagem do conteúdo">
+                        </div>
+                        <div class="post__interacoes">
+                            <ul>
+                                <li id="botaoCurtir" onclick="curtir()"><span class="material-symbols-outlined">
+                                    favorite
+                                    </span>36</li>
+                                <li id="botaoComentar" onclick="comentar()"><span class="material-symbols-outlined">
+                                    forum
+                                    </span>3</li>
+                                <li><span class="material-symbols-outlined">
+                                    send
+                                    </span></li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="post__comentarios">
+                            <h2>Comentários</h2>
+                            <div class="post__perfil">
+                                <div class="post__perfil__foto post__perfil__foto-comentario">
+                                    <img src="./imagens/Roberto.jpg" alt="Imagem do Perfil">
+                                </div>
+                                <div class="post__perfil__dados">
+                                    <p class="post__perfil__dados__nome">Roberto</p>
+                                    <p class="post__perfil__dados__cargo">Engenheiro Ambiental</p>
+                                </div>
+                            </div>
+                            <div class="post__conteudo">
+                                <p class="post__conteudo__texto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos dolor ab qui temporibus, cupiditate animi nesciunt praesentium dolorum soluta quas nihil vitae ullam facilis ut iusto pariatur perspiciatis at explicabo?</p>
+                                <img src="./imagens/policiaFederal.png" alt="imagem do conteúdo">
+                            </div>
+                            <div class="post__interacoes">
+                                <ul>
+                                    <li><span class="material-symbols-outlined">
+                                        favorite
+                                        </span>36</li>
+                                    <li><span class="material-symbols-outlined">
+                                        forum
+                                        </span>3</li>
+                                    <li><span class="material-symbols-outlined">
+                                        send
+                                        </span></li>
+                                </ul>
+                            </div>
+                            <hr>
+                        </div>
                     </section>
                 </div>
             </main>
