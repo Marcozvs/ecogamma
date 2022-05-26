@@ -202,6 +202,21 @@
                 </ul>
             </aside>
             <main class="principal">
+                <div id="donate-button-container">
+                    <div id="donate-button"></div>
+                        <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                        <script>
+                        PayPal.Donation.Button({
+                        env:'production',
+                        hosted_button_id:'5P847ZMKYEUEG',
+                        image: {
+                        src:'https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif',
+                        alt:'Faça doações com o botão do PayPal',
+                        title:'PayPal - The safer, easier way to pay online!',
+                        }
+                        }).render('#donate-button');
+                        </script>
+                    </div>
             </main>
             <aside class="patrocinio">
                 <h2 class="patrocinio__titulo">Patrocínio</h2>

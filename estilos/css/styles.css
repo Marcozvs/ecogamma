@@ -559,6 +559,108 @@ p {
   }
 }
 @media screen and (min-width: 320px) {
+  .notificacoes .notificacoes__notificacao {
+    display: flex;
+    margin-top: 1rem;
+    align-items: center;
+  }
+  .notificacoes .notificacoes__notificacao .notificacoes__notificacao__foto {
+    height: 50px;
+    width: 50px;
+    margin-right: 1rem;
+    border-radius: 50%;
+  }
+  .notificacoes .notificacoes__notificacao div .notificacoes__notificacao__nome {
+    color: #5570FF;
+    font-weight: 700;
+  }
+}
+@media screen and (min-width: 320px) {
+  .notificacoes form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    bottom: 0px;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background: #fefefe;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  .notificacoes form .cabecalho__pesquisa__formulario__search {
+    width: 60%;
+  }
+  .notificacoes form .cabecalho__pesquisa__formulario__submit {
+    width: 25%;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .notificacoes form {
+    left: 20vw;
+    width: 75vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .notificacoes form {
+    left: 20vw;
+    width: 60vw;
+  }
+}
+@media screen and (min-width: 320px) {
+  .noticias h2 {
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (min-width: 320px) {
+  #donate-button-container {
+    width: 50%;
+    position: absolute;
+    left: 20vw;
+    padding: 1rem;
+    margin-top: 3rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  #donate-button-container {
+    width: 25%;
+    left: 45vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #donate-button-container {
+    width: 10%;
+    left: 45vw;
+  }
+}
+@media screen and (min-width: 320px) {
+  .principal .pontoDeColeta {
+    width: 100%;
+    position: relative;
+    left: -5vw;
+    top: 3rem;
+  }
+  .principal .pontoDeColeta iframe {
+    width: 100vw;
+    height: 500px;
+  }
+}
+@media screen and (min-width: 320px) {
+  .principal .pontoDeColeta {
+    left: 0vw;
+  }
+  .principal .pontoDeColeta iframe {
+    width: 75vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .principal .pontoDeColeta iframe {
+    width: 58vw;
+    height: 600px;
+  }
+}
+@media screen and (min-width: 320px) {
   .container {
     display: grid;
     grid-template-columns: auto;
