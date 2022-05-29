@@ -1,0 +1,55 @@
+@use '../variaveis'
+#menuLateral
+    background-color: variaveis.$primeira-cor
+    position: fixed
+    top: 0px
+    padding: 1rem
+    box-sizing: border-box
+    width: 75%
+    left: 25%
+    display: none
+    height: 100vh
+    overflow-y: auto
+    z-index: 4
+    .menuBar
+        background-color: variaveis.$primeira-cor
+        position: fixed
+        width: 100%
+        top: 0
+        left: 25%
+        height: 4rem
+        span
+            position: fixed
+            left: 88%
+            top: 2rem
+            color: variaveis.$branco
+    ul
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        width: 100%
+        box-sizing: border-box
+        margin-top: 4rem
+        a
+            color: variaveis.$branco
+            font-weight: 700
+            line-height: 3rem
+            li
+                display: flex
+                align-items: center
+                span
+                    margin-right: 1rem
+                    color: variaveis.$branco
+@media screen and (min-width: 768px)
+    #menuLateral
+        left: 0px
+        right: 25%
+        .menuBar
+            left: 0px
+            right: 25%
+            width: 75%
+            span
+                left: 1rem
+                top: 2rem
+                color: variaveis.$branco
+

@@ -1,0 +1,31 @@
+@use '../variaveis'
+
+.eventoNoticias
+    display: flex
+    flex-direction: column
+    .eventoNoticias__lista
+        margin-top: 1rem
+        border-left: 2px solid variaveis.$cinza
+        overflow-y: scroll
+        &:hover
+            border-left: 2px solid variaveis.$segunda-cor
+        .eventoNoticias__lista__link
+            margin-top: 1rem
+            line-height: 3rem
+            .eventoNoticias__lista__link__item
+                color: variaveis.$cinza
+                font-weight: 700
+                display: flex
+                align-items: center
+                padding-left: 1rem
+                &:hover
+                    border-left: 3px solid variaveis.$segunda-cor
+                span
+                    margin-right: 1rem
+                    opacity: 50%
+            &:hover
+                .eventoNoticias__lista__link__item
+                    color: variaveis.$segunda-cor
+                    padding-left: 1rem
+                    span
+                        opacity: 100%
