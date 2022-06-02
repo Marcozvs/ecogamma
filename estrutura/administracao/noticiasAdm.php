@@ -22,11 +22,12 @@
                 <section class="principal__postagem">
                     <h1>Inserindo Notícia</h1>
                     <p>Preencha o formulário abaixo para publicar uma notícia</p>
-                    <form action="noticiasAdm-processamento.php" class="principal__postagem__formulario">
-                        <textarea cols="15" rows="4" placeholder="Escreva seu post aqui..." maxlength="200" minlength="1"></textarea>
+                    <form action="noticiasAdm-processamento.php" class="principal__postagem__formulario" method="POST">
+                        <input type="text" placeholder="Escreva o título da notícia aqui..."  id="noticia__titulo">
+                        <textarea cols="15" rows="4" placeholder="Escreva o texto da notícia aqui..." maxlength="200" minlength="1" name="noticia__texto" id="noticia__texto"></textarea>
                         <div class="principal__postagem__formulario__botoes">
-                            <label for="imagem" class="postagem__formulario__botoes__labelArquivo">Enviar imagem</label>
-                            <input type="file" accept="image/*" id="imagem" class="postagem__formulario__botoes__inputArquivo">
+                            <label for="noticia__imagem" class="postagem__formulario__botoes__labelArquivo">Enviar imagem</label>
+                            <input type="file" accept="image/*"  name="noticia__imagem" id="noticia__imagem" class="postagem__formulario__botoes__inputArquivo">
                             <input type="submit" value="Postar">
                         </div>
                     </form>

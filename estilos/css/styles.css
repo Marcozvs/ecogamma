@@ -664,6 +664,10 @@ p {
   display: flex;
 }
 
+#noticia__titulo {
+  width: 53.8vw;
+}
+
 @media screen and (min-width: 320px) {
   .container {
     display: grid;
