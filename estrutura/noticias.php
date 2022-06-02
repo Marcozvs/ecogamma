@@ -22,6 +22,43 @@
             <?php include './base/menuLateral.php';?>
             <?php include './base/menuDesktop.php';?>
             <main class="principal">
+                
+                <!--Conectando ao banco de dados-->
+            
+                <?php include './administracao/conexao.php'?>
+
+                <?php 
+                    $sql = "SELECT titulo, data_noticia, texto, foto FROM MyGuests";
+                    $result = mysqli_query($conn, $sql);
+                    
+                    if (mysqli_num_rows($result) > 0) {
+                    // output data of each row
+                    while($row = mysqli_fetch_assoc($result)) {
+                        
+                        echo 
+                        
+                        "
+                            <h1>" . $row['titulo'] . "</h1>
+                            
+                            <br>" . $row['data_noticia'] . "<br>
+
+                            <p>" . $row['texto'] . "</p>
+
+                            <br>
+
+                            <img src=\"" . $row['titulo'] . "\">
+
+                            <br>
+
+                        ";
+                    }
+                    } else {
+                    echo "0 results";
+                    }
+                    
+                    mysqli_close($conn);
+                ?>
+
                 <div class="noticias">
                     <h1>Notícias</h1>
                     <h2>Título exemplo da notícia</h2>

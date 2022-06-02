@@ -660,6 +660,10 @@ p {
     height: 600px;
   }
 }
+.noticiasAdm__form {
+  display: flex;
+}
+
 @media screen and (min-width: 320px) {
   .container {
     display: grid;
