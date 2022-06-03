@@ -19,30 +19,11 @@
     <body>
     <?php
 
-        //Criando Classe Login
-
-        
-        
-        $senha = $email = "";
-
-        // aplicando segurança
-
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $name = test_input($_POST["senha"]);
-            $email = test_input($_POST["email"]);
-            }
-
-            function test_input($data) {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-            }
         ?>
         <section class="login">
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+            <form action="./loginProcessa.php" method="POST">
                 <label for="email">Email</label>
-                <input type="mail" placeholder="Insira seu email..." maxlength="100" minlength="1" required  name="email" id="email">
+                <input type="email" placeholder="Insira seu email..." maxlength="100" minlength="1" required  name="email" id="email">
                 <label for="senha">Senha</label>
                 <input type="password" placeholder="Insira sua senha..." maxlength="100" minlength="1" required name="senha" id="senha">
                 <input type="submit">
