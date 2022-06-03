@@ -23,7 +23,31 @@
             <?php include './base/menuDesktop.php';?>
             <main class="principal">
                 <div class="noticias">
-                    <?php include './administracao/noticiasAdm-processamento.php' ?>                
+                    <?php
+                    
+                    //Conectando ao banco de dados
+
+                    include './administracao/conexao.php';
+
+                    //Puxando dados do banco
+
+                        $sql = "SELECT id, titulo, data_noticia, texto, foto FROM noticia";
+                        $result = mysqli_query($conn, $sql);
+                    
+                        if (mysqli_num_rows($result) > 0) {
+                        // output data of each row
+                        while($row = mysqli_fetch_assoc($result)) {
+                            echo "<h1>" . $row['titulo'] . "</h1>";
+                            echo $row['data_noticia'];
+                            echo "<p>" . $row['texto'] . "</p>";
+                            echo "<img src=\"".$row['foto']."\">";
+                        }
+                        } else {
+                        echo "0 results";
+                        }
+                        
+                        mysqli_close($conn);
+                    ?>               
                 </div>
             </main>
             <?php include './base/patrocinio.php';?>

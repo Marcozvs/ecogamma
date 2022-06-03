@@ -42,10 +42,14 @@
                         } else {
                         $texto = test_input($_POST["noticia__texto"]);
                         }
-                        $imagem = test_input($_POST["noticia__imagem"]);
+                        $imagem = $_FILES["noticia__imagem"];
+                        $target_dir = "uploads/";
+                        $target_file = $target_dir . basename($_FILES["noticia__imagem"]["name"]);
+                        $uploadOk = 1;
+                        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
                     }
                     
-                    $dataPost = date('d-m-Y');
+                    $dataPost = date('Y-m-d');
                     
                     function test_input($data) {
                         $data = trim($data);
@@ -60,11 +64,11 @@
 
                     <?php
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                            $sql = "INSERT INTO noticia (titulo, data_noticia, texto, foto)
-                            VALUES ('$titulo', '$texto', '$dataPost', '$imagem')";
+                            $sql = "INSERT INTO noticia (id, titulo, data_noticia, texto, foto)
+                            VALUES ('', '$titulo', '$dataPost', '$texto', '$imagem')";
     
                             if (mysqli_query($conn, $sql)) {
-                            //echo "New record created successfully";
+                            echo "New record created successfully";
                             } else {
                             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
                             }
@@ -73,7 +77,7 @@
                         }
                     ?>
 
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="principal__postagem__formulario" method="post">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="principal__postagem__formulario" method="post" enctype="multipart/form-data">
                         <input type="text" placeholder="Escreva o título da notícia aqui..."  name="noticia__titulo" id="noticia__titulo">
                         <textarea cols="15" rows="4" placeholder="Escreva o texto da notícia aqui..." maxlength="200" minlength="1" name="noticia__texto" id="noticia__texto"></textarea>
                         <div class="principal__postagem__formulario__botoes">
