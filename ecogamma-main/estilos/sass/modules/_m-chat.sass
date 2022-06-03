@@ -1,0 +1,31 @@
+@use '../variaveis'
+
+@media screen and (min-width: 320px)
+    .notificacoes
+        form
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            bottom: 0px
+            position: fixed
+            left: 0
+            width: 100%
+            background: variaveis.$branco
+            padding: 1rem
+            box-sizing: border-box
+            .cabecalho__pesquisa__formulario__search
+                width: 60%
+            .cabecalho__pesquisa__formulario__submit
+                width: 25%
+                text-align: center
+@media screen and (min-width: 768px)
+    .notificacoes
+            form
+                left: 20vw
+                width: 75vw
+@media screen and (min-width: 1024px)
+    .notificacoes
+            form
+                left: 20vw
+                width: 60vw
+

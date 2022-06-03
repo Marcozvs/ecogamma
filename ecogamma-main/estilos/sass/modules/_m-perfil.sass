@@ -1,0 +1,80 @@
+@use '../variaveis'
+@media screen and (min-width: 320px)
+    .perfil
+        display: flex
+        flex-direction: column
+        .perfil__dados__capaDeFundo
+            position: relative
+            left: -5vw
+            width: 100vw   
+            z-index: 1
+        .perfil__dados__fotoPerfil
+            position: relative
+            top: -75px
+            z-index: 2
+            display: flex
+            justify-content: center
+            img
+                height: 150px
+                width: 60%
+                border-radius: 50%
+                border: 5px solid variaveis.$primeira-cor
+        hr
+            top: -75px
+            position: relative
+        .perfil__dados__informacoesPerfil
+            position: relative
+            top: -75px
+            ul
+                display: flex
+                flex-direction: column
+                li
+                    display: flex
+                    align-items: center
+                    font-weight: bold
+                    color: variaveis.$primeira-cor
+                    padding: 0.5rem 0rem
+                    p
+                        margin-left: 1rem
+                        color: variaveis.$cinza
+        .principal__postagem
+            position: relative
+            top: -75px
+        .post
+            position: relative
+            top: -75px
+@media screen and (min-width: 768px)
+    .perfil
+        .perfil__dados__capaDeFundo
+            left: -5vw
+            width: 82.75vw
+            height: 200px
+            img
+                height: 200px
+        .perfil__dados__fotoPerfil
+            justify-content: left
+            img
+                width: 30%
+                margin-left: 1rem
+        .perfil__dados__informacoesPerfil
+            ul
+                flex-direction: row
+                justify-content: space-between
+@media screen and (min-width: 1024px)
+    .perfil
+        .perfil__dados__capaDeFundo
+            left: 0vw
+            width: 100%
+        .perfil__dados__fotoPerfil
+            img
+                width: 20%
+        .perfil__dados__informacoesPerfil
+            ul
+                width: 60%
+
+
+
+                    
+
+
+                

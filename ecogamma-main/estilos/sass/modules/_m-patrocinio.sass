@@ -1,0 +1,46 @@
+@use '../variaveis'
+
+@media screen and (min-width: 1024px)
+    .patrocinio
+        display: flex
+        align-items: center
+        flex-direction: column
+        box-sizing: border-box
+        border-left: 2px solid variaveis.$cinza
+        overflow-y: scroll
+        &:hover
+            border-left: 2px solid variaveis.$segunda-cor
+            .patrocinio__titulo
+                color: variaveis.$segunda-cor
+        .patrocinio__titulo
+            color: variaveis.$cinza
+            margin-top: 1rem
+        .patrocinio__link
+            display: flex
+            align-items: center
+            margin-top: 1rem
+            padding-left: 1rem
+            .patrocinio__link__logoPatrocinador
+                width: 15%
+                display: flex
+                align-items: center
+                justify-content: center
+                border: 2px solid variaveis.$cinza
+                height: 50px
+                border-radius: 100%
+                img
+                    width: 50%
+                    opacity: 50%
+            .patrocinio__link__nomePatrocinador
+                margin-left: 1rem
+                color: variaveis.$cinza
+                font-weight: 700
+            &:hover
+                .patrocinio__link__nomePatrocinador
+                    color: variaveis.$terceira-cor
+                .patrocinio__link__logoPatrocinador
+                    img
+                        opacity: 100%
+                padding-left: 1rem
+                border-left: 5px solid variaveis.$segunda-cor
+                
