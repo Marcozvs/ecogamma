@@ -74,20 +74,67 @@
                 <hr>
             </section>
             <section class="container__post">
-                    <div class="container__post__perfil">
-                        <div class="container__post__perfil__foto">
-                            <img src="../imagens/leandro.jpg" alt="Imagem do Perfil">
-                        </div>
-                        <div class="container__post__perfil__dados">
-                            <p class="container__post__perfil__dados__nome nome__perfil">Leandro</p>
-                            <p class="container__post__perfil__dados__cargo cargo__perfil">Engenheiro de Software</p>
-                        </div>
+                <div class="container__post__perfil">
+                    <div class="container__post__perfil__foto">
+                        <img src="../imagens/leandro.jpg" alt="Imagem do Perfil">
                     </div>
-                    <div class="container__post__conteudo">
-                        <p class="container__post__conteudo__texto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos dolor ab qui temporibus, cupiditate animi nesciunt praesentium dolorum soluta quas nihil vitae ullam facilis ut iusto pariatur perspiciatis at explicabo?</p>
-                        <img src="../imagens/feed_imagem.jpg" alt="imagem do conteúdo">
+                    <div class="container__post__perfil__dados">
+                        <p class="container__post__perfil__dados__nome nome__perfil">Leandro</p>
+                        <p class="container__post__perfil__dados__cargo cargo__perfil">Engenheiro de Software</p>
                     </div>
-                </section>
+                </div>
+                <div class="container__post__conteudo">
+                    <p class="container__post__conteudo__texto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos dolor ab qui temporibus, cupiditate animi nesciunt praesentium dolorum soluta quas nihil vitae ullam facilis ut iusto pariatur perspiciatis at explicabo?</p>
+                    <img src="../imagens/feed_imagem.jpg" alt="imagem do conteúdo" class="container__post__conteudo__imagem">
+                </div>
+                <div class="container__post__interacoes">
+                    <ul class="container__post__interacoes__lista">
+                        <li class="container__post__interacoes__lista__item">
+                            <span class="material-symbols-outlined container__menu__icone span--azul">&#xe87d;</span>
+                            <p>32</p>
+                        </li>
+                        <li class="container__post__interacoes__lista__item">
+                            <span class="material-symbols-outlined container__menu__icone span--azul">&#xe0b9;</span>
+                            <p>32</p>
+                        </li>
+                        <li class="container__post__interacoes__lista__item">
+                            <span class="material-symbols-outlined container__menu__icone span--azul">&#xe163;</span>
+                            <p>32</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="post__comentarios">
+                        <h2>Comentários</h2>
+                        <div class="post__perfil">
+                            <div class="post__perfil__foto post__perfil__foto-comentario">
+                                <img src="../imagens/Roberto.jpg" alt="Imagem do Perfil">
+                            </div>
+                            <div class="post__perfil__dados">
+                                <p class="post__perfil__dados__nome">Roberto</p>
+                                <p class="post__perfil__dados__cargo">Engenheiro Ambiental</p>
+                            </div>
+                        </div>
+                        <div class="post__conteudo">
+                            <p class="post__conteudo__texto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos dolor ab qui temporibus, cupiditate animi nesciunt praesentium dolorum soluta quas nihil vitae ullam facilis ut iusto pariatur perspiciatis at explicabo?</p>
+                            <img src="../imagens/policiaFederal.png" alt="imagem do conteúdo">
+                        </div>
+                        <div class="post__interacoes">
+                            <ul>
+                                <li><span class="material-symbols-outlined">
+                                    favorite
+                                    </span>36</li>
+                                <li><span class="material-symbols-outlined">
+                                    forum
+                                    </span>3</li>
+                                <li><span class="material-symbols-outlined">
+                                    send
+                                    </span></li>
+                            </ul>
+                        </div>
+                        <hr>
+                    </div>
+            </section>
+
         </div>
     </main>
     <script src="../manipulacao/manuLateral.js"></script>

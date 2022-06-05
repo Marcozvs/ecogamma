@@ -311,6 +311,30 @@ main .container .container__postagem .container__postagem__formulario .container
   width: 60%;
   margin-right: 15%;
 }
+.container__post .container__post__conteudo {
+  display: flex;
+  flex-direction: column;
+}
+.container__post .container__post__conteudo .container__post__conteudo__texto {
+  margin: 1rem 0rem;
+}
+.container__post .container__post__conteudo .container__post__conteudo__imagem {
+  width: 100%;
+}
+.container__post .container__post__interacoes .container__post__interacoes__lista {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+}
+.container__post .container__post__interacoes .container__post__interacoes__lista .container__post__interacoes__lista__item {
+  display: flex;
+  margin-top: 1rem;
+}
+.container__post .container__post__interacoes .container__post__interacoes__lista .container__post__interacoes__lista__item span,
+.container__post .container__post__interacoes .container__post__interacoes__lista .container__post__interacoes__lista__item p {
+  margin-right: 1rem;
+  color: #5570FF;
+}
 
 .container .container__logout a {
   text-align: center;
