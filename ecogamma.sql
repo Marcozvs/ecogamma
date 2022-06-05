@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 05, 2022 at 09:47 PM
+-- Generation Time: Jun 05, 2022 at 11:31 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `foto` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `descricao` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Descricao que aparece no perfil do usuário',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `usuarios`
@@ -91,7 +91,9 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `token`, `nome`, `sobrenome`, `email`, `senha`, `senhaC`, `dataN`, `genero`, `numero`, `pais`, `estado`, `cidade`, `profissao`, `foto`, `descricao`) VALUES
 (1, 1, 'João', 'Bobão', 'jao@gmail.com', 'jao', 'jao', '1992-06-10', 'Alfa', '111111111', 'Ilhas Mcdonald', 'São Paulo', 'São Paulo', 'Fazedor de Site', 'naruto.png', 'Todos têm algo em comum. Nenhum é tão bom quanto eu.'),
-(2, NULL, 'sdsdsfd', 'fdsfdsfdsfsdf', 'teste@gmail.com', '123', '123', '4444-03-22', 'naoBinario', '11111111111111113000', 'AzerbaijÃ£o', 'pe', '3214234', '32423423', '', '');
+(4, NULL, 'Marcos', 'Vinico', 'teste@gmail.com', '123', '123', '1975-12-11', 'transgenero', '11111111', 'Brasil', 'sp', 'Caieras', 'LadrÃ£o de CÃ³digo', '', ''),
+(7, NULL, 'leandro', 'Silva', 'leandrosdc@outlook.com', 'le1', 'le1', '2022-06-15', 'transgenero', '9309292', 'ArmÃªnia', 'ms', 'SÃ£o Paulo', 'Programador', '', ''),
+(8, NULL, 'Mandangueira', 'Mandengo', 'mandinha@gmail.com', '0999', '0999', '2022-05-30', 'masculinoCisgÃªnero', '19938449', 'Brasil', 'pr', 'SÃ£o Paulo', 'Advogado', '', '');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
