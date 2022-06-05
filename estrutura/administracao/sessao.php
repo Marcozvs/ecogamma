@@ -12,14 +12,23 @@ if (isset($_SESSION['logado']) == FALSE) {
         $id;
         $token;
         $nome;
+        $sobrenome;
+        $email;
+        $senha;
+        $senhaC;
+        $dataN;
+        $genero;
         $numero;
+        $pais;
         $estado;
-        $foto;
-        $nascimento;
+        $cidade;
         $profissao;
+        $foto;
+        $descricao;
 
         $email = $_SESSION['email'];
-        $sql = "SELECT id, token, nome, numero, estado, foto, nascimento, profissao FROM usuario WHERE email = '$email'";
+        $sql = "SELECT id, token, nome, sobrenome, email, dataN, genero, numero, pais, estado, cidade, profissao,
+        foto, descricao FROM usuarios WHERE email = '$email'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
