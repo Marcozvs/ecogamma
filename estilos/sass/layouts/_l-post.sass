@@ -1,0 +1,17 @@
+@use '../variaveis'
+.container__post
+    display: flex
+    flex-direction: column
+    .container__post__perfil
+        display: flex
+        align-items: center
+        justify-content: space-between
+        .container__post__perfil__foto
+            width: 20%
+            img
+                width: 100%
+                border-radius: 50%
+                border: 2px solid variaveis.$primeira-cor
+        .container__post__perfil__dados
+            width: 60%
+            margin-right: 15%

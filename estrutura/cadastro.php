@@ -18,16 +18,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
-<?php
-include './administracao/sessao.php';
-if ($_SESSION['logado'] == 1) {
-    // print_r($_SESSION);
-    echo "Parece que você já está logado...";
-    echo "<br><a href='./comunidade.php'>Voltar à tela inicial</a>";
-    die();
-    exit();
-};
-?>
 <body>
     <div class="fundo">
       <img src="../imagens/banner_inicio_mobile.png" alt="Fundo da página" class="fundo__inicio"> 
@@ -58,11 +48,11 @@ if ($_SESSION['logado'] == 1) {
     </section>
     <main>
       <div class="container">
-        <h1>Sustentabilidade.</h1>
+        <h1 class="h1--alternativo">Sustentabilidade.</h1>
         <p>Para se cadastrar preencha o formulário abaixo</p>
         <div class="container__formLogin">
           <h2>Cadastro</h2>
-          <form action="./cadastroProcessa.php" class="container__formLogin__form" method="POST">
+          <form action="" class="container__formLogin__form">
 
             <label for="nome">Nome</label>
             <input type="text" placeholder="Insira seu nome..." maxlength="150" minlength="1" required id="nome" name="nome"> 
@@ -71,29 +61,26 @@ if ($_SESSION['logado'] == 1) {
             <input type="text" placeholder="Insira seu sobrenome..." maxlength="150" minlength="1" required id="sobrenome" name="sobrenome"> 
             
             <label for="email">Email</label>
-            <input type="email" placeholder="Insira seu email..." maxlength="150" minlength="1" required id="email" name="email">
-
-            <label for="numero">Celular</label>
-            <input type="number" placeholder="Insira seu numero..." maxlength="150" minlength="1" required id="numero" name="numero"> 
+            <input type="mail" placeholder="Insira seu email..." maxlength="150" minlength="1" required id="email" name="email"> 
 
             <label for="novaSenha">Nova senha</label>
-            <input type="password" placeholder="Insira uma nova senha..." maxlength="80" minlength="1" required id="senha" name="senha"> 
+            <input type="password" placeholder="Insira uma nova senha..." maxlength="80" minlength="1" required id="novaSenha" name="novaSenha"> 
 
             <label for="repitaSenha">Repita a senha</label>
-            <input type="password" placeholder="Repita a nova senha..." maxlength="80" minlength="1" required  id="senhaC" name="senhaC">
+            <input type="password" placeholder="Repita a nova senha..." maxlength="80" minlength="1" required  id="repitaSenha" name="repitaSenha">
 
             <label for="nascimento">Data de Nascimento</label>
-            <input type="date" required   id="dataN" name="dataN">
+            <input type="date" required   id="nascimento" name="nascimento">
 
             <label for="genero">Genêro</label>
-            <select name="genero" id="genero" name="genero">
+            <select name="genero" id="genero" name="genero" form="carform">
                 <option value="masculinoCisgênero">Cisgênero</option>
-                <option value="transgenero">Transgênero</option>
-                <option value="naoBinario">Não Binário</option>
+                <option value="masculinoCisgênero">Transgênero</option>
+                <option value="masculinoCisgênero">Não Binário</option>
             </select>
 
             <label for="sobrenome"  class="label_select">País</label>
-            <select name="pais" id="pais">
+            <select name="paises" id="paises">
                 <option value="Brasil" selected="selected">Brasil</option>
                 <option value="Afeganistão">Afeganistão</option>
                 <option value="África do Sul">África do Sul</option>
@@ -383,6 +370,9 @@ if ($_SESSION['logado'] == 1) {
 
             <label for="profissao">Profissão</label>
             <input type="text" placeholder="Insira sua profissão..." maxlength="100" minlength="1" required  id="profissao" name="profissao">
+
+            <label for="profissao">Foto</label>
+            <input type="file" placeholder="Insira sua profissão..." maxlength="100" minlength="1" required  id="profissao" name="profissao">
 
             <input type="submit" value="Enviar" class="botao__principal">
 

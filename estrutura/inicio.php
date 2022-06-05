@@ -48,24 +48,20 @@
     </section>
     <main>
       <div class="container">
-      <h1 class="h1--alternativo">Sustentabilidade.</h1>
-        <p>Para entrar em contato com a gente preencha o formulário abaixo</p>
+        <h1 class="h1--alternativo">Sustentabilidade.</h1>
+        <p>Venha fazer parte da comunidade e nos ajudar a cuidar do nosso lar, o planeta!</p>
         <div class="container__formLogin">
-          <h2>Contato</h2>
+          <h2>Login</h2>
           <form action="" class="container__formLogin__form">
-              <label for="nome">Nome</label>
-              <input type="text" placeholder="Insira seu nome..." maxlength="150" minlength="1" required>
-              <label for="sobreno">Sobrenome</label>
-              <input type="text" placeholder="Insira seu sobrenome..." maxlength="150" minlength="1" required>
               <label for="email">Email</label>
-              <input type="email" placeholder="Insira seu email..." maxlength="150" minlength="1" required>
-              <label for="telefone">Telefone</label>
-              <input type="tel" placeholder="Insira seu telefone..." maxlength="50" minlength="1" required>
+              <input type="email" placeholder="Insira seu email..." maxlength="100" minlength="1" required id="email" name="email">
+              <label for="senha">Senha</label>
+              <input type="password" placeholder="Insira sua senha..." maxlength="100" minlength="1" required id="senha" name="senha">
               <input type="submit" value="Entrar" class="botao__principal">
           </form>
           <a href="cadastro.php">Cadastre-se</a>
           <br>
-          <a href="email.php">Esqueci meu email</a>
+          <a href="email.php">Esqueci a senha</a>
         </div>
       </div>
     </main>

@@ -8,9 +8,13 @@ h3
     font-weight: 700
     text-align: center
 
-h1
+h1,
+.h1--alternativo
     font-size: 2rem
     color: variaveis.$primeira-cor
+
+.h1--alternativo
+    color: variaveis.$branco
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
 
 h2
@@ -20,10 +24,19 @@ h3
     font-size: 1.25rem
     color: variaveis.$terceira-cor
 
-p
+p,
+.p--alternativo
     line-height: 1.5rem
     text-align: justify
     color: variaveis.$preto
+.nome__perfil
+    color: variaveis.$primeira-cor
+    font-weight: 700
+.cargo__perfil
+    color: variaveis.$segunda-cor
+    font-weight: 700
+.p--alternativo
+    color: variaveis.$branco
 //Formulários
 form
     display: flex
@@ -41,11 +54,32 @@ input
     padding: 0.5rem
     margin-bottom: 1rem
     color: variaveis.$primeira-cor
+textarea
+    background: variaveis.$branco
+    border: 2px solid variaveis.$primeira-cor
+    border-radius: 5px
+    height: 80px
+    padding: 0.5rem
+    margin-bottom: 1rem
+    color: variaveis.$primeira-cor
 .botao__principal
     height: 50px
     background-color: variaveis.$primeira-cor
     border: none
     color: variaveis.$branco
+.botao__secundario
+    background-color: variaveis.$branco
+    border: 2px solid variaveis.$primeira-cor
+    border-radius: 5px
+    color: variaveis.$primeira-cor
+    height: 50px
+.label-botao
+    background-color: variaveis.$branco
+    border: 2px solid variaveis.$primeira-cor
+    border-radius: 5px
+    text-align: center
+    color: variaveis.$primeira-cor
+    padding: 1rem
 .label_select
     margin-top: 1rem
 //link
@@ -58,5 +92,7 @@ a
 //Icones
 span
     color: variaveis.$branco
+.span--azul
+    color: variaveis.$primeira-cor
 .icone-alternativo
     color: variaveis.$preto
