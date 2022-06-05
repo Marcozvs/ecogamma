@@ -18,6 +18,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
+<?php
+include './administracao/sessao.php';
+    if ($_SESSION['logado'] == 1) {
+        // print_r($_SESSION);
+        echo "Parece que você já está logado...";
+        echo "<br><a href='./comunidade.php'>Voltar à tela inicial</a>";
+        die();
+        exit();
+    };
+?>
 <body>
     <div class="fundo">
       <img src="../imagens/banner_inicio_mobile.png" alt="Fundo da página" class="fundo__inicio"> 
@@ -52,7 +62,7 @@
         <p>Venha fazer parte da comunidade e nos ajudar a cuidar do nosso lar, o planeta!</p>
         <div class="container__formLogin">
           <h2>Login</h2>
-          <form action="" class="container__formLogin__form">
+          <form action="./loginProcessa.php" class="container__formLogin__form" method="POST">
               <label for="email">Email</label>
               <input type="email" placeholder="Insira seu email..." maxlength="100" minlength="1" required id="email" name="email">
               <label for="senha">Senha</label>
