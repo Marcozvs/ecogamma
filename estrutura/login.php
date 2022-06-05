@@ -22,8 +22,9 @@
 include './administracao/sessao.php';
     if ($_SESSION['logado'] == 1) {
         // print_r($_SESSION);
-        echo "Parece que você já está logado...";
-        echo "<br><a href='./comunidade.php'>Voltar à tela inicial</a>";
+        echo "
+        <div class='container__logout'><h1>Sua conta já está conectada!</h1>
+        <a href='feed.php'><button class='botao__principal'>Início</button></a></div>";
         die();
         exit();
     };

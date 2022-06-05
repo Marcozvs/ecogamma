@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,14 +19,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <main>
         <div class="container">
             <div class="container__logout">
-                <h1>Você está deslogado</h1>
-                <a href="inicio.php"><button class="botao__principal">Okay</button></a>
+                <?php
+                include_once './administracao/sessao.php';
+                if ($_SESSION['logado'] == 0) {
+                    echo "<h1>Sua conta não está conectada!</h1>
+                    <a href='login.php'><button class='botao__principal'>Login</button></a>";
+                    exit();
+                } else {
+                    session_destroy();
+                    include_once './administracao/sessao.php';
+                    echo "<h1>Sua conta foi desconectada com sucesso!</h1>
+                    <a href='login.php'><button class='botao__principal'>Login</button></a>";
+                    $_SESSION['logado'] = 0;
+                    exit();
+                };
+                ?>
+
             </div>
         </div>
     </main>
 </body>
+
 </html>
