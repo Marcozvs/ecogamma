@@ -1,0 +1,28 @@
+@use '../variaveis'
+
+#menuLateral
+    display: none
+    .menuLateral__container
+        position: sticky
+        z-index: 3
+        height: 100vh
+        left: 50vw
+        width: 50vw
+        background: variaveis.$branco
+        padding: 1rem
+        box-sizing: border-box
+        .container__menu
+            margin: 5% 0% 0% 86%
+        .menuLateral__container__lista
+            display: flex
+            flex-direction: column
+            height: 95%
+            justify-content: space-around
+            .menuLateral__container__lista__item
+                display: flex
+                align-items: center
+                color: variaveis.$primeira-cor
+                font-weight: 700
+                span
+                    margin-right: 1rem
+

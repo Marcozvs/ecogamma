@@ -12,6 +12,7 @@ h3 {
 h1 {
   font-size: 2rem;
   color: #5570FF;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 h2 {
@@ -49,6 +50,7 @@ input {
   height: 20px;
   padding: 0.5rem;
   margin-bottom: 1rem;
+  color: #5570FF;
 }
 
 .botao__principal {
@@ -70,10 +72,14 @@ span {
   color: #fefefe;
 }
 
+.icone-alternativo {
+  color: #111111;
+}
+
 header {
   z-index: 2;
   position: absolute;
-  height: 75px;
+  height: 15vh;
   width: 100vw;
 }
 header .container {
@@ -111,6 +117,38 @@ main .container {
   box-sizing: border-box;
 }
 
+#menuLateral {
+  display: none;
+}
+#menuLateral .menuLateral__container {
+  position: sticky;
+  z-index: 3;
+  height: 100vh;
+  left: 50vw;
+  width: 50vw;
+  background: #fefefe;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+#menuLateral .menuLateral__container .container__menu {
+  margin: 5% 0% 0% 86%;
+}
+#menuLateral .menuLateral__container .menuLateral__container__lista {
+  display: flex;
+  flex-direction: column;
+  height: 95%;
+  justify-content: space-around;
+}
+#menuLateral .menuLateral__container .menuLateral__container__lista .menuLateral__container__lista__item {
+  display: flex;
+  align-items: center;
+  color: #5570FF;
+  font-weight: 700;
+}
+#menuLateral .menuLateral__container .menuLateral__container__lista .menuLateral__container__lista__item span {
+  margin-right: 1rem;
+}
+
 header .container .container__logo {
   width: 25vw;
   box-sizing: border-box;
@@ -142,6 +180,9 @@ main .container .container__formLogin {
 }
 main .container .container__formLogin .container__formLogin__form {
   margin-top: 1rem;
+}
+main .container .container__formLogin a {
+  color: #8325E0;
 }
 
 /*# sourceMappingURL=styles.css.map */
