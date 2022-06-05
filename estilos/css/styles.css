@@ -60,6 +60,10 @@ input {
   color: #fefefe;
 }
 
+.label_select {
+  margin-top: 1rem;
+}
+
 a {
   line-height: 1.5rem;
   text-align: justify;
@@ -95,7 +99,7 @@ header .container {
   width: 100vw;
   height: 100%;
   z-index: 1;
-  position: absolute;
+  position: fixed;
 }
 .fundo .fundo__inicio {
   width: 100%;
@@ -108,10 +112,12 @@ main {
   z-index: 2;
   top: 75px;
   margin-top: 1.5rem;
-  padding: 0rem 2rem 0rem 2rem;
+  padding: 0% 5% 0% 5%;
+  width: 90%;
 }
 main .container {
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
@@ -121,7 +127,7 @@ main .container {
   display: none;
 }
 #menuLateral .menuLateral__container {
-  position: sticky;
+  position: fixed;
   z-index: 3;
   height: 100vh;
   left: 50vw;
@@ -136,7 +142,7 @@ main .container {
 #menuLateral .menuLateral__container .menuLateral__container__lista {
   display: flex;
   flex-direction: column;
-  height: 95%;
+  height: 90%;
   justify-content: space-around;
 }
 #menuLateral .menuLateral__container .menuLateral__container__lista .menuLateral__container__lista__item {
@@ -147,6 +153,46 @@ main .container {
 }
 #menuLateral .menuLateral__container .menuLateral__container__lista .menuLateral__container__lista__item span {
   margin-right: 1rem;
+}
+
+.container__cartao {
+  display: flex;
+  background-color: #fefefe;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  padding: 1rem;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 1rem 0rem;
+}
+.container__cartao .container__cartao__dados {
+  display: flex;
+  align-items: center;
+}
+.container__cartao .container__cartao__dados .container__cartao__dados__foto {
+  width: 25%;
+}
+.container__cartao .container__cartao__dados .container__cartao__dados__foto img {
+  width: 100%;
+  border-radius: 50px;
+  border: solid 2px #5570FF;
+  width: 75%;
+}
+.container__cartao .container__cartao__dados div {
+  display: flex;
+  width: 75%;
+  flex-direction: column;
+}
+.container__cartao .container__cartao__dados div .container__cartao__dados__nome {
+  color: #5570FF;
+  font-weight: 700;
+}
+.container__cartao .container__cartao__dados div .container__cartao__dados__cargo {
+  color: #34B132;
+  font-weight: 700;
+}
+.container__cartao .container__cartao__texto {
+  color: #111111;
 }
 
 header .container .container__logo {

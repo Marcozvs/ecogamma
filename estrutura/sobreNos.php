@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecogamma | Início</title>
+    <title>Ecogamma | Sobre Nós</title>
     <!--Aplicando reset CSS-->
     <link rel="stylesheet" href="../estilos/css/reset.css">
     <!--Aplicando CSS-->
@@ -20,7 +20,7 @@
 </head>
 <body>
     <div class="fundo">
-      <img src="../imagens/banner_inicio_mobile.png" alt="Fundo da página" class="fundo__inicio"> 
+      <img src="../imagens/banner_comunidade_mobile.png" alt="Fundo da página" class="fundo__inicio"> 
     </div>
     <header>
       <div class="container">
@@ -47,23 +47,9 @@
       </div>
     </section>
     <main>
-      <div class="container">
-        <h1>Sustentabilidade.</h1>
-        <p>Venha fazer parte da comunidade e nos ajudar a cuidar do nosso lar, o planeta!</p>
-        <div class="container__formLogin">
-          <h2>Login</h2>
-          <form action="" class="container__formLogin__form">
-              <label for="email">Email</label>
-              <input type="email" placeholder="Insira seu email..." maxlength="100" minlength="1" required id="email" name="email">
-              <label for="senha">Senha</label>
-              <input type="password" placeholder="Insira sua senha..." maxlength="100" minlength="1" required id="senha" name="senha">
-              <input type="submit" value="Entrar" class="botao__principal">
-          </form>
-          <a href="cadastro.php">Cadastre-se</a>
-          <br>
-          <a href="email.php">Esqueci a senha</a>
+        <div class="container">
+            <h1>Sobre Nós</h1>
         </div>
-      </div>
     </main>
     <script src="../manipulacao/manuLateral.js"></script>
 </body>

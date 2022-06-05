@@ -1,0 +1,32 @@
+@use '../variaveis'
+.container__cartao
+    display: flex
+    background-color: variaveis.$branco
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+    border-radius: 25px 
+    padding: 1rem  
+    justify-content: space-between
+    flex-direction: column
+    margin: 1rem 0rem
+    .container__cartao__dados
+        display: flex
+        align-items: center
+        .container__cartao__dados__foto
+            width: 25%
+            img
+                width: 100%
+                border-radius: 50px
+                border: solid 2px variaveis.$primeira-cor
+                width: 75%
+        div
+            display: flex
+            width: 75%
+            flex-direction: column
+            .container__cartao__dados__nome
+                color: variaveis.$primeira-cor
+                font-weight: 700
+            .container__cartao__dados__cargo
+                color: variaveis.$segunda-cor
+                font-weight: 700
+    .container__cartao__texto
+        color: variaveis.$preto
