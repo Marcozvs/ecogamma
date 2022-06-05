@@ -293,11 +293,15 @@ main .container .container__postagem .container__postagem__formulario .container
 .container__post {
   display: flex;
   flex-direction: column;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  padding: 1rem;
 }
 .container__post .container__post__perfil {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 1rem;
 }
 .container__post .container__post__perfil .container__post__perfil__foto {
   width: 20%;
@@ -334,6 +338,10 @@ main .container .container__postagem .container__postagem__formulario .container
 .container__post .container__post__interacoes .container__post__interacoes__lista .container__post__interacoes__lista__item p {
   margin-right: 1rem;
   color: #5570FF;
+}
+.container__post .container__post__comentarios {
+  width: 90%;
+  margin: 10% 0% 0% 5%;
 }
 
 .container .container__logout a {
