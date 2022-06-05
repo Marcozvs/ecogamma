@@ -18,10 +18,10 @@
     </head>
     <body>
     <?php
-    include_once './administracao/sessao.php';
+    include_once './administracao/sessao.php'; // isso iria iniciar a sessão tenho que mudar
     if ($_SESSION['logado'] != false) {
         die('Você está já está logado!');
-    }
+    } // não dá para incluir uma variável que não existe :(
         ?>
         <section class="login">
             <form action="./loginProcessa.php" method="POST">

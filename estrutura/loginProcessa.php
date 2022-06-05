@@ -11,11 +11,10 @@
 <body>
     <?php
     include './administracao/conexao.php';
-    include_once './administracao/sessao.php';
-
+    
     $email = $_POST['email'];
     $senha = $_POST['senha'];
-
+    
     $query = "SELECT id, nome from usuario where email = '$email' and senha = '$senha'";
     
     $resultado = mysqli_query($conn, $query);
@@ -23,15 +22,15 @@
     $row = mysqli_num_rows($resultado);
     
     if ($row == 1) {
-        echo "comparei e deu certo" . $row; // LINHA PARA TESTAR EM CASO DE ACERTO NO LOGIN
+        echo "comparei e deu certo" . $row; // LINHA PARA TESTAR EM CASO DE ACERTO NO LOGIN (DESATIVAR O HEADER ABAIXO)
+        include_once './administracao/sessao.php';
         $_SESSION['email'] = $email;
         $_SESSION['logado'] = true;
         header('Location: index.php');
         $logado = true; //   INICIA A SESSÃO DO USUÁRIO
         exit();
     } else {
-        echo "comparei e deu ERRADO"; // LINHA PARA TESTAR EM CASO DE FALHA NO LOGIN
-        $_SESSION['logado'] = false;
+        echo "comparei e deu ERRADO"; // LINHA PARA TESTAR EM CASO DE FALHA NO LOGIN (DESATIVAR O HEADER ABAIXO)
         header('Location: login.php');
         exit();
     }
