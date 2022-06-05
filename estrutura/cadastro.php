@@ -18,6 +18,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
+<?php
+include './administracao/sessao.php';
+if ($_SESSION['logado'] == 1) {
+    print_r($_SESSION);
+    echo "Parece que você já está logado...";
+    echo "<br><a href='./feed.php'>Voltar à tela inicial</a>";
+    die();
+    exit();
+};
+?>
 <body>
     <div class="fundo">
       <img src="../imagens/banner_inicio_mobile.png" alt="Fundo da página" class="fundo__inicio"> 
@@ -25,7 +35,7 @@
     <header>
       <div class="container">
           <div class="container__logo">
-            <a href="inicio.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
+            <a href="login.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
           </div>
           <div id="container__menu" onclick="menuLateralOpen()">
             <span class="material-symbols-outlined container__menu__icone">&#xe5d2;</span>
@@ -38,7 +48,7 @@
           <span class="material-symbols-outlined container__menu__icone icone-alternativo">&#xe5d2;</span>
         </div>
         <ul class="menuLateral__container__lista">
-          <a href="./inicio.php"><li class="menuLateral__container__lista__item"><span class="material-symbols-outlined container__menu__icone icone-alternativo">&#xe9ba;</span>Login</li></a>
+          <a href="./login.php"><li class="menuLateral__container__lista__item"><span class="material-symbols-outlined container__menu__icone icone-alternativo">&#xe9ba;</span>Login</li></a>
           <a href="./cadastro.php"><li class="menuLateral__container__lista__item"><span class="material-symbols-outlined container__menu__icone  icone-alternativo  icone-alternativo">&#xe145;</span>Cadastre-se</li></a>
           <a href="./contato.php"><li class="menuLateral__container__lista__item"><span class="material-symbols-outlined container__menu__icone  icone-alternativo">&#xf223;</span>Contato</li></a>
           <a href="./sobreNos.php"><li class="menuLateral__container__lista__item"><span class="material-symbols-outlined container__menu__icone  icone-alternativo">&#xf8d7;</span>Sobre nós</li></a>
@@ -48,11 +58,11 @@
     </section>
     <main>
       <div class="container">
-        <h1 class="h1--alternativo">Sustentabilidade.</h1>
+        <h1>Sustentabilidade.</h1>
         <p>Para se cadastrar preencha o formulário abaixo</p>
         <div class="container__formLogin">
           <h2>Cadastro</h2>
-          <form action="" class="container__formLogin__form">
+          <form action="./cadastroProcessa.php" class="container__formLogin__form" method="POST">
 
             <label for="nome">Nome</label>
             <input type="text" placeholder="Insira seu nome..." maxlength="150" minlength="1" required id="nome" name="nome"> 
@@ -61,26 +71,29 @@
             <input type="text" placeholder="Insira seu sobrenome..." maxlength="150" minlength="1" required id="sobrenome" name="sobrenome"> 
             
             <label for="email">Email</label>
-            <input type="mail" placeholder="Insira seu email..." maxlength="150" minlength="1" required id="email" name="email"> 
+            <input type="email" placeholder="Insira seu email..." maxlength="150" minlength="1" required id="email" name="email">
+
+            <label for="numero">Celular</label>
+            <input type="number" placeholder="Insira seu numero..." maxlength="150" minlength="1" required id="numero" name="numero"> 
 
             <label for="novaSenha">Nova senha</label>
-            <input type="password" placeholder="Insira uma nova senha..." maxlength="80" minlength="1" required id="novaSenha" name="novaSenha"> 
+            <input type="password" placeholder="Insira uma nova senha..." maxlength="80" minlength="1" required id="senha" name="senha"> 
 
             <label for="repitaSenha">Repita a senha</label>
-            <input type="password" placeholder="Repita a nova senha..." maxlength="80" minlength="1" required  id="repitaSenha" name="repitaSenha">
+            <input type="password" placeholder="Repita a nova senha..." maxlength="80" minlength="1" required  id="senhaC" name="senhaC">
 
             <label for="nascimento">Data de Nascimento</label>
-            <input type="date" required   id="nascimento" name="nascimento">
+            <input type="date" required   id="dataN" name="dataN">
 
             <label for="genero">Genêro</label>
-            <select name="genero" id="genero" name="genero" form="carform">
+            <select name="genero" id="genero" name="genero">
                 <option value="masculinoCisgênero">Cisgênero</option>
-                <option value="masculinoCisgênero">Transgênero</option>
-                <option value="masculinoCisgênero">Não Binário</option>
+                <option value="transgenero">Transgênero</option>
+                <option value="naoBinario">Não Binário</option>
             </select>
 
             <label for="sobrenome"  class="label_select">País</label>
-            <select name="paises" id="paises">
+            <select name="pais" id="pais">
                 <option value="Brasil" selected="selected">Brasil</option>
                 <option value="Afeganistão">Afeganistão</option>
                 <option value="África do Sul">África do Sul</option>
@@ -370,9 +383,6 @@
 
             <label for="profissao">Profissão</label>
             <input type="text" placeholder="Insira sua profissão..." maxlength="100" minlength="1" required  id="profissao" name="profissao">
-
-            <label for="profissao">Foto</label>
-            <input type="file" placeholder="Insira sua profissão..." maxlength="100" minlength="1" required  id="profissao" name="profissao">
 
             <input type="submit" value="Enviar" class="botao__principal">
 

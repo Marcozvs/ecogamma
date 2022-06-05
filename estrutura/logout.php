@@ -22,8 +22,24 @@
     <main>
         <div class="container">
             <div class="container__logout">
-                <h1>Você está deslogado</h1>
-                <a href="login.php"><button class="botao__principal">Sair</button></a>
+            <?php
+                include_once './administracao/sessao.php';
+                if ($_SESSION['logado'] == 0) {
+                    echo "<h1>Sua conta não está conectada!</h1>
+                    <a href='login.php'><button class='botao__principal'>Login</button></a>";
+                    print_r($_SESSION);
+                    exit();
+                } else {
+                    session_destroy();
+                    include_once './administracao/sessao.php';
+                    echo "<h1>Sua conta foi desconectada com sucesso!</h1>
+                    <a href='login.php'><button class='botao__principal'>Login</button></a>";
+                    print_r($_SESSION);
+                    $_SESSION['logado'] = 0;
+                    exit();
+                };
+                ?>
+                ?>
             </div>
         </div>
     </main>
