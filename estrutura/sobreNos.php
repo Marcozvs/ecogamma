@@ -25,7 +25,7 @@
     <header>
       <div class="container">
           <div class="container__logo">
-            <a href="inicio.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
+            <a href="login.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
           </div>
           <div id="container__menu" onclick="menuLateralOpen()">
             <span class="material-symbols-outlined container__menu__icone">&#xe5d2;</span>
@@ -38,7 +38,7 @@
           <span class="material-symbols-outlined container__menu__icone icone-alternativo">&#xe5d2;</span>
         </div>
         <ul class="menuLateral__container__lista">
-          <a href="./inicio.php"><li class="menuLateral__container__lista__item"><span class="material-symbols-outlined container__menu__icone icone-alternativo">&#xe9ba;</span>Login</li></a>
+          <a href="./login.php"><li class="menuLateral__container__lista__item"><span class="material-symbols-outlined container__menu__icone icone-alternativo">&#xe9ba;</span>Login</li></a>
           <a href="./cadastro.php"><li class="menuLateral__container__lista__item"><span class="material-symbols-outlined container__menu__icone  icone-alternativo  icone-alternativo">&#xe145;</span>Cadastre-se</li></a>
           <a href="./contato.php"><li class="menuLateral__container__lista__item"><span class="material-symbols-outlined container__menu__icone  icone-alternativo">&#xf223;</span>Contato</li></a>
           <a href="./sobreNos.php"><li class="menuLateral__container__lista__item"><span class="material-symbols-outlined container__menu__icone  icone-alternativo">&#xf8d7;</span>Sobre nós</li></a>
