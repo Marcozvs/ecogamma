@@ -1,0 +1,20 @@
+
+
+Código dos estilos para ser incluido dentro das heads:
+
+<?php include './base/linksGlobais.php' ?>
+
+--------------------------------------------------------
+
+Se estiver logado, não exibe o resto da página até o ponto em que for colocado:
+
+include './administracao/sessao.php';
+    if ($_SESSION['logado'] == 1) {
+        echo "
+        <div class='container__logout'><h1>Sua conta já está conectada!</h1>
+        <a href='feed.php'><button class='botao__principal'>Início</button></a></div>";
+        die();
+        exit();
+    };
+
+--------------------------------------------------------

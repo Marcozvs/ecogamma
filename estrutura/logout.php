@@ -27,14 +27,14 @@
                 if ($_SESSION['logado'] == 0) {
                     echo "<h1>Sua conta não está conectada!</h1>
                     <a href='login.php'><button class='botao__principal'>Login</button></a>";
-                    print_r($_SESSION);
+                    // print_r($_SESSION);
                     exit();
                 } else {
                     session_destroy();
                     include_once './administracao/sessao.php';
                     echo "<h1>Sua conta foi desconectada com sucesso!</h1>
                     <a href='login.php'><button class='botao__principal'>Login</button></a>";
-                    print_r($_SESSION);
+                    // print_r($_SESSION);
                     $_SESSION['logado'] = 0;
                     exit();
                 };
