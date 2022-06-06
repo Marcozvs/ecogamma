@@ -35,7 +35,7 @@ include './administracao/sessao.php';
     <header>
       <div class="container">
           <div class="container__logo">
-            <a href="inicio.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
+            <a href="login.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
           </div>
           <div id="container__menu" onclick="menuLateralOpen()">
             <span class="material-symbols-outlined container__menu__icone">&#xe5d2;</span>

@@ -22,7 +22,16 @@
     <header class="header__interno">
       <div class="container">
           <div class="container__logo">
-            <a href="feed.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
+            <a href="login.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
+          </div>
+          <div class="container__perfil">
+            <span class="material-symbols-outlined container__menu__icone span--azul">&#xe853;</span>
+          </div>
+          <div class="container__chat">
+            <span class="material-symbols-outlined container__menu__icone span--azul">&#xe8af;</span>
+          </div>
+          <a href="logout.php"><div class="container__logout">
+            <span class="material-symbols-outlined container__menu__icone span--azul">&#xeffd;</span></a>
           </div>
           <nav>
               <a href="perfil.php">
@@ -46,7 +55,7 @@
           <span class="material-symbols-outlined container__menu__icone icone-alternativo">&#xe5d2;</span>
         </div>
         <ul class="menuLateral__container__lista">
-          <a href="./inicio.php"><li class="menuLateral__container__lista__item"><span class="material-symbols-outlined container__menu__icone icone-alternativo">&#xe761;</span>Feed</li></a>
+          <a href="./login.php"><li class="menuLateral__container__lista__item"><span class="material-symbols-outlined container__menu__icone icone-alternativo">&#xe761;</span>Feed</li></a>
           <a href="./sobreNos.php"><li class="menuLateral__container__lista__item"><span class="material-symbols-outlined container__menu__icone  icone-alternativo">&#xe7f4;</span>Notificação</li></a>
           <a href="./comunidade.php"><li class="menuLateral__container__lista__item"><span class="material-symbols-outlined container__menu__icone  icone-alternativo">&#xe865;</span>Salvos</li></a>
           <a href="./comunidade.php"><li class="menuLateral__container__lista__item"><span class="material-symbols-outlined container__menu__icone  icone-alternativo">&#xe878;</span>Eventos</li></a>
