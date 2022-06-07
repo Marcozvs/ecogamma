@@ -10,6 +10,13 @@
 </head>
 
 <body>
+    <?php
+    include './administracao/sessao.php';
+    if ($_SESSION['logado'] == 0) {
+        include 'naoLogado.php';
+        die();
+    };
+    ?>
     <header class="header__interno">
         <div class="container">
             <div class="container__logo">
