@@ -173,7 +173,7 @@ main {
   position: absolute;
   z-index: 2;
   top: 75px;
-  margin-top: 1.5rem;
+  margin-top: 75px;
   padding: 0% 5% 0% 5%;
   width: 90%;
 }
@@ -200,7 +200,6 @@ main .container {
   padding: 1rem;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  transition: width 2s;
 }
 
 #menuLateral__interno {
