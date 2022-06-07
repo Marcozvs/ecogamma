@@ -104,7 +104,8 @@
         // include './administracao/sessao.php';    
         $textoP = $_POST['texto'];
         $imagemP = $_POST['imagem'];
-        echo "
+
+        $temp = echo "
     <section class='container__post'>
                 <div class='container__post__perfil'>
                     <div class='container__post__perfil__foto'>
