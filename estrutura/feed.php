@@ -109,7 +109,7 @@
     <section class='container__post'>
                 <div class='container__post__perfil'>
                     <div class='container__post__perfil__foto'>
-                        <img src='../imagens/leandro.jpg' alt='Imagem do Perfil'>
+                        <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
                     </div>
                     <div class='container__post__perfil__dados'>
                         <p class='container__post__perfil__dados__nome nome__perfil'>" . $nome . " " . $sobrenome . "</p>
@@ -137,10 +137,9 @@
                     </ul>
                 </div>
                 <div class='container__post__comentarios'>
-                    <h2>Comentários</h2>
                     <div class='container__post__perfil'>
                         <div class='container__post__perfil__foto'>
-                            <img src='../imagens/leandro.jpg' alt='Imagem do Perfil'>
+                            <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
                         </div>
                         <div class='container__post__perfil__dados'>
                             <p class='container__post__perfil__dados__nome nome__perfil'>Leandro</p>
