@@ -194,34 +194,13 @@ main .container {
   position: fixed;
   z-index: 3;
   height: 100vh;
-  left: 50vw;
-  width: 50vw;
+  left: 25vw;
+  width: 75vw;
   background: #fefefe;
   padding: 1rem;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-#menuLateral .menuLateral__container .container__menu,
-#menuLateral__interno .menuLateral__container .container__menu {
-  margin: 9% 0% 0% 87%;
-}
-#menuLateral .menuLateral__container .menuLateral__container__lista,
-#menuLateral__interno .menuLateral__container .menuLateral__container__lista {
-  display: flex;
-  flex-direction: column;
-  height: 90%;
-  justify-content: space-around;
-}
-#menuLateral .menuLateral__container .menuLateral__container__lista .menuLateral__container__lista__item,
-#menuLateral__interno .menuLateral__container .menuLateral__container__lista .menuLateral__container__lista__item {
-  display: flex;
-  align-items: center;
-  color: #5570FF;
-  font-weight: 700;
-}
-#menuLateral .menuLateral__container .menuLateral__container__lista .menuLateral__container__lista__item span,
-#menuLateral__interno .menuLateral__container .menuLateral__container__lista .menuLateral__container__lista__item span {
-  margin-right: 1rem;
+  transition: width 2s;
 }
 
 #menuLateral__interno {
@@ -389,6 +368,29 @@ main .container .container__formLogin .container__formLogin__form {
 }
 main .container .container__formLogin a {
   color: #8325E0;
+}
+
+#menuLateral .container__menu,
+#menuLateral__interno .container__menu {
+  margin: 9% 0% 0% 87%;
+}
+#menuLateral .menuLateral__container__lista,
+#menuLateral__interno .menuLateral__container__lista {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  justify-content: space-around;
+}
+#menuLateral .menuLateral__container__lista .menuLateral__container__lista__item,
+#menuLateral__interno .menuLateral__container__lista .menuLateral__container__lista__item {
+  display: flex;
+  align-items: center;
+  color: #5570FF;
+  font-weight: 700;
+}
+#menuLateral .menuLateral__container__lista .menuLateral__container__lista__item span,
+#menuLateral__interno .menuLateral__container__lista .menuLateral__container__lista__item span {
+  margin-right: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
