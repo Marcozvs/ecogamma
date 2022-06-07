@@ -39,19 +39,21 @@ if (isset($_SESSION['logado']) == FALSE) {
                 // echo "foto: " . $row["foto"] . " - nascimento: " . $row["nascimento"];
                 // echo "profissao: " . $row["profissao"];
                 $id = $row["id"];
-                $id = $row["token"];
-                $id = $row["nome"];
-                $id = $row["sobrenome"];
-                $id = $row["email"];
-                $id = $row["dataN"];
-                $id = $row["genero"];
-                $id = $row["numero"];
-                $id = $row["pais"];
-                $id = $row["estado"];
-                $id = $row["cidade"];
-                $id = $row["profissao"];
-                $id = $row["foto"];
-                $id = $row["descricao"];
+                $token = $row["token"];
+                $nome = $row["nome"];
+                $sobrenome = $row["sobrenome"];
+                $email = $row["email"];
+                $senha = $row["senha"];
+                $senhaC = $row["senhaC"];
+                $dataN = $row["dataN"];
+                $genero = $row["genero"];
+                $numero = $row["numero"];
+                $pais = $row["pais"];
+                $estado = $row["estado"];
+                $cidade = $row["cidade"];
+                $profissao = $row["profissao"];
+                $foto = $row["foto"];
+                $descricao = $row["descricao"];
             }
         } else {
             echo "0 results";

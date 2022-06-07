@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -14,14 +14,23 @@
     include_once './administracao/sessao.php';
     include './administracao/conexao.php';
     if ($_SESSION['logado'] == 1) {
-        // header('Location: index.php');
-        echo "<h1>Logado!</h1>
-            <a href='feed.php'><button class='botao__principal'>Iniciar</button></a>";
+        echo "
+        <main>
+            <div class='container'>
+                <div class='container__logout'><h1>Logado!</h1>
+                    <a href='feed.php'>
+                        <button class='botao__principal'>
+                            Iniciar
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </main>";
         die();
     };
 
     if (empty($_POST['email']) || empty($_POST['senha'])) {
-        // header('Location: login.php');
+        header('Location: login.php');
         exit();
     }
 
@@ -35,16 +44,25 @@
     $row = mysqli_num_rows($resultado);
 
     if ($row == 1) {
-        echo "<h1>Logado!</h1>
-            <a href='feed.php'><button class='botao__principal'>Iniciar</button></a>";
+        echo "
+        <main>
+            <div class='container'>
+                <div class='container__logout'><h1>Logado!</h1>
+                    <a href='feed.php'>
+                        <button class='botao__principal'>
+                            Iniciar
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </main>";
         $_SESSION['logado'] = 1;
         $_SESSION['email'] = $email;
         // print_r($_SESSION);
         include_once './administracao/sessao.php';
         exit();
     } else {
-        echo "comparei e deu ERRADO"; // LINHA PARA TESTAR EM CASO DE FALHA NO LOGIN (DESATIVAR O HEADER ABAIXO)
-        // header('Location: login.php');
+        header('Location: login.php?msg=falha'); //Retorna um valor get para ser utilizado no alerta de senha e email errados
         exit();
     }
     ?>

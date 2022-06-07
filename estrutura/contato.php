@@ -6,18 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ecogamma | Início</title>
-  <!--Aplicando reset CSS-->
-  <link rel="stylesheet" href="../estilos/css/reset.css">
-  <!--Aplicando CSS-->
-  <link rel="stylesheet" href="../estilos/css/styles.css">
-  <!--Aplicando ícone do Ecogamma-->
-  <link rel="icon" type="imagem/png" href="../imagens/logos/logo-principal.png" />
-  <!--Aplicando ícones e símbolos-->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-  <!--Aplicando fonte-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <?php include './base/linksGlobais.php' ?>
 </head>
 
 <body>
@@ -73,7 +62,7 @@
           <input type="email" placeholder="Insira seu email..." maxlength="150" minlength="1" required>
           <label for="telefone">Telefone</label>
           <input type="tel" placeholder="Insira seu telefone..." maxlength="50" minlength="1" required>
-          <input type="submit" value="Entrar" class="botao__principal">
+          <input type="submit" value="Enviar" class="botao__principal">
         </form>
         <a href="cadastro.php">Cadastre-se</a>
         <br>
