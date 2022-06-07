@@ -14,12 +14,9 @@
     include './administracao/conexao.php';
     include './administracao/sessao.php';
     if ($_SESSION['logado'] == 1) {
-        // print_r($_SESSION);
-        echo "Parece que você já tem uma conta e está logado nela...";
-        echo "<br><a href='./comunidade.php'>Voltar à tela inicial</a>";
-        die();
-        exit();
-    };
+            include 'jaLogado.php';
+            die();
+        };
     //pega os dados do formulário e coloca em variáveis
     $id;
     $token; //por padrão é 0

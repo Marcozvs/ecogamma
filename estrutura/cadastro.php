@@ -11,12 +11,9 @@
 <?php
 include './administracao/sessao.php';
 if ($_SESSION['logado'] == 1) {
-  print_r($_SESSION);
-  echo "Parece que você já está logado...";
-  echo "<br><a href='./feed.php'>Voltar à tela inicial</a>";
-  die();
-  exit();
-};
+        include 'jaLogado.php';
+        die();
+    };
 ?>
 
 <body>

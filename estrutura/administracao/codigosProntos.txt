@@ -9,21 +9,9 @@ Código dos estilos para ser incluido dentro das heads:
 Se estiver logado, não exibe o resto da página até o ponto em que for colocado:
 <?php
 include './administracao/sessao.php';
-    if ($_SESSION['logado'] == 1) {
-        echo "
-        <main>
-            <div class='container'>
-                <div class='container__logout'><h1>Logado!</h1>
-                    <a href='feed.php'>
-                        <button class='botao__principal'>
-                            Iniciar
-                        </button>
-                    </a>
-                </div>
-            </div>
-        </main>";
+if ($_SESSION['logado'] == 1) {
+        include 'jaLogado.php';
         die();
-        exit();
     };
 ?>
 --------------------------------------------------------
@@ -31,20 +19,8 @@ include './administracao/sessao.php';
 Se estiver deslogado, não exibe o resto da página até o ponto em que for colocado:
 <?php
 include './administracao/sessao.php';
-    if ($_SESSION['logado'] == 0) {
-                echo "
-        <main>
-            <div class='container'>
-                <div class='container__logout'><h1>Você não está Logado!</h1>
-                    <a href='feed.php'>
-                        <button class='botao__principal'>
-                            Iniciar
-                        </button>
-                    </a>
-                </div>
-            </div>
-        </main>";
+if ($_SESSION['logado'] == 0) {
+        include 'naoLogado.php';
         die();
-        exit();
     };
 ?>

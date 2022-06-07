@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 05, 2022 at 11:31 PM
+-- Generation Time: Jun 07, 2022 at 02:05 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -67,7 +67,7 @@ INSERT INTO `noticia` (`id`, `titulo`, `data_noticia`, `texto`, `foto`, `likes`)
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id de cada um dos user',
-  `token` tinyint(1) DEFAULT NULL COMMENT 'token de adm',
+  `token` tinyint(1) DEFAULT '0' COMMENT 'token de adm',
   `nome` varchar(80) COLLATE utf8_unicode_ci NOT NULL COMMENT 'nome',
   `sobrenome` varchar(80) COLLATE utf8_unicode_ci NOT NULL COMMENT 'sobrenome',
   `email` varchar(80) COLLATE utf8_unicode_ci NOT NULL COMMENT 'email do usuário',
@@ -83,17 +83,17 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `foto` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `descricao` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Descricao que aparece no perfil do usuário',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `token`, `nome`, `sobrenome`, `email`, `senha`, `senhaC`, `dataN`, `genero`, `numero`, `pais`, `estado`, `cidade`, `profissao`, `foto`, `descricao`) VALUES
-(1, 1, 'João', 'Bobão', 'jao@gmail.com', 'jao', 'jao', '1992-06-10', 'Alfa', '111111111', 'Ilhas Mcdonald', 'São Paulo', 'São Paulo', 'Fazedor de Site', 'naruto.png', 'Todos têm algo em comum. Nenhum é tão bom quanto eu.'),
-(4, NULL, 'Marcos', 'Vinico', 'teste@gmail.com', '123', '123', '1975-12-11', 'transgenero', '11111111', 'Brasil', 'sp', 'Caieras', 'LadrÃ£o de CÃ³digo', '', ''),
-(7, NULL, 'leandro', 'Silva', 'leandrosdc@outlook.com', 'le1', 'le1', '2022-06-15', 'transgenero', '9309292', 'ArmÃªnia', 'ms', 'SÃ£o Paulo', 'Programador', '', ''),
-(8, NULL, 'Mandangueira', 'Mandengo', 'mandinha@gmail.com', '0999', '0999', '2022-05-30', 'masculinoCisgÃªnero', '19938449', 'Brasil', 'pr', 'SÃ£o Paulo', 'Advogado', '', '');
+(1, 0, 'João', 'Bobão', 'jao@gmail.com', 'jao', 'jao', '1992-06-10', 'Alfa', '111111111', 'Ilhas Mcdonald', 'São Paulo', 'São Paulo', 'Fazedor de Site', 'naruto.png', 'Todos têm algo em comum. Nenhum é tão bom quanto eu.'),
+(4, 1, 'Marcos', 'Vinico', 'teste@gmail.com', '123', '123', '1975-12-11', 'transgenero', '11111111', 'Brasil', 'sp', 'Caieras', 'LadrÃ£o de CÃ³digo', '', ''),
+(10, 0, 'Ludovisko', 'Mariachi', 'luludo@gmail.com', 'portuga', 'portuga', '2022-06-03', 'transgenero', '110390399', 'Brasil', 'mt', 'SÃ£o Paulo', 'PortuguÃªs', '', ''),
+(11, 0, 'zululuga', 'leandrovisk', 'teste2@gmail.com', 'jjj', 'jjj', '2022-06-10', 'transgenero', '1198940292', 'Brasil', 'pb', 'Sampa', 'Sampaleiro', '', '');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

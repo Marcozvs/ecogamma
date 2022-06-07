@@ -43,8 +43,8 @@ if (isset($_SESSION['logado']) == FALSE) {
                 $nome = $row["nome"];
                 $sobrenome = $row["sobrenome"];
                 $email = $row["email"];
-                $senha = $row["senha"];
-                $senhaC = $row["senhaC"];
+                // $senha = $row["senha"]; vai dar erro
+                // $senhaC = $row["senhaC"]; vai dar erro
                 $dataN = $row["dataN"];
                 $genero = $row["genero"];
                 $numero = $row["numero"];

@@ -14,20 +14,9 @@
     include_once './administracao/sessao.php';
     include './administracao/conexao.php';
     if ($_SESSION['logado'] == 1) {
-        echo "
-        <main>
-            <div class='container'>
-                <div class='container__logout'><h1>Logado!</h1>
-                    <a href='feed.php'>
-                        <button class='botao__principal'>
-                            Iniciar
-                        </button>
-                    </a>
-                </div>
-            </div>
-        </main>";
-        die();
-    };
+            include 'jaLogado.php';
+            die();
+        };
 
     if (empty($_POST['email']) || empty($_POST['senha'])) {
         header('Location: login.php');

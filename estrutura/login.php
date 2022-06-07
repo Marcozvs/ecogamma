@@ -11,21 +11,9 @@
 <?php
 include './administracao/sessao.php';
 if ($_SESSION['logado'] == 1) {
-  echo "
-  <main>
-      <div class='container'>
-          <div class='container__logout'><h1>Logado!</h1>
-              <a href='feed.php'>
-                  <button class='botao__principal'>
-                      Iniciar
-                  </button>
-              </a>
-          </div>
-      </div>
-  </main>";
-  die();
-  exit();
-};
+        include 'jaLogado.php';
+        die();
+    };
 ?>
 
 <body>

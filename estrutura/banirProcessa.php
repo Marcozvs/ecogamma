@@ -8,11 +8,10 @@
     <title>Banir</title>
     <?php include './base/linksGlobais.php' ?>
 </head>
-
 <body>
-    <?php
-    include './administracao/sessao.php';
-    if ($_SESSION['logado'] == 0) {
+<?php
+include './administracao/sessao.php';
+if ($_SESSION['logado'] == 0) {
         include 'naoLogado.php';
         die();
     } elseif ($token == 0) {
@@ -31,24 +30,19 @@
         die();
         exit();
     }
+    include './administracao/conexao.php';
+    $emailDel = $_POST['email'];
+    $sql = "DELETE FROM usuarios WHERE email = '$emailDel'";
+
+    if (mysqli_query($conn, $sql)) {
+    echo "Usuário foi banido!<br><a href='banir.php'>Voltar</a>";
+
+    } else {
+    echo "Erro: " . mysqli_error($conn);
+    echo "<br><a href='banir.php'>Voltar</a>";
+    }
     ?>
-    <main>
-        <h2>Banir Usuário</h2>
-        <form action="./banirProcessa.php" class="container__formLogin__form" method="POST">
-            <label for="email">Email do Usuário</label>
-            <input type="email" placeholder="O email do usuário que deseja banir" maxlength="100" minlength="1" required id="email" name="email">
-            <input type="submit" value="Banir" class="botao__principal">
-        </form>
-        <a href='feed.php'>
-            <div class='container'>
-                <div class='container__logout'>
-                    <button class='botao__principal'>
-                        Feed
-                    </button>
-        </a>
-        </div>
-        </div>
-        <main>
+</form>
 </body>
 
 </html>
