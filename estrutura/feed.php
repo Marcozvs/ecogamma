@@ -87,17 +87,89 @@
         <div class="container">
             <h1>Postagem</h1>
             <section class="container__postagem">
-                <form action="./feedPost.php" class="container__postagem__formulario">
-                    <textarea cols="15" rows="4" placeholder="Escreva seu post aqui..." maxlength="200" minlength="1" id="texto"></textarea>
+                <form action="./feed.php" class="container__postagem__formulario" method="POST">
+                    <textarea cols="15" rows="4" placeholder="Escreva seu post aqui..." maxlength="200" minlength="1" id="texto" name="texto"></textarea>
                     <div class="container__postagem__formulario__botoes">
                         <label for="imagem" class="container__postagem__formulario__botoes__label label-botao">Enviar imagem</label>
-                        <input type="file" accept="image/*" id="imagem" class="container__postagem__formulario__botoes__input">
+                        <input type="file" accept="image/*" id="imagem" name="imagem" class="container__postagem__formulario__botoes__input">
                         <input type="submit" value="Postar" class="botao__principal" name="submit" id="submit">
                     </div>
                 </form>
                 <hr>
             </section>
-
+            <?php
+            if (isset($_POST['texto'])) {
+                
+           
+        // include './administracao/sessao.php';    
+        $textoP = $_POST['texto'];
+        $imagemP = $_POST['imagem'];
+        echo "
+    <section class='container__post'>
+                <div class='container__post__perfil'>
+                    <div class='container__post__perfil__foto'>
+                        <img src='../imagens/leandro.jpg' alt='Imagem do Perfil'>
+                    </div>
+                    <div class='container__post__perfil__dados'>
+                        <p class='container__post__perfil__dados__nome nome__perfil'>" . $nome . " " . $sobrenome . "</p>
+                        <p class='container__post__perfil__dados__cargo cargo__perfil'>" . $profissao . "</p>
+                    </div>
+                </div>
+                <div class='container__post__conteudo'>
+                    <p class='container__post__conteudo__texto'>" . $textoP . "</p>
+                    <img src='../imagens/feed_imagem.jpg' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
+                </div>
+                <div class='container__post__interacoes'>
+                    <ul class='container__post__interacoes__lista'>
+                        <li class='container__post__interacoes__lista__item'>
+                            <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe87d;</span>
+                            <p>32</p>
+                        </li>
+                        <li class='container__post__interacoes__lista__item'>
+                            <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe0b9;</span>
+                            <p>32</p>
+                        </li>
+                        <li class='container__post__interacoes__lista__item'>
+                            <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe163;</span>
+                            <p>32</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class='container__post__comentarios'>
+                    <h2>Comentários</h2>
+                    <div class='container__post__perfil'>
+                        <div class='container__post__perfil__foto'>
+                            <img src='../imagens/leandro.jpg' alt='Imagem do Perfil'>
+                        </div>
+                        <div class='container__post__perfil__dados'>
+                            <p class='container__post__perfil__dados__nome nome__perfil'>Leandro</p>
+                            <p class='container__post__perfil__dados__cargo cargo__perfil'>Engenheiro de Software</p>
+                        </div>
+                    </div>
+                    <div class='container__post__conteudo'>
+                        <p class='container__post__conteudo__texto'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos dolor ab qui temporibus, cupiditate animi nesciunt praesentium dolorum soluta quas nihil vitae ullam facilis ut iusto pariatur perspiciatis at explicabo?</p>
+                        <img src='../imagens/feed_imagem.jpg' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
+                    </div>
+                    <div class='container__post__interacoes'>
+                        <ul class='container__post__interacoes__lista'>
+                            <li class='container__post__interacoes__lista__item'>
+                                <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe87d;</span>
+                                <p>32</p>
+                            </li>
+                            <li class='container__post__interacoes__lista__item'>
+                                <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe0b9;</span>
+                                <p>32</p>
+                            </li>
+                            <li class='container__post__interacoes__lista__item'>
+                                <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe163;</span>
+                                <p>32</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>";
+        }
+    ?>
         </div>
     </main>
     <script src="../manipulacao/manuLateral.js"></script>
