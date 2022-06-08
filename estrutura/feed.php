@@ -105,7 +105,7 @@
         $textoP = $_POST['texto'];
         $imagemP = $_POST['imagem'];
 
-        $temp = echo "
+        $temp = "
     <section class='container__post'>
                 <div class='container__post__perfil'>
                     <div class='container__post__perfil__foto'>
