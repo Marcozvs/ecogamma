@@ -10,16 +10,13 @@
 </head>
 
 <body>
-  <div class="fundo">
-    <img src="../imagens/banner_inicio_mobile.png" alt="Fundo da página" class="fundo__inicio">
-  </div>
-  <header class="header">
+<header class="header">
     <div class="container">
       <div class="container__logo">
         <a href="login.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
       </div>
     <div id="container__menu" onclick="menuLateralInternoOpen()">
-      <span class="material-symbols-outlined container__menu__icone">&#xe5d2;</span>
+      <span class="material-symbols-outlined container__menu__icone span--azul">&#xe5d2;</span>
     </div>
     </div>
   </header>
@@ -38,6 +35,9 @@
                 <a href="contato.php">
                     <li class="container__lista__item-ativo"><span class="material-symbols-outlined container__lista__item__icone-ativo  icone-alternativo">&#xe0b0;</span>Contato</li>
                 </a>
+                <a href="comunidade.php">
+                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xf8d7;</span>Comunidade</li>
+                </a>
                 <a href="sobreNos.php">
                     <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xf8d8;</span>Sobre Nós</li>
                 </a>
@@ -46,7 +46,7 @@
     </section>
   <main>
     <div class="container">
-      <h1 class="h1--alternativo">Sustentabilidade.</h1>
+      <h1>Sustentabilidade.</h1>
       <p>Para entrar em contato com a gente preencha o formulário abaixo</p>
       <div class="container__formLogin">
         <h2>Contato</h2>
