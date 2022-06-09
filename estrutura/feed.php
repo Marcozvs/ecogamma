@@ -99,81 +99,62 @@
             </section>
             <?php
             if (isset($_POST['texto'])) {
-                
-           
-        // include './administracao/sessao.php';    
-        $textoP = $_POST['texto'];
-        $imagemP = $_POST['imagem'];
 
-        $temp = "
-    <section class='container__post'>
-                <div class='container__post__perfil'>
-                    <div class='container__post__perfil__foto'>
-                        <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
-                    </div>
-                    <div class='container__post__perfil__dados'>
-                        <p class='container__post__perfil__dados__nome nome__perfil'>" . $nome . " " . $sobrenome . "</p>
-                        <p class='container__post__perfil__dados__cargo cargo__perfil'>" . $profissao . "</p>
-                    </div>
-                </div>
-                <div class='container__post__conteudo'>
-                    <p class='container__post__conteudo__texto'>" . $textoP . "</p>
-                    <img src='../imagens/feed_imagem.jpg' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
-                </div>
-                <div class='container__post__interacoes'>
-                    <ul class='container__post__interacoes__lista'>
-                        <li class='container__post__interacoes__lista__item'>
-                            <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe87d;</span>
-                            <p>32</p>
-                        </li>
-                        <li class='container__post__interacoes__lista__item'>
-                            <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe0b9;</span>
-                            <p>32</p>
-                        </li>
-                        <li class='container__post__interacoes__lista__item'>
-                            <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe163;</span>
-                            <p>32</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class='container__post__comentarios'>
-                    <div class='container__post__perfil'>
-                        <div class='container__post__perfil__foto'>
-                            <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
-                        </div>
-                        <div class='container__post__perfil__dados'>
-                            <p class='container__post__perfil__dados__nome nome__perfil'>Leandro</p>
-                            <p class='container__post__perfil__dados__cargo cargo__perfil'>Engenheiro de Software</p>
-                        </div>
-                    </div>
-                    <div class='container__post__conteudo'>
-                        <p class='container__post__conteudo__texto'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos dolor ab qui temporibus, cupiditate animi nesciunt praesentium dolorum soluta quas nihil vitae ullam facilis ut iusto pariatur perspiciatis at explicabo?</p>
-                        <img src='../imagens/feed_imagem.jpg' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
-                    </div>
-                    <div class='container__post__interacoes'>
-                        <ul class='container__post__interacoes__lista'>
-                            <li class='container__post__interacoes__lista__item'>
-                                <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe87d;</span>
-                                <p>32</p>
-                            </li>
-                            <li class='container__post__interacoes__lista__item'>
-                                <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe0b9;</span>
-                                <p>32</p>
-                            </li>
-                            <li class='container__post__interacoes__lista__item'>
-                                <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe163;</span>
-                                <p>32</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>";
-        }
-    ?>
+
+                // include './administracao/sessao.php';    
+                $idP = $id;
+                $fotoP = $foto;
+                $nomeP = $nome;
+                $sobrenomeP = $sobrenome;
+                $profissaoP = $profissao;
+                $data_Post = date("Y-m-d");
+                $texto_Post = $_POST['texto'];
+                $imagem_Post = $_POST['imagem'];
+
+                include './administracao/conexao.php';
+         
+                //INSERINDO DADOS 
+            
+                $sql1 = "INSERT INTO posts (id_Post, id, foto, nome, sobrenome, profissao, data_Post, texto_Post, imagem_Post)
+                VALUES ('', '$idP', '$foto', '$nome', '$sobrenome', '$profissao', '$data_Post', '$texto_Post', $imagem_Post)";
+            
+            
+                //PUXANDO DADOS
+            
+                $sql = "SELECT * FROM posts ORDER BY id DESC";
+                    $result = mysqli_query($conn, $sql);
+                    
+                    if (mysqli_num_rows($result) > 0) {
+                    // output data of each row
+                        while($row = mysqli_fetch_assoc($result)) {
+                            
+                            $idP = $row["id"];
+                            $id_Post = $row["id_Post"];
+                            $fotoP = $row["foto"];
+                            $nomeP = $row["nome"];
+                            $sobrenomeP = $row["sobrenome"];
+                            $profissaoP = $row["profissao"];
+                            $data_Post = $row["data_Post"];
+                            $texto_Post = $row["texto_Post"];
+                            $imagem_Post = $row["imagem_Post"];
+
+                            echo "
+                                <p>" . $nomeP . " " . $sobrenomeP . "</p>
+                                <p>" . $profissaoP . "</p>
+                                <p>" . $data_Post . "</p>
+                                <p>" . $texto_Post . "</p>
+                                <p>" . $imagem_Post . "</p>
+                            ";
+
+                        }
+                    } else {
+                    echo "0 results";
+                    }
+                }
+            ?>
         </div>
     </main>
     <script src="../manipulacao/manuLateral.js"></script>
 </body>
 
 </html>
-            
