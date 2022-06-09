@@ -11,11 +11,6 @@
 
 <body>
   <?php
-  include './administracao/sessao.php';
-  if ($_SESSION['logado'] == 0) {
-    include 'naoLogado.php';
-    die();
-  };
   ?>
   <header class="header__interno">
     <div class="container">
@@ -90,7 +85,7 @@
 
 <body>
     <div id="chat">
-        <p class="robo">Prazer em conhecê-lo, meu nome é <strong>Lovebot</strong>! Sou o responsável por ajudar os clientes a se encontrarem dentro do nosso website de forma amigável e intuitiva! ♥</p>
+        <p class="robo">Prazer em conhecê-lo, meu nome é <strong>Ecobot</strong>! Sou o responsável por ajudar os amigos da natureza a se encontrarem dentro do nosso website de forma amigável e intuitiva! ♥</p>
         <p class="robo">Tire suas dúvidas comigo! Tente digitar <strong>olá</strong> no meu chat!</p>
     </div>
     <input type="text" name="" id="escrever" autocomplete="off"
@@ -117,22 +112,22 @@
                 alert("Opa! Tente escrever algo na mensagem!");
             } else if (mensagem == "olá" || mensagem == "Olá" || mensagem == "oi" || mensagem == "Oi" || mensagem == "ajuda") {
                 chat.innerHTML += `<p>${mensagem}</p>`;
-                chat.innerHTML += `<p>Olá, de qual informação você precisa? Digite o número da informação que precisa:<br>1. Como me cadastro no site?<br>2. Quais meios de pagamento a Loveflix aceita?<br>3. Posso usar a Loveflix mesmo sem namorar?<br>4. Quem está por trás da Loveflix?<br> 5. Esqueci a minha senha, e agora?<br><br>Lembre-se de que é possível mudar o tema da página digitando <strong>escuro</strong> ou <strong>claro</strong> </p>`;
+                chat.innerHTML += `<p>Olá, de qual informação você precisa? Digite o número da informação que precisa:<br>1. Como me cadastro no site?<br>2. Quais os meios de doação?<br>3. Posso usar o site para prover a minha empresa?<br>4. Quem está por trás do Ecogamma?<br> 5. Esqueci a minha senha, e agora?<br><br>Lembre-se de que é possível mudar o tema da página digitando <strong>escuro</strong> ou <strong>claro</strong> </p>`;
             } else if (mensagem == "1") {
                 chat.innerHTML += `<p>${mensagem}</p>`;
-                chat.innerHTML += `<p>Para se cadastrar no site e efetivar a sua conta é necessário realizar o pagamento, a página de cadastro pode ser acessada <a href='#' style='text-decoration:none;color: white; font-weight:bolder;'>clicando aqui</a>.</p>`;
+                chat.innerHTML += `<p>Para se cadastrar no site e efetivar a sua conta é necessário realizar o cadastro, a página de cadastro pode ser acessada <a href='./cadastro.php' style='text-decoration:none;color: white; font-weight:bolder;'>clicando aqui</a>.</p>`;
             } else if (mensagem == "2") {
                 chat.innerHTML += `<p>${mensagem}</p>`;
                 chat.innerHTML += `<p>Aceitamos cartões de crédito, débito, pix, paypal e pagamento via boleto bancário.</p>`;
             } else if (mensagem == "3") {
                 chat.innerHTML += `<p">${mensagem}</p>`;
-                chat.innerHTML += `<p>Contamos com um catálogo diversificado com diversos filmes que satisfazem à todo o tipo de público!</p>`;
+                chat.innerHTML += `<p>Para se tornar um parceiro oficial de nosso site e evitar punições por divulgações não autorizadas, fale com a nossa equipe usando o nosso email empresarial!</p>`;
             } else if (mensagem == "4") {
                 chat.innerHTML += `<p>${mensagem}</p>`;
-                chat.innerHTML += `<p>O site foi feito inicialmente como um projeto para a ETEC Parque Belém, realizado por alunos do curso de Informática para Internet (Infonet).</p>`;
+                chat.innerHTML += `<p>O Ecogamma foi feito para os amantes de ecossistemas e ciências naturais, desenvolvido pela nossa larga equipe de profissionais especializados em programação.</p>`;
             } else if (mensagem == "5") {
                 chat.innerHTML += `<p>${mensagem}</p>`;
-                chat.innerHTML += `<p>Não se desespere, há uma página justamente para a resolução deste problema <a href='#' style='text-decoration:none; font-weight:bolder; color: white;'>clique aqui</a> para ir direto para ela.</p>`;
+                chat.innerHTML += `<p>Não se desespere, há uma página justamente para a resolução deste problema <a href='#' style='text-decoration:none; font-weight:bolder; color: white;'>clique aqui</a> para ir direto a ela.</p>`;
             } else if (mensagem == "escuro" || mensagem == "dark" || mensagem == "apagar" || mensagem == "escurecer" || mensagem == "Escuro") {
                 chat.innerHTML += `<p>${mensagem}</p>`;
                 chat.innerHTML += `<p>Só um momento, irei deixar tudo escurinho!</p>`;
@@ -156,13 +151,13 @@
             } else if (mensagem == "Tchau" || mensagem == "tchau" || mensagem == "Adeus" || mensagem == "adeus" || mensagem == "até mais") {
                 chat.innerHTML += `<p>${mensagem}</p>`;
                 chat.innerHTML += `<p>Até mais, pode contar comigo sempre que precisar.</p>`;
-            } else if (mensagem == "Obrigado" || mensagem == "obrigado" || mensagem == "Obrigado lovebot" || mensagem == "obrigado pela ajuda" || mensagem == "Obrigado pela ajuda") {
+            } else if (mensagem == "Obrigado" || mensagem == "obrigado" || mensagem == "Obrigado Ecobot" || mensagem == "obrigado pela ajuda" || mensagem == "Obrigado pela ajuda") {
                 chat.innerHTML += `<p>${mensagem}</p>`;
-                chat.innerHTML += `<p>Por nada, aproveite a Loveflix e o amor, pois os dois são sensacionais.</p>`;
+                chat.innerHTML += `<p>Por nada, aproveite o Ecogamma e o amor, pois os dois são sensacionais.</p>`;
             }
              else {
                 chat.innerHTML += `<p>${mensagem}</p>`;
-                chat.innerHTML += `<p>Desculpe, não consegui entender :(</p>`;
+                chat.innerHTML += `<p>Desculpe, não consegui entender, isso não foi nada natural! <br> :(</p>`;
             }
 
         }
