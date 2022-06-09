@@ -115,41 +115,46 @@
          
                 //INSERINDO DADOS 
             
-                $sql1 = "INSERT INTO posts (id_Post, id, foto, nome, sobrenome, profissao, data_Post, texto_Post, imagem_Post)
-                VALUES ('', '$idP', '$foto', '$nome', '$sobrenome', '$profissao', '$data_Post', '$texto_Post', $imagem_Post)";
+                $sql1 = "INSERT INTO posts (id, foto, nome, sobrenome, profissao, data_Post, texto_Post, imagem_Post)
+                VALUES ('$idP', '$foto', '$nome', '$sobrenome', '$profissao', '$data_Post', '$texto_Post', '$imagem_Post')";
             
+                if (mysqli_query($conn, $sql1)) {
+                    echo "New record created successfully";
+                } else {
+                    echo "Error: " . $sql1 . "<br>" . mysqli_error($conn);
+                }
             
                 //PUXANDO DADOS
             
-                $sql = "SELECT * FROM posts ORDER BY id DESC";
-                    $result = mysqli_query($conn, $sql);
-                    
-                    if (mysqli_num_rows($result) > 0) {
-                    // output data of each row
-                        while($row = mysqli_fetch_assoc($result)) {
-                            
-                            $idP = $row["id"];
-                            $id_Post = $row["id_Post"];
-                            $fotoP = $row["foto"];
-                            $nomeP = $row["nome"];
-                            $sobrenomeP = $row["sobrenome"];
-                            $profissaoP = $row["profissao"];
-                            $data_Post = $row["data_Post"];
-                            $texto_Post = $row["texto_Post"];
-                            $imagem_Post = $row["imagem_Post"];
-
-                            echo "
-                                <p>" . $nomeP . " " . $sobrenomeP . "</p>
-                                <p>" . $profissaoP . "</p>
-                                <p>" . $data_Post . "</p>
-                                <p>" . $texto_Post . "</p>
-                                <p>" . $imagem_Post . "</p>
-                            ";
-
-                        }
-                    } else {
-                    echo "0 results";
+            }
+            $sql = "SELECT * FROM posts ORDER BY id_Post DESC";
+                $result = mysqli_query($conn, $sql);
+                
+                if (mysqli_num_rows($result) > 0) {
+                // output data of each row
+                    while($row = mysqli_fetch_assoc($result)) {
+                        
+                        $idP = $row["id"];
+                        $id_Post = $row["id_Post"];
+                        $fotoP = $row["foto"];
+                        $nomeP = $row["nome"];
+                        $sobrenomeP = $row["sobrenome"];
+                        $profissaoP = $row["profissao"];
+                        $data_Post = $row["data_Post"];
+                        $texto_Post = $row["texto_Post"];
+                        $imagem_Post = $row["imagem_Post"];
+    
+                        echo "
+                            <p>" . $nomeP . " " . $sobrenomeP . "</p>
+                            <p>" . $profissaoP . "</p>
+                            <p>" . $data_Post . "</p>
+                            <p>" . $texto_Post . "</p>
+                            <p>" . $imagem_Post . "</p>
+                        ";
+    
                     }
+                } else {
+                echo "0 Posts";
                 }
             ?>
         </div>
