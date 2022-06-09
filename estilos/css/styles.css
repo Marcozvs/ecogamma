@@ -189,8 +189,8 @@ main .container {
 #menuLateral__interno {
   display: none;
 }
-#menuLateral .menuLateral__container,
-#menuLateral__interno .menuLateral__container {
+#menuLateral .container,
+#menuLateral__interno .container {
   position: fixed;
   z-index: 3;
   height: 100vh;
@@ -378,23 +378,43 @@ main .container .container__formLogin a {
 #menuLateral__interno .container__menu {
   margin: 9% 0% 0% 87%;
 }
-#menuLateral .menuLateral__container__lista,
-#menuLateral__interno .menuLateral__container__lista {
+#menuLateral .container__lista,
+#menuLateral__interno .container__lista {
   display: flex;
   flex-direction: column;
   height: 90%;
   justify-content: space-around;
 }
-#menuLateral .menuLateral__container__lista .menuLateral__container__lista__item,
-#menuLateral__interno .menuLateral__container__lista .menuLateral__container__lista__item {
+#menuLateral .container__lista .container__lista__item,
+#menuLateral .container__lista .container__lista__item-ativo,
+#menuLateral__interno .container__lista .container__lista__item,
+#menuLateral__interno .container__lista .container__lista__item-ativo {
   display: flex;
   align-items: center;
   color: #5570FF;
   font-weight: 700;
 }
-#menuLateral .menuLateral__container__lista .menuLateral__container__lista__item span,
-#menuLateral__interno .menuLateral__container__lista .menuLateral__container__lista__item span {
+#menuLateral .container__lista .container__lista__item .container__lista__item__icone,
+#menuLateral .container__lista .container__lista__item .container__lista__item__icone-ativo,
+#menuLateral .container__lista .container__lista__item-ativo .container__lista__item__icone,
+#menuLateral .container__lista .container__lista__item-ativo .container__lista__item__icone-ativo,
+#menuLateral__interno .container__lista .container__lista__item .container__lista__item__icone,
+#menuLateral__interno .container__lista .container__lista__item .container__lista__item__icone-ativo,
+#menuLateral__interno .container__lista .container__lista__item-ativo .container__lista__item__icone,
+#menuLateral__interno .container__lista .container__lista__item-ativo .container__lista__item__icone-ativo {
   margin-right: 1rem;
+  color: #5570FF;
+}
+#menuLateral .container__lista .container__lista__item-ativo,
+#menuLateral__interno .container__lista .container__lista__item-ativo {
+  background-color: #34B132;
+  color: #fefefe;
+  padding: 1rem;
+  width: 120%;
+}
+#menuLateral .container__lista .container__lista__item-ativo .container__lista__item__icone-ativo,
+#menuLateral__interno .container__lista .container__lista__item-ativo .container__lista__item__icone-ativo {
+  color: #fefefe;
 }
 
 /*# sourceMappingURL=styles.css.map */

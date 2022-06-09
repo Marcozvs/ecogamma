@@ -4,15 +4,25 @@
 #menuLateral__interno
         .container__menu
             margin: 9% 0% 0% 87%
-        .menuLateral__container__lista
+        .container__lista
             display: flex
             flex-direction: column
             height: 90%
             justify-content: space-around
-            .menuLateral__container__lista__item
+            .container__lista__item,
+            .container__lista__item-ativo
                 display: flex
                 align-items: center
                 color: variaveis.$primeira-cor
                 font-weight: 700
-                span
+                .container__lista__item__icone,
+                .container__lista__item__icone-ativo
                     margin-right: 1rem
+                    color: variaveis.$primeira-cor
+            .container__lista__item-ativo
+                background-color: variaveis.$segunda-cor
+                color: variaveis.$branco
+                padding: 1rem
+                width: 120%
+                .container__lista__item__icone-ativo
+                    color: variaveis.$branco
