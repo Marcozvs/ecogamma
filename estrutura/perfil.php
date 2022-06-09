@@ -23,16 +23,20 @@
         <a href="login.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
       </div>
       <div class="container__perfil">
-        <span class="material-symbols-outlined container__menu__icone span--azul">&#xe853;</span>
+        <a href="perfil.php">
+          <span class="material-symbols-outlined container__menu__icone span--verde">&#xe853;</span>
+        </a>
       </div>
       <div class="container__chat">
-        <span class="material-symbols-outlined container__menu__icone span--azul">&#xe8af;</span>
+        <a href="chat.php">
+            <span class="material-symbols-outlined container__menu__icone span--azul">&#xe8af;</span>
+        </a>
       </div>
-      <a href="logout.php">
-        <div class="container__logout">
-          <span class="material-symbols-outlined container__menu__icone span--azul">&#xeffd;</span>
-      </a>
-    </div>
+      <div class="container__chat">
+        <a href="logout.php">
+            <span class="material-symbols-outlined container__menu__icone span--azul">&#xeffd;</span>
+        </a>
+      </div>
     <div id="container__menu" onclick="menuLateralInternoOpen()">
       <span class="material-symbols-outlined container__menu__icone span--azul">&#xe5d2;</span>
     </div>

@@ -41,7 +41,7 @@
   <section id="menuLateral__interno">
         <div class="container">
             <div class="container__menu" onclick="menuLateralInternoClose()">
-                <span class="material-symbols-outlined container__menu__icone icone-alternativo">&#xe5d2;</span>
+                <span class="material-symbols-outlined container__menu__icone span--verde">&#xe5d2;</span>
             </div>
             <ul class="container__lista">
                 <a href="./feed.php">
@@ -83,7 +83,7 @@
             </ul>
         </div>
     </section>
-  <main>
+    <main>
     <div class="container">
       <h1>Dica</h1>
       <section class="container__post">
@@ -111,7 +111,7 @@
       </section>
     </div>
   </main>
-  <script src="../manipulacao/manuLateral.js"></script>
+    <script src="../manipulacao/manuLateral.js"></script>
 </body>
 
 </html>
