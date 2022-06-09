@@ -73,7 +73,7 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'falha') {
         </form>
         <a href="cadastro.php">Cadastre-se</a>
         <br>
-        <a href="email.php">Esqueci a senha</a>
+        <a href="recuperarSenha.php">Esqueci a senha</a>
       </div>
     </div>
   </main>
