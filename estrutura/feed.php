@@ -85,7 +85,7 @@
     </section>
     <main>
         <div class="container">
-            <h1>Postagem</h1>
+            <h1>Postageeeem</h1>
             <section class="container__postagem">
                 <form action="./feed.php" class="container__postagem__formulario" method="POST">
                     <textarea cols="15" rows="4" placeholder="Escreva seu post aqui..." maxlength="200" minlength="1" id="texto" name="texto"></textarea>
