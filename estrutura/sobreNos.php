@@ -41,11 +41,15 @@
                 <a href="sobreNos.php">
                     <li class="container__lista__item-ativo"><span class="material-symbols-outlined container__lista__item__icone-ativo  icone-alternativo">&#xf8d8;</span>Sobre Nós</li>
                 </a>
+                <a href="recuperarSenha.php">
+                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe898;</span>Recuperar a Senha</li>
+                </a>
             </ul>
         </div>
     </section>
 <main>
   <h1>Sobre Nós</h1>
+  <p>Aqui vai ter um bot contando sobre o projeto</p>
 </main>
 <script src="../manipulacao/manuLateral.js"></script>
 </body>

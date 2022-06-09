@@ -39,7 +39,10 @@
                     <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xf8d7;</span>Comunidade</li>
                 </a>
                 <a href="sobreNos.php">
-                    <li class="container__lista__item-ativo"><span class="material-symbols-outlined container__lista__item__icone-ativo  icone-alternativo">&#xf8d8;</span>Sobre Nós</li>
+                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xf8d8;</span>Sobre Nós</li>
+                </a>
+                <a href="recuperarSenha.php">
+                    <li class="container__lista__item-ativo"><span class="material-symbols-outlined container__lista__item__icone-ativo  icone-alternativo">&#xe898;</span>Recuperar a Senha</li>
                 </a>
             </ul>
         </div>
@@ -52,6 +55,23 @@
     <input type="submit" value="Enviar" class="botao__principal">
   </form>
 </main>
+<footer class="footer-recuperarSenha">
+    <h1>Contato</h1>
+    <ul class="footer__lista">
+      <li class="footer__lista__item">
+        <a href="malito:ecogamma@gmail.com"><span class="material-symbols-outlined container__menu__icone span">&#xe158;</span>ecogamma@gmail.com</a>
+      </li>
+      <hr>
+      <li class="footer__lista__item">
+        <a href="tel:(11)975030589"><span class="material-symbols-outlined container__menu__icone span">&#xe61d;</span>(11)975030589</a>
+      </li>
+      <hr>
+    </ul>
+    <div class="footer__copyright">
+      <span class="material-symbols-outlined container__menu__icone span">&#xe90c;</span>
+      <p>Copyright - Ecogamma 2022</p>
+    </div>
+</footer>
 <script src="../manipulacao/manuLateral.js"></script>
 </body>
 </html>

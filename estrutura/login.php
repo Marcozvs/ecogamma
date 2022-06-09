@@ -55,6 +55,9 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'falha') {
                 <a href="sobreNos.php">
                     <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xf8d8;</span>Sobre Nós</li>
                 </a>
+                <a href="recuperarSenha.php">
+                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe898;</span>Recuperar a Senha</li>
+                </a>
             </ul>
         </div>
     </section>
