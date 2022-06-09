@@ -41,7 +41,7 @@
       <span class="material-symbols-outlined container__menu__icone span--azul">&#xe5d2;</span>
     </div>
     </div>
-  </header>
+</header>
   <section id="menuLateral__interno">
         <div class="container">
             <div class="container__menu" onclick="menuLateralInternoClose()">
