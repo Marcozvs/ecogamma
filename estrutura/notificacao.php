@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ecogamma | Eventos</title>
+  <title>Ecogamma | Chat</title>
   <?php include './base/linksGlobais.php' ?>
 </head>
 
@@ -38,7 +38,7 @@
         </div>
     </div>
 </header>
-  <section id="menuLateral__interno">
+<section id="menuLateral__interno">
     <div class="container">
         <div class="container__menu" onclick="menuLateralInternoClose()">
             <span class="material-symbols-outlined container__menu__icone span--verde">&#xe5d2;</span>
@@ -48,13 +48,13 @@
                 <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone icone-alternativo container__lista__item__icone">&#xe761;</span>Feed</li>
             </a>
             <a href="./notificacao.php">
-                <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe7f4;</span>Notificação</li>
+                <li class="container__lista__item-ativo"><span class="material-symbols-outlined container__lista__item__icone-ativo  icone-alternativo">&#xe7f4;</span>Notificação</li>
             </a>
             <a href="./salvos.php">
                 <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe865;</span>Salvos</li>
             </a>
             <a href="./evento.php">
-                <li class="container__lista__item-ativo"><span class="material-symbols-outlined container__lista__item__icone-ativo  icone-alternativo">&#xe878;</span>Eventos</li>
+                <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe878;</span>Eventos</li>
             </a>
             <a href="./noticia.php">
                 <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xeb81;</span>Notícias</li>
@@ -84,34 +84,23 @@
     </div>
 </section>
 <main>
-    <div class="container">
-      <h1>Evento</h1>
-      <section class="container__post">
-        <h2>Título do Evento</h2>
-        <div class="container__post__conteudo">
-          <p class="container__post__conteudo__texto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos dolor ab qui temporibus, cupiditate animi nesciunt praesentium dolorum soluta quas nihil vitae ullam facilis ut iusto pariatur perspiciatis at explicabo?</p>
-          <img src="../imagens/feed_imagem.jpg" alt="imagem do conteúdo" class="container__post__conteudo__imagem">
+  <div class="container">
+    <h1>Notificações</h1>
+    <section class="container__post">
+      <div class="container__post__perfil">
+        <div class="container__post__perfil__foto">
+          <img src="../imagens/leandro.jpg" alt="Imagem do Perfil">
         </div>
-        <div class="container__post__interacoes">
-          <ul class="container__post__interacoes__lista">
-            <li class="container__post__interacoes__lista__item">
-              <span class="material-symbols-outlined container__menu__icone span--azul">&#xe87d;</span>
-              <p>32</p>
-            </li>
-            <li class="container__post__interacoes__lista__item">
-              <span class="material-symbols-outlined container__menu__icone span--azul">&#xe0b9;</span>
-              <p>32</p>
-            </li>
-            <li class="container__post__interacoes__lista__item">
-              <span class="material-symbols-outlined container__menu__icone span--azul">&#xe163;</span>
-              <p>32</p>
-            </li>
-          </ul>
+        <div class="container__post__perfil__dados">
+          <p class="container__post__perfil__dados__nome nome__perfil">Leandro</p>
+          <p class="container__post__perfil__dados__cargo cargo__perfil">Engenheiro de Software</p>
         </div>
-      </section>
-    </div>
-  </main>
-  <script src="../manipulacao/manuLateral.js"></script>
+      </div>
+      <p>Curtiu seu post</p>
+    </section>
+  </div>
+</main>
+<script src="../manipulacao/manuLateral.js"></script>
 </body>
 
 </html>
