@@ -1,65 +1,64 @@
 <?php
 include 'conexao.php';
-
-session_start();
-
-if (isset($_SESSION['logado']) == FALSE) {
-    $_SESSION['logado'] = 0;
-    // print_r($_SESSION);
-} else {
-    if ($_SESSION['logado'] == 1) {
-        //dados que serão preenchidos pelo script
-        $id;
-        $token;
-        $nome;
-        $sobrenome;
-        $email;
-        $senha;
-        $senhaC;
-        $dataN;
-        $genero;
-        $numero;
-        $pais;
-        $estado;
-        $cidade;
-        $profissao;
-        $foto;
-        $descricao;
-
-        $email = $_SESSION['email'];
-        $sql = "SELECT id, token, nome, sobrenome, email, dataN, genero, numero, pais, estado, cidade, profissao,
-        foto, descricao FROM usuarios WHERE email = '$email'";
-        $result = mysqli_query($conn, $sql);
-
-        if (mysqli_num_rows($result) > 0) {
-            // output data of each row
-            while ($row = mysqli_fetch_assoc($result)) {
-                // echo "id: " . $row["id"] . " - Token: " . $row["token"];
-                // echo "Nome: " . $row["nome"] . " - numero: " . $row["numero"];
-                // echo "foto: " . $row["foto"] . " - nascimento: " . $row["nascimento"];
-                // echo "profissao: " . $row["profissao"];
-                $id = $row["id"];
-                $token = $row["token"];
-                $nome = $row["nome"];
-                $sobrenome = $row["sobrenome"];
-                $email = $row["email"];
-                // $senha = $row["senha"]; vai dar erro
-                // $senhaC = $row["senhaC"]; vai dar erro
-                $dataN = $row["dataN"];
-                $genero = $row["genero"];
-                $numero = $row["numero"];
-                $pais = $row["pais"];
-                $estado = $row["estado"];
-                $cidade = $row["cidade"];
-                $profissao = $row["profissao"];
-                $foto = $row["foto"];
-                $descricao = $row["descricao"];
+    session_start();
+    
+    if (isset($_SESSION['logado']) == FALSE) {
+        $_SESSION['logado'] = 0;
+        // print_r($_SESSION);
+    } else {
+        if ($_SESSION['logado'] == 1) {
+            //dados que serão preenchidos pelo script
+            $id;
+            $token;
+            $nome;
+            $sobrenome;
+            $email;
+            $senha;
+            $senhaC;
+            $dataN;
+            $genero;
+            $numero;
+            $pais;
+            $estado;
+            $cidade;
+            $profissao;
+            $foto;
+            $descricao;
+    
+            $email = $_SESSION['email'];
+            $sql = "SELECT id, token, nome, sobrenome, email, dataN, genero, numero, pais, estado, cidade, profissao,
+            foto, descricao FROM usuarios WHERE email = '$email'";
+            $result = mysqli_query($conn, $sql);
+    
+            if (mysqli_num_rows($result) > 0) {
+                // output data of each row
+                while ($row = mysqli_fetch_assoc($result)) {
+                    // echo "id: " . $row["id"] . " - Token: " . $row["token"];
+                    // echo "Nome: " . $row["nome"] . " - numero: " . $row["numero"];
+                    // echo "foto: " . $row["foto"] . " - nascimento: " . $row["nascimento"];
+                    // echo "profissao: " . $row["profissao"];
+                    $id = $row["id"];
+                    $token = $row["token"];
+                    $nome = $row["nome"];
+                    $sobrenome = $row["sobrenome"];
+                    $email = $row["email"];
+                    // $senha = $row["senha"]; vai dar erro
+                    // $senhaC = $row["senhaC"]; vai dar erro
+                    $dataN = $row["dataN"];
+                    $genero = $row["genero"];
+                    $numero = $row["numero"];
+                    $pais = $row["pais"];
+                    $estado = $row["estado"];
+                    $cidade = $row["cidade"];
+                    $profissao = $row["profissao"];
+                    $foto = $row["foto"];
+                    $descricao = $row["descricao"];
+                }
+            } else {
+                echo "0 results";
             }
-        } else {
-            echo "0 results";
-        }
-    };
-}
+        };
+    }
 
 ?>
 <!--
