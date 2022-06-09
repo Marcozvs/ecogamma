@@ -36,7 +36,6 @@ p,
   line-height: 1.5rem;
   text-align: justify;
   color: #111111;
-  margin: 1rem 0rem;
 }
 
 .nome__perfil {
@@ -334,6 +333,63 @@ main .container .container__postagem .container__postagem__formulario .container
   width: 100%;
   border-radius: 5px;
   font-weight: 700;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #5570FF;
+  margin-top: 25px;
+  padding: 5%;
+  width: 90%;
+}
+footer h1,
+footer a,
+footer p {
+  color: #fefefe;
+}
+footer .footer__lista,
+footer .footer__copyright {
+  width: 100%;
+}
+footer .footer__lista .footer__lista__item a,
+footer .footer__copyright .footer__lista__item a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+footer .footer__lista .footer__lista__item a span,
+footer .footer__copyright .footer__lista__item a span {
+  margin-right: 1rem;
+}
+footer .footer__copyright {
+  width: 100%;
+  display: flex;
+}
+footer .footer__copyright span {
+  margin-right: 1rem;
+  color: #fefefe;
+}
+
+.footer-login {
+  position: absolute;
+  top: 700px;
+}
+
+.footer-cadastro {
+  position: absolute;
+  top: 1450px;
+}
+
+.footer-contato {
+  position: absolute;
+  top: 800px;
+}
+
+.footer-comunidade {
+  position: absolute;
+  top: 2400px;
 }
 
 header .container .container__logo {

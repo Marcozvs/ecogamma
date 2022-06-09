@@ -61,12 +61,26 @@
           <input type="tel" placeholder="Insira seu telefone..." maxlength="50" minlength="1" required>
           <input type="submit" value="Enviar" class="botao__principal">
         </form>
-        <a href="cadastro.php">Cadastre-se</a>
-        <br>
-        <a href="email.php">Esqueci meu email</a>
       </div>
     </div>
   </main>
+  <footer class="footer-contato">
+    <h1>Contato</h1>
+    <ul class="footer__lista">
+      <li class="footer__lista__item">
+        <a href="malito:ecogamma@gmail.com"><span class="material-symbols-outlined container__menu__icone span">&#xe158;</span>ecogamma@gmail.com</a>
+      </li>
+      <hr>
+      <li class="footer__lista__item">
+        <a href="tel:(11)975030589"><span class="material-symbols-outlined container__menu__icone span">&#xe61d;</span>(11)975030589</a>
+      </li>
+      <hr>
+    </ul>
+    <div class="footer__copyright">
+      <span class="material-symbols-outlined container__menu__icone span">&#xe90c;</span>
+      <p>Copyright - Ecogamma 2022</p>
+    </div>
+</footer>
   <script src="../manipulacao/manuLateral.js"></script>
 </body>
 

@@ -1,0 +1,42 @@
+@use '../variaveis'
+
+footer
+    display: flex
+    flex-direction: column
+    align-items: center
+    background-color: variaveis.$primeira-cor
+    margin-top: 25px
+    padding: 5%
+    width: 90%
+    h1,
+    a,
+    p
+        color: variaveis.$branco
+    .footer__lista,
+    .footer__copyright
+        width: 100%
+        .footer__lista__item
+            a
+                display: flex
+                align-items: center
+                width: 100%
+                span
+                    margin-right: 1rem
+    .footer__copyright
+        width: 100%
+        display: flex
+        span
+            margin-right: 1rem
+            color: variaveis.$branco
+.footer-login
+    position: absolute
+    top: 700px
+.footer-cadastro
+    position: absolute
+    top: 1450px
+.footer-contato
+    position: absolute
+    top: 800px
+.footer-comunidade
+    position: absolute
+    top: 2400px
