@@ -8,6 +8,13 @@
     <title>Logar</title>
     <?php include './base/linksGlobais.php' ?>
 </head>
+<?php
+include './administracao/sessao.php';
+if ($_SESSION['logado'] == 1) {
+        include 'jaLogado.php';
+        die();
+    };
+?>
 <body>
     <main>
         <div class='container'>
