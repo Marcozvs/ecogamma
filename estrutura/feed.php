@@ -188,6 +188,7 @@
             ?>
         </div>
     </main>
+
     <script src="../manipulacao/manuLateral.js"></script>
 </body>
 
