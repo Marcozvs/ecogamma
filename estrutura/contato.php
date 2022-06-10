@@ -49,19 +49,37 @@
     </section>
   <main>
     <div class="container">
-      <h1>Sustentabilidade.</h1>
+      <h1>Contato</h1>
       <p>Para entrar em contato com a gente preencha o formulário abaixo</p>
       <div class="container__formLogin">
-        <h2>Contato</h2>
         <form action="" class="container__formLogin__form">
-          <label for="nome">Nome</label>
-          <input type="text" placeholder="Insira seu nome..." maxlength="150" minlength="1" required>
-          <label for="sobreno">Sobrenome</label>
-          <input type="text" placeholder="Insira seu sobrenome..." maxlength="150" minlength="1" required>
+        <label for="nome">Nome</label>
+          <div class="input-icones">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe7fd;</span>
+            <input type="nome" placeholder="Insira seu nome..." maxlength="150" minlength="1" required id="nome" name="nome">
+          </div>
+
+          <label for="sobrenome">Sobrenome</label>
+          <div class="input-icones">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe7fd;</span>
+            <input type="text" placeholder="Insira seu sobrenome..." maxlength="150" minlength="1" required id="sobrenome" name="sobrenome">
+          </div>
+
           <label for="email">Email</label>
-          <input type="email" placeholder="Insira seu email..." maxlength="150" minlength="1" required>
-          <label for="telefone">Telefone</label>
-          <input type="tel" placeholder="Insira seu telefone..." maxlength="50" minlength="1" required>
+          <div class="input-icones">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe158;</span>
+            <input type="email" placeholder="Insira seu email..." maxlength="150" minlength="1" required id="email" name="email">
+          </div>
+
+          <label for="telefone">Telefone / Celular</label>
+          <div class="input-icones">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe0b0;</span>
+            <input type="tel" placeholder="Insira seu número..." maxlength="150" minlength="1" required id="celular" name="celular">
+          </div>
+
+          <label for="mensagem">Mensagem</label>
+          <textarea name="mensagem" id="mensagem" cols="30" rows="10" placeholder="Escreva sua mensagem aqui..."></textarea>
+        
           <input type="submit" value="Enviar" class="botao__principal">
         </form>
       </div>
@@ -75,7 +93,7 @@
       </li>
       <hr>
       <li class="footer__lista__item">
-        <a href="tel:(11)975030589"><span class="material-symbols-outlined container__menu__icone span">&#xe61d;</span>(11)975030589</a>
+        <a href="tel:(00)000000000"><span class="material-symbols-outlined container__menu__icone span">&#xe61d;</span>(00)000000000</a>
       </li>
       <hr>
     </ul>

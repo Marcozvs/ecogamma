@@ -63,7 +63,7 @@
       </li>
       <hr>
       <li class="footer__lista__item">
-        <a href="tel:(11)975030589"><span class="material-symbols-outlined container__menu__icone span">&#xe61d;</span>(11)975030589</a>
+        <a href="tel:(00)000000000"><span class="material-symbols-outlined container__menu__icone span">&#xe61d;</span>(00)000000000</a>
       </li>
       <hr>
     </ul>

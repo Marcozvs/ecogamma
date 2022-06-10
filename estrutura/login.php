@@ -63,10 +63,9 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'falha') {
     </section>
     <main>
     <div class="container">
-      <h1>Sustentabilidade.</h1>
+      <h1>Login</h1>
       <p>Venha fazer parte da comunidade e nos ajudar a cuidar do nosso lar, o planeta!</p>
       <div class="container__formLogin">
-        <h2>Login</h2>
         <form action="./loginProcessa.php" class="container__formLogin__form" method="POST">
           <label for="email">Email</label>
           <div class="input-icones">
@@ -76,7 +75,7 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'falha') {
           <label for="senha">Senha</label>
           <div class="input-icones">
             <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe897;</span>
-            <input type="email" placeholder="Insira sua senha..." maxlength="100" minlength="1" required id="senha" name="senha">
+            <input type="password" placeholder="Insira sua senha..." maxlength="100" minlength="1" required id="senha" name="senha">
           </div>
           <input type="submit" value="Entrar" class="botao__principal">
         </form>
@@ -94,7 +93,7 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'falha') {
       </li>
       <hr>
       <li class="footer__lista__item">
-        <a href="tel:(11)975030589"><span class="material-symbols-outlined container__menu__icone span">&#xe61d;</span>(11)975030589</a>
+        <a href="tel:(00)0000-0000"><span class="material-symbols-outlined container__menu__icone span">&#xe61d;</span>(00)00000000</a>
       </li>
       <hr>
     </ul>
