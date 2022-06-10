@@ -442,14 +442,13 @@ main .container .container__post--perfil {
   top: 800px;
 }
 
-main .container .container__form__chat {
+.container__form__chat {
+  bottom: 0px;
   display: flex;
-  background-color: #fefefe;
+  background-color: #5570FF;
   width: 100vw;
-  bottom: 110px;
-  height: 150;
+  position: fixed;
   height: 150px;
-  position: absolute;
 }
 
 header .container .container__logo {
