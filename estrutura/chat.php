@@ -93,16 +93,19 @@
       <section class="container__post">
         <div class="container__post__perfil">
           <div class="container__post__perfil__foto">
-            <img src="../imagens/leandro.jpg" alt="Imagem do Perfil">
+            <img src="../imagens/perfil_default.svg" alt="Imagem do Perfil">
           </div>
           <div class="container__post__perfil__dados">
-            <p class="container__post__perfil__dados__nome nome__perfil">Leandro</p>
-            <p class="container__post__perfil__dados__cargo cargo__perfil">Engenheiro de Software</p>
+            <p class="container__post__perfil__dados__nome nome__perfil">Fulano</p>
           </div>
         </div>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum dolorem laudantium consectetur obcaecati doloribus voluptatum laboriosam, fugit officiis atque praesentium magnam vero aut totam cum nesciunt sunt dolore labore dignissimos!</p>
       </section>
     </div>
+    <form action="#" class="form__chat">
+      <textarea name="mensagem" id="mensagem" cols="30" rows="10" placeholder="Escreve sua mensagem aqui..."></textarea>
+      <input type="submit" value="Enviar" class="botao__principal form__chat__enviar">
+    </form>
   </main>
   <script src="../manipulacao/manuLateral.js"></script>
 </body>
