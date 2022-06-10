@@ -51,7 +51,11 @@
   <h1>Reperar a Senha</h1>
   <p>Insira seu email abaixo para recuperar a senha</p>
   <form action="recuperarSenhaProcessa">
-    <input type="email" name="email" id="email" placeholder="Insira seu email..." maxlength="200" minlength="1">
+    <label for="email">Email</label>
+      <div class="input-icones">
+        <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe158;</span>
+        <input type="email" placeholder="Insira seu email..." maxlength="100" minlength="1" required id="email" name="email">
+      </div>
     <input type="submit" value="Enviar" class="botao__principal">
   </form>
 </main>
