@@ -418,6 +418,16 @@ footer .footer__copyright span {
   bottom: 0px;
 }
 
+main .container .container__perfil {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+main .container .container__post {
+  position: absolute;
+  top: 800px;
+}
+
 header .container .container__logo {
   width: 100px;
   box-sizing: border-box;
@@ -497,6 +507,54 @@ main .container .container__formLogin a {
 #menuLateral .container__lista .container__lista__item-ativo .container__lista__item__icone-ativo,
 #menuLateral__interno .container__lista .container__lista__item-ativo .container__lista__item__icone-ativo {
   color: #fefefe;
+}
+
+main .container .container__perfil .container__perfil__capa {
+  display: flex;
+  position: relative;
+  top: -30px;
+}
+main .container .container__perfil .container__perfil__capa .container__perfil__capa__imagem {
+  width: 100vw;
+}
+main .container .container__perfil .container__perfil__foto {
+  display: flex;
+  position: relative;
+  top: -100px;
+  padding-left: 25vw;
+}
+main .container .container__perfil .container__perfil__foto .container__perfil__foto__imagem {
+  width: 50vw;
+  border: 2px solid #5570FF;
+  border-radius: 50%;
+  height: 150px;
+  background-color: #fefefe;
+}
+main .container .container__perfil .container__perfil__dados {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  position: absolute;
+  border-bottom: 2px solid #5570FF;
+  top: 300px;
+}
+main .container .container__perfil .container__perfil__dados .container__perfil__dados__lista {
+  display: flex;
+  flex-direction: column;
+}
+main .container .container__perfil .container__perfil__dados .container__perfil__dados__lista .container__perfil__dados__lista__item {
+  padding: 1rem 0rem;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px dotted #5570FF;
+}
+main .container .container__perfil .container__perfil__dados .container__perfil__dados__lista .container__perfil__dados__lista__item p:first-child {
+  color: #5570FF;
+  font-weight: 700;
+  margin-right: 1rem;
+}
+main .container .container__perfil .container__perfil__dados .container__perfil__dados__lista .container__perfil__dados__lista__item p {
+  color: #34B132;
 }
 
 /*# sourceMappingURL=styles.css.map */

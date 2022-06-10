@@ -45,11 +45,11 @@
   <section id="menuLateral__interno">
         <div class="container">
             <div class="container__menu" onclick="menuLateralInternoClose()">
-                <span class="material-symbols-outlined container__menu__icone icone-alternativo">&#xe5d2;</span>
+                <span class="material-symbols-outlined container__menu__icone span--verde">&#xe5d2;</span>
             </div>
             <ul class="container__lista">
                 <a href="./feed.php">
-                    <li class="container__lista__item-ativo"><span class="material-symbols-outlined container__lista__item__icone icone-alternativo container__lista__item__icone-ativo">&#xe761;</span>Feed</li>
+                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone icone-alternativo container__lista__item__icone">&#xe761;</span>Feed</li>
                 </a>
                 <a href="./notificacao.php">
                     <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe7f4;</span>Notificação</li>
@@ -90,18 +90,65 @@
     <main>
     <div class="container">
       <div class="container__perfil">
-        <div class="container__perfil__fotoDeFundo">
-          <img src="../imagens/rio_de_janeiro.jpg" alt="Foto de fundo do perfil" class="container__perfil__fotoDeFundo__imagem">
+        <div class="container__perfil__capa">
+          <img src="../imagens/rio_de_janeiro.jpg" alt="Fundo do perfil" class="container__perfil__capa__imagem">
         </div>
         <div class="container__perfil__foto">
-          <img src="../imagens/leandro.jpg" alt="Foto de perfil" class="container__perfil__foto__imagem">
+          <img src="../imagens/perfil_default.svg" alt="Fundo do perfil" class="container__perfil__foto__imagem">
         </div>
         <div class="container__perfil__dados">
-          <p class="container__perfil__dados__nome">Leandro</p>
-          <p class="container__perfil__dados__cargo">Engenheiro de Software</p>
-          <p class="container__perfil__dados__descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur asperiores, consequuntur ratione qui voluptatem minus! Eum laudantium neque, quo sunt quibusdam fugiat accusantium soluta maxime, nesciunt velit illo laboriosam cupiditate.</p>
+          <ul class="container__perfil__dados__lista">
+            <li class="container__perfil__dados__lista__item">
+              <p>Nome:</p>
+              <p>Fulano</p>
+            </li>
+            <li class="container__perfil__dados__lista__item">
+              <p>Cargo:</p>
+              <p>Cargo Exemplo</p>
+            </li>
+            <li class="container__perfil__dados__lista__item">
+              <p>Descrição:</p>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio unde voluptatibus laborum iusto, quibusdam, illo temporibus nobis similique expedita sapiente natus nemo fuga perspiciatis amet reiciendis voluptates incidunt perferendis in!</p>
+            </li>
+            <li class="container__perfil__dados__lista__item">
+              <p>Amigos:</p>
+              <p>32</p>
+            </li>
+          </ul>
         </div>
       </div>
+    <section class='container__post'>
+        <div class='container__post__perfil'>
+            <div class='container__post__perfil__foto'>
+                <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
+            </div>
+            <div class='container__post__perfil__dados'>
+                <p class='container__post__perfil__dados__nome nome__perfil'>" . $nomeP . " " . $sobrenomeP . "</p>
+                <p class='container__post__perfil__dados__cargo cargo__perfil'>" . $profissaoP . "</p>
+            </div>
+        </div>
+        <div class='container__post__conteudo'>
+            <p class='container__post__conteudo__texto'>" . $data_Post . "</p>
+            <p class='container__post__conteudo__texto'>" . $texto_Post . "</p>
+            <img src='../imagens/" . $imagem_Post . "' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
+        </div>
+        <div class='container__post__interacoes'>
+            <ul class='container__post__interacoes__lista'>
+                <li class='container__post__interacoes__lista__item'>
+                    <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe87d;</span>
+                    <p>32</p>
+                </li>
+                <li class='container__post__interacoes__lista__item'>
+                    <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe0b9;</span>
+                    <p>32</p>
+                </li>
+                <li class='container__post__interacoes__lista__item'>
+                    <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe163;</span>
+                    <p>32</p>
+                </li>
+            </ul>
+        </div>
+    </section>
     </div>
   </main>
   <script src="../manipulacao/manuLateral.js"></script>

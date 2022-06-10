@@ -1,0 +1,43 @@
+@use '../variaveis'
+main
+    .container
+        .container__perfil
+            .container__perfil__capa
+                display: flex
+                position: relative
+                top: -30px
+                .container__perfil__capa__imagem
+                    width: 100vw
+            .container__perfil__foto
+                display: flex
+                position: relative
+                top: -100px
+                padding-left: 25vw
+                .container__perfil__foto__imagem
+                    width: 50vw
+                    border: 2px solid variaveis.$primeira-cor
+                    border-radius: 50%
+                    height: 150px
+                    background-color: variaveis.$branco
+            .container__perfil__dados
+                display: flex
+                flex-direction: column
+                padding: 1rem
+                position: absolute
+                border-bottom: 2px solid variaveis.$primeira-cor
+                top: 300px
+                .container__perfil__dados__lista
+                    display: flex
+                    flex-direction: column
+                    .container__perfil__dados__lista__item
+                        padding: 1rem 0rem
+                        display: flex
+                        flex-direction: column
+                        border-bottom: 1px dotted variaveis.$primeira-cor
+                        p
+                            &:first-child
+                                color: variaveis.$primeira-cor
+                                font-weight: 700
+                                margin-right: 1rem
+                        p
+                            color: variaveis.$segunda-cor
