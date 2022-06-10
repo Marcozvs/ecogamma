@@ -444,8 +444,12 @@ main .container .container__post--perfil {
 
 main .container .container__form__chat {
   display: flex;
-  background-color: #5570FF;
+  background-color: #fefefe;
   width: 100vw;
+  bottom: 110px;
+  height: 150;
+  height: 150px;
+  position: absolute;
 }
 
 header .container .container__logo {
