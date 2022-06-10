@@ -1,0 +1,81 @@
+FRONT-END
+
+	- Colocar video no fundo das pagina de fora
+
+	- Quando clicar na foto ela aumentar nos post
+
+	- Melhorando a borda dos posts
+
+	- Estilizar a seleção nos formulários
+
+	- Estilizar bot e jogar ele também para a página sobre nós
+
+	- Trocar link da logo
+
+	- Linkar perfil do post para a página de perfil
+
+	- Colocar interação de curtir, comentar e compartilhar no post
+
+	- Montar uma página simples para quando a pessoa acessar o link compartilhado for redirecionada
+
+	- Melhorar o form do chat
+
+	- Colocar modo noturno
+
+	- Colocar opção de idioma na página de configurações
+	
+	- COlocar opção de seguir uma pessoa
+
+	- COlocar uma caixa de pesquisar uma pessoa
+
+	- Mudas a página amigos para seguidores e fazer uma para seguindo
+
+	- Colocar paypal e outros botões de pagamente em doação e colocar mais conteúdo na página
+
+	- Se tiver pelo pc vai ter QR Code
+
+	- Jogar link do sobre nós no menu lateral
+
+	- Jogar bot para o sobre nós
+
+	- Fazer funcionar em todos os navegadores
+
+	- Diminuir contraste dos elementos
+
+	- Adicionar na configuração opção de contraste alto e baixo
+
+	- Fazer três níveis de contraste no botão de contraste, claro, medio e escuro
+
+	- Aplicar JS no que der
+
+BACK-END
+
+	- Clicar no email no rodapé e abrir link para o email do usuario
+
+	- Tirar do cadastro país
+
+	- Colocar back end na página recuperar senha
+
+	- Fazer back da página de perfil
+
+	- Fazer com que o post dos amigos aparecem no seu feed
+
+	- Fazer compartilhamento externo do post
+
+	- Fazer backend do chat 
+
+	- Fazer backend do notificação
+
+	- Fazer backend do salvos somente post
+
+	- Montar uma página para publicar evento, outra para notícia, outra para dica, outra para ponto de coleta
+
+	- Colocar backend para modo noturno
+
+	- Colocar backend para o idioma da página
+
+	- COlocar backend para ecotrends somente para os posts
+
+	- Fazer backend de seguidores e seguindo
+
+	- Adicionar algumas parada no bot para oferecer ajuda e apresentar o projeto
