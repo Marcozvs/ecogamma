@@ -442,13 +442,36 @@ main .container .container__post--perfil {
   top: 800px;
 }
 
-.container__form__chat {
-  bottom: 0px;
+.container__pontosDeColeta {
+  width: 100%;
+}
+.container__pontosDeColeta .container__pontosDeColeta__lista {
+  width: 100%;
+}
+.container__pontosDeColeta .container__pontosDeColeta__lista .container__pontosDeColeta__lista__item {
   display: flex;
-  background-color: #5570FF;
-  width: 100vw;
-  position: fixed;
-  height: 150px;
+  width: 100%;
+  flex-direction: column;
+}
+.container__pontosDeColeta .container__pontosDeColeta__lista .container__pontosDeColeta__lista__item .container__post__perfil {
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  width: 90%;
+}
+.container__pontosDeColeta .container__pontosDeColeta__lista .container__pontosDeColeta__lista__item .container__post__perfil .container__post__perfil__foto img {
+  border: 2px solid #5570FF;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+.container__pontosDeColeta .container__pontosDeColeta__lista .container__pontosDeColeta__lista__item .container__pontosDeColeta__lista__item__mapa {
+  width: 99%;
+  display: flex;
+  height: 300px;
+}
+.container__pontosDeColeta .container__pontosDeColeta__lista .container__pontosDeColeta__lista__item .container__pontosDeColeta__lista__item__mapa iframe {
+  width: 100%;
 }
 
 header .container .container__logo {
@@ -578,6 +601,15 @@ main .container .container__perfil .container__perfil__dados .container__perfil_
 }
 main .container .container__perfil .container__perfil__dados .container__perfil__dados__lista .container__perfil__dados__lista__item p {
   color: #34B132;
+}
+
+.container__form__chat {
+  bottom: 0px;
+  display: flex;
+  background-color: #5570FF;
+  width: 100vw;
+  position: fixed;
+  height: 150px;
 }
 
 /*# sourceMappingURL=styles.css.map */

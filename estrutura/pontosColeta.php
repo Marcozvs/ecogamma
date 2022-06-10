@@ -41,7 +41,7 @@
   <section id="menuLateral__interno">
         <div class="container">
             <div class="container__menu" onclick="menuLateralInternoClose()">
-                <span class="material-symbols-outlined container__menu__icone icone-alternativo">&#xe5d2;</span>
+                <span class="material-symbols-outlined container__menu__icone span--verde">&#xe5d2;</span>
             </div>
             <ul class="container__lista">
                 <a href="./feed.php">
@@ -84,6 +84,27 @@
         </div>
     </section>
   <main>
+    <div class="container">
+        <h1>Pontos de Coleta</h1>
+        <div class="container__pontosDeColeta">
+            <ul class="container__pontosDeColeta__lista">
+                <li class="container__pontosDeColeta__lista__item">
+                    <div class='container__post__perfil'>
+                        <div class='container__post__perfil__foto'>
+                            <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
+                        </div>
+                        <div class='container__post__perfil__dados'>
+                            <p class='container__post__perfil__dados__nome nome__perfil'>Repapel</p>
+                        </div>
+                    </div>
+                    <div class="container__pontosDeColeta__lista__item__mapa">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.4284946756534!2d-46.3963721!3d-23.445003399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce628b6fcc65f9%3A0xa842aff251b82d67!2sRepapel%20Com%C3%A9rcio%20Pap%C3%A9is!5e0!3m2!1spt-BR!2sbr!4v1654865058205!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
   </main>
   <script src="../manipulacao/manuLateral.js"></script>
 </body>
