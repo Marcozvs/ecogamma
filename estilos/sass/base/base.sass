@@ -47,7 +47,9 @@ label
     color: variaveis.$primeira-cor
     font-weight: 700
     margin-bottom: 1rem
-input
+.input-icones
+    display: flex
+    align-items: center
     background: variaveis.$branco
     border: 2px solid variaveis.$primeira-cor
     border-radius: 5px
@@ -55,6 +57,16 @@ input
     padding: 0.5rem
     margin-bottom: 1rem
     color: variaveis.$primeira-cor
+    span
+        margin-right: 1rem
+        color: variaveis.$primeira-cor
+    input
+        border: none
+        color: variaveis.$primeira-cor
+textarea:focus, 
+input:focus
+    box-shadow: 0 0 0 0
+    outline: 0
 textarea
     background: variaveis.$branco
     border: 2px solid variaveis.$primeira-cor
@@ -68,6 +80,7 @@ textarea
     background-color: variaveis.$primeira-cor
     border: none
     color: variaveis.$branco
+    margin: 0.5rem 0rem
 .botao__secundario
     background-color: variaveis.$branco
     border: 2px solid variaveis.$primeira-cor

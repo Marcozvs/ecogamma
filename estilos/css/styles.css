@@ -64,7 +64,9 @@ label {
   margin-bottom: 1rem;
 }
 
-input {
+.input-icones {
+  display: flex;
+  align-items: center;
   background: #fefefe;
   border: 2px solid #5570FF;
   border-radius: 5px;
@@ -72,6 +74,20 @@ input {
   padding: 0.5rem;
   margin-bottom: 1rem;
   color: #5570FF;
+}
+.input-icones span {
+  margin-right: 1rem;
+  color: #5570FF;
+}
+.input-icones input {
+  border: none;
+  color: #5570FF;
+}
+
+textarea:focus,
+input:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
 }
 
 textarea {
@@ -89,6 +105,7 @@ textarea {
   background-color: #5570FF;
   border: none;
   color: #fefefe;
+  margin: 0.5rem 0rem;
 }
 
 .botao__secundario {

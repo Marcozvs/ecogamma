@@ -69,9 +69,15 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'falha') {
         <h2>Login</h2>
         <form action="./loginProcessa.php" class="container__formLogin__form" method="POST">
           <label for="email">Email</label>
-          <input type="email" placeholder="Insira seu email..." maxlength="100" minlength="1" required id="email" name="email">
+          <div class="input-icones">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe158;</span>
+            <input type="email" placeholder="Insira seu email..." maxlength="100" minlength="1" required id="email" name="email">
+          </div>
           <label for="senha">Senha</label>
-          <input type="password" placeholder="Insira sua senha..." maxlength="100" minlength="1" required id="senha" name="senha">
+          <div class="input-icones">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe897;</span>
+            <input type="email" placeholder="Insira sua senha..." maxlength="100" minlength="1" required id="senha" name="senha">
+          </div>
           <input type="submit" value="Entrar" class="botao__principal">
         </form>
         <a href="cadastro.php">Cadastre-se</a>
