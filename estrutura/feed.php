@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" id="html">
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@
         die();
     };
     ?>
-<header class="header__interno">
+<header class="header__interno" id="header__interno">
     <div class="container">
       <div class="container__logo">
         <a href="login.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
@@ -32,18 +32,20 @@
             <span class="material-symbols-outlined container__menu__icone span--azul">&#xe8af;</span>
         </a>
       </div>
-      <div class="container__chat">
+      <div class="container__logout">
         <a href="logout.php">
             <span class="material-symbols-outlined container__menu__icone span--azul">&#xeffd;</span>
         </a>
+      </div class="botao__diaNoite">
+        <button onclick="modoNoite()" id="botao__noite"><span class="material-symbols-outlined container__menu__icone span--azul">&#xf03d;</span></button>
+        <button onclick="modoDia()" id="botao__dia"><span class="material-symbols-outlined container__menu__icone span--azul">&#xe518;</span></button>
+      <div id="container__menu" onclick="menuLateralInternoOpen()">
+        <span class="material-symbols-outlined container__menu__icone span--azul">&#xe5d2;</span>
       </div>
-    <div id="container__menu" onclick="menuLateralInternoOpen()">
-      <span class="material-symbols-outlined container__menu__icone span--azul">&#xe5d2;</span>
-    </div>
     </div>
 </header>
   <section id="menuLateral__interno">
-        <div class="container">
+        <div class="container" id="menuLateral__InternoNoturno">
             <div class="container__menu" onclick="menuLateralInternoClose()">
                 <span class="material-symbols-outlined container__menu__icone span--verde">&#xe5d2;</span>
             </div>
@@ -94,7 +96,7 @@
                 <form action="./feed.php" class="container__postagem__formulario" method="POST">
                     <textarea cols="15" rows="4" placeholder="Escreva seu post aqui..." maxlength="200" minlength="1" id="texto" name="texto"></textarea>
                     <div class="container__postagem__formulario__botoes">
-                        <label for="imagem" class="container__postagem__formulario__botoes__label label-botao">Enviar imagem</label>
+                        <label for="imagem" class="container__postagem__formulario__botoes__label label-botao" id="upload">Enviar imagem</label>
                         <input type="file" accept="image/*" id="imagem" name="imagem" class="container__postagem__formulario__botoes__input">
                         <input type="submit" value="Postar" class="botao__principal" name="submit" id="submit">
                     </div>
@@ -160,8 +162,8 @@
                     </div>
                 </div>
                 <div class='container__post__conteudo'>
-                    <p class='container__post__conteudo__texto'>" . $data_Post . "</p>
-                    <p class='container__post__conteudo__texto'>" . $texto_Post . "</p>
+                    <p class='container__post__conteudo__data' id='container__post__conteudo__data'>" . $data_Post . "</p>
+                    <p class='container__post__conteudo__texto' id='container__post__conteudo__texto'>" . $texto_Post . "</p>
                     <img src='../imagens/" . $imagem_Post . "' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
                 </div>
                 <div class='container__post__interacoes'>
@@ -190,6 +192,7 @@
     </main>
 
     <script src="../manipulacao/manuLateral.js"></script>
+    <script src="../manipulacao/modoTela.js"></script>
 </body>
 
 </html>

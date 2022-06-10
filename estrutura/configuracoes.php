@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" id="html">
 
 <head>
   <meta charset="UTF-8">
@@ -9,7 +9,7 @@
   <?php include './base/linksGlobais.php' ?>
 </head>
 
-<body>
+<body id="body">
   <?php
   include './administracao/sessao.php';
   if ($_SESSION['logado'] == 0) {
@@ -17,7 +17,7 @@
     die();
   };
   ?>
-  <header class="header__interno">
+  <header class="header__interno" id="header__interno">
     <div class="container">
         <div class="container__logo">
             <a href="feed.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
@@ -85,33 +85,12 @@
     </section>
   <main>
     <div class="container">
-      <h1>Dica</h1>
-      <section class="container__post">
-        <h2>Título da Dica</h2>
-        <div class="container__post__conteudo">
-          <p class="container__post__conteudo__texto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos dolor ab qui temporibus, cupiditate animi nesciunt praesentium dolorum soluta quas nihil vitae ullam facilis ut iusto pariatur perspiciatis at explicabo?</p>
-          <img src="../imagens/feed_imagem.jpg" alt="imagem do conteúdo" class="container__post__conteudo__imagem">
-        </div>
-        <div class="container__post__interacoes">
-          <ul class="container__post__interacoes__lista">
-            <li class="container__post__interacoes__lista__item">
-              <span class="material-symbols-outlined container__menu__icone span--azul">&#xe87d;</span>
-              <p>32</p>
-            </li>
-            <li class="container__post__interacoes__lista__item">
-              <span class="material-symbols-outlined container__menu__icone span--azul">&#xe0b9;</span>
-              <p>32</p>
-            </li>
-            <li class="container__post__interacoes__lista__item">
-              <span class="material-symbols-outlined container__menu__icone span--azul">&#xe163;</span>
-              <p>32</p>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <h1>Configurações</h1>
+      <button class="botao__principal" onclick="modoNoturno()">Modo Noturno</button>
     </div>
   </main>
   <script src="../manipulacao/manuLateral.js"></script>
+  <script src="../manipulacao/modoNoturno.js"></script>
 </body>
 
 </html>

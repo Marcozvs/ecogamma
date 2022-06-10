@@ -116,6 +116,16 @@ textarea {
   height: 50px;
 }
 
+#botao__noite {
+  background-color: #fefefe;
+  border: none;
+}
+
+#botao__dia {
+  background-color: #111111;
+  border: none;
+}
+
 .label-botao {
   background-color: #fefefe;
   border: 2px solid #5570FF;
@@ -610,6 +620,14 @@ main .container .container__perfil .container__perfil__dados .container__perfil_
   width: 100vw;
   position: fixed;
   height: 150px;
+}
+
+#botao__noite {
+  display: flex;
+}
+
+#botao__dia {
+  display: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
