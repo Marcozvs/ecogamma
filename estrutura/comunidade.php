@@ -61,79 +61,85 @@
                         <p class="container__cartao__dados__cargo">Engenheiro da Computação</p>
                     </div>
                 </div>
-                <p class="container__cartao__texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nostrum et neque, eius repellendus velit ab ullam fugit optio quis corporis, iure quibusdam dolorum culpa tempora necessitatibus sequi sed nulla.</p>
+                <p class="container__cartao__texto">Claro que é importante debatermos assuntos como consumo de energia, entrentanto devemos também pensar na poluição gerada pelos materiais dos smartphones e outros dispositivos que são descartados diariamente!</p>
             </div>
             <div class="container__cartao">
                 <div class="container__cartao__dados">
                     <div class="container__cartao__dados__foto">
-                        <img src="../imagens/marcos.jpg" alt="foto de perfil">
+                        <img src="../imagens/leandro.jpg" alt="foto de perfil">
                     </div>
                     <div>
-                        <p class="container__cartao__dados__nome">Marcos Vinícius da Silva</p>
-                        <p class="container__cartao__dados__cargo">Engenheiro da Computação</p>
+                        <p class="container__cartao__dados__nome">Leandro Silva de Carvalho</p>
+                        <p class="container__cartao__dados__cargo">Engenheiro da Software</p>
                     </div>
                 </div>
-                <p class="container__cartao__texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nostrum et neque, eius repellendus velit ab ullam fugit optio quis corporis, iure quibusdam dolorum culpa tempora necessitatibus sequi sed nulla.</p>
+                <p class="container__cartao__texto">Hoje validamos um projeto de melhoria no sistema de energia em alguns setores da empresa graças ao nosso novo software #TECHLINS #MEIO AMBIENTE</p>
             </div>
             <div class="container__cartao">
                 <div class="container__cartao__dados">
                     <div class="container__cartao__dados__foto">
-                        <img src="../imagens/marcos.jpg" alt="foto de perfil">
+                        <img src="../imagens/Mandanga.jpg" alt="foto de perfil">
                     </div>
                     <div>
-                        <p class="container__cartao__dados__nome">Marcos Vinícius da Silva</p>
-                        <p class="container__cartao__dados__cargo">Engenheiro da Computação</p>
+                        <p class="container__cartao__dados__nome">Mandanga Sebastião</p>
+                        <p class="container__cartao__dados__cargo">Jornalista Esportivo</p>
                     </div>
                 </div>
-                <p class="container__cartao__texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nostrum et neque, eius repellendus velit ab ullam fugit optio quis corporis, iure quibusdam dolorum culpa tempora necessitatibus sequi sed nulla.</p>
+                <p class="container__cartao__texto">No Estádio Nilton Santos, do Botafogo, iniciou uma parceria com a empresa MeuCopo Eco para reduzir a quantidade de copos descartados no estádio</p>
             </div>
             <div class="container__cartao">
                 <div class="container__cartao__dados">
                     <div class="container__cartao__dados__foto">
-                        <img src="../imagens/marcos.jpg" alt="foto de perfil">
+                        <img src="../imagens/Rafael.jpg" alt="foto de perfil">
                     </div>
                     <div>
-                        <p class="container__cartao__dados__nome">Marcos Vinícius da Silva</p>
-                        <p class="container__cartao__dados__cargo">Engenheiro da Computação</p>
+                        <p class="container__cartao__dados__nome">Rafael Lopes</p>
+                        <p class="container__cartao__dados__cargo">Contador</p>
                     </div>
                 </div>
-                <p class="container__cartao__texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nostrum et neque, eius repellendus velit ab ullam fugit optio quis corporis, iure quibusdam dolorum culpa tempora necessitatibus sequi sed nulla.</p>
+                <p class="container__cartao__texto">Estamos implantando os 5 R's para reduzir o consumo na empresa, junto com a equipe de logística nossos galpões estão reutilizando as caixas de papelão e paletes ao invés de descartá-los</p>
+                <div  class="container__cartao__imagem">
+                    <img src="../imagens/rafaelEmpresa.jpg" alt="Foto do publicação">
+                </div>
             </div>
             <div class="container__cartao">
                 <div class="container__cartao__dados">
                     <div class="container__cartao__dados__foto">
-                        <img src="../imagens/marcos.jpg" alt="foto de perfil">
+                        <img src="../imagens/Vanessa.jpg" alt="foto de perfil">
                     </div>
                     <div>
-                        <p class="container__cartao__dados__nome">Marcos Vinícius da Silva</p>
-                        <p class="container__cartao__dados__cargo">Engenheiro da Computação</p>
+                        <p class="container__cartao__dados__nome">Vanessa</p>
+                        <p class="container__cartao__dados__cargo">Doutora em Ciência da Computação</p>
                     </div>
                 </div>
-                <p class="container__cartao__texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nostrum et neque, eius repellendus velit ab ullam fugit optio quis corporis, iure quibusdam dolorum culpa tempora necessitatibus sequi sed nulla.</p>
+                <p class="container__cartao__texto">A educação ambiental é o primeiro passo que precisamos dar, sem ela não podemos ter certeza de que o próximo entende o que está e jogo #LutaPelaEducaçãoAmbiental</p>
             </div>
             <div class="container__cartao">
                 <div class="container__cartao__dados">
                     <div class="container__cartao__dados__foto">
-                        <img src="../imagens/marcos.jpg" alt="foto de perfil">
+                        <img src="../imagens/samyra.jpg" alt="foto de perfil">
                     </div>
                     <div>
-                        <p class="container__cartao__dados__nome">Marcos Vinícius da Silva</p>
-                        <p class="container__cartao__dados__cargo">Engenheiro da Computação</p>
+                        <p class="container__cartao__dados__nome">Samyra</p>
+                        <p class="container__cartao__dados__cargo">Analísta de Sistemas</p>
                     </div>
                 </div>
-                <p class="container__cartao__texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nostrum et neque, eius repellendus velit ab ullam fugit optio quis corporis, iure quibusdam dolorum culpa tempora necessitatibus sequi sed nulla.</p>
+                <p class="container__cartao__texto">A mais pura verdade</p>
+                <div  class="container__cartao__imagem">
+                    <img src="../imagens/tirinha.jpg" alt="Foto do publicação">
+                </div>
             </div>
             <div class="container__cartao">
                 <div class="container__cartao__dados">
                     <div class="container__cartao__dados__foto">
-                        <img src="../imagens/marcos.jpg" alt="foto de perfil">
+                        <img src="../imagens/richard.jpg" alt="foto de perfil">
                     </div>
                     <div>
-                        <p class="container__cartao__dados__nome">Marcos Vinícius da Silva</p>
-                        <p class="container__cartao__dados__cargo">Engenheiro da Computação</p>
+                        <p class="container__cartao__dados__nome">Richard</p>
+                        <p class="container__cartao__dados__cargo">Técnico em Informática para Internet</p>
                     </div>
                 </div>
-                <p class="container__cartao__texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nostrum et neque, eius repellendus velit ab ullam fugit optio quis corporis, iure quibusdam dolorum culpa tempora necessitatibus sequi sed nulla.</p>
+                <p class="container__cartao__texto">O governo devia dar mais atenção a floresta amazônica :/</p>
             </div>
         </div>
     </main>

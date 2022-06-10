@@ -261,6 +261,9 @@ main .container {
 .container__cartao .container__cartao__texto {
   color: #111111;
 }
+.container__cartao .container__cartao__imagem img {
+  width: 100%;
+}
 
 main .container .container__postagem {
   margin-top: 1rem;
@@ -407,7 +410,7 @@ footer .footer__copyright span {
 
 .footer-comunidade {
   position: absolute;
-  top: 2400px;
+  top: 2200px;
 }
 
 .footer-recuperarSenha {
