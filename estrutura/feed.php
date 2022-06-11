@@ -83,8 +83,8 @@
                 <a href="./doacao.php">
                     <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xea70;</span>Doação</li>
                 </a>
-                <a href="./bot.php">
-                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xf06c;</span>Bot de Ajuda</li>
+                <a href="./sobreNos.php">
+                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone-ativo icone-alternativo">&#xf06c;</span>Sobre Nós</li>
                 </a>
             </ul>
         </div>
