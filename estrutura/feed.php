@@ -121,7 +121,7 @@
 
                 //INSERINDO DADOS 
 
-                $sql1 = "INSERT INTO posts (id, foto, nome, sobrenome, profissao, data_Post, texto_Post, imagem_Post, likes)
+                $sql1 = "INSERT INTO posts (id, foto, nome, sobrenome, profissao, data_Post, texto_Post, imagem_Post, likes_Post)
                 VALUES ('$id', '$foto', '$nome', '$sobrenome', '$profissao', '$data_Post', '$texto_Post', '$imagem_Post', '$likes')";
 
                 if (mysqli_query($conn, $sql1)) {
@@ -149,7 +149,7 @@
                     $data_Post = $row["data_Post"];
                     $texto_Post = $row["texto_Post"];
                     $imagem_Post = $row["imagem_Post"];
-                    $likesP = $row["likes"];
+                    $likesP = $row["likes_Post"];
 
                     echo "
     <section class='container__post'>
