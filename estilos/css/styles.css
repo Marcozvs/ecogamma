@@ -481,22 +481,29 @@ main .container .container__post--perfil {
   width: 100%;
 }
 
-.fundo {
+.fundo,
+.fundo--alternativo {
   position: fixed;
   display: flex;
   width: 100vw;
   height: 100vh;
   z-index: 1;
 }
-.fundo video {
+.fundo video,
+.fundo--alternativo video {
   width: 100%;
   position: absolute;
   top: 1rem;
   height: 115vh;
   opacity: 25%;
 }
-.fundo video source {
+.fundo video source,
+.fundo--alternativo video source {
   width: 100%;
+}
+
+.fundo--alternativo {
+  top: -15vh;
 }
 
 header .container .container__logo {

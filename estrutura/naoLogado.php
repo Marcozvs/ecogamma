@@ -9,6 +9,11 @@
     <?php include './base/linksGlobais.php' ?>
 </head>
 <body>
+    <div class="fundo--alternativo">
+        <video autoplay="autoplay" loop="true" muted>
+            <source src="../videos/fundo.mp4" type="video/mp4">
+        </video>
+    </div>
     <main>
         <div class='container'>
         <div class='container__logout'>

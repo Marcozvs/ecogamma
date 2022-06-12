@@ -10,6 +10,11 @@
 </head>
 
 <body>
+    <div class="fundo--alternativo">
+        <video autoplay="autoplay" loop="true" muted>
+            <source src="../videos/fundo.mp4" type="video/mp4">
+        </video>
+    </div>
     <?php
     include_once './administracao/sessao.php';
     include './administracao/conexao.php';
