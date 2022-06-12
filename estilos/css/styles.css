@@ -142,6 +142,12 @@ textarea {
   border: none;
 }
 
+.btn-curtido,
+.btn-comentado,
+.btn-compartilhado {
+  color: #34B132;
+}
+
 .label-botao {
   background-color: #fefefe;
   border: 2px solid #5570FF;
@@ -167,7 +173,7 @@ a {
   font-weight: 700;
 }
 
-.span--azul {
+span {
   color: #5570FF;
 }
 
@@ -366,7 +372,6 @@ main .container .container__postagem .container__postagem__formulario .container
 .container__post--perfil .container__post__interacoes .container__post__interacoes__lista .container__post__interacoes__lista__item span,
 .container__post--perfil .container__post__interacoes .container__post__interacoes__lista .container__post__interacoes__lista__item p {
   margin-right: 1rem;
-  color: #5570FF;
 }
 .container__post .container__post__comentarios,
 .container__post--perfil .container__post__comentarios {
