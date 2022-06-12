@@ -17,6 +17,11 @@ if ($_SESSION['logado'] == 1) {
 ?>
 
 <body>
+  <div class="fundo">
+      <video autoplay="autoplay" loop="true" muted>
+        <source src="../videos/fundo.mp4" type="video/mp4">
+      </video>
+  </div>
   <?php 
   //alerta em caso de errar as informações da conta
   $message = "Email ou senha inválidos";
@@ -63,8 +68,8 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'falha') {
     </section>
     <main>
     <div class="container">
-      <h1>Login</h1>
-      <p>Venha fazer parte da comunidade e nos ajudar a cuidar do nosso lar, o planeta!</p>
+      <h1 class="titulo-sombra">Login</h1>
+      <p class="paragrafo-sombra">Venha fazer parte da comunidade e nos ajudar a cuidar do nosso lar, o planeta!</p>
       <div class="container__formLogin">
         <form action="./loginProcessa.php" class="container__formLogin__form" method="POST">
           <label for="email">Email</label>

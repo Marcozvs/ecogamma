@@ -52,6 +52,12 @@ p,
   color: #fefefe;
 }
 
+.titulo-sombra,
+.paragrafo-sombra {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: 700;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -167,6 +173,7 @@ header,
   width: 100vw;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background: #fefefe;
+  top: 0px;
 }
 header .container,
 .header__interno .container {
@@ -181,18 +188,6 @@ header .container,
 
 .header__interno .container {
   width: 100vw;
-}
-
-.fundo {
-  width: 100vw;
-  height: 100%;
-  z-index: 1;
-  position: fixed;
-}
-.fundo .fundo__inicio {
-  width: 100%;
-  height: 100%;
-  z-index: 1;
 }
 
 main {
@@ -218,6 +213,7 @@ main .container {
 #menuLateral .container,
 #menuLateral__interno .container {
   position: fixed;
+  top: 0px;
   z-index: 3;
   height: 100vh;
   left: 25vw;
@@ -388,6 +384,7 @@ footer {
   margin-top: 25px;
   padding: 5%;
   width: 90%;
+  z-index: 2;
 }
 footer h1,
 footer a,
@@ -481,6 +478,24 @@ main .container .container__post--perfil {
   height: 300px;
 }
 .container__pontosDeColeta .container__pontosDeColeta__lista .container__pontosDeColeta__lista__item .container__pontosDeColeta__lista__item__mapa iframe {
+  width: 100%;
+}
+
+.fundo {
+  position: fixed;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+.fundo video {
+  width: 100%;
+  position: absolute;
+  top: 1rem;
+  height: 115vh;
+  opacity: 25%;
+}
+.fundo video source {
   width: 100%;
 }
 

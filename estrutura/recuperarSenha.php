@@ -10,6 +10,11 @@
 </head>
 
 <body>
+<div class="fundo">
+      <video autoplay="autoplay" loop="true" muted>
+        <source src="../videos/fundo.mp4" type="video/mp4">
+      </video>
+</div>
   <header class="header">
     <div class="container">
       <div class="container__logo">
@@ -48,8 +53,8 @@
         </div>
     </section>
 <main>
-  <h1>Reperar a Senha</h1>
-  <p>Insira seu email abaixo para recuperar a senha</p>
+  <h1 class="titulo-sombra">Reperar a Senha</h1>
+  <p class="paragrafo-sombra">Insira seu email abaixo para recuperar a senha</p>
   <form action="recuperarSenhaProcessa">
     <label for="email">Email</label>
       <div class="input-icones">

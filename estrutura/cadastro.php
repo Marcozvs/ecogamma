@@ -17,6 +17,11 @@ if ($_SESSION['logado'] == 1) {
 ?>
 
 <body>
+<div class="fundo">
+      <video autoplay="autoplay" loop="true" muted>
+        <source src="../videos/fundo.mp4" type="video/mp4">
+      </video>
+</div>
 <?php 
   //alerta em caso de email já cadastrado
   $message = "O email informado já está em uso!";
@@ -63,8 +68,8 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'email') {
     </section>
     <main>
     <div class="container">
-      <h1>Cadastro</h1>
-      <p>Para se cadastrar preencha o formulário abaixo</p>
+      <h1 class="titulo-sombra">Cadastro</h1>
+      <p class="paragrafo-sombra">Para se cadastrar preencha o formulário abaixo</p>
       <div class="container__formLogin">
         <form action="./cadastroProcessa.php" class="container__formLogin__form" method="POST">
 

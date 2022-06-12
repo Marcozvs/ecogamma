@@ -10,6 +10,11 @@
 </head>
 
 <body>
+<div class="fundo">
+      <video autoplay="autoplay" loop="true" muted>
+        <source src="../videos/fundo.mp4" type="video/mp4">
+      </video>
+</div>
 <header class="header">
     <div class="container">
       <div class="container__logo">
@@ -49,8 +54,8 @@
     </section>
     <main>
         <div class="container">
-            <h1>Comunidade</h1>
-            <p>Nossa comunidade é impulsionada por pessoas motivadas em preservar o meio ambiente</p>
+            <h1 class="titulo-sombra">Comunidade</h1>
+            <p class="paragrafo-sombra">Nossa comunidade é impulsionada por pessoas motivadas em preservar o meio ambiente</p>
             <div class="container__cartao">
                 <div class="container__cartao__dados">
                     <div class="container__cartao__dados__foto">

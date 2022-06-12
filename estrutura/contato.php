@@ -10,6 +10,11 @@
 </head>
 
 <body>
+<div class="fundo">
+      <video autoplay="autoplay" loop="true" muted>
+        <source src="../videos/fundo.mp4" type="video/mp4">
+      </video>
+</div>
 <header class="header">
     <div class="container">
       <div class="container__logo">
@@ -49,8 +54,8 @@
     </section>
   <main>
     <div class="container">
-      <h1>Contato</h1>
-      <p>Para entrar em contato com a gente preencha o formulário abaixo</p>
+      <h1 class="titulo-sombra">Contato</h1>
+      <p class="paragrafo-sombra">Para entrar em contato com a gente preencha o formulário abaixo</p>
       <div class="container__formLogin">
         <form action="" class="container__formLogin__form">
         <label for="nome">Nome</label>
