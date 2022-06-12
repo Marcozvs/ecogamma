@@ -127,7 +127,7 @@
     } elseif ($estado == 'pi') {
       $fundo = '';
     } elseif ($estado == 'rj') {
-      $fundo = '';
+      $fundo = 'rio_de_janeiro.jpg';
     } elseif ($estado == 'rn') {
       $fundo = '';
     } elseif ($estado == 'ro') {
@@ -150,7 +150,7 @@
     <div class='container'>
       <div class='container__perfil'>
         <div class='container__perfil__capa'>
-          <img src='../imagens/" . $fundo . "' alt='Fundo do perfil' class='container__perfil__capa__imagem'>
+          <img src='../imagens/fundos/" . $fundo . "' alt='Fundo do perfil' class='container__perfil__capa__imagem'>
         </div>
         <div class='container__perfil__foto'>
           <img src='../imagens/" . $foto . "' alt='Fundo do perfil' class='container__perfil__foto__imagem'>
