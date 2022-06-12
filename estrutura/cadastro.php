@@ -89,7 +89,7 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'email') {
           <label for="telefone">Telefone / Celular</label>
           <div class="input-icones">
             <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe0b0;</span>
-            <input type="tel" placeholder="Insira seu número..." maxlength="150" minlength="1" required id="celular" name="celular">
+            <input type="tel" placeholder="Insira seu número..." maxlength="150" minlength="1" required id="numero" name="numero">
           </div>
 
           <label for="senha">Senha</label>
@@ -101,7 +101,7 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'email') {
           <label for="senha">Confirmação da senha</label>
           <div class="input-icones">
             <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe63f;</span>
-            <input type="password" placeholder="Repita sua senha..." maxlength="80" minlength="1" required id="senha" name="senha">
+            <input type="password" placeholder="Repita sua senha..." maxlength="80" minlength="1" required id="senhaC" name="senhaC">
           </div>
           
           <label for="nascimento">Data de Nascimento</label>

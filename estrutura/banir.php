@@ -35,8 +35,8 @@
     <main>
         <h2>Banir Usuário</h2>
         <form action="./banirProcessa.php" class="container__formLogin__form" method="POST">
-            <label for="email">Email do Usuário</label>
-            <input type="email" placeholder="O email do usuário que deseja banir" maxlength="100" minlength="1" required id="email" name="email">
+            <label for="text">ID do Usuário</label>
+            <input type="text" placeholder="O id do usuário que deseja banir" maxlength="100" minlength="1" required id="id" name="id">
             <input type="submit" value="Banir" class="botao__principal">
         </form>
         <a href='feed.php'>

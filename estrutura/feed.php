@@ -11,7 +11,7 @@
 
 <body>
     <?php
-    include './administracao/sessao.php';
+    include_once './administracao/sessao.php';
     if ($_SESSION['logado'] == 0) {
         include 'naoLogado.php';
         die();
@@ -107,22 +107,22 @@
             if (isset($_POST['texto'])) {
 
 
-                // include './administracao/sessao.php';    
-                $idP = $id;
-                $fotoP = $foto;
-                $nomeP = $nome;
-                $sobrenomeP = $sobrenome;
-                $profissaoP = $profissao;
+                // $idP = $id;
+                // $fotoP = $foto;
+                // $nomeP = $nome;
+                // $sobrenomeP = $sobrenome;
+                // $profissaoP = $profissao;
                 $data_Post = date("Y-m-d");
                 $texto_Post = $_POST['texto'];
                 $imagem_Post = $_POST['imagem'];
+                $likes = 0;
 
                 include './administracao/conexao.php';
 
                 //INSERINDO DADOS 
 
-                $sql1 = "INSERT INTO posts (id, foto, nome, sobrenome, profissao, data_Post, texto_Post, imagem_Post)
-                VALUES ('$idP', '$foto', '$nome', '$sobrenome', '$profissao', '$data_Post', '$texto_Post', '$imagem_Post')";
+                $sql1 = "INSERT INTO posts (id, foto, nome, sobrenome, profissao, data_Post, texto_Post, imagem_Post, likes)
+                VALUES ('$id', '$foto', '$nome', '$sobrenome', '$profissao', '$data_Post', '$texto_Post', '$imagem_Post', '$likes')";
 
                 if (mysqli_query($conn, $sql1)) {
                     echo "New record created successfully";
@@ -149,6 +149,7 @@
                     $data_Post = $row["data_Post"];
                     $texto_Post = $row["texto_Post"];
                     $imagem_Post = $row["imagem_Post"];
+                    $likesP = $row["likes"];
 
                     echo "
     <section class='container__post'>
@@ -170,7 +171,7 @@
                     <ul class='container__post__interacoes__lista'>
                         <li class='container__post__interacoes__lista__item'>
                             <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe87d;</span>
-                            <p>32</p>
+                            <p>" . $likesP . "</p>
                         </li>
                         <li class='container__post__interacoes__lista__item'>
                             <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe0b9;</span>

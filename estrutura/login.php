@@ -9,7 +9,7 @@
   <?php include './base/linksGlobais.php' ?>
 </head>
 <?php
-include './administracao/sessao.php';
+include_once './administracao/sessao.php';
 if ($_SESSION['logado'] == 1) {
         include 'jaLogado.php';
         die();

@@ -1,8 +1,9 @@
 <?php
 include 'conexao.php';
-    session_start();
+session_start();
+
     
-    if (isset($_SESSION['logado']) == FALSE) {
+    if (!isset($_SESSION['logado'])) {
         $_SESSION['logado'] = 0;
         // print_r($_SESSION);
     } else {
@@ -18,7 +19,6 @@ include 'conexao.php';
             $dataN;
             $genero;
             $numero;
-            $pais;
             $estado;
             $cidade;
             $profissao;
@@ -26,8 +26,8 @@ include 'conexao.php';
             $descricao;
     
             $email = $_SESSION['email'];
-            $sql = "SELECT id, token, nome, sobrenome, email, dataN, genero, numero, pais, estado, cidade, profissao,
-            foto, descricao FROM usuarios WHERE email = '$email'";
+            $sql = "SELECT id, token, nome, sobrenome, email, dataN, genero, numero, estado, cidade, profissao,
+            foto, descricao, amigos FROM usuarios WHERE email = '$email'";
             $result = mysqli_query($conn, $sql);
     
             if (mysqli_num_rows($result) > 0) {
@@ -47,12 +47,18 @@ include 'conexao.php';
                     $dataN = $row["dataN"];
                     $genero = $row["genero"];
                     $numero = $row["numero"];
-                    $pais = $row["pais"];
                     $estado = $row["estado"];
                     $cidade = $row["cidade"];
-                    $profissao = $row["profissao"];
                     $foto = $row["foto"];
+                    $profissao = $row["profissao"];
+                    if (empty($foto)) {
+                        $foto = 'perfil_default.svg';
+                    }
                     $descricao = $row["descricao"];
+                    if (empty($descricao)) {
+                        $descricao = 'Eco é agro, Eco é tec, Eco é tudo!';
+                    }
+                    $amigos = $row["amigos"];
                 }
             } else {
                 echo "0 results";

@@ -28,7 +28,6 @@
     $dataN = $_POST['dataN'];
     $genero = $_POST['genero'];
     $numero = $_POST['numero'];
-    $pais = $_POST['pais'];
     $estado = $_POST['estado'];
     $cidade = $_POST['cidade'];
     $profissao = $_POST['profissao'];
@@ -45,7 +44,7 @@
         if ($senha == $senhaC) {
             # code...
 
-            $sql = "INSERT INTO usuarios (nome, sobrenome, email, senha, senhaC, dataN, genero, numero, pais, estado, cidade, profissao, foto, descricao) VALUES ('$nome', '$sobrenome', '$email', '$senha', '$senhaC', '$dataN', '$genero', '$numero', '$pais', '$estado', '$cidade', '$profissao', '', '')";
+            $sql = "INSERT INTO usuarios (nome, sobrenome, email, senha, senhaC, dataN, genero, numero, estado, cidade, profissao, foto, descricao, amigos) VALUES ('$nome', '$sobrenome', '$email', '$senha', '$senhaC', '$dataN', '$genero', '$numero', '$estado', '$cidade', '$profissao', '', '', '0')";
 
                 if (mysqli_query($conn, $sql)) {
                     echo "
