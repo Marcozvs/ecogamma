@@ -179,7 +179,7 @@
     } elseif ($estadoUser == 'to') {
       $fundoUser = '';
     }
-
+// AQUI FICA AS INFORMAÇÕES DO USUÁRIO
     echo "
     <div class='container'>
       <div class='container__perfil'>
@@ -210,33 +210,38 @@
           </ul>
         </div>
       </div>";
+    ?>
 
+
+      <?php
       $sql = "SELECT * FROM posts WHERE id = '$idUser' ORDER BY id_Post DESC";
-  
-      $result = mysqli_query($conn, $sql);
-  
-      if (mysqli_num_rows($result) > 0) {
-        echo "<section class='container__post--perfil'>";
-        while ($row = mysqli_fetch_assoc($result)) {
-    
-            $idP = $row["id"];
-            $id_Post = $row["id_Post"];
-            $fotoP = $row["foto"];
-            $nomeP = $row["nome"];
-            $sobrenomeP = $row["sobrenome"];
-            $profissaoP = $row["profissao"];
-            $data_Post = $row["data_Post"];
-            $texto_Post = $row["texto_Post"];
-            $imagem_Post = $row["imagem_Post"];
-            $likesP = $row["likes_Post"];
 
-            echo "
+      $result = mysqli_query($conn, $sql);
+
+      if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+
+          $idP = $row["id"];
+          $id_Post = $row["id_Post"];
+          $fotoP = $row["foto"];
+          $nomeP = $row["nome"];
+          $sobrenomeP = $row["sobrenome"];
+          $profissaoP = $row["profissao"];
+          $data_Post = $row["data_Post"];
+          $texto_Post = $row["texto_Post"];
+          $imagem_Post = $row["imagem_Post"];
+          $likesP = $row["likes_Post"];
+
+
+// AQUI FICA OS POSTS DO USUÁRIO
+          echo "
+          <section class='container__post--perfil'>
             <div class='container__post__perfil'>
               <div class='container__post__perfil__foto'>
                 <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
               </div>
               <div class='container__post__perfil__dados'>
-                <p class='container__post__perfil__dados__nome nome__perfil'>". $nomeP . " " . $sobrenomeP . "</p>
+                <p class='container__post__perfil__dados__nome nome__perfil'>" . $nomeP . " " . $sobrenomeP . "</p>
                 <p class='container__post__perfil__dados__cargo cargo__perfil'>" . $profissaoP . "</p>
               </div>
             </div>
@@ -261,16 +266,15 @@
                 </li>
               </ul>
             </div>
-
+            </section>
           ";
         }
       } else {
         echo "Sem posts ainda...";
       }
-    
-    ?>
-  </section>
-  </div>
+
+      ?>
+    </div>
   </main>
   <script src="../manipulacao/manuLateral.js"></script>
 </body>
