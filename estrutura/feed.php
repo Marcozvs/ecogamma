@@ -169,17 +169,17 @@
                 </div>
                 <div class='container__post__interacoes'>
                     <ul class='container__post__interacoes__lista'>
-                        <li class='container__post__interacoes__lista__item'>
-                            <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe87d;</span>
-                            <p>" . $likesP . "</p>
+                        <li class='container__post__interacoes__lista__item' onclick='curtir()'>
+                            <span class='material-symbols-outlined container__menu__icone span--azul' id='gostar-icone'>&#xe87d;</span>
+                            <p id='gostar-numero'>" . $likesP . "</p>
                         </li>
-                        <li class='container__post__interacoes__lista__item'>
-                            <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe0b9;</span>
-                            <p>32</p>
+                        <li class='container__post__interacoes__lista__item' onclick='comentar()'>
+                            <span class='material-symbols-outlined container__menu__icone span--azul' id='comentar-icone'>&#xe0b9;</span>
+                            <p id='comentar-numero'>32</p>
                         </li>
-                        <li class='container__post__interacoes__lista__item'>
-                            <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe163;</span>
-                            <p>32</p>
+                        <li class='container__post__interacoes__lista__item' onclick='compartilhar()'>
+                            <span class='material-symbols-outlined container__menu__icone span--azul' id='compartilhar-icone'>&#xe163;</span>
+                            <p id='compartilhar-numero'>32</p>
                         </li>
                     </ul>
                 </div>
@@ -194,6 +194,9 @@
 
     <script src="../manipulacao/manuLateral.js"></script>
     <script src="../manipulacao/modoTela.js"></script>
+    <script src="../manipulacao/curtir.js"></script>
+    <script src="../manipulacao/comentar.js"></script>
+    <script src="../manipulacao/compartilhar.js"></script>
 </body>
 
 </html>
