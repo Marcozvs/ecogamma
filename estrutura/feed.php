@@ -158,7 +158,7 @@
                         <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
                     </div>
                     <div class='container__post__perfil__dados'>
-                        <a href='./perfilUser.php?user=" . $idP . "'><p class='container__post__perfil__dados__nome nome__perfil'>" . $nomeP . " " . $sobrenomeP . "</p></a>
+                        <p class='container__post__perfil__dados__nome nome__perfil'>" . $nomeP . " " . $sobrenomeP . "</p>
                         <p class='container__post__perfil__dados__cargo cargo__perfil'>" . $profissaoP . "</p>
                     </div>
                 </div>

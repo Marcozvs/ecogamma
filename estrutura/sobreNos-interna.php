@@ -16,6 +16,11 @@
       </video>
   </div>
   <?php
+    include './administracao/sessao.php';
+    if ($_SESSION['logado'] == 1) {
+            include 'jaLogado.php';
+            die();
+        };
   ?>
   <header class="header">
     <div class="container">
@@ -57,13 +62,6 @@
   <main>
 
 <body>
-    <?php
-        include './administracao/sessao.php';
-        if ($_SESSION['logado'] == 0) {
-                include 'naoLogado.php';
-                die();
-            };
-    ?>
     <div class="container">
         <section class="container__post">
             <div class="container__post__perfil">
