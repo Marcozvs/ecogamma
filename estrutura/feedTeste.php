@@ -17,34 +17,34 @@
         die();
     };
     ?>
-<header class="header__interno" id="header__interno">
-    <div class="container">
-      <div class="container__logo">
-        <a href="feed.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
-      </div>
-      <div class="container__perfil">
-        <a href="perfil.php">
-          <span class="material-symbols-outlined container__menu__icone span--azul">&#xe853;</span>
-        </a>
-      </div>
-      <div class="container__chat">
-        <a href="chat.php">
-            <span class="material-symbols-outlined container__menu__icone span--azul">&#xe8af;</span>
-        </a>
-      </div>
-      <div class="container__logout">
-        <a href="logout.php">
-            <span class="material-symbols-outlined container__menu__icone span--azul">&#xeffd;</span>
-        </a>
-      </div class="botao__diaNoite">
-        <button onclick="modoNoite()" id="botao__noite"><span class="material-symbols-outlined container__menu__icone span--azul">&#xf03d;</span></button>
-        <button onclick="modoDia()" id="botao__dia"><span class="material-symbols-outlined container__menu__icone span--azul">&#xe518;</span></button>
-      <div id="container__menu" onclick="menuLateralInternoOpen()">
-        <span class="material-symbols-outlined container__menu__icone span--azul">&#xe5d2;</span>
-      </div>
-    </div>
-</header>
-  <section id="menuLateral__interno">
+    <header class="header__interno" id="header__interno">
+        <div class="container">
+            <div class="container__logo">
+                <a href="feed.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
+            </div>
+            <div class="container__perfil">
+                <a href="perfil.php">
+                    <span class="material-symbols-outlined container__menu__icone span--azul">&#xe853;</span>
+                </a>
+            </div>
+            <div class="container__chat">
+                <a href="chat.php">
+                    <span class="material-symbols-outlined container__menu__icone span--azul">&#xe8af;</span>
+                </a>
+            </div>
+            <div class="container__logout">
+                <a href="logout.php">
+                    <span class="material-symbols-outlined container__menu__icone span--azul">&#xeffd;</span>
+                </a>
+            </div class="botao__diaNoite">
+            <button onclick="modoNoite()" id="botao__noite"><span class="material-symbols-outlined container__menu__icone span--azul">&#xf03d;</span></button>
+            <button onclick="modoDia()" id="botao__dia"><span class="material-symbols-outlined container__menu__icone span--azul">&#xe518;</span></button>
+            <div id="container__menu" onclick="menuLateralInternoOpen()">
+                <span class="material-symbols-outlined container__menu__icone span--azul">&#xe5d2;</span>
+            </div>
+        </div>
+    </header>
+    <section id="menuLateral__interno">
         <div class="container" id="menuLateral__InternoNoturno">
             <div class="container__menu" onclick="menuLateralInternoClose()">
                 <span class="material-symbols-outlined container__menu__icone span--verde">&#xe5d2;</span>
@@ -170,9 +170,9 @@
                 <div class='container__post__interacoes'>
                     <ul class='container__post__interacoes__lista'>
                         <li class='container__post__interacoes__lista__item' onclick='curtir()'>
-                            <form action='./feedTeste.php?post=" . $id_Post . "' method='POST'> 
-                                <input type='submit' value = 'like' name='like' id='btn-curtir'>
-                            </form>
+                        <form action='./feedTeste.php?post=" . $id_Post . "' method='POST'> 
+                            <input type='submit' value = 'like' name='like' id='btn-curtir'>
+                        </form>
                             <p>" . $likesP . "</p>
                         </li>
                         <li class='container__post__interacoes__lista__item' onclick='comentar()'>
@@ -190,21 +190,20 @@
             } else {
                 echo "0 Posts";
             }
-            ?>
 
-            <?php 
-            if (isset($_POST[$id_Post])) { // Se o like existir
-                $like = $_POST[$id_Post];
-                $sql = "UPDATE posts SET likes_Post +=1 WHERE id = $id_Post";
-            }
-                
-            if (mysqli_query($conn, $sql)) {
-              echo "Record updated successfully";
-            } else {
-              echo "Error updating record: " . mysqli_error($conn);
-            }
+            // $sql = "UPDATE posts SET likes_Post = 34 WHERE id = '$like'";
+            
+
+                $sql = "UPDATE posts SET likes_Post = 20 WHERE id = 22";
+
+                if (mysqli_query($conn, $sql)) {
+                    echo "<h1>Record updated successfully</h1>";
+                } else {
+                    echo "<h1>Error updating record: </h1>" . mysqli_error($conn);
+                }
             
             ?>
+
         </div>
     </main>
 
@@ -212,9 +211,9 @@
     <script src="../manipulacao/modoTela.js"></script>
     <script src="../manipulacao/curtir.js"></script>
     <script>
-        function comentar(){
-        var btnComentar = document.getElementById("btn-comentar");
-        btnComentar.classList.toggle("btn-comentado-<?php echo $idP; ?>"); 
+        function comentar() {
+            var btnComentar = document.getElementById("btn-comentar");
+            btnComentar.classList.toggle("btn-comentado-<?php echo $idP; ?>");
         }
     </script>
     <script src="../manipulacao/compartilhar.js"></script>
