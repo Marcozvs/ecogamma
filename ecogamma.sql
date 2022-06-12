@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 12-Jun-2022 às 00:15
+-- Tempo de geração: 12-Jun-2022 às 00:52
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -24,6 +24,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `eventos`
+--
+
+DROP TABLE IF EXISTS `eventos`;
+CREATE TABLE IF NOT EXISTS `eventos` (
+  `id_Evento` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
+  `titulo_Evento` varchar(35) COLLATE utf8_unicode_ci NOT NULL,
+  `texto_Evento` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `imagem_Evento` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `link_Evento` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `likes_Evento` int(20) NOT NULL,
+  PRIMARY KEY (`id_Evento`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `noticias`
 --
 
@@ -38,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `noticias` (
   `titulo_Noticia` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
   `texto_Noticia` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `imagem_Noticia` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `likes` int(20) NOT NULL DEFAULT '0',
+  `likes_Noticia` int(20) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_Noticia`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -59,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `data_Post` date NOT NULL,
   `texto_Post` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `imagem_Post` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `likes` int(20) NOT NULL DEFAULT '0',
+  `likes_Post` int(20) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_Post`),
   KEY `user_post` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -68,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
 -- Extraindo dados da tabela `posts`
 --
 
-INSERT INTO `posts` (`id_Post`, `id`, `foto`, `nome`, `sobrenome`, `profissao`, `data_Post`, `texto_Post`, `imagem_Post`, `likes`) VALUES
+INSERT INTO `posts` (`id_Post`, `id`, `foto`, `nome`, `sobrenome`, `profissao`, `data_Post`, `texto_Post`, `imagem_Post`, `likes_Post`) VALUES
 (13, 14, 'perfil_default.svg', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', '2022-06-11', 'OlÃ¡ Pessoas do ecogamma!', '', 0),
 (14, 15, 'perfil_default.svg', 'Leandro', 'Silva', 'Staff Ecogamma', '2022-06-11', 'Ecogamma estÃ¡ finalmente em estÃ¡gio BETA!', '', 0),
 (15, 15, 'perfil_default.svg', 'Leandro', 'Silva', 'Staff Ecogamma', '2022-06-12', 'opa', '', 0),
