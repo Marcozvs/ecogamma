@@ -170,7 +170,7 @@
                 <div class='container__post__interacoes'>
                     <ul class='container__post__interacoes__lista'>
                         <li class='container__post__interacoes__lista__item' onclick='curtir()'>
-                        <form action='./feedTeste.php' method='GET'> 
+                        <form action='./feedTeste.php' method='POST'> 
                             <input type='submit' value = '" . $id_Post . "' name='like' id='btn-curtir'>
                         </form>
                             <p>" . $likesP . "</p>
@@ -191,17 +191,17 @@
                 echo "0 Posts";
             }
 
-                if (isset($_GET['like'])) {
-                    $soma = 1;
-                    $idP = $_GET['like'];
-                    $sql3 = "UPDATE posts SET likes_Post = likes_Post + $soma WHERE id_Post = $idP";
-    
-                    if (mysqli_query($conn, $sql3)) {
-                        echo "<h1>Record updated successfully</h1>";
-                    } else {
-                        echo "<h1>Error updating record: </h1>" . mysqli_error($conn);
-                    }
+                $_POST['like'];
+                $soma = 1;
+                $idP = $_POST['like'];
+                $sql3 = "UPDATE posts SET likes_Post = likes_Post + $soma WHERE id_Post = $idP";
+                if (mysqli_query($conn, $sql3)) {
+                    echo "<h1>Record updated successfully</h1>";
+                } else {
+                    echo "<h1>Error updating record: </h1>" . mysqli_error($conn);
                 }
+                header('Location: ./feedTeste.php')
+                
 
             
             ?>
