@@ -110,6 +110,7 @@ textarea {
   height: 50px;
   background-color: #5570FF;
   border: none;
+  border-radius: 5px;
   color: #fefefe;
   margin: 0.5rem 0rem;
 }
@@ -638,10 +639,25 @@ main .container .container__perfil .container__perfil__dados .container__perfil_
 .container__form__chat {
   bottom: 0px;
   display: flex;
-  background-color: #5570FF;
+  background-color: #fefefe;
+  box-shadow: 0px 2px 10px #111111;
   width: 100vw;
+  padding: 1rem;
   position: fixed;
-  height: 150px;
+  flex-direction: row;
+  align-itens: center;
+  height: 50px;
+  justify-content: space-between;
+}
+.container__form__chat .container__form__chat__texto {
+  width: 70vw;
+  height: 25px;
+  margin: 0vh 0vw 0vh 2.5vw;
+}
+.container__form__chat .container__form__chat__botao {
+  width: 20vw;
+  height: 45px;
+  margin: 0vh 5vw 0vh 2.5vw;
 }
 
 #botao__noite {

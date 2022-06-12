@@ -124,8 +124,8 @@
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum dolorem laudantium consectetur obcaecati doloribus voluptatum laboriosam, fugit officiis atque praesentium magnam vero aut totam cum nesciunt sunt dolore labore dignissimos!</p>
       </section>
       <form action="#" class="container__form__chat">
-        <textarea name="mensagem" id="mensagem" cols="30" rows="10" placeholder="Escreva sua mensagem aqui..."></textarea>
-        <input type="submit" value="Enviar" class="botao__principal form__chat__enviar">
+        <textarea name="mensagem" id="mensagem" cols="30" rows="10" placeholder="Escreva sua mensagem aqui..." class="container__form__chat__texto"></textarea>
+        <input type="submit" value="Enviar" class="botao__principal container__form__chat__botao">
       </form>
     </div>
   </main>
