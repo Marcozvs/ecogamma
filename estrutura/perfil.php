@@ -177,26 +177,47 @@
         </div>
       </div>"
        ?>
-      <section class='container__post--perfil'>
+
+       <?php
+           
+             $sql = "SELECT * FROM posts WHERE id = '$id' ORDER BY id_Post DESC";
+       
+             $result = mysqli_query($conn, $sql);
+       
+             if (mysqli_num_rows($result) > 0) {
+               while ($row = mysqli_fetch_assoc($result)) {
+       
+                 $idP = $row["id"];
+                 $id_Post = $row["id_Post"];
+                 $fotoP = $row["foto"];
+                 $nomeP = $row["nome"];
+                 $sobrenomeP = $row["sobrenome"];
+                 $profissaoP = $row["profissao"];
+                 $data_Post = $row["data_Post"];
+                 $texto_Post = $row["texto_Post"];
+                 $imagem_Post = $row["imagem_Post"];
+                 $likesP = $row["likes_Post"];
+
+      echo "<section class='container__post--perfil'>
         <div class='container__post__perfil'>
           <div class='container__post__perfil__foto'>
             <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
           </div>
           <div class='container__post__perfil__dados'>
-            <p class='container__post__perfil__dados__nome nome__perfil'>Fulano de Tal</p>
-            <p class='container__post__perfil__dados__cargo cargo__perfil'>Profissional de Sei la</p>
+            <p class='container__post__perfil__dados__nome nome__perfil'>" . $nomeP . " " . $sobrenomeP . "</p>
+            <p class='container__post__perfil__dados__cargo cargo__perfil'>" . $profissaoP . "</p>
           </div>
         </div>
         <div class='container__post__conteudo'>
-          <p class='container__post__conteudo__texto'>25/05/22</p>
-          <p class='container__post__conteudo__texto'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas iusto quo vero iure quidem, nobis eius quam quibusdam dolores similique! Architecto repellendus aliquid alias dolorum nihil provident sed ex cumque!</p>
+          <p class='container__post__conteudo__texto'>" . $data_Post . "</p>
+          <p class='container__post__conteudo__texto'>" . $texto_Post . "</p>
           <img src='../imagens/" . $imagem_Post . "' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
         </div>
         <div class='container__post__interacoes'>
           <ul class='container__post__interacoes__lista'>
             <li class='container__post__interacoes__lista__item'>
               <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe87d;</span>
-              <p>32</p>
+              <p>" . $likesP . "</p>
             </li>
             <li class='container__post__interacoes__lista__item'>
               <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe0b9;</span>
@@ -204,7 +225,10 @@
             </li>
             <li class='container__post__interacoes__lista__item'>
               <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe163;</span>
-              <p>32</p>
+              <p>32</p>";
+               }
+              }
+          ?>
             </li>
           </ul>
         </div>
