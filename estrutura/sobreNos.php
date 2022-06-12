@@ -15,8 +15,6 @@
         <source src="../videos/fundo.mp4" type="video/mp4">
       </video>
   </div>
-  <?php
-  ?>
   <header class="header">
     <div class="container">
       <div class="container__logo">
@@ -56,14 +54,6 @@
     </section>
   <main>
 
-<body>
-    <?php
-        include './administracao/sessao.php';
-        if ($_SESSION['logado'] == 0) {
-                include 'naoLogado.php';
-                die();
-            };
-    ?>
     <div class="container">
         <section class="container__post">
             <div class="container__post__perfil">
