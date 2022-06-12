@@ -192,8 +192,9 @@
             }
 
                 if (isset($_GET['like'])) {
+                    $soma = 1;
                     $idP = $_GET['like'];
-                    $sql3 = "UPDATE posts SET likes_Post = ++1 WHERE id_Post = $idP";
+                    $sql3 = "UPDATE posts SET likes_Post = likes_Post + $soma WHERE id_Post = $idP";
     
                     if (mysqli_query($conn, $sql3)) {
                         echo "<h1>Record updated successfully</h1>";
