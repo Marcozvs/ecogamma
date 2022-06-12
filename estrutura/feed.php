@@ -170,7 +170,9 @@
                 <div class='container__post__interacoes'>
                     <ul class='container__post__interacoes__lista'>
                         <li class='container__post__interacoes__lista__item' onclick='curtir()'>
-                            <span class='material-symbols-outlined container__menu__icone' id='btn-curtir'>&#xe83a;</span>
+                            <form action='<?php echo S_SERVER['PHP_SELF]?>' method='POST'> 
+                                <input type='submit' value = 'like' name='like' id='btn-curtir'>
+                            </form>
                             <p>" . $likesP . "</p>
                         </li>
                         <li class='container__post__interacoes__lista__item' onclick='comentar()'>
@@ -195,7 +197,12 @@
     <script src="../manipulacao/manuLateral.js"></script>
     <script src="../manipulacao/modoTela.js"></script>
     <script src="../manipulacao/curtir.js"></script>
-    <script src="../manipulacao/comentar.js"></script>
+    <script>
+        function comentar(){
+        var btnComentar = document.getElementById("btn-comentar");
+        btnComentar.classList.toggle("btn-comentado-<?php echo $idP; ?>"); 
+        }
+    </script>
     <script src="../manipulacao/compartilhar.js"></script>
 </body>
 
