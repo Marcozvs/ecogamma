@@ -20,7 +20,7 @@
   <header class="header__interno">
     <div class="container">
       <div class="container__logo">
-        <a href="login.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
+        <a href="feed.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
       </div>
       <div class="container__perfil">
         <a href="perfil.php">
