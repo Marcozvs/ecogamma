@@ -15,46 +15,74 @@
         <source src="../videos/fundo.mp4" type="video/mp4">
       </video>
   </div>
-  <?php
-    include './administracao/sessao.php';
-    if ($_SESSION['logado'] == 1) {
-            include 'jaLogado.php';
-            die();
-        };
-  ?>
-  <header class="header">
+  <header class="header__interno" id="header__interno">
     <div class="container">
       <div class="container__logo">
-        <a href="login.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
+        <a href="feed.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
       </div>
-    <div id="container__menu" onclick="menuLateralInternoOpen()">
-      <span class="material-symbols-outlined container__menu__icone span--azul">&#xe5d2;</span>
+      <div class="container__perfil">
+        <a href="perfil.php">
+          <span class="material-symbols-outlined container__menu__icone span--azul">&#xe853;</span>
+        </a>
+      </div>
+      <div class="container__chat">
+        <a href="chat.php">
+            <span class="material-symbols-outlined container__menu__icone span--azul">&#xe8af;</span>
+        </a>
+      </div>
+      <div class="container__logout">
+        <a href="logout.php">
+            <span class="material-symbols-outlined container__menu__icone span--azul">&#xeffd;</span>
+        </a>
+      </div class="botao__diaNoite">
+        <button onclick="modoNoite()" id="botao__noite"><span class="material-symbols-outlined container__menu__icone span--azul">&#xf03d;</span></button>
+        <button onclick="modoDia()" id="botao__dia"><span class="material-symbols-outlined container__menu__icone span--azul">&#xe518;</span></button>
+      <div id="container__menu" onclick="menuLateralInternoOpen()">
+        <span class="material-symbols-outlined container__menu__icone span--azul">&#xe5d2;</span>
+      </div>
     </div>
-    </div>
-  </header>
-  <section id="menuLateral__interno">
-        <div class="container">
+</header>
+<section id="menuLateral__interno">
+        <div class="container" id="menuLateral__InternoNoturno">
             <div class="container__menu" onclick="menuLateralInternoClose()">
                 <span class="material-symbols-outlined container__menu__icone span--verde">&#xe5d2;</span>
             </div>
             <ul class="container__lista">
-                <a href="login.php">
-                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone icone-alternativo container__lista__item__icone-ativo">&#xea77;</span>Login</li>
+                <a href="./feed.php">
+                    <li class="container__lista__item-ativo"><span class="material-symbols-outlined container__lista__item__icone icone-alternativo container__lista__item__icone-ativo">&#xe761;</span>Feed</li>
                 </a>
-                <a href="cadastro.php">
-                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe145;</span>Cadastro</li>
+                <a href="./notificacao.php">
+                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe7f4;</span>Notificação</li>
                 </a>
-                <a href="contato.php">
-                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe0b0;</span>Contato</li>
+                <a href="./salvos.php">
+                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe865;</span>Salvos</li>
                 </a>
-                <a href="comunidade.php">
-                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xf8d7;</span>Comunidade</li>
+                <a href="./evento.php">
+                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe878;</span>Eventos</li>
                 </a>
-                <a href="sobreNos-interno.php">
-                    <li class="container__lista__item-ativo"><span class="material-symbols-outlined container__lista__item__icone-ativo  icone-alternativo">&#xf8d8;</span>Sobre Nós</li>
+                <a href="./noticia.php">
+                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xeb81;</span>Notícias</li>
                 </a>
-                <a href="recuperarSenha.php">
-                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe898;</span>Recuperar a Senha</li>
+                <a href="./dica.php">
+                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe0f0;</span>Dicas</li>
+                </a>
+                <a href="./pontosColeta.php">
+                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe55f;</span>Pontos de Coleta</li>
+                </a>
+                <a href="./configuracoes.php">
+                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe8b8;</span>Configurações</li>
+                </a>
+                <a href="./ecotrends.php">
+                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe80e;</span>Ecotrends</li>
+                </a>
+                <a href="./amigos.php">
+                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xf8d9;</span>Amigos</li>
+                </a>
+                <a href="./doacao.php">
+                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xea70;</span>Doação</li>
+                </a>
+                <a href="./sobreNos-interno.php">
+                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone-ativo icone-alternativo">&#xf8d8;</span>Sobre Nós</li>
                 </a>
             </ul>
         </div>
