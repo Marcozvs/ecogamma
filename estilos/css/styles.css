@@ -660,10 +660,11 @@ main .container .container__perfil .container__perfil__foto .container__perfil__
 main .container .container__perfil .container__perfil__dados {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 2.5vh 2.5vw;
   position: absolute;
-  border-bottom: 2px solid #5570FF;
-  top: 300px;
+  border-bottom: 5px dotted #5570FF;
+  top: 350px;
+  width: 95vw;
 }
 main .container .container__perfil .container__perfil__dados .container__perfil__dados__lista {
   display: flex;
