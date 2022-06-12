@@ -29,7 +29,7 @@ session_start();
     
             $email = $_SESSION['email'];
             $sql = "SELECT id, token, nome, sobrenome, email, dataN, genero, numero, estado, cidade, profissao, mdEscuro,
-            foto, descricao, amigos, FROM usuarios WHERE email = '$email'";
+            foto, descricao, amigos FROM usuarios WHERE email = '$email'";
             $result = mysqli_query($conn, $sql);
     
             if (mysqli_num_rows($result) > 0) {

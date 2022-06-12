@@ -92,7 +92,7 @@ $sql = "SELECT * FROM posts ORDER BY likes_Post DESC";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
-    // output data of each row
+    // output de cada row de data
     while ($row = mysqli_fetch_assoc($result)) {
 
         $idP = $row["id"];

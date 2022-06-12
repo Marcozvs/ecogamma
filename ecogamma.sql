@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 12-Jun-2022 às 00:52
+-- Tempo de geração: 12-Jun-2022 às 01:36
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `likes_Post` int(20) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_Post`),
   KEY `user_post` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Extraindo dados da tabela `posts`
@@ -88,12 +88,13 @@ CREATE TABLE IF NOT EXISTS `posts` (
 
 INSERT INTO `posts` (`id_Post`, `id`, `foto`, `nome`, `sobrenome`, `profissao`, `data_Post`, `texto_Post`, `imagem_Post`, `likes_Post`) VALUES
 (13, 14, 'perfil_default.svg', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', '2022-06-11', 'OlÃ¡ Pessoas do ecogamma!', '', 0),
-(14, 15, 'perfil_default.svg', 'Leandro', 'Silva', 'Staff Ecogamma', '2022-06-11', 'Ecogamma estÃ¡ finalmente em estÃ¡gio BETA!', '', 0),
+(14, 15, 'perfil_default.svg', 'Leandro', 'Silva', 'Staff Ecogamma', '2022-06-11', 'Ecogamma estÃ¡ finalmente em estÃ¡gio BETA!', '', 1),
 (15, 15, 'perfil_default.svg', 'Leandro', 'Silva', 'Staff Ecogamma', '2022-06-12', 'opa', '', 0),
 (16, 15, 'perfil_default.svg', 'Leandro', 'Silva', 'Staff Ecogamma', '2022-06-12', 'opa', '', 0),
 (17, 15, 'perfil_default.svg', 'Leandro', 'Silva', 'Staff Ecogamma', '2022-06-12', 'opa', '', 0),
 (18, 15, 'perfil_default.svg', 'Leandro', 'Silva', 'Staff Ecogamma', '2022-06-12', 'opa', '', 0),
-(19, 15, 'perfil_default.svg', 'Leandro', 'Silva', 'Staff Ecogamma', '2022-06-12', 'tÃ¡ indo', '', 0);
+(19, 15, 'perfil_default.svg', 'Leandro', 'Silva', 'Staff Ecogamma', '2022-06-12', 'tÃ¡ indo', '', 0),
+(20, 16, 'perfil_default.svg', 'Mandanga', 'SebastiÃ£o', 'Jogador de Futebol Profissional', '2022-06-12', 'sÃ³ pra marcar presenÃ§a pae', '', 0);
 
 -- --------------------------------------------------------
 
@@ -116,19 +117,21 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `estado` varchar(60) NOT NULL,
   `cidade` varchar(80) NOT NULL COMMENT 'cidade',
   `profissao` varchar(120) NOT NULL COMMENT 'profissão/area de atuação',
+  `mdEscuro` tinyint(4) NOT NULL DEFAULT '0',
   `foto` varchar(255) NOT NULL,
   `descricao` varchar(255) NOT NULL COMMENT 'Descricao que aparece no perfil do usuário',
   `amigos` int(20) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `token`, `nome`, `sobrenome`, `email`, `senha`, `senhaC`, `dataN`, `genero`, `numero`, `estado`, `cidade`, `profissao`, `foto`, `descricao`, `amigos`) VALUES
-(14, 1, 'Marcos', 'Vinicius', 'teste@gmail.com', '123', '123', '2023-11-16', 'masculinoCisgÃªnero', '', 'am', 'Caieras', 'Estudante de Medicina na USP', '', '', 0),
-(15, 0, 'Leandro', 'Silva', 'leandrosdc@outlook.com', 'leandro1', 'leandro1', '2004-11-13', 'masculinoCisgÃªnero', '11979609142', 'sp', 'SÃ£o Paulo', 'Staff Ecogamma', '', '', 0);
+INSERT INTO `usuarios` (`id`, `token`, `nome`, `sobrenome`, `email`, `senha`, `senhaC`, `dataN`, `genero`, `numero`, `estado`, `cidade`, `profissao`, `mdEscuro`, `foto`, `descricao`, `amigos`) VALUES
+(14, 1, 'Marcos', 'Vinicius', 'teste@gmail.com', '123', '123', '2023-11-16', 'masculinoCisgÃªnero', '', 'am', 'Caieras', 'Estudante de Medicina na USP', 0, '', '', 0),
+(15, 0, 'Leandro', 'Silva', 'leandrosdc@outlook.com', 'leandro1', 'leandro1', '2004-11-13', 'masculinoCisgÃªnero', '11979609142', 'sp', 'SÃ£o Paulo', 'Staff Ecogamma', 0, '', '', 0),
+(16, 0, 'Mandanga', 'SebastiÃ£o', 'mandanga@gmail.com', 'manda', 'manda', '2005-11-12', 'masculinoCisgÃªnero', '332423424', 'df', 'Rio de Janeiro', 'Jogador de Futebol Profissional', 0, '', '', 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
