@@ -70,6 +70,7 @@ label {
   margin-bottom: 1rem;
 }
 
+input,
 .input-icones {
   display: flex;
   align-items: center;
@@ -81,10 +82,12 @@ label {
   margin-bottom: 1rem;
   color: #5570FF;
 }
+input span,
 .input-icones span {
   margin-right: 1rem;
   color: #5570FF;
 }
+input input,
 .input-icones input {
   border: none;
   color: #5570FF;
@@ -144,6 +147,10 @@ textarea {
 
 .label_select {
   margin-top: 1rem;
+}
+
+select {
+  border: none;
 }
 
 a {
@@ -296,7 +303,7 @@ main .container .container__postagem .container__postagem__formulario .container
 .container__post--perfil {
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   padding: 1rem;
 }
@@ -305,7 +312,7 @@ main .container .container__postagem .container__postagem__formulario .container
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin: 1rem 0rem;
 }
 .container__post .container__post__perfil .container__post__perfil__foto,
 .container__post--perfil .container__post__perfil .container__post__perfil__foto {
@@ -505,6 +512,41 @@ main .container .container__post--perfil {
 
 .fundo--alternativo {
   top: -15vh;
+}
+
+#chat .robo,
+#chat .usuario {
+  margin-bottom: 1rem;
+  background-color: #5570FF;
+  padding: 1rem;
+  border-radius: 5px 40px 5px 40px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  color: #fefefe;
+  width: auto;
+  display: inline-block;
+}
+#chat .usuario {
+  border-radius: 40px 5px 40px 5px;
+  background-color: #34B132;
+}
+
+.chat__form {
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fefefe;
+}
+.chat__form input,
+.chat__form button {
+  width: 100%;
+}
+
+.container__post {
+  background-color: #fefefe;
+}
+.container__post .container__post__perfil__foto span {
+  font-size: 3rem;
 }
 
 header .container .container__logo {

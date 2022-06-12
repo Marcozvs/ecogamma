@@ -1,0 +1,3 @@
+function aumentarFoto(){
+    document.getElementById()
+}
