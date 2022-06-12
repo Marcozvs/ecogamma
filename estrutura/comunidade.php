@@ -38,12 +38,12 @@
                     <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe145;</span>Cadastro</li>
                 </a>
                 <a href="contato.php">
-                    <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe0b0;</span>Contato</li>
+                    <li class="container__lista__itemxsd"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe0b0;</span>Contato</li>
                 </a>
                 <a href="comunidade.php">
                     <li class="container__lista__item-ativo"><span class="material-symbols-outlined container__lista__item__icone-ativo  icone-alternativo">&#xf8d7;</span>Comunidade</li>
                 </a>
-                <a href="sobreNos.php">
+                <a href="sobreNos-interno.php">
                     <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xf8d8;</span>Sobre Nós</li>
                 </a>
                 <a href="recuperarSenha.php">

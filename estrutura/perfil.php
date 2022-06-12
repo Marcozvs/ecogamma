@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ecogamma | Perfil</title>
+  <title>Ecogamma | Chat</title>
   <?php include './base/linksGlobais.php' ?>
 </head>
 
@@ -127,7 +127,7 @@
     } elseif ($estado == 'pi') {
       $fundo = '';
     } elseif ($estado == 'rj') {
-      $fundo = 'rio_de_janeiro.jpg';
+      $fundo = '';
     } elseif ($estado == 'rn') {
       $fundo = '';
     } elseif ($estado == 'ro') {
@@ -150,7 +150,7 @@
     <div class='container'>
       <div class='container__perfil'>
         <div class='container__perfil__capa'>
-          <img src='../imagens/fundos/" . $fundo . "' alt='Fundo do perfil' class='container__perfil__capa__imagem'>
+          <img src='../imagens/" . $fundo . "' alt='Fundo do perfil' class='container__perfil__capa__imagem'>
         </div>
         <div class='container__perfil__foto'>
           <img src='../imagens/" . $foto . "' alt='Fundo do perfil' class='container__perfil__foto__imagem'>
