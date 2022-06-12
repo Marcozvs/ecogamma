@@ -170,8 +170,8 @@
                 <div class='container__post__interacoes'>
                     <ul class='container__post__interacoes__lista'>
                         <li class='container__post__interacoes__lista__item' onclick='curtir()'>
-                        <form action='./feedTeste.php?post=" . $id_Post . "' method='POST'> 
-                            <input type='submit' value = 'like' name='like' id='btn-curtir'>
+                        <form action='./feedTeste.php' method='GET'> 
+                            <input type='submit' value = '" . $id_Post . "' name='like' id='btn-curtir'>
                         </form>
                             <p>" . $likesP . "</p>
                         </li>
@@ -192,11 +192,10 @@
             }
 
             // $sql = "UPDATE posts SET likes_Post = 34 WHERE id = '$like'";
-            
+                
+                $sql3 = "UPDATE posts SET likes_Post = 20 WHERE id_Post = 22";
 
-                $sql = "UPDATE posts SET likes_Post = 20 WHERE id = 22";
-
-                if (mysqli_query($conn, $sql)) {
+                if (mysqli_query($conn, $sql3)) {
                     echo "<h1>Record updated successfully</h1>";
                 } else {
                     echo "<h1>Error updating record: </h1>" . mysqli_error($conn);

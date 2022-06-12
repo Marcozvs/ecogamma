@@ -170,7 +170,7 @@
                 <div class='container__post__interacoes'>
                     <ul class='container__post__interacoes__lista'>
                         <li class='container__post__interacoes__lista__item' onclick='curtir()'>
-                            <form action='./feedTeste.php?post=" . $id_Post . "' method='POST'> 
+                            <form action='" . $_SERVER['PHP_SELF'] . "' method='POST'> 
                                 <input type='submit' value = 'like' name='like' id='btn-curtir'>
                             </form>
                             <p>" . $likesP . "</p>
@@ -191,20 +191,7 @@
                 echo "0 Posts";
             }
             ?>
-
-            <?php 
-            if (isset($_POST[$id_Post])) { // Se o like existir
-                $like = $_POST[$id_Post];
-                $sql = "UPDATE posts SET likes_Post +=1 WHERE id = $id_Post";
-            }
-                
-            if (mysqli_query($conn, $sql)) {
-              echo "Record updated successfully";
-            } else {
-              echo "Error updating record: " . mysqli_error($conn);
-            }
             
-            ?>
         </div>
     </main>
 
