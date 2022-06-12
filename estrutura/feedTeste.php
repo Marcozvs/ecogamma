@@ -191,15 +191,17 @@
                 echo "0 Posts";
             }
 
-            // $sql = "UPDATE posts SET likes_Post = 34 WHERE id = '$like'";
-                
-                $sql3 = "UPDATE posts SET likes_Post = 20 WHERE id_Post = 22";
-
-                if (mysqli_query($conn, $sql3)) {
-                    echo "<h1>Record updated successfully</h1>";
-                } else {
-                    echo "<h1>Error updating record: </h1>" . mysqli_error($conn);
+                if (isset($_GET['like'])) {
+                    $idP = $_GET['like'];
+                    $sql3 = "UPDATE posts SET likes_Post = ++1 WHERE id_Post = $idP";
+    
+                    if (mysqli_query($conn, $sql3)) {
+                        echo "<h1>Record updated successfully</h1>";
+                    } else {
+                        echo "<h1>Error updating record: </h1>" . mysqli_error($conn);
+                    }
                 }
+
             
             ?>
 
