@@ -24,10 +24,12 @@ session_start();
             $profissao;
             $foto;
             $descricao;
+            $amigos;
+            $mdEscuro;
     
             $email = $_SESSION['email'];
-            $sql = "SELECT id, token, nome, sobrenome, email, dataN, genero, numero, estado, cidade, profissao,
-            foto, descricao, amigos FROM usuarios WHERE email = '$email'";
+            $sql = "SELECT id, token, nome, sobrenome, email, dataN, genero, numero, estado, cidade, profissao, mdEscuro,
+            foto, descricao, amigos, FROM usuarios WHERE email = '$email'";
             $result = mysqli_query($conn, $sql);
     
             if (mysqli_num_rows($result) > 0) {
@@ -51,6 +53,7 @@ session_start();
                     $cidade = $row["cidade"];
                     $foto = $row["foto"];
                     $profissao = $row["profissao"];
+                    $mdEscuro = $row["mdEscuro"];
                     if (empty($foto)) {
                         $foto = 'perfil_default.svg';
                     }

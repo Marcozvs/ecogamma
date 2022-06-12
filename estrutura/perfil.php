@@ -171,7 +171,7 @@
             </li>
             <li class='container__perfil__dados__lista__item'>
               <p>Amigos:</p>
-              <p>32</p>
+              <p>" . $amigos . "</p>
             </li>
           </ul>
         </div>

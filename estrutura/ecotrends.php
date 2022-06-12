@@ -86,29 +86,65 @@
   <main>
     <div class="container">
       <h1>Ecotrends</h1>
-      <section class="container__post">
-        <h2>Título da notícia</h2>
-        <div class="container__post__conteudo">
-          <p class="container__post__conteudo__texto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos dolor ab qui temporibus, cupiditate animi nesciunt praesentium dolorum soluta quas nihil vitae ullam facilis ut iusto pariatur perspiciatis at explicabo?</p>
-          <img src="../imagens/feed_imagem.jpg" alt="imagem do conteúdo" class="container__post__conteudo__imagem">
-        </div>
-        <div class="container__post__interacoes">
-          <ul class="container__post__interacoes__lista">
-            <li class="container__post__interacoes__lista__item">
-              <span class="material-symbols-outlined container__menu__icone span--azul">&#xe87d;</span>
-              <p>32</p>
-            </li>
-            <li class="container__post__interacoes__lista__item">
-              <span class="material-symbols-outlined container__menu__icone span--azul">&#xe0b9;</span>
-              <p>32</p>
-            </li>
-            <li class="container__post__interacoes__lista__item">
-              <span class="material-symbols-outlined container__menu__icone span--azul">&#xe163;</span>
-              <p>32</p>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <?php 
+
+$sql = "SELECT * FROM posts ORDER BY likes_Post DESC";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while ($row = mysqli_fetch_assoc($result)) {
+
+        $idP = $row["id"];
+        $id_Post = $row["id_Post"];
+        $fotoP = $row["foto"];
+        $nomeP = $row["nome"];
+        $sobrenomeP = $row["sobrenome"];
+        $profissaoP = $row["profissao"];
+        $data_Post = $row["data_Post"];
+        $texto_Post = $row["texto_Post"];
+        $imagem_Post = $row["imagem_Post"];
+        $likesP = $row["likes_Post"];
+
+
+    echo "
+    <section class='container__post'>
+                <div class='container__post__perfil'>
+                    <div class='container__post__perfil__foto'>
+                        <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
+                    </div>
+                    <div class='container__post__perfil__dados'>
+                        <p class='container__post__perfil__dados__nome nome__perfil'>" . $nomeP . " " . $sobrenomeP . "</p>
+                        <p class='container__post__perfil__dados__cargo cargo__perfil'>" . $profissaoP . "</p>
+                    </div>
+                </div>
+                <div class='container__post__conteudo'>
+                    <p class='container__post__conteudo__data' id='container__post__conteudo__data'>" . $data_Post . "</p>
+                    <p class='container__post__conteudo__texto' id='container__post__conteudo__texto'>" . $texto_Post . "</p>
+                    <img src='../imagens/" . $imagem_Post . "' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
+                </div>
+                <div class='container__post__interacoes'>
+                    <ul class='container__post__interacoes__lista'>
+                        <li class='container__post__interacoes__lista__item'>
+                            <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe87d;</span>
+                            <p>" . $likesP . "</p>
+                        </li>
+                        <li class='container__post__interacoes__lista__item'>
+                            <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe0b9;</span>
+                            <p>32</p>
+                        </li>
+                        <li class='container__post__interacoes__lista__item'>
+                            <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe163;</span>
+                            <p>32</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>";
+          }
+  } else {
+    echo "<p>Sem posts...</p>";
+  }
+      ?>
     </div>
   </main>
   <script src="../manipulacao/manuLateral.js"></script>

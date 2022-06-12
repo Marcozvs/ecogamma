@@ -44,7 +44,8 @@
         if ($senha == $senhaC) {
             # code...
 
-            $sql = "INSERT INTO usuarios (nome, sobrenome, email, senha, senhaC, dataN, genero, numero, estado, cidade, profissao, foto, descricao, amigos) VALUES ('$nome', '$sobrenome', '$email', '$senha', '$senhaC', '$dataN', '$genero', '$numero', '$estado', '$cidade', '$profissao', '', '', '0')";
+            $sql = "INSERT INTO usuarios (nome, sobrenome, email, senha, senhaC, dataN, genero, numero, estado, cidade, profissao, mdEscuro, foto, descricao, amigos)
+            VALUES ('$nome', '$sobrenome', '$email', '$senha', '$senhaC', '$dataN', '$genero', '$numero', '$estado', '$cidade', '$profissao', '0', '', '', '0')";
 
                 if (mysqli_query($conn, $sql)) {
                     echo "
