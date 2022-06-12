@@ -242,7 +242,7 @@
             </div>
             <div class='container__post__conteudo'>
               <p class='container__post__conteudo__texto'>" . $data_Post . "</p>
-              <p class='container__post__conteudo__texto'" . $texto_Post . "</p>
+              <p class='container__post__conteudo__texto'>" . $texto_Post . "</p>
               <img src='../imagens/" . $imagem_Post . "' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
             </div>
             <div class='container__post__interacoes'>
