@@ -104,8 +104,24 @@
                 <hr>
             </section>
             <?php
-            if (isset($_POST['texto'])) {
+            // LIKEZINHO
 
+                if (isset($_POST['like'])) {
+                    $soma = 1;
+                    $idP = $_POST['like'];
+                    $sql3 = "UPDATE posts SET likes_Post = likes_Post + $soma WHERE id_Post = $idP";
+                    if (mysqli_query($conn, $sql3)) {
+                        echo "<h1>Record updated successfully</h1>";
+                    } else {
+                        echo "<h1>Error updating record: </h1>" . mysqli_error($conn);
+                    }
+                    // header('Location: ./feedTeste.php');
+                }
+            
+
+            //POSTAR
+            if (isset($_POST['texto'])) {
+                
 
                 // $idP = $id;
                 // $fotoP = $foto;
@@ -133,6 +149,9 @@
                 //PUXANDO DADOS
 
             }
+
+
+            //MOSTRAR
             $sql = "SELECT * FROM posts ORDER BY id_Post DESC";
             $result = mysqli_query($conn, $sql);
 
@@ -189,21 +208,7 @@
                 }
             } else {
                 echo "0 Posts";
-            }
-
-                $_POST['like'];
-                $soma = 1;
-                $idP = $_POST['like'];
-                $sql3 = "UPDATE posts SET likes_Post = likes_Post + $soma WHERE id_Post = $idP";
-                if (mysqli_query($conn, $sql3)) {
-                    echo "<h1>Record updated successfully</h1>";
-                } else {
-                    echo "<h1>Error updating record: </h1>" . mysqli_error($conn);
-                }
-                header('Location: ./feedTeste.php')
-                
-
-            
+            }  
             ?>
 
         </div>
