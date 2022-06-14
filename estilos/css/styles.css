@@ -194,7 +194,7 @@ span {
 }
 
 #btn__funcao__curtir {
-  display: none;
+  display: flex;
 }
 
 #btn__funcao__comentar {

@@ -172,14 +172,14 @@ if (mysqli_query($conn, $sql1)) {
                 </div>
                 <div class='container__post__interacoes'>
                     <ul class='container__post__interacoes__lista'>
-                        <li class='container__post__interacoes__lista__item' onclick='curtir()'>
+                        
                         <form action='./feed.php' id='likeForm' method='POST'>
                             <input type='checkbox' name='like' id='checkbox__curtir'>
-                            <span class='material-symbols-outlined container__menu__icone' id='btn__curtir'>&#xe87d;</span>
                             <input type='submit' value = 'like' name='like' onclick='curtir'()' id='btn__funcao__curtir'>
+                            <span class='material-symbols-outlined container__menu__icone' id='btn__curtir'>&#xe87d;</span>
                         </form>
                             <p id='valor__curtir'>" . $likesP . "</p>
-                        </li>
+                        
                         <li class='container__post__interacoes__lista__item' onclick='comentar()'>
                             <input type='submit' value = 'comentar' name='comentar' onclick='comentar'()' id='btn__funcao__comentar'>
                             <input type='checkbox' name='comentar' id='checkbox__comentar'>
