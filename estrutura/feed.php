@@ -38,8 +38,10 @@
             <span class="material-symbols-outlined container__menu__icone span--azul">&#xeffd;</span>
         </a>
       </div class="botao__diaNoite">
-        <button onclick="modoNoite()" id="botao__noite"><span class="material-symbols-outlined container__menu__icone span--azul">&#xf03d;</span></button>
-        <button onclick="modoDia()" id="botao__dia"><span class="material-symbols-outlined container__menu__icone span--azul">&#xe518;</span></button>
+        <select name="modoTela" id="modoTela">
+            <option value="claro">Claro</option>
+            <option value="escuro">Escuro</option>
+        </select>
       <div id="container__menu" onclick="menuLateralInternoOpen()">
         <span class="material-symbols-outlined container__menu__icone span--azul">&#xe5d2;</span>
       </div>
@@ -167,7 +169,7 @@ if (mysqli_query($conn, $sql1)) {
                     $likesP = $row["likes_Post"];
 
                     echo "
-    <section class='container__post'>
+    <section class='container__post' id='post'>
                 <div class='container__post__perfil'>
                     <div class='container__post__perfil__foto'>
                         <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>

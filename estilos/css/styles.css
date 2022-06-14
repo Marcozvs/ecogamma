@@ -227,6 +227,14 @@ span {
   width: 1px;
 }
 
+select#gender option[value=claro] {
+  background-image: url("../../imagens/modoClaro.png");
+}
+
+select#gender option[value=escuro] {
+  background-image: url("../../imagens/modoEscuro.png");
+}
+
 header,
 .header__interno {
   z-index: 3;
@@ -613,7 +621,7 @@ header .container .container__logo {
   box-sizing: border-box;
 }
 header .container .container__logo a .container__logo__imagem {
-  width: 100%;
+  width: 50%;
 }
 header .container nav {
   display: flex;
