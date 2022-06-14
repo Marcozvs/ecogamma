@@ -187,13 +187,13 @@ if (mysqli_query($conn, $sql1)) {
                         
                         <form action='./feed.php' id='likeForm' method='POST'>
                             <input type='checkbox' name='like' id='checkbox__curtir'>
-                            <input type='submit' value = 'like' name='" . $id_Post . "' onclick='curtir'()' id='btn__funcao__curtir'>
+                            <input type='submit' value = 'like' name='" . $id_Post . "' onclick='curtir()' id='btn__funcao__curtir'>
                             <span class='material-symbols-outlined container__menu__icone' id='btn__curtir'>&#xe87d;</span>
                         </form>
                             <p id='valor__curtir'>" . $likesP . "</p>
                         
                         <li class='container__post__interacoes__lista__item' onclick='comentar()'>
-                            <input type='submit' value = 'comentar' name='comentar' onclick='comentar'()' id='btn__funcao__comentar'>
+                            <input type='submit' value = 'comentar' name='comentar' onclick='comentar()' id='btn__funcao__comentar'>
                             <input type='checkbox' name='comentar' id='checkbox__comentar'>
                             <span class='material-symbols-outlined container__menu__icone' id='btn__comentar'>&#xe0b9;</span>
                             <p id='valor__comentar'>" . $likesP . "</p>
