@@ -185,6 +185,41 @@ span {
   color: #111111;
 }
 
+#checkbox__curtir {
+  display: none;
+}
+
+#checkbox__comentar {
+  display: none;
+}
+
+#btn__funcao__curtir {
+  display: none;
+}
+
+#btn__funcao__comentar {
+  display: none;
+}
+
+#caixa__comentario {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+#texto__comentario {
+  display: none;
+  width: 70%;
+  height: 30px;
+}
+
+#submit__comentario {
+  display: none;
+  width: 20%;
+  margin: 5% 0%;
+}
+
 header,
 .header__interno {
   z-index: 3;
@@ -342,6 +377,10 @@ main .container .container__postagem .container__postagem__formulario .container
 .container__post--perfil .container__post__perfil .container__post__perfil__dados {
   width: 60%;
   margin-right: 15%;
+}
+.container__post .container__post__perfil .container__post__perfil__dados p,
+.container__post--perfil .container__post__perfil .container__post__perfil__dados p {
+  text-align: left;
 }
 .container__post .container__post__conteudo,
 .container__post--perfil .container__post__conteudo {

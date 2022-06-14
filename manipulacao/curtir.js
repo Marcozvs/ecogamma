@@ -1,6 +1,29 @@
 //Interação curtir
 
 function curtir(){
-    var btnCurtir = document.getElementById("btn-curtir");
-    btnCurtir.classList.toggle("btn-curtido"); 
+    //Selecionando botão curtir
+    const btn__curtir = document.getElementById("btn__curtir");
+    let checkbox__curtir = document.getElementById("checkbox__curtir");
+    if(checkbox__curtir.checked){
+        //Mudando cor do ícone para azul
+        btn__curtir.style.color = "#5570FF";
+        //Deixando o checkbox não checado
+        checkbox__curtir = document.getElementById("checkbox__curtir").removeAttribute("checked");
+        //Diminuindo valor do like
+        let valor__curtir = document.getElementById("valor__curtir").innerText;
+        valor__curtir = parseInt(valor__curtir);
+        valor__curtir = document.getElementById("valor__curtir").value = valor__curtir - 1;
+        valor__curtir = document.getElementById("valor__curtir").innerHTML = valor__curtir
+    }else{
+        //Mudando cor do ícone para verde
+        btn__curtir.style.color = "#34B132";
+        //Deixando checkbox checado
+        checkbox__curtir = document.getElementById("checkbox__curtir");
+        checkbox__curtir.setAttribute('checked', '');
+        //Aumentando valor do like
+        let valor__curtir = document.getElementById("valor__curtir").innerText;
+        valor__curtir = parseInt(valor__curtir);
+        valor__curtir = document.getElementById("valor__curtir").value = valor__curtir + 1;
+        valor__curtir = document.getElementById("valor__curtir").innerHTML = valor__curtir
+    }
 }

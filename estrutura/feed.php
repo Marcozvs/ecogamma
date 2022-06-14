@@ -170,20 +170,26 @@
                 <div class='container__post__interacoes'>
                     <ul class='container__post__interacoes__lista'>
                         <li class='container__post__interacoes__lista__item' onclick='curtir()'>
-                            <form action='" . $_SERVER['PHP_SELF'] . "' method='POST'> 
-                                <input type='submit' value = 'like' name='like' id='btn-curtir'>
-                            </form>
-                            <p>" . $likesP . "</p>
+                            <input type='submit' value = 'like' name='like' onclick='curtir'()' id='btn__funcao__curtir'>
+                            <input type='checkbox' name='like' id='checkbox__curtir'>
+                            <span class='material-symbols-outlined container__menu__icone' id='btn__curtir'>&#xe87d;</span>
+                            <p id='valor__curtir'>" . $likesP . "</p>
                         </li>
                         <li class='container__post__interacoes__lista__item' onclick='comentar()'>
-                            <span class='material-symbols-outlined container__menu__icone' id='btn-comentar'>&#xe0b9;</span>
-                            <p>32</p>
+                            <input type='submit' value = 'comentar' name='comentar' onclick='comentar'()' id='btn__funcao__comentar'>
+                            <input type='checkbox' name='comentar' id='checkbox__comentar'>
+                            <span class='material-symbols-outlined container__menu__icone' id='btn__comentar'>&#xe0b9;</span>
+                            <p id='valor__comentar'>" . $likesP . "</p>
                         </li>
                         <li class='container__post__interacoes__lista__item' onclick='compartilhar()'>
-                            <span class='material-symbols-outlined container__menu__icone' id='btn-compartilhar'>&#xe163;</span>
-                            <p>32</p>
+                        <span class='material-symbols-outlined container__menu__icone' id='btn-compartilhar'>&#xe163;</span>
                         </li>
                     </ul>
+                    <div id='caixa__comentario'>
+                        <input type='text' name='texto__comentario' id='texto__comentario' placeholder='Insira seu comentário aqui'>
+                        <input type='submit' name='submit__comentario' id='submit__comentario' class='botao__principal'>
+                    </div>
+
                 </div>
             </section>";
                 }
@@ -198,13 +204,15 @@
     <script src="../manipulacao/manuLateral.js"></script>
     <script src="../manipulacao/modoTela.js"></script>
     <script src="../manipulacao/curtir.js"></script>
+    <script src="../manipulacao/comentar.js"></script>
     <script>
-        function comentar(){
-        var btnComentar = document.getElementById("btn-comentar");
-        btnComentar.classList.toggle("btn-comentado-<?php echo $idP; ?>"); 
-        }
+        function compartilhar(){
+        var btnCompartilhar = document.getElementById("btn-compartilhar");
+        btnCompartilhar.classList.toggle("btn-compartilhado"); 
+        btnCompartilhar.innerText = "<?php $_SERVER['PHP_SELF'];?>";
+        alert(btnCompartilhar);
+    }
     </script>
-    <script src="../manipulacao/compartilhar.js"></script>
 </body>
 
 </html>
