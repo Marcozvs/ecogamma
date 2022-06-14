@@ -211,6 +211,7 @@
     <script>
         function compartilhar(){
         var btnCompartilhar = document.getElementById("btn-compartilhar");
+        var btnCompartilhar = document.getElementById("btn-compartilhar").innerHTML = <?php $_SERVER['PHP_SELF'];?>
         let link = btnCompartilhar.innerText;
         alert(link);
     }
