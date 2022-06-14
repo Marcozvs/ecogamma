@@ -184,7 +184,8 @@
                             <p id='valor__comentar'>" . $likesP . "</p>
                         </li>
                         <li class='container__post__interacoes__lista__item' onclick='compartilhar()'>
-                        <span class='material-symbols-outlined container__menu__icone' id='btn-compartilhar'>&#xe163;</span>
+                            <span class='material-symbols-outlined container__menu__icone'>&#xe163;</span>
+                            <p id='btn-compartilhar'>" . $_SERVER['PHP_SELF'] ."</p>
                         </li>
                     </ul>
                     <div id='caixa__comentario'>
@@ -210,9 +211,9 @@
     <script>
         function compartilhar(){
         var btnCompartilhar = document.getElementById("btn-compartilhar");
-        btnCompartilhar.classList.toggle("btn-compartilhado"); 
-        btnCompartilhar.innerText = "<?php $_SERVER['PHP_SELF'];?>";
-        alert(btnCompartilhar);
+        var btnCompartilhar = document.getElementById("btn-compartilhar").innerHTML = <?php $_SERVER['PHP_SELF'];?>
+        let link = btnCompartilhar.innerText;
+        alert(link);
     }
     </script>
 </body>
