@@ -126,7 +126,6 @@
                         } else {
                             echo "<h1>Error no curtir: </h1>" . mysqli_error($conn);
                         }
-                        exit();
                     }
                 } elseif ($total == TRUE) {
                     $deletaCurtida = "DELETE FROM curtidas WHERE id_Post = '$id_PostC'";
@@ -138,6 +137,7 @@
                         } else {
                             echo "<h1>Erro no deslike: </h1>" . mysqli_error($conn);
                         }
+
                     }
 
                     // header('Location: ./feedTeste.php');
@@ -211,13 +211,8 @@
                     <ul class='container__post__interacoes__lista'>
                         
                         <form action='./feed.php' id='likeForm' method='POST'>
-<<<<<<< HEAD
-                            <input type='checkbox' name='like' id='checkbox__curtir'>
-                            <input type='submit' value = 'like' name='like' onclick='curtir'()' id='btn__funcao__curtir'>
-=======
                             <input type='checkbox' name='like' value='True' id='checkbox__curtir'>
                             <input type='submit' value = '" . $id_Post . "' name='enviaLike' onclick='curtir()' id='btn__funcao__curtir'>
->>>>>>> 43b5b31b6bf47fafe7e8282c658df50edc20ec32
                             <span class='material-symbols-outlined container__menu__icone' id='btn__curtir'>&#xe87d;</span>
                         </form>
                             <p id='valor__curtir'>" . $likesP . "</p>
