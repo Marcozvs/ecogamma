@@ -103,7 +103,6 @@
                 <hr>
             </section>
             <?php
-            // LIKEZINHO
 
             if (isset($_POST['enviaLike']) && isset($_POST['like'])) {
                 $soma = 1;
@@ -193,7 +192,7 @@
                     $likesP = $row["likes_Post"];
 
                     echo "
-    <section class='container__post' id='post'>
+    <section class='container__post' id='container__post'>
                 <div class='container__post__perfil'>
                     <div class='container__post__perfil__foto'>
                         <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
@@ -208,18 +207,23 @@
                     <p class='container__post__conteudo__texto' id='container__post__conteudo__texto'>" . $texto_Post . "</p>
                     <img src='../imagens/" . $imagem_Post . "' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
                 </div>
-                <div class='container__post__interacoes'>
+                <div class='container__post__interacoes' id='post'>
                     <ul class='container__post__interacoes__lista'>
                         
                         <form action='./feed.php' id='likeForm' method='POST'>
+<<<<<<< HEAD
+                            <input type='checkbox' name='like' id='checkbox__curtir'>
+                            <input type='submit' value = 'like' name='like' onclick='curtir'()' id='btn__funcao__curtir'>
+=======
                             <input type='checkbox' name='like' value='True' id='checkbox__curtir'>
                             <input type='submit' value = '" . $id_Post . "' name='enviaLike' onclick='curtir()' id='btn__funcao__curtir'>
+>>>>>>> 43b5b31b6bf47fafe7e8282c658df50edc20ec32
                             <span class='material-symbols-outlined container__menu__icone' id='btn__curtir'>&#xe87d;</span>
                         </form>
                             <p id='valor__curtir'>" . $likesP . "</p>
                         
                         <li class='container__post__interacoes__lista__item' onclick='comentar()'>
-                            <input type='submit' value = 'comentar' name='comentar' onclick='comentar()' id='btn__funcao__comentar'>
+                            <input type='submit' value = 'comentar' name='comentar' onclick='comentar'()' id='btn__funcao__comentar'>
                             <input type='checkbox' name='comentar' id='checkbox__comentar'>
                             <span class='material-symbols-outlined container__menu__icone' id='btn__comentar'>&#xe0b9;</span>
                             <p id='valor__comentar'>0</p>
