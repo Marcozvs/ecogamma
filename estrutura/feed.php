@@ -187,7 +187,7 @@ if (mysqli_query($conn, $sql1)) {
                         
                         <form action='./feed.php' id='likeForm' method='POST'>
                             <input type='checkbox' name='like' id='checkbox__curtir'>
-                            <input type='submit' value = 'like' name='" . $id_Post . "' onclick='curtir'()' id='btn__funcao__curtir'>
+                            <input type='submit' value = 'like' name='" . $id_Post . "' onclick='curtir()' id='btn__funcao__curtir'>
                             <span class='material-symbols-outlined container__menu__icone' id='btn__curtir'>&#xe87d;</span>
                         </form>
                             <p id='valor__curtir'>" . $likesP . "</p>
@@ -200,7 +200,6 @@ if (mysqli_query($conn, $sql1)) {
                         </li>
                         <li class='container__post__interacoes__lista__item' onclick='compartilhar()'>
                             <span class='material-symbols-outlined container__menu__icone'>&#xe163;</span>
-                            <p id='valor__compartilhar'>" . $likesP . "</p>
                             <input type='text' id='btn-compartilhar'value='" . $_SERVER['PHP_SELF'] . "?" . $id_Post ."'>
                         </li>
                     </ul>
