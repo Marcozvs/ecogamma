@@ -38,10 +38,6 @@
             <span class="material-symbols-outlined container__menu__icone span--azul">&#xeffd;</span>
         </a>
       </div class="botao__diaNoite">
-        <select name="modoTela" id="modoTela" onclick="modoTela()">
-            <option value="claro">Claro</option>
-            <option value="escuro">Escuro</option>
-        </select>
       <div id="container__menu" onclick="menuLateralInternoOpen()">
         <span class="material-symbols-outlined container__menu__icone span--azul">&#xe5d2;</span>
       </div>
