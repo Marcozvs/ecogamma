@@ -105,9 +105,11 @@
                 <hr>
             </section>
             <?php
+
+
             if (isset($_POST['texto'])) {
-
-
+                
+                
                 // $idP = $id;
                 // $fotoP = $foto;
                 // $nomeP = $nome;
@@ -125,14 +127,14 @@
                 $sql1 = "INSERT INTO posts (id, foto, nome, sobrenome, profissao, data_Post, texto_Post, imagem_Post, likes_Post)
                 VALUES ('$id', '$foto', '$nome', '$sobrenome', '$profissao', '$data_Post', '$texto_Post', '$imagem_Post', '$likes')";
 
-                if (mysqli_query($conn, $sql1)) {
+if (mysqli_query($conn, $sql1)) {
                     echo "New record created successfully";
                 } else {
                     echo "Error: " . $sql1 . "<br>" . mysqli_error($conn);
                 }
 
                 //PUXANDO DADOS
-
+                
             }
             $sql = "SELECT * FROM posts ORDER BY id_Post DESC";
             $result = mysqli_query($conn, $sql);
@@ -173,8 +175,8 @@
                         <li class='container__post__interacoes__lista__item' onclick='curtir()'>
                         <form action='./feed.php' id='likeForm' method='POST'>
                             <input type='checkbox' name='like' id='checkbox__curtir'>
-                            <input type='submit' value = 'like' name='like' onclick='curtir'()' id='btn__funcao__curtir'>
                             <span class='material-symbols-outlined container__menu__icone' id='btn__curtir'>&#xe87d;</span>
+                            <input type='submit' value = 'like' name='like' onclick='curtir'()' id='btn__funcao__curtir'>
                         </form>
                             <p id='valor__curtir'>" . $likesP . "</p>
                         </li>
