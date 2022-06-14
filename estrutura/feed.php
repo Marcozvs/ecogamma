@@ -38,7 +38,7 @@
             <span class="material-symbols-outlined container__menu__icone span--azul">&#xeffd;</span>
         </a>
       </div class="botao__diaNoite">
-        <select name="modoTela" id="modoTela">
+        <select name="modoTela" id="modoTela" onclick="modoTela()">
             <option value="claro">Claro</option>
             <option value="escuro">Escuro</option>
         </select>
