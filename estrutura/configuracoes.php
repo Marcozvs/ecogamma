@@ -86,8 +86,10 @@
   <main>
     <div class="container">
       <h1>Configurações</h1>
-      <button class="botao__principal" onclick="modoNoturno()">Modo Noturno</button>
-    </div>
+      <select name="modoTela" id="modoTela" onclick="modoTela()">
+            <option value="claro">Claro</option>
+            <option value="escuro">Escuro</option>
+      </select>    
   </main>
   <script src="../manipulacao/manuLateral.js"></script>
   <script src="../manipulacao/modoNoturno.js"></script>
