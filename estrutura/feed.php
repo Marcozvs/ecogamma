@@ -103,19 +103,18 @@
                 <hr>
             </section>
             <?php
+            // LIKEZINHO
 
             if (isset($_POST['enviaLike']) && isset($_POST['like'])) {
                 $soma = 1;
                 $teste = $_POST['like']; //esse é o checkbox
                 $id_PostC = $_POST['enviaLike']; // Id do post
                 echo "<h1>" . $teste . "</h1>"; // Aqui é para testar se o submit tá indo, ele pega o valor do submit que quando eu testei era like
-                $verSeCurtiuAlgumPost = "SELECT FROM curtidas WHERE id_Elemento = '$id_PostC' AND id_User = $id";
+                $verSeCurtiuAlgumPost = "SELECT id_Elemento, id_User FROM curtidas WHERE id_Elemento = '$id_PostC' AND id_User = $id";
 
                 $verifica = mysqli_query($conn, $verSeCurtiuAlgumPost);
 
-                $total = mysqli_num_rows($verifica);
-                if ($total == FALSE) {
-                    echo "$verifica";
+                if (mysqli_num_rows($verifica) == 0) {
                     // se a curtida não existir:
                     $insereCurtidaLog = "INSERT INTO curtidas (id_Elemento, id_User) VALUES ('$id_PostC','$id')"; // Ele vai inserir na tabela curtidas um log dizendo que o usuário curtiu tal coisa
                     $insereCurtida = "UPDATE posts SET likes_Post = likes_Post + '$soma' WHERE id_Post = '$id_PostC'";
@@ -127,7 +126,7 @@
                             echo "<h1>Error no curtir: </h1>" . mysqli_error($conn);
                         }
                     }
-                } elseif ($total == TRUE) {
+                } elseif (mysqli_num_rows($verifica) == 1) {
                     $deletaCurtida = "DELETE FROM curtidas WHERE id_Post = '$id_PostC'";
                     $diminuiCurtida = "UPDATE posts SET likes_Post = likes_Post - '$soma' WHERE id_Post = '$id_PostC'";
                     if (mysqli_query($conn, $deletaCurtida)) {
@@ -137,7 +136,6 @@
                         } else {
                             echo "<h1>Erro no deslike: </h1>" . mysqli_error($conn);
                         }
-
                     }
 
                     // header('Location: ./feedTeste.php');
@@ -192,7 +190,7 @@
                     $likesP = $row["likes_Post"];
 
                     echo "
-    <section class='container__post' id='container__post'>
+    <section class='container__post' id='post'>
                 <div class='container__post__perfil'>
                     <div class='container__post__perfil__foto'>
                         <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
@@ -207,7 +205,7 @@
                     <p class='container__post__conteudo__texto' id='container__post__conteudo__texto'>" . $texto_Post . "</p>
                     <img src='../imagens/" . $imagem_Post . "' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
                 </div>
-                <div class='container__post__interacoes' id='post'>
+                <div class='container__post__interacoes'>
                     <ul class='container__post__interacoes__lista'>
                         
                         <form action='./feed.php' id='likeForm' method='POST'>
@@ -218,7 +216,7 @@
                             <p id='valor__curtir'>" . $likesP . "</p>
                         
                         <li class='container__post__interacoes__lista__item' onclick='comentar()'>
-                            <input type='submit' value = 'comentar' name='comentar' onclick='comentar'()' id='btn__funcao__comentar'>
+                            <input type='submit' value = 'comentar' name='comentar' onclick='comentar()' id='btn__funcao__comentar'>
                             <input type='checkbox' name='comentar' id='checkbox__comentar'>
                             <span class='material-symbols-outlined container__menu__icone' id='btn__comentar'>&#xe0b9;</span>
                             <p id='valor__comentar'>0</p>

@@ -32,8 +32,6 @@
             <a href="logout.php">
                 <span class="material-symbols-outlined container__menu__icone span--azul">&#xeffd;</span>
             </a>
-            <button onclick="modoEscuro()" id="botao__noite"><span class="material-symbols-outlined container__menu__icone span--azul">&#xf03d;</span></button>
-            <button onclick="modoClaro()" id="botao__dia"><span class="material-symbols-outlined container__menu__icone span--azul">&#xe518;</span></button>
         </nav>
         <div id="container__menu" onclick="menuLateralInternoOpen()">
             <span class="material-symbols-outlined container__menu__icone span--azul">&#xe5d2;</span>
@@ -102,7 +100,6 @@
     </div>
   </main>
   <script src="../manipulacao/manuLateral.js"></script>
-  <script src="../manipulacao/modoTela.js"></script>
 </body>
 
 </html>

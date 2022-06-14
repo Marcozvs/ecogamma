@@ -85,10 +85,14 @@
     </section>
   <main>
     <div class="container">
-      <h1>Configurações</h1>  
+      <h1>Configurações</h1>
+      <select name="modoTela" id="modoTela" onclick="modoTela()">
+            <option value="claro">Claro</option>
+            <option value="escuro">Escuro</option>
+      </select>    
   </main>
   <script src="../manipulacao/manuLateral.js"></script>
-  <script src="../manipulacao/modoTela.js"></script>
+  <script src="../manipulacao/modoNoturno.js"></script>
 </body>
 
 </html>
