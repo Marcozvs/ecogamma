@@ -1,23 +1,4 @@
-
-
-
-SCRIPT QUE MUDA A URL (PHP + JS)
-
-function set_url( $url )
-{
-echo("<script>
-    history.replaceState({}, '', '$url');
-</script>");
-}
-set_url("./feed.php?post=$id_Post");
-
-
-
-
-
-
-SCRIPT DO MARCOS PARA CURTIR COM JS
-
+//Interação curtir
 
 function curtir(){
     //Selecionando botão curtir

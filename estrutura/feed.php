@@ -107,11 +107,35 @@
             <?php
             // LIKEZINHO
 
-            if (isset($_POST['like'])) {
+            if (isset($_POST['enviaLike'])) {
                 $soma = 1;
-                $idP = $_POST['like'];
-                $sql3 = "UPDATE posts SET likes_Post = likes_Post + $soma WHERE id_Post = $idP";
-                if (mysqli_query($conn, $sql3)) {
+                $teste = $_POST['enviaLike'];
+                $idP = $_POST['like']; // Id do post
+                echo "<h1>" . $teste . "</h1>"; // Aqui é para testar se o submit tá indo, ele pega o valor do submit que quando eu testei era like
+                $verSeCurtiuAlgumPost = "SELECT id_Elemento, id_User FROM curtidas WHERE id_Elemento = '$idP' AND id_User = $id";
+
+                $result = mysqli_query($conn, $verSeCurtiuAlgumPost);
+                
+                if (mysqli_num_rows($result) == 0) {
+                    // se a curtida não existir:
+                    $insereCurtidaLog = "INSERT INTO curtidas (id_Elemento, id_User) VALUES ('$idP','$id')"; // Ele vai inserir na tabela curtidas um log dizendo que o usuário curtiu tal coisa
+                    $insereCurtida = "UPDATE posts SET likes_Post = likes_Post + '$soma' WHERE id_Post = '$idP'";
+
+
+                    if (mysqli_query($conn, $insereCurtidaLog)) {
+                        echo "<h1>inserido em curtidas</h1>";
+                    } elseif (mysqli_query($conn, $insereCurtida)) {
+                        echo "<h1>inserido em posts</h1>";
+                    } else {
+                        echo "<h1>Erro no like: </h1>" . mysqli_error($conn);
+                    }
+                  } elseif (mysqli_num_rows($result) == 1) {
+                    $deletaCurtida = "DELETE FROM curtidas WHERE id_Post = '$idP'";
+                    $diminuiCurtidas = "UPDATE posts SET likes_Post = likes_Post - '$soma' WHERE id_Post = '$idP'";
+                  }
+
+                $insereCurtidaLog = "INSERT INTO curtidas (id_Elemento, id_User) VALUES ('$idP','$id')"; // Ele vai inserir na tabela curtidas um log dizendo que o usuário curtiu tal coisa
+                if (mysqli_query($conn, $insereCurtidaLog)) {
                     echo "<h1>Record updated successfully</h1>";
                 } else {
                     echo "<h1>Error updating record: </h1>" . mysqli_error($conn);
@@ -186,8 +210,8 @@ if (mysqli_query($conn, $sql1)) {
                     <ul class='container__post__interacoes__lista'>
                         
                         <form action='./feed.php' id='likeForm' method='POST'>
-                            <input type='checkbox' name='like' id='checkbox__curtir'>
-                            <input type='submit' value = 'like' name='" . $id_Post . "' onclick='curtir()' id='btn__funcao__curtir'>
+                            <input type='checkbox' name='like' value='" . $id_Post . "' id='checkbox__curtir'>
+                            <input type='submit' value = 'like' name='enviaLike' onclick='curtir()' id='btn__funcao__curtir'>
                             <span class='material-symbols-outlined container__menu__icone' id='btn__curtir'>&#xe87d;</span>
                         </form>
                             <p id='valor__curtir'>" . $likesP . "</p>
