@@ -174,9 +174,9 @@ if (mysqli_query($conn, $sql1)) {
                     <ul class='container__post__interacoes__lista'>
                         <li class='container__post__interacoes__lista__item' onclick='curtir()'>
                         <form action='./feed.php' id='likeForm' method='POST'>
+                        <input type='submit' value = 'like' name='like' onclick='curtir()' id='btn__funcao__curtir'>
                             <input type='checkbox' name='like' id='checkbox__curtir'>
                             <span class='material-symbols-outlined container__menu__icone' id='btn__curtir'>&#xe87d;</span>
-                            <input type='submit' value = 'like' name='like' onclick='curtir'()' id='btn__funcao__curtir'>
                         </form>
                             <p id='valor__curtir'>" . $likesP . "</p>
                         </li>
