@@ -170,9 +170,11 @@
                 <div class='container__post__interacoes'>
                     <ul class='container__post__interacoes__lista'>
                         <li class='container__post__interacoes__lista__item' onclick='curtir()'>
-                            <input type='submit' value = 'like' name='like' onclick='curtir'()' id='btn__funcao__curtir'>
+                        <form action='./feed.php' id='likeForm' method='POST'>
                             <input type='checkbox' name='like' id='checkbox__curtir'>
+                            <input type='submit' value = 'like' name='like' onclick='curtir'()' id='btn__funcao__curtir'>
                             <span class='material-symbols-outlined container__menu__icone' id='btn__curtir'>&#xe87d;</span>
+                        </form>
                             <p id='valor__curtir'>" . $likesP . "</p>
                         </li>
                         <li class='container__post__interacoes__lista__item' onclick='comentar()'>
