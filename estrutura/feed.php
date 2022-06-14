@@ -18,34 +18,32 @@
         die();
     };
     ?>
-<header class="header__interno" id="header__interno">
-    <div class="container">
-      <div class="container__logo">
-        <a href="feed.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
-      </div>
-      <div class="container__perfil">
-        <a href="perfil.php">
-          <span class="material-symbols-outlined container__menu__icone span--azul">&#xe853;</span>
-        </a>
-      </div>
-      <div class="container__chat">
-        <a href="chat.php">
-            <span class="material-symbols-outlined container__menu__icone span--azul">&#xe8af;</span>
-        </a>
-      </div>
-      <div class="container__logout">
-        <a href="logout.php">
-            <span class="material-symbols-outlined container__menu__icone span--azul">&#xeffd;</span>
-        </a>
-      </div>
-        <button onclick="modoEscuro()" id="botao__noite"><span class="material-symbols-outlined container__menu__icone span--azul">&#xf03d;</span></button>
-        <button onclick="modoClaro()" id="botao__dia"><span class="material-symbols-outlined container__menu__icone span--azul">&#xe518;</span></button>
-      <div id="container__menu" onclick="menuLateralInternoOpen()">
-        <span class="material-symbols-outlined container__menu__icone span--azul">&#xe5d2;</span>
-      </div>
-    </div>
-</header>
-  <section id="menuLateral__interno">
+    <header class="header__interno" id="header__interno">
+        <div class="container">
+            <div class="container__logo">
+                <a href="feed.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
+            </div>
+            <div class="container__perfil">
+                <a href="perfil.php">
+                    <span class="material-symbols-outlined container__menu__icone span--azul">&#xe853;</span>
+                </a>
+            </div>
+            <div class="container__chat">
+                <a href="chat.php">
+                    <span class="material-symbols-outlined container__menu__icone span--azul">&#xe8af;</span>
+                </a>
+            </div>
+            <div class="container__logout">
+                <a href="logout.php">
+                    <span class="material-symbols-outlined container__menu__icone span--azul">&#xeffd;</span>
+                </a>
+            </div class="botao__diaNoite">
+            <div id="container__menu" onclick="menuLateralInternoOpen()">
+                <span class="material-symbols-outlined container__menu__icone span--azul">&#xe5d2;</span>
+            </div>
+        </div>
+    </header>
+    <section id="menuLateral__interno">
         <div class="container" id="menuLateral__InternoNoturno">
             <div class="container__menu" onclick="menuLateralInternoClose()">
                 <span class="material-symbols-outlined container__menu__icone span--verde">&#xe5d2;</span>
@@ -106,10 +104,49 @@
             </section>
             <?php
 
+<<<<<<< HEAD
+=======
+            if (isset($_POST['enviaLike']) && isset($_POST['like'])) {
+                $soma = 1;
+                $teste = $_POST['like']; //esse é o checkbox
+                $id_PostC = $_POST['enviaLike']; // Id do post
+                echo "<h1>" . $teste . "</h1>"; // Aqui é para testar se o submit tá indo, ele pega o valor do submit que quando eu testei era like
+                $verSeCurtiuAlgumPost = "SELECT id_Elemento, id_User FROM curtidas WHERE id_Elemento = '$id_PostC' AND id_User = $id";
+
+                $verifica = mysqli_query($conn, $verSeCurtiuAlgumPost);
+
+                if (mysqli_num_rows($verifica) == 0) {
+                    // se a curtida não existir:
+                    $insereCurtidaLog = "INSERT INTO curtidas (id_Elemento, id_User) VALUES ('$id_PostC','$id')"; // Ele vai inserir na tabela curtidas um log dizendo que o usuário curtiu tal coisa
+                    $insereCurtida = "UPDATE posts SET likes_Post = likes_Post + '$soma' WHERE id_Post = '$id_PostC'";
+                    if (mysqli_query($conn, $insereCurtidaLog)) {
+                        echo "<h1>Curtiu em logs</h1>";
+                        if (mysqli_query($conn, $insereCurtida)) {
+                            echo "<h1>inserido em posts</h1>";
+                        } else {
+                            echo "<h1>Error no curtir: </h1>" . mysqli_error($conn);
+                        }
+                    }
+                } elseif (mysqli_num_rows($verifica) == 1) {
+                    $deletaCurtida = "DELETE FROM curtidas WHERE id_Post = '$id_PostC'";
+                    $diminuiCurtida = "UPDATE posts SET likes_Post = likes_Post - '$soma' WHERE id_Post = '$id_PostC'";
+                    if (mysqli_query($conn, $deletaCurtida)) {
+                        echo "<h1>descoisado de curtidas</h1>";
+                        if (mysqli_query($conn, $diminuiCurtida)) {
+                            echo "<h1>descoisado de posts</h1>";
+                        } else {
+                            echo "<h1>Erro no deslike: </h1>" . mysqli_error($conn);
+                        }
+                    }
+
+                    // header('Location: ./feedTeste.php');
+                }
+            }
+>>>>>>> 43b5b31b6bf47fafe7e8282c658df50edc20ec32
 
             if (isset($_POST['texto'])) {
-                
-                
+
+
                 // $idP = $id;
                 // $fotoP = $foto;
                 // $nomeP = $nome;
@@ -127,14 +164,14 @@
                 $sql1 = "INSERT INTO posts (id, foto, nome, sobrenome, profissao, data_Post, texto_Post, imagem_Post, likes_Post)
                 VALUES ('$id', '$foto', '$nome', '$sobrenome', '$profissao', '$data_Post', '$texto_Post', '$imagem_Post', '$likes')";
 
-if (mysqli_query($conn, $sql1)) {
+                if (mysqli_query($conn, $sql1)) {
                     echo "New record created successfully";
                 } else {
                     echo "Error: " . $sql1 . "<br>" . mysqli_error($conn);
                 }
 
                 //PUXANDO DADOS
-                
+
             }
             $sql = "SELECT * FROM posts ORDER BY id_Post DESC";
             $result = mysqli_query($conn, $sql);
@@ -174,8 +211,13 @@ if (mysqli_query($conn, $sql1)) {
                     <ul class='container__post__interacoes__lista'>
                         
                         <form action='./feed.php' id='likeForm' method='POST'>
+<<<<<<< HEAD
                             <input type='checkbox' name='like' id='checkbox__curtir'>
                             <input type='submit' value = 'like' name='like' onclick='curtir'()' id='btn__funcao__curtir'>
+=======
+                            <input type='checkbox' name='like' value='True' id='checkbox__curtir'>
+                            <input type='submit' value = '" . $id_Post . "' name='enviaLike' onclick='curtir()' id='btn__funcao__curtir'>
+>>>>>>> 43b5b31b6bf47fafe7e8282c658df50edc20ec32
                             <span class='material-symbols-outlined container__menu__icone' id='btn__curtir'>&#xe87d;</span>
                         </form>
                             <p id='valor__curtir'>" . $likesP . "</p>
@@ -184,11 +226,11 @@ if (mysqli_query($conn, $sql1)) {
                             <input type='submit' value = 'comentar' name='comentar' onclick='comentar'()' id='btn__funcao__comentar'>
                             <input type='checkbox' name='comentar' id='checkbox__comentar'>
                             <span class='material-symbols-outlined container__menu__icone' id='btn__comentar'>&#xe0b9;</span>
-                            <p id='valor__comentar'>" . $likesP . "</p>
+                            <p id='valor__comentar'>0</p>
                         </li>
                         <li class='container__post__interacoes__lista__item' onclick='compartilhar()'>
                             <span class='material-symbols-outlined container__menu__icone'>&#xe163;</span>
-                            <input type='text' id='btn-compartilhar'value='" . $_SERVER['PHP_SELF'] . "?" . $id_Post ."'>
+                            <input type='text' id='btn-compartilhar'value='" . $_SERVER['PHP_SELF'] . "?" . $id_Post . "'>
                         </li>
                     </ul>
                     <div id='caixa__comentario'>
@@ -203,7 +245,7 @@ if (mysqli_query($conn, $sql1)) {
                 echo "0 Posts";
             }
             ?>
-            
+
         </div>
     </main>
 
@@ -212,11 +254,11 @@ if (mysqli_query($conn, $sql1)) {
     <script src="../manipulacao/curtir.js"></script>
     <script src="../manipulacao/comentar.js"></script>
     <script type="text/javascript">
-    function compartilhar() {
-        document.getElementById("btn-compartilhar").select();
-        document.execCommand("copy");
-        swal("Link Copiado!", "Compartilhe com seus amigos!", "success");
-    }
+        function compartilhar() {
+            document.getElementById("btn-compartilhar").select();
+            document.execCommand("copy");
+            swal("Link Copiado!", "Compartilhe com seus amigos!", "success");
+        }
     </script>
 </body>
 
