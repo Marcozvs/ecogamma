@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecogamma | Feed</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <?php include './base/linksGlobais.php' ?>
 </head>
 
@@ -185,7 +186,8 @@
                         </li>
                         <li class='container__post__interacoes__lista__item' onclick='compartilhar()'>
                             <span class='material-symbols-outlined container__menu__icone'>&#xe163;</span>
-                            <p id='btn-compartilhar'>" . $_SERVER['PHP_SELF'] ."</p>
+                            <p id='btn-compartilhar'>" . $_SERVER['PHP_SELF'] . "?" . $id_Post ."</p>
+                            <p id='valor__compartilhar'>" . $likesP . "</p>
                         </li>
                     </ul>
                     <div id='caixa__comentario'>
@@ -208,12 +210,10 @@
     <script src="../manipulacao/modoTela.js"></script>
     <script src="../manipulacao/curtir.js"></script>
     <script src="../manipulacao/comentar.js"></script>
-    <script>
-        function compartilhar(){
-        var btnCompartilhar = document.getElementById("btn-compartilhar");
-        var btnCompartilhar = document.getElementById("btn-compartilhar").innerHTML = <?php $_SERVER['PHP_SELF'];?>
-        let link = btnCompartilhar.innerText;
-        alert(link);
+    <script type="text/javascript">
+    function compartilhar() {
+        document.getElementById("btn-compartilhar").select();
+        swal("Link Copiado!", "Compartilhe com seus amigos!", "success");
     }
     </script>
 </body>

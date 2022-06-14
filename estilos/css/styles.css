@@ -220,6 +220,10 @@ span {
   margin: 5% 0%;
 }
 
+#btn-compartilhar {
+  display: none;
+}
+
 header,
 .header__interno {
   z-index: 3;
