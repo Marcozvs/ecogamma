@@ -188,8 +188,8 @@ if (mysqli_query($conn, $sql1)) {
                         </li>
                         <li class='container__post__interacoes__lista__item' onclick='compartilhar()'>
                             <span class='material-symbols-outlined container__menu__icone'>&#xe163;</span>
-                            <p id='btn-compartilhar'>" . $_SERVER['PHP_SELF'] . "?" . $id_Post ."</p>
                             <p id='valor__compartilhar'>" . $likesP . "</p>
+                            <input type='text' id='btn-compartilhar'value='" . $_SERVER['PHP_SELF'] . "?" . $id_Post ."'>
                         </li>
                     </ul>
                     <div id='caixa__comentario'>
@@ -215,6 +215,7 @@ if (mysqli_query($conn, $sql1)) {
     <script type="text/javascript">
     function compartilhar() {
         document.getElementById("btn-compartilhar").select();
+        document.execCommand("copy");
         swal("Link Copiado!", "Compartilhe com seus amigos!", "success");
     }
     </script>

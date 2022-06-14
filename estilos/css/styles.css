@@ -221,7 +221,10 @@ span {
 }
 
 #btn-compartilhar {
-  display: none;
+  display: flex;
+  color: white;
+  border: none;
+  width: 1px;
 }
 
 header,
