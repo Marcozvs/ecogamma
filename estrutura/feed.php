@@ -110,11 +110,13 @@
                 $teste = $_POST['like']; //esse é o checkbox
                 $id_PostC = $_POST['enviaLike']; // Id do post
                 echo "<h1>" . $teste . "</h1>"; // Aqui é para testar se o submit tá indo, ele pega o valor do submit que quando eu testei era like
-                $verSeCurtiuAlgumPost = "SELECT id_Elemento, id_User FROM curtidas WHERE id_Elemento = '$id_PostC' AND id_User = $id";
+                $verSeCurtiuAlgumPost = "SELECT FROM curtidas WHERE id_Elemento = '$id_PostC' AND id_User = $id";
 
                 $verifica = mysqli_query($conn, $verSeCurtiuAlgumPost);
 
-                if (mysqli_num_rows($verifica) == 0) {
+                $total = mysqli_num_rows($verifica);
+                if ($total == FALSE) {
+                    echo "$verifica";
                     // se a curtida não existir:
                     $insereCurtidaLog = "INSERT INTO curtidas (id_Elemento, id_User) VALUES ('$id_PostC','$id')"; // Ele vai inserir na tabela curtidas um log dizendo que o usuário curtiu tal coisa
                     $insereCurtida = "UPDATE posts SET likes_Post = likes_Post + '$soma' WHERE id_Post = '$id_PostC'";
@@ -125,8 +127,9 @@
                         } else {
                             echo "<h1>Error no curtir: </h1>" . mysqli_error($conn);
                         }
+                        exit();
                     }
-                } elseif (mysqli_num_rows($verifica) == 1) {
+                } elseif ($total == TRUE) {
                     $deletaCurtida = "DELETE FROM curtidas WHERE id_Post = '$id_PostC'";
                     $diminuiCurtida = "UPDATE posts SET likes_Post = likes_Post - '$soma' WHERE id_Post = '$id_PostC'";
                     if (mysqli_query($conn, $deletaCurtida)) {
