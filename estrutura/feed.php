@@ -37,7 +37,9 @@
         <a href="logout.php">
             <span class="material-symbols-outlined container__menu__icone span--azul">&#xeffd;</span>
         </a>
-      </div class="botao__diaNoite">
+      </div>
+        <button onclick="modoEscuro()" id="botao__noite"><span class="material-symbols-outlined container__menu__icone span--azul">&#xf03d;</span></button>
+        <button onclick="modoClaro()" id="botao__dia"><span class="material-symbols-outlined container__menu__icone span--azul">&#xe518;</span></button>
       <div id="container__menu" onclick="menuLateralInternoOpen()">
         <span class="material-symbols-outlined container__menu__icone span--azul">&#xe5d2;</span>
       </div>
@@ -103,44 +105,7 @@
                 <hr>
             </section>
             <?php
-            // LIKEZINHO
 
-            if (isset($_POST['enviaLike'])) {
-                $soma = 1;
-                $teste = $_POST['enviaLike'];
-                $id_PostC = $_POST['like']; // Id do post
-                echo "<h1>" . $teste . "</h1>"; // Aqui é para testar se o submit tá indo, ele pega o valor do submit que quando eu testei era like
-                $verSeCurtiuAlgumPost = "SELECT id_Elemento, id_User FROM curtidas WHERE id_Elemento = '$id_PostC' AND id_User = $id";
-
-                $verifica = mysqli_query($conn, $verSeCurtiuAlgumPost);
-                
-                if (mysqli_num_rows($verifica) == 0) {
-                    // se a curtida não existir:
-                    $insereCurtidaLog = "INSERT INTO curtidas (id_Elemento, id_User) VALUES ('$id_PostC','$id')"; // Ele vai inserir na tabela curtidas um log dizendo que o usuário curtiu tal coisa
-                    $insereCurtida = "UPDATE posts SET likes_Post = likes_Post + '$soma' WHERE id_Post = '$id_PostC'";
-
-
-                    if (mysqli_query($conn, $insereCurtidaLog)) {
-                        echo "<h1>inserido em curtidas</h1>";
-                            if (mysqli_query($conn, $insereCurtida)) {
-                                echo "<h1>inserido em posts</h1>";
-                            } else {
-                                echo "<h1>Erro no like: </h1>" . mysqli_error($conn);
-                            }
-                    } 
-                  } elseif (mysqli_num_rows($verifica) == 1) {
-                    $deletaCurtida = "DELETE FROM curtidas WHERE id_Post = '$id_PostC'";
-                    $diminuiCurtidas = "UPDATE posts SET likes_Post = likes_Post - '$soma' WHERE id_Post = '$id_PostC'";
-                  }
-
-                $insereCurtidaLog = "INSERT INTO curtidas (id_Elemento, id_User) VALUES ('$id_PostC','$id')"; // Ele vai inserir na tabela curtidas um log dizendo que o usuário curtiu tal coisa
-                if (mysqli_query($conn, $insereCurtidaLog)) {
-                    echo "<h1>Record updated successfully</h1>";
-                } else {
-                    echo "<h1>Error updating record: </h1>" . mysqli_error($conn);
-                }
-                // header('Location: ./feedTeste.php');
-            }
 
             if (isset($_POST['texto'])) {
                 
@@ -190,7 +155,7 @@ if (mysqli_query($conn, $sql1)) {
                     $likesP = $row["likes_Post"];
 
                     echo "
-    <section class='container__post' id='post'>
+    <section class='container__post' id='container__post'>
                 <div class='container__post__perfil'>
                     <div class='container__post__perfil__foto'>
                         <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
@@ -205,18 +170,18 @@ if (mysqli_query($conn, $sql1)) {
                     <p class='container__post__conteudo__texto' id='container__post__conteudo__texto'>" . $texto_Post . "</p>
                     <img src='../imagens/" . $imagem_Post . "' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
                 </div>
-                <div class='container__post__interacoes'>
+                <div class='container__post__interacoes' id='post'>
                     <ul class='container__post__interacoes__lista'>
                         
                         <form action='./feed.php' id='likeForm' method='POST'>
-                            <input type='checkbox' name='like' value='" . $id_Post . "' id='checkbox__curtir'>
-                            <input type='submit' value = 'like' name='enviaLike' onclick='curtir()' id='btn__funcao__curtir'>
+                            <input type='checkbox' name='like' id='checkbox__curtir'>
+                            <input type='submit' value = 'like' name='like' onclick='curtir'()' id='btn__funcao__curtir'>
                             <span class='material-symbols-outlined container__menu__icone' id='btn__curtir'>&#xe87d;</span>
                         </form>
                             <p id='valor__curtir'>" . $likesP . "</p>
                         
                         <li class='container__post__interacoes__lista__item' onclick='comentar()'>
-                            <input type='submit' value = 'comentar' name='comentar' onclick='comentar()' id='btn__funcao__comentar'>
+                            <input type='submit' value = 'comentar' name='comentar' onclick='comentar'()' id='btn__funcao__comentar'>
                             <input type='checkbox' name='comentar' id='checkbox__comentar'>
                             <span class='material-symbols-outlined container__menu__icone' id='btn__comentar'>&#xe0b9;</span>
                             <p id='valor__comentar'>" . $likesP . "</p>
