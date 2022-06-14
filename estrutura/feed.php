@@ -193,7 +193,7 @@ if (mysqli_query($conn, $sql1)) {
                             <p id='valor__curtir'>" . $likesP . "</p>
                         
                         <li class='container__post__interacoes__lista__item' onclick='comentar()'>
-                            <input type='submit' value = 'comentar' name='comentar' onclick='comentar'()' id='btn__funcao__comentar'>
+                            <input type='submit' value = 'comentar' name='comentar' onclick='comentar()' id='btn__funcao__comentar'>
                             <input type='checkbox' name='comentar' id='checkbox__comentar'>
                             <span class='material-symbols-outlined container__menu__icone' id='btn__comentar'>&#xe0b9;</span>
                             <p id='valor__comentar'>" . $likesP . "</p>
