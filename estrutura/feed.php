@@ -104,8 +104,6 @@
             </section>
             <?php
 
-<<<<<<< HEAD
-=======
             if (isset($_POST['enviaLike']) && isset($_POST['like'])) {
                 $soma = 1;
                 $teste = $_POST['like']; //esse é o checkbox
@@ -142,7 +140,6 @@
                     // header('Location: ./feedTeste.php');
                 }
             }
->>>>>>> 43b5b31b6bf47fafe7e8282c658df50edc20ec32
 
             if (isset($_POST['texto'])) {
 
