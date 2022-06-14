@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 12-Jun-2022 às 01:36
+-- Tempo de geração: 14-Jun-2022 às 22:51
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -20,6 +20,37 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `ecogamma`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `curtidas`
+--
+
+DROP TABLE IF EXISTS `curtidas`;
+CREATE TABLE IF NOT EXISTS `curtidas` (
+  `id_Curtida` int(11) NOT NULL AUTO_INCREMENT,
+  `id_Elemento` int(11) NOT NULL,
+  `id_User` int(11) NOT NULL,
+  PRIMARY KEY (`id_Curtida`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `curtidas`
+--
+
+INSERT INTO `curtidas` (`id_Curtida`, `id_Elemento`, `id_User`) VALUES
+(23, 22, 14),
+(24, 22, 14),
+(25, 22, 14),
+(26, 22, 14),
+(27, 22, 14),
+(28, 22, 14),
+(29, 22, 14),
+(30, 22, 14),
+(31, 22, 14),
+(32, 22, 14),
+(33, 22, 14);
 
 -- --------------------------------------------------------
 
@@ -80,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `likes_Post` int(20) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_Post`),
   KEY `user_post` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Extraindo dados da tabela `posts`
@@ -94,7 +125,9 @@ INSERT INTO `posts` (`id_Post`, `id`, `foto`, `nome`, `sobrenome`, `profissao`, 
 (17, 15, 'perfil_default.svg', 'Leandro', 'Silva', 'Staff Ecogamma', '2022-06-12', 'opa', '', 0),
 (18, 15, 'perfil_default.svg', 'Leandro', 'Silva', 'Staff Ecogamma', '2022-06-12', 'opa', '', 0),
 (19, 15, 'perfil_default.svg', 'Leandro', 'Silva', 'Staff Ecogamma', '2022-06-12', 'tÃ¡ indo', '', 0),
-(20, 16, 'perfil_default.svg', 'Mandanga', 'SebastiÃ£o', 'Jogador de Futebol Profissional', '2022-06-12', 'sÃ³ pra marcar presenÃ§a pae', '', 0);
+(20, 16, 'perfil_default.svg', 'Mandanga', 'SebastiÃ£o', 'Jogador de Futebol Profissional', '2022-06-12', 'sÃ³ pra marcar presenÃ§a pae', '', 0),
+(21, 14, 'perfil_default.svg', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', '2022-06-14', 'gfgdfgfdg', '', 0),
+(22, 14, 'perfil_default.svg', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', '2022-06-14', 'gfgdfgfdg', '', 2);
 
 -- --------------------------------------------------------
 
