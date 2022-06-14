@@ -105,7 +105,19 @@
                 <hr>
             </section>
             <?php
+            // LIKEZINHO
 
+            if (isset($_POST['like'])) {
+                $soma = 1;
+                $idP = $_POST['like'];
+                $sql3 = "UPDATE posts SET likes_Post = likes_Post + $soma WHERE id_Post = $idP";
+                if (mysqli_query($conn, $sql3)) {
+                    echo "<h1>Record updated successfully</h1>";
+                } else {
+                    echo "<h1>Error updating record: </h1>" . mysqli_error($conn);
+                }
+                // header('Location: ./feedTeste.php');
+            }
 
             if (isset($_POST['texto'])) {
                 
@@ -175,7 +187,7 @@ if (mysqli_query($conn, $sql1)) {
                         
                         <form action='./feed.php' id='likeForm' method='POST'>
                             <input type='checkbox' name='like' id='checkbox__curtir'>
-                            <input type='submit' value = 'like' name='like' onclick='curtir'()' id='btn__funcao__curtir'>
+                            <input type='submit' value = 'like' name='" . $id_Post . "' onclick='curtir'()' id='btn__funcao__curtir'>
                             <span class='material-symbols-outlined container__menu__icone' id='btn__curtir'>&#xe87d;</span>
                         </form>
                             <p id='valor__curtir'>" . $likesP . "</p>
