@@ -104,9 +104,11 @@
                 <hr>
             </section>
             <?php
+
+
             if (isset($_POST['texto'])) {
-
-
+                
+                
                 // $idP = $id;
                 // $fotoP = $foto;
                 // $nomeP = $nome;
@@ -124,14 +126,14 @@
                 $sql1 = "INSERT INTO posts (id, foto, nome, sobrenome, profissao, data_Post, texto_Post, imagem_Post, likes_Post)
                 VALUES ('$id', '$foto', '$nome', '$sobrenome', '$profissao', '$data_Post', '$texto_Post', '$imagem_Post', '$likes')";
 
-                if (mysqli_query($conn, $sql1)) {
+if (mysqli_query($conn, $sql1)) {
                     echo "New record created successfully";
                 } else {
                     echo "Error: " . $sql1 . "<br>" . mysqli_error($conn);
                 }
 
                 //PUXANDO DADOS
-
+                
             }
             $sql = "SELECT * FROM posts ORDER BY id_Post DESC";
             $result = mysqli_query($conn, $sql);
