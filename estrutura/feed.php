@@ -111,8 +111,8 @@
 
             if (isset($_POST['enviaLike'])) {
                 $soma = 1;
-                $teste = $_POST['enviaLike'];
-                $id_PostC = $_POST['like']; // Id do post
+                $teste = $_POST['like']; //esse é o checkbox
+                $id_PostC = $_POST['enviaLike']; // Id do post
                 echo "<h1>" . $teste . "</h1>"; // Aqui é para testar se o submit tá indo, ele pega o valor do submit que quando eu testei era like
                 $verSeCurtiuAlgumPost = "SELECT id_Elemento, id_User FROM curtidas WHERE id_Elemento = '$id_PostC' AND id_User = $id";
 
@@ -122,27 +122,29 @@
                     // se a curtida não existir:
                     $insereCurtidaLog = "INSERT INTO curtidas (id_Elemento, id_User) VALUES ('$id_PostC','$id')"; // Ele vai inserir na tabela curtidas um log dizendo que o usuário curtiu tal coisa
                     $insereCurtida = "UPDATE posts SET likes_Post = likes_Post + '$soma' WHERE id_Post = '$id_PostC'";
-
-
                     if (mysqli_query($conn, $insereCurtidaLog)) {
-                        echo "<h1>inserido em curtidas</h1>";
-                            if (mysqli_query($conn, $insereCurtida)) {
-                                echo "<h1>inserido em posts</h1>";
-                            } else {
-                                echo "<h1>Erro no like: </h1>" . mysqli_error($conn);
-                            }
-                    } 
-                  } elseif (mysqli_num_rows($verifica) == 1) {
-                    $deletaCurtida = "DELETE FROM curtidas WHERE id_Post = '$id_PostC'";
-                    $diminuiCurtidas = "UPDATE posts SET likes_Post = likes_Post - '$soma' WHERE id_Post = '$id_PostC'";
-                  }
+                        echo "<h1>Curtiu em logs</h1>";
+                        if (mysqli_query($conn, $insereCurtida)) {
+                            echo "<h1>inserido em posts</h1>";
+                        } else {
+                            echo "<h1>Error no curtir: </h1>" . mysqli_error($conn);
+                        }
+                    }
 
-                $insereCurtidaLog = "INSERT INTO curtidas (id_Elemento, id_User) VALUES ('$id_PostC','$id')"; // Ele vai inserir na tabela curtidas um log dizendo que o usuário curtiu tal coisa
-                if (mysqli_query($conn, $insereCurtidaLog)) {
-                    echo "<h1>Record updated successfully</h1>";
-                } else {
-                    echo "<h1>Error updating record: </h1>" . mysqli_error($conn);
+
+                } 
+            } elseif (mysqli_num_rows($verifica) == 1) {
+                $deletaCurtida = "DELETE FROM curtidas WHERE id_Post = '$id_PostC'";
+                $diminuiCurtida = "UPDATE posts SET likes_Post = likes_Post - '$soma' WHERE id_Post = '$id_PostC'";
+                if (mysqli_query($conn, $deletaCurtida)) {
+                    echo "<h1>descoisado de curtidas</h1>";
+                        if (mysqli_query($conn, $diminuiCurtida)) {
+                            echo "<h1>descoisado de posts</h1>";
+                        } else {
+                            echo "<h1>Erro no deslike: </h1>" . mysqli_error($conn);
+                        }
                 }
+
                 // header('Location: ./feedTeste.php');
             }
 
@@ -213,8 +215,8 @@ if (mysqli_query($conn, $sql1)) {
                     <ul class='container__post__interacoes__lista'>
                         
                         <form action='./feed.php' id='likeForm' method='POST'>
-                            <input type='checkbox' name='like' value='" . $id_Post . "' id='checkbox__curtir'>
-                            <input type='submit' value = 'like' name='enviaLike' onclick='curtir()' id='btn__funcao__curtir'>
+                            <input type='checkbox' name='like' value='' id='checkbox__curtir'>
+                            <input type='submit' value = '" . $id_Post . "' name='enviaLike' onclick='curtir()' id='btn__funcao__curtir'>
                             <span class='material-symbols-outlined container__menu__icone' id='btn__curtir'>&#xe87d;</span>
                         </form>
                             <p id='valor__curtir'>" . $likesP . "</p>
