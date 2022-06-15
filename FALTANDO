@@ -48,6 +48,22 @@ FRONT-END
 
 	- Aplicar JS no que der
 
+	- Adicionar um padding ou margin nos posts da página de comunidade
+
+	- Retirar a margin do botão de postar no feed, pois deixa ele torto
+
+	- Concertar a posição do botão de modo escuro no nav de todas as páginas
+
+	- Quando o usuário vai para a aba de comunidade, antes de fazer o login, ao clicar novamente no menu de seleção é possível ver a opção de contato sem a devida formatação
+
+	- Tirar a justificação dos textos dos posts da aba comunidade
+
+	- Arrumar os icones do número e email no footer de todas as páginas acessíveis antes do cadastro
+
+	- Estilizar a página do perfil urgentemente
+
+
+
 BACK-END
 
 	- Clicar no email no rodapé e abrir link para o email do usuario
@@ -64,7 +80,7 @@ BACK-END
 
 	- Fazer backend do chat 
 
-	- Fazer backend do notificação
+ 	- Fazer backend do notificação
 
 	- Fazer backend do salvos somente post
 
@@ -74,8 +90,18 @@ BACK-END
 
 	- Colocar backend para o idioma da página
 
-	X COlocar backend para ecotrends somente para os posts
+	X Colocar backend para ecotrends somente para os posts
 
 	- Fazer backend de amigos e amizades
 
 	- Adicionar algumas parada no bot para oferecer ajuda e apresentar o projeto
+
+	- Comentários posts, noticias e eventos
+
+	X Like dos comentários do posts, noticias e eventos
+
+	- Sistema para comentar um comentário
+
+	- Arrumar um jeito de evitar que usuário reenvie os formulários ao pressionar F5
+
+

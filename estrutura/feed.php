@@ -8,6 +8,11 @@
     <title>Ecogamma | Feed</title>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <?php include './base/linksGlobais.php' ?>
+    <style>
+        .botao__principal {
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
