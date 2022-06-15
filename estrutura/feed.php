@@ -113,8 +113,9 @@
                 $verSeCurtiuAlgumPost = "SELECT id_Elemento, id_User FROM curtidas WHERE id_Elemento = '$id_PostC' AND id_User = $id";
 
                 $verifica = mysqli_query($conn, $verSeCurtiuAlgumPost);
+                $verifica = mysqli_num_rows($verifica);
 
-                if (mysqli_num_rows($verifica) == 0) {
+                if (empty($verifica)) {
                     // se a curtida não existir:
                     $insereCurtidaLog = "INSERT INTO curtidas (id_Elemento, id_User) VALUES ('$id_PostC','$id')"; // Ele vai inserir na tabela curtidas um log dizendo que o usuário curtiu tal coisa
                     $insereCurtida = "UPDATE posts SET likes_Post = likes_Post + '$soma' WHERE id_Post = '$id_PostC'";
@@ -126,7 +127,7 @@
                             echo "<h1>Error no curtir: </h1>" . mysqli_error($conn);
                         }
                     }
-                } elseif (mysqli_num_rows($verifica) == 1) {
+                } else {
                     $deletaCurtida = "DELETE FROM curtidas WHERE id_Post = '$id_PostC'";
                     $diminuiCurtida = "UPDATE posts SET likes_Post = likes_Post - '$soma' WHERE id_Post = '$id_PostC'";
                     if (mysqli_query($conn, $deletaCurtida)) {
