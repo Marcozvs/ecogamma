@@ -117,11 +117,13 @@
                 $soma = 1;
                 $teste = $_POST['like']; //esse é o checkbox
                 $id_PostC = $_POST['enviaLike']; // Id do post
-                echo "<h1>" . $teste . "</h1>"; // Aqui é para testar se o submit tá indo, ele pega o valor do submit que quando eu testei era like
+                echo "<h1>" . $teste . "</h1>"; // Aqui é para testar se o submit tá indo, ele pega o valor do submit que não é importante agora...
                 $verSeCurtiuAlgumPost = "SELECT id_Elemento, id_User FROM curtidas WHERE id_Elemento = '$id_PostC' AND id_User = $id";
-
+                // echo "<h1>" . $verSeCurtiuAlgumPost . "</h1>";
                 $verifica = mysqli_query($conn, $verSeCurtiuAlgumPost);
+                // echo "<h1>" . $verifica . "</h1>";
                 $verifica = mysqli_num_rows($verifica);
+                echo "<h1>" . $verifica . "</h1>";
 
                 if (empty($verifica)) {
                     // se a curtida não existir:
@@ -135,19 +137,23 @@
                             echo "<h1>Error no curtir: </h1>" . mysqli_error($conn);
                         }
                     }
-                } else {
-                    $deletaCurtida = "DELETE FROM curtidas WHERE id_Post = '$id_PostC'";
+                } elseif ($verifica === 1) { //se a curtida existir vai cair aqui, provavelmente...
+                    
+                    $deletaCurtida = "DELETE FROM curtidas WHERE id_Elemento = '$id_PostC'";
+
                     $diminuiCurtida = "UPDATE posts SET likes_Post = likes_Post - '$soma' WHERE id_Post = '$id_PostC'";
+
                     if (mysqli_query($conn, $deletaCurtida)) {
                         echo "<h1>descoisado de curtidas</h1>";
-                        if (mysqli_query($conn, $diminuiCurtida)) {
-                            echo "<h1>descoisado de posts</h1>";
-                        } else {
-                            echo "<h1>Erro no deslike: </h1>" . mysqli_error($conn);
-                        }
+                    } else {
+                        echo "<h1>Erro no delete: </h1>" . mysqli_error($conn);
                     }
 
-                    // header('Location: ./feedTeste.php');
+                    if (mysqli_query($conn, $diminuiCurtida)) {
+                        echo "<h1>descoisado de posts</h1>";
+                    } else {
+                        echo "<h1>Erro no diminuir: </h1>" . mysqli_error($conn);
+                    }
                 }
             }
 
