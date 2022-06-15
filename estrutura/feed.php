@@ -133,6 +133,7 @@
                         echo "<h1>Curtiu em logs</h1>";
                         if (mysqli_query($conn, $insereCurtida)) {
                             echo "<h1>inserido em posts</h1>";
+                            echo "<h1>pnc do marcos</h1>";
                         } else {
                             echo "<h1>Error no curtir: </h1>" . mysqli_error($conn);
                         }
