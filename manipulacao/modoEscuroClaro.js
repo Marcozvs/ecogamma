@@ -1,9 +1,7 @@
 function modoEscuro(){
     //Definindo fundo da página em modo escuro
-    const html = document.querySelectorAll("html");
-    for (let i = 0; i < html.length; i++) {
-      html[i].style.backgroundColor = "#16181c";
-    }
+    const html = document.querySelector("html");
+      html.style.backgroundColor = "#16181c";
     //Definindo fundo do cabeçalho em modo escuro
     const header = document.querySelectorAll("header");
     for (let i = 0; i < header.length; i++) {
@@ -24,6 +22,11 @@ function modoEscuro(){
     for (let i = 0; i < botaoEscuro.length; i++) {
         botaoEscuro[i].style.backgroundColor = "#16181c";
     }
+    //Substituindo botão escuro pelo claro
+    botaoEscuro.style.display = "none";
+    const botaoClaro = document.querySelector("#botao__dia");
+    botaoClaro.style.display = "flex";
+    botaoClaro.style.backgroundColor = "#16181c";
     //Excessões:
         //Parágrafo do cargo do perfil tem que permanecer verde.
         const paragrafo__cargo = document.querySelectorAll(".cargo__perfil");
