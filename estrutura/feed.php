@@ -37,14 +37,22 @@
                 <a href="logout.php">
                     <span class="material-symbols-outlined container__menu__icone span--azul">&#xeffd;</span>
                 </a>
-            </div class="botao__diaNoite">
+            </div>
+            <div>
+                <button id="botao__noite" onclick="modoEscuro()">
+                    <span class="material-symbols-outlined container__menu__icone span--azul">&#xf159;</span>
+                </button>
+                <button id="botao__dia" onclick="modoClaro()">
+                    <span class="material-symbols-outlined container__menu__icone span--azul">&#xe518;</span>
+                </button>
+            </div>
             <div id="container__menu" onclick="menuLateralInternoOpen()">
                 <span class="material-symbols-outlined container__menu__icone span--azul">&#xe5d2;</span>
             </div>
         </div>
     </header>
     <section id="menuLateral__interno">
-        <div class="container" id="menuLateral__InternoNoturno">
+        <div class="container" id="menuLateral__Interno__conteudo">
             <div class="container__menu" onclick="menuLateralInternoClose()">
                 <span class="material-symbols-outlined container__menu__icone span--verde">&#xe5d2;</span>
             </div>
@@ -250,7 +258,7 @@
     </main>
 
     <script src="../manipulacao/manuLateral.js"></script>
-    <script src="../manipulacao/modoTela.js"></script>
+    <script src="../manipulacao/modoEscuroClaro.js"></script>
     <script src="../manipulacao/curtir.js"></script>
     <script src="../manipulacao/comentar.js"></script>
     <script type="text/javascript">
