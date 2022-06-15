@@ -33,7 +33,22 @@ function modoEscuro(){
         //Tirando fundo branco do textarea da sessão postagem.
         const textareaPostagem = document.querySelectorAll("#texto");
         for (let i = 0; i < textareaPostagem.length; i++) {
-        textareaPostagem[i].style.color = "#34B132";
+        textareaPostagem[i].style.backgroundColor = "#16181c";
         }
-
+        //Tirando fundo branco do input para inserir arquivos.
+        const labelBotao = document.querySelectorAll(".label-botao");
+        for (let i = 0; i < labelBotao.length; i++) {
+        labelBotao[i].style.backgroundColor = "#16181c";
+        }
+        //Tirando fundo branco dos posts.
+        const post = document.querySelectorAll("#post");
+        for (let i = 0; i < post.length; i++) {
+        post[i].style.backgroundColor = "#16181c";
+        }
+        //Escondendo botão compartilhar
+        const botaoCompartilhar = document.querySelectorAll("#btn-compartilhar");
+        for (let i = 0; i < botaoCompartilhar.length; i++) {
+        botaoCompartilhar[i].style.backgroundColor = "#16181c";
+        botaoCompartilhar[i].style.color = "#16181c";
+        }
 }
