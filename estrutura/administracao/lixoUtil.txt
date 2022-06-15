@@ -46,3 +46,11 @@ function curtir(){
         valor__curtir = document.getElementById("valor__curtir").innerHTML = valor__curtir
     }
 }
+
+
+
+
+
+
+                            <input type='submit' value = '" . $id_Post . "' name='enviaLike' onclick='curtir()' id='btn__funcao__curtir'>
+                            <span class='material-symbols-outlined container__menu__icone' id='btn__curtir'>&#xe87d;</span>

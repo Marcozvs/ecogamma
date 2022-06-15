@@ -125,59 +125,59 @@
 
 
     if ($estadoUser == 'ac') {
-      $fundoUser = '';
+      $fundoUser = 'ac.jpg';
     } elseif ($estadoUser == 'al') {
-      $fundoUser = '';
+      $fundoUser = 'al.jpg';
     } elseif ($estadoUser == 'am') {
-      $fundoUser = '';
+      $fundoUser = 'am.jpeg';
     } elseif ($estadoUser == 'ap') {
-      $fundoUser = '';
+      $fundoUser = 'ap.jpg';
     } elseif ($estadoUser == 'ba') {
-      $fundoUser = '';
+      $fundoUser = 'ba.jpg';
     } elseif ($estadoUser == 'ce') {
-      $fundoUser = '';
+      $fundoUser = 'ce.jpg';
     } elseif ($estadoUser == 'df') {
-      $fundoUser = '';
+      $fundoUser = 'df.jpg';
     } elseif ($estadoUser == 'es') {
-      $fundoUser = '';
+      $fundoUser = 'es.png';
     } elseif ($estadoUser == 'go') {
-      $fundoUser = '';
+      $fundoUser = 'go.jpg';
     } elseif ($estadoUser == 'ma') {
-      $fundoUser = '';
+      $fundoUser = 'ma.jpg';
     } elseif ($estadoUser == 'mt') {
-      $fundoUser = '';
+      $fundoUser = 'mt.jpg';
     } elseif ($estadoUser == 'ms') {
-      $fundoUser = '';
+      $fundoUser = 'ms.jpg';
     } elseif ($estadoUser == 'mg') {
-      $fundoUser = '';
+      $fundoUser = 'mg.jpg';
     } elseif ($estadoUser == 'pa') {
-      $fundoUser = '';
+      $fundoUser = 'pa.jpg';
     } elseif ($estadoUser == 'pb') {
-      $fundoUser = '';
+      $fundoUser = 'pb.jpg';
     } elseif ($estadoUser == 'pr') {
-      $fundoUser = '';
+      $fundoUser = 'pr.jpg';
     } elseif ($estadoUser == 'pe') {
-      $fundoUser = '';
+      $fundoUser = 'pe.jpg';
     } elseif ($estadoUser == 'pi') {
-      $fundoUser = '';
+      $fundoUser = 'pi.jpg';
     } elseif ($estadoUser == 'rj') {
-      $fundoUser = 'rio_de_janeiro.jpg';
+      $fundoUser = 'rj.jpg';
     } elseif ($estadoUser == 'rn') {
-      $fundoUser = '';
+      $fundoUser = 'rn.jpg';
     } elseif ($estadoUser == 'ro') {
-      $fundoUser = '';
+      $fundoUser = 'ro.jpg';
     } elseif ($estadoUser == 'rs') {
-      $fundoUser = '';
+      $fundoUser = 'rr.jpg';
     } elseif ($estadoUser == 'rr') {
-      $fundoUser = '';
+      $fundoUser = 'rr.jpg';
     } elseif ($estadoUser == 'sc') {
-      $fundoUser = '';
+      $fundoUser = 'sc.jpg';
     } elseif ($estadoUser == 'se') {
-      $fundoUser = '';
+      $fundoUser = 'se.jpg';
     } elseif ($estadoUser == 'sp') {
-      $fundoUser = '';
+      $fundoUser = 'sp.jpg';
     } elseif ($estadoUser == 'to') {
-      $fundoUser = '';
+      $fundoUser = 'to.jpg';
     }
 // AQUI FICA AS INFORMAÇÕES DO USUÁRIO
     echo "

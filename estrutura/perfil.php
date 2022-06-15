@@ -91,59 +91,59 @@
     <?php
 
     if ($estado == 'ac') {
-      $fundo = '';
+      $fundo = 'ac.jpg';
     } elseif ($estado == 'al') {
-      $fundo = '';
+      $fundo = 'al.jpg';
     } elseif ($estado == 'am') {
-      $fundo = '';
+      $fundo = 'am.jpeg';
     } elseif ($estado == 'ap') {
-      $fundo = '';
+      $fundo = 'ap.jpg';
     } elseif ($estado == 'ba') {
-      $fundo = '';
+      $fundo = 'ba.jpg';
     } elseif ($estado == 'ce') {
-      $fundo = '';
+      $fundo = 'ce.jpg';
     } elseif ($estado == 'df') {
-      $fundo = '';
+      $fundo = 'df.jpg';
     } elseif ($estado == 'es') {
-      $fundo = '';
+      $fundo = 'es.png';
     } elseif ($estado == 'go') {
-      $fundo = '';
+      $fundo = 'go.jpg';
     } elseif ($estado == 'ma') {
-      $fundo = '';
+      $fundo = 'ma.jpg';
     } elseif ($estado == 'mt') {
-      $fundo = '';
+      $fundo = 'mt.jpg';
     } elseif ($estado == 'ms') {
-      $fundo = '';
+      $fundo = 'ms.jpg';
     } elseif ($estado == 'mg') {
-      $fundo = '';
+      $fundo = 'mg.jpg';
     } elseif ($estado == 'pa') {
-      $fundo = '';
+      $fundo = 'pa.jpg';
     } elseif ($estado == 'pb') {
-      $fundo = '';
+      $fundo = 'pb.jpg';
     } elseif ($estado == 'pr') {
-      $fundo = '';
+      $fundo = 'pr.jpg';
     } elseif ($estado == 'pe') {
-      $fundo = '';
+      $fundo = 'pe.jpg';
     } elseif ($estado == 'pi') {
-      $fundo = '';
+      $fundo = 'pi.jpg';
     } elseif ($estado == 'rj') {
-      $fundo = 'rio_de_janeiro.jpg';
+      $fundo = 'rj.jpg';
     } elseif ($estado == 'rn') {
-      $fundo = '';
+      $fundo = 'rn.jpg';
     } elseif ($estado == 'ro') {
-      $fundo = '';
+      $fundo = 'ro.jpg';
     } elseif ($estado == 'rs') {
-      $fundo = '';
+      $fundo = 'rr.jpg';
     } elseif ($estado == 'rr') {
-      $fundo = '';
+      $fundo = 'rr.jpg';
     } elseif ($estado == 'sc') {
-      $fundo = '';
+      $fundo = 'sc.jpg';
     } elseif ($estado == 'se') {
-      $fundo = '';
+      $fundo = 'se.jpg';
     } elseif ($estado == 'sp') {
-      $fundo = '';
+      $fundo = 'sp.jpg';
     } elseif ($estado == 'to') {
-      $fundo = '';
+      $fundo = 'to.jpg';
     }
 
     echo "
