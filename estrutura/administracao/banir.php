@@ -54,7 +54,7 @@
             <input type="text" placeholder="O id do usuário que deseja exlcuir os comentários" maxlength="100" minlength="1" required id="id2" name="id2">
             <input type="submit" value="Excluir" class="botao__principal">
         </form><br>
-        <a href='feed.php'>
+        <a href='../feed.php'>
             <div class='container'>
                 <div class='container__logout'>
                     <button class='botao__principal'>

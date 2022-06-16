@@ -70,11 +70,11 @@
 
     if (isset($_POST['id2'])) {
         $idDel = $_POST['id2'];
-        $sql4 = "DELETE FROM comentarios WHERE id_User = '$idDel";
-        $sql5 = "DELETE FROM curtidas WHERE id_User = '$idDel";
+        $sql4 = "DELETE FROM comentarios WHERE id_User = '$idDel'";
+        $sql5 = "DELETE FROM curtidas WHERE id_User = '$idDel'";
     
         if (mysqli_query($conn, $sql4)) {
-            echo "Todos os comentarios do usuário foram excluidos!<br><a href='banir.php'>Voltar</a>";
+            echo "Todos os comentarios do usuário foram excluidos!<br>";
         } else {
             echo "Erro 2:1: " . mysqli_error($conn);
             echo "<br><a href='banir.php'>Voltar</a>";
