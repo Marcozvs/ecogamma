@@ -162,7 +162,31 @@
                     }
                 }
             }
+            
+            //Aqui é pra comentar
+            if (isset($_GET['id_Post_Comentario'])) {
+                # code...
+                $id_Post_Comentario = $_GET['id_Post_Comentario'];
+                $id_User_Comentario = $id;
+                $data_Comentario = date("Y-m-d");
+                $nome_User_Comentario = $nome;
+                $sobrenome_User_Comentario = $sobrenome;
+                $profissao_User_Comentario = $profissao;
+                $texto_Comentario = $_POST['texto__comentario'];
+                $likes_Comentario = 0;
 
+                $insereComentarios = "INSERT INTO comentarios (id_Post, id_User, data_Comentario, nome_User, sobrenome_User, profissao_User, texto_Comentario, likes_Comentario) VALUES ('$id_Post_Comentario','$id_User_Comentario','$data_Comentario','$nome_User_Comentario','$sobrenome_User_Comentario','$profissao_User_Comentario','$texto_Comentario','$likes_Comentario')";
+
+                if (mysqli_query($conn, $insereComentarios)) {
+                    // echo "<h1>Comentou irmão!</h1>";
+                } else {
+                    // echo "Erro né pae: " . $insereComentarios . "<br>" . mysqli_error($conn);
+                }
+
+            } //fim if do post de comentarios
+
+
+            //Aqui é pra postar
             if (isset($_POST['texto'])) {
 
 
@@ -209,6 +233,7 @@
                     $texto_Post = $row["texto_Post"];
                     $imagem_Post = $row["imagem_Post"];
                     $likesP = $row["likes_Post"];
+                    $comentarios = $row["comentarios_Post"];
 
                     echo "
     <section class='container__post' id='post'>
@@ -224,7 +249,7 @@
                 <div class='container__post__conteudo'>
                     <p class='container__post__conteudo__data' id='container__post__conteudo__data'>" . $data_Post . "</p>
                     <p class='container__post__conteudo__texto' id='container__post__conteudo__texto'>" . $texto_Post . "</p>
-                    <img src='../imagens/" . $imagem_Post . "' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
+                    <img src='../imagens/" . $imagem_Post . "' class='container__post__conteudo__imagem'>
                 </div>
                 <div class='container__post__interacoes'>
                     <ul class='container__post__interacoes__lista'>
@@ -240,7 +265,7 @@
                             <input type='submit' value = 'comentar' name='comentar' onclick='comentar()' id='btn__funcao__comentar'>
                             <input type='checkbox' name='comentar' id='checkbox__comentar'>
                             <span class='material-symbols-outlined container__menu__icone' id='btn__comentar'>&#xe0b9;</span>
-                            <p id='valor__comentar'>0</p>
+                            <p id='valor__comentar'>" . $comentarios . "</p>
                         </li>
                         <li class='container__post__interacoes__lista__item' onclick='compartilhar()'>
                             <span class='material-symbols-outlined container__menu__icone'>&#xe163;</span>
@@ -248,21 +273,52 @@
                         </li>
                     </ul>
                     <div id='caixa__comentario'>
+                    <form action='./feed.php?id_Post_Comentario=" . $id_Post . "' method='POST'>
                         <input type='text' name='texto__comentario' id='texto__comentario' placeholder='Insira seu comentário aqui'>
                         <input type='submit' name='submit__comentario' id='submit__comentario' class='botao__principal'>
+                    </form>
                     </div>
-
                 </div>
             </section>";
-                }
-            } else {
+            //aqui é pra carregar os comentários
+                $comentarioSeleciona = "SELECT * FROM comentarios WHERE id_Post = '$id_Post' ORDER BY id_Comentario DESC";
+                $resultComentario = mysqli_query($conn, $comentarioSeleciona);
+
+                if (mysqli_num_rows($resultComentario) > 0) {
+                        
+                        while ($row = mysqli_fetch_assoc($resultComentario)) {
+                            $id_Post_Comentario = $row["id_Post"];
+                            $id_User_Comentario = $row["id_User"];
+                            $data_Comentario = $row["data_Comentario"];
+                            $nome_User_Comentario = $row["nome_User"];
+                            $sobrenome_User_Comentario = $row["sobrenome_User"];
+                            $profissao_User_Comentario = $row["profissao_User"];
+                            $texto_Comentario = $row["texto_Comentario"];
+                            $likes_Comentario = $row["likes_Comentario"];
+
+                            echo "<section><br><p>Só estilizar essa bagaça, e não sei se tu viu mas, o botãozinho de comentário só tá funcionando no primeiro post e também tem que... tirar o efeito de like do comentário, ele tá aumentando o número quando a gente clica no botão pra aparecer o input</p>"
+                             . $id_Post_Comentario . "<br>" . $id_User_Comentario . "<br>"
+                             . $data_Comentario . "<br>" . $nome_User_Comentario . "<br>"
+                             . $sobrenome_User_Comentario . "<br>" . $profissao_User_Comentario . "<br>"
+                             . $texto_Comentario . "<br>" . $likes_Comentario . "</section>";
+                    } //fim do while do if comentarios
+
+                //fim do if comentarios
+                } else {// else do if comentarios
+                    echo "sem comentários";
+                } 
+                
+            } // fim do while posts
+
+        // fim do if posts  
+        } else { //else do if posts
                 echo "0 Posts";
             }
             ?>
 
         </div>
     </main>
-
+            <!-- umas script de js -->
     <script src="../manipulacao/manuLateral.js"></script>
     <script src="../manipulacao/modoEscuroClaro.js"></script>
     <script src="../manipulacao/curtir.js"></script>
