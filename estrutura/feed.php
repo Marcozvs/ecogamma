@@ -273,8 +273,8 @@
                         </li>
                     </ul>
                     <div id='caixa__comentario'>
-                    <form action='./feed.php?id_Post_Comentario=" . $id_Post . "' method='POST'>
-                        <input type='text' name='texto__comentario' id='texto__comentario' placeholder='Insira seu comentário aqui'>
+                    <form action='./feed.php?id_Post_Comentario=" . $id_Post . "' method='POST' id='form__comentario'>
+                        <textarea name='texto__comentario' id='texto__comentario' placeholder='Insira seu comentário aqui' wrap='hard'></textarea>
                         <input type='submit' name='submit__comentario' id='submit__comentario' class='botao__principal'>
                     </form>
                     </div>
@@ -321,7 +321,7 @@
             <!-- umas script de js -->
     <script src="../manipulacao/manuLateral.js"></script>
     <script src="../manipulacao/modoEscuroClaro.js"></script>
-    <script src="../manipulacao/curtir.js"></script>
+    <script src="../manipulacao/curtirdoPHP.js"></script>
     <script src="../manipulacao/comentar.js"></script>
     <script type="text/javascript">
         function compartilhar() {
