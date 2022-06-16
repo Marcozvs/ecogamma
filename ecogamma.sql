@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 16-Jun-2022 às 00:43
+-- Tempo de geração: 16-Jun-2022 às 04:29
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -51,10 +51,20 @@ CREATE TABLE IF NOT EXISTS `comentarios` (
   `sobrenome_User` varchar(80) COLLATE utf8_unicode_ci NOT NULL COMMENT 'sobrenome do usuario que comentou',
   `profissao_User` varchar(120) COLLATE utf8_unicode_ci NOT NULL COMMENT 'profissao do usuario que comentou',
   `texto_Comentario` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'texto do comentario',
-  `imagem_Comentario` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'imagem do comentario',
   `likes_Comentario` int(11) NOT NULL DEFAULT '0' COMMENT 'likes/curtidas do comentario',
   PRIMARY KEY (`id_Comentario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `comentarios`
+--
+
+INSERT INTO `comentarios` (`id_Comentario`, `id_Post`, `id_User`, `data_Comentario`, `nome_User`, `sobrenome_User`, `profissao_User`, `texto_Comentario`, `likes_Comentario`) VALUES
+(1, 35, 14, '2022-06-16', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', 'Enviar', 0),
+(2, 35, 14, '2022-06-16', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', 'golfe2', 0),
+(3, 35, 14, '2022-06-16', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', 'golfe2', 0),
+(4, 35, 14, '2022-06-16', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', 'golfe2', 0),
+(5, 36, 14, '2022-06-16', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', 'golfe', 0);
 
 -- --------------------------------------------------------
 
@@ -130,7 +140,17 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `comentarios_Post` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_Post`),
   KEY `user_post` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `posts`
+--
+
+INSERT INTO `posts` (`id_Post`, `id`, `foto`, `nome`, `sobrenome`, `profissao`, `data_Post`, `texto_Post`, `imagem_Post`, `likes_Post`, `comentarios_Post`) VALUES
+(33, 14, 'perfil_default.svg', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', '2022-06-16', 'teste', '', 0, 0),
+(34, 14, 'perfil_default.svg', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', '2022-06-16', 'teste', '', 0, 0),
+(35, 14, 'perfil_default.svg', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', '2022-06-16', 'teste', '', 0, 0),
+(36, 14, 'perfil_default.svg', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', '2022-06-16', 'O texto dos comentÃ¡rios tÃ¡ incomodando? Fiz um novo menu no banir :D', '', 0, 0);
 
 -- --------------------------------------------------------
 
