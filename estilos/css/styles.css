@@ -97,6 +97,7 @@ input {
   height: 20px;
   padding: 0.5rem;
   color: #5570FF;
+  font-size: 1rem;
 }
 
 textarea:focus,
@@ -113,6 +114,7 @@ textarea {
   padding: 0.5rem;
   margin-bottom: 1rem;
   color: #5570FF;
+  font-size: 1rem;
 }
 
 .botao__principal {
@@ -215,6 +217,19 @@ span {
   display: none;
 }
 
+#btn__comentar {
+  position: relative;
+  top: 3px;
+}
+
+#valor__comentar {
+  color: #5570FF;
+  position: relative;
+  top: 3px;
+  margin-right: 15px;
+  font-weight: 700;
+}
+
 #caixa__comentario {
   width: 100%;
   margin-top: 1rem;
@@ -222,16 +237,25 @@ span {
   align-items: center;
 }
 
+#form__comentario {
+  display: flex;
+  flex-direction: row;
+}
+
 #texto__comentario {
   display: none;
-  width: 70%;
+  width: 65%;
   height: 30px;
 }
 
 #submit__comentario {
   display: none;
-  width: 20%;
-  margin: 5% 0%;
+  position: relative;
+  right: 5px;
+  width: 25%;
+  text-align: center;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 #btn-compartilhar {
