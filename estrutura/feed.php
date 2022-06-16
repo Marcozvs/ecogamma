@@ -321,7 +321,7 @@
             <!-- umas script de js -->
     <script src="../manipulacao/manuLateral.js"></script>
     <script src="../manipulacao/modoEscuroClaro.js"></script>
-    <script src="../manipulacao/curtir.js"></script>
+    <script src="../manipulacao/curtirdoPHP.js"></script>
     <script src="../manipulacao/comentar.js"></script>
     <script type="text/javascript">
         function compartilhar() {
