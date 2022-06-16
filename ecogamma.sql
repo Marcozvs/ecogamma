@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 15-Jun-2022 às 13:46
+-- Tempo de geração: 16-Jun-2022 às 00:43
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -20,6 +20,41 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `ecogamma`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `amigos`
+--
+
+DROP TABLE IF EXISTS `amigos`;
+CREATE TABLE IF NOT EXISTS `amigos` (
+  `id_Amizade` int(11) NOT NULL COMMENT 'id da amizade, só serve como identificador',
+  `id_UserAsk` int(11) NOT NULL COMMENT 'id do usuário que enviou o pedido',
+  `id_UserAcc` int(11) NOT NULL COMMENT 'id do usuário que aceitou o pedido',
+  `pendente` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'aceitação pendente (true/false)'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `comentarios`
+--
+
+DROP TABLE IF EXISTS `comentarios`;
+CREATE TABLE IF NOT EXISTS `comentarios` (
+  `id_Comentario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id do comentario',
+  `id_Post` int(11) NOT NULL COMMENT 'id do post em que esta o comentario',
+  `id_User` int(11) NOT NULL COMMENT 'id do usuário que está comentando',
+  `data_Comentario` date NOT NULL COMMENT 'data em que o comentario foi feito',
+  `nome_User` varchar(80) COLLATE utf8_unicode_ci NOT NULL COMMENT 'nome do usuario que comentou',
+  `sobrenome_User` varchar(80) COLLATE utf8_unicode_ci NOT NULL COMMENT 'sobrenome do usuario que comentou',
+  `profissao_User` varchar(120) COLLATE utf8_unicode_ci NOT NULL COMMENT 'profissao do usuario que comentou',
+  `texto_Comentario` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'texto do comentario',
+  `imagem_Comentario` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'imagem do comentario',
+  `likes_Comentario` int(11) NOT NULL DEFAULT '0' COMMENT 'likes/curtidas do comentario',
+  PRIMARY KEY (`id_Comentario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -92,9 +127,24 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `texto_Post` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `imagem_Post` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `likes_Post` int(20) NOT NULL DEFAULT '0',
+  `comentarios_Post` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_Post`),
   KEY `user_post` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `salvos`
+--
+
+DROP TABLE IF EXISTS `salvos`;
+CREATE TABLE IF NOT EXISTS `salvos` (
+  `id_Salvo` int(11) NOT NULL AUTO_INCREMENT,
+  `id_Post` int(11) NOT NULL,
+  `id_User` int(11) NOT NULL,
+  PRIMARY KEY (`id_Salvo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
