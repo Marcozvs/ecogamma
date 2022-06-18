@@ -151,7 +151,8 @@
               $comentarios = $row["comentarios_Post"];
 
             echo "Post";
-
+          }
+        }
       ?>
       <h1>Evento</h1>
       <section class="container__post">
