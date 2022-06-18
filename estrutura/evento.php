@@ -87,12 +87,12 @@
     <div class="container">
       <?php
       //AQUI É PARA OS ADM POSTAREM
-      if ($token === 1) {
+      if ($token == 1) {
                 echo"
         <section class='container__postagem'>
             <form action='./evento.php' class='container__postagem__formulario' method='POST'>
               <input type='text' placeholder='Insira o título...' maxlength='150' minlength='1' required id='titulo' name='titulo'>
-              <input type='text' placeholder='Insira o título...' maxlength='150' minlength='1' required id='link' name='link'>
+              <input type='text' placeholder='Insira o link...' maxlength='150' minlength='1' id='link' name='link'>
                 <textarea cols='15' rows='4' placeholder='Escreva seu post aqui...' maxlength='200' minlength='1' id='texto' name='texto' required></textarea>
                 <div class='container__postagem__formulario__botoes'>
                     <label for='imagem' class='container__postagem__formulario__botoes__label label-botao' id='upload'>Enviar imagem</label>
@@ -123,61 +123,55 @@
             VALUES ('$id', '$data_Evento', '$titulo_Evento', '$texto_Evento', '$imagem_Evento', '$link_Evento', '$likes')";
 
           if (mysqli_query($conn, $insereEvento)) {
-            echo "Evento inserido";
+            // echo "Evento inserido";
           } else {
-            echo "Error: " . $insereEvento . "<br>" . mysqli_error($conn);
+            // echo "Error: " . $insereEvento . "<br>" . mysqli_error($conn);
           }
 
         }
       }
 
-      $sql = "SELECT * FROM posts ORDER BY id_Post DESC";
-      $result = mysqli_query($conn, $sql);
+      $selecionaEventos = "SELECT * FROM eventos ORDER BY id_Evento DESC";
+      $result = mysqli_query($conn, $selecionaEventos);
 
       if (mysqli_num_rows($result) > 0) {
           // output data of each row
           while ($row = mysqli_fetch_assoc($result)) {
 
-              $idP = $row["id"];
-              $id_Post = $row["id_Post"];
-              $fotoP = $row["foto"];
-              $nomeP = $row["nome"];
-              $sobrenomeP = $row["sobrenome"];
-              $profissaoP = $row["profissao"];
-              $data_Post = $row["data_Post"];
-              $texto_Post = $row["texto_Post"];
-              $imagem_Post = $row["imagem_Post"];
-              $likesP = $row["likes_Post"];
-              $comentarios = $row["comentarios_Post"];
+              $id_Evento = $row["id_Evento"];
+              $id_User = $row["id"];
+              $data_Evento = $row["data_Evento"];
+              $titulo_Evento = $row["titulo_Evento"];
+              $texto_Evento = $row["texto_Evento"];
+              $imagem_Evento = $row["imagem_Evento"];
+              $link_Evento = $row["link_Evento"];
+              $likes_Evento = $row["likes_Evento"];
 
-            echo "Post";
+            echo "<section class='container__post'>
+            <h2>" . $titulo_Evento . "</h2>
+            <div class='container__post__conteudo'>
+              <p class='container__post__conteudo__texto'>" . $texto_Evento . "</p>
+              <img src='../imagens/feed_imagem.jpg' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
+              <p class='container__post__conteudo__texto'><a href='" . $link_Evento . "'>Ir para o evento</a></p>
+            </div>
+            <div class='container__post__interacoes'>
+              <ul class='container__post__interacoes__lista'>
+                <li class='container__post__interacoes__lista__item'>
+                  <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe87d;</span>
+                  <p>" . $likes_Evento . "</p>
+                </li>
+                <li class='container__post__interacoes__lista__item'>
+                  <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe163;</span>
+                  <p>32</p>
+                </li>
+              </ul>
+            </div>
+          </section>";
           }
         }
       ?>
       <h1>Evento</h1>
-      <section class="container__post">
-        <h2>Título do Evento</h2>
-        <div class="container__post__conteudo">
-          <p class="container__post__conteudo__texto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos dolor ab qui temporibus, cupiditate animi nesciunt praesentium dolorum soluta quas nihil vitae ullam facilis ut iusto pariatur perspiciatis at explicabo?</p>
-          <img src="../imagens/feed_imagem.jpg" alt="imagem do conteúdo" class="container__post__conteudo__imagem">
-        </div>
-        <div class="container__post__interacoes">
-          <ul class="container__post__interacoes__lista">
-            <li class="container__post__interacoes__lista__item">
-              <span class="material-symbols-outlined container__menu__icone span--azul">&#xe87d;</span>
-              <p>32</p>
-            </li>
-            <li class="container__post__interacoes__lista__item">
-              <span class="material-symbols-outlined container__menu__icone span--azul">&#xe0b9;</span>
-              <p>32</p>
-            </li>
-            <li class="container__post__interacoes__lista__item">
-              <span class="material-symbols-outlined container__menu__icone span--azul">&#xe163;</span>
-              <p>32</p>
-            </li>
-          </ul>
-        </div>
-      </section>
+      
     </div>
   </main>
   <script src="../manipulacao/manuLateral.js"></script>
