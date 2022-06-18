@@ -85,6 +85,74 @@
   </section>
   <main>
     <div class="container">
+      <?php
+      //AQUI É PARA OS ADM POSTAREM
+      if ($token === 1) {
+                echo"
+        <section class='container__postagem'>
+            <form action='./evento.php' class='container__postagem__formulario' method='POST'>
+              <input type='text' placeholder='Insira o título...' maxlength='150' minlength='1' required id='titulo' name='titulo'>
+              <input type='text' placeholder='Insira o título...' maxlength='150' minlength='1' required id='link' name='link'>
+                <textarea cols='15' rows='4' placeholder='Escreva seu post aqui...' maxlength='200' minlength='1' id='texto' name='texto' required></textarea>
+                <div class='container__postagem__formulario__botoes'>
+                    <label for='imagem' class='container__postagem__formulario__botoes__label label-botao' id='upload'>Enviar imagem</label>
+                    <input type='file' accept='image/*' id='imagem' name='imagem' class='container__postagem__formulario__botoes__input'>
+                    <input type='submit' value='Postar' class='botao__principal' name='submit' id='submit'>
+                </div>
+            </form>
+            <hr>
+        </section>";
+        if (isset($_POST['texto']) && isset($_POST['titulo'])) {
+
+          $data_Evento = date("Y-m-d");
+          $titulo_Evento = $_POST['titulo'];
+          $link_Evento = $_POST['link'];
+          $texto_Evento = $_POST['texto'];
+          if (isset($_POST['imagem'])) {
+            $imagem_Evento = $_POST['imagem'];
+          } else {
+            $imagem_Evento = "naoTem";
+          }
+          $likes = 0;
+
+          include './administracao/conexao.php';
+
+          //INSERINDO DADOS 
+
+          $insereEvento = "INSERT INTO eventos (id, data_Evento, titulo_Evento, texto_Evento, imagem_Evento, link_Evento, likes_Evento)
+            VALUES ('$id', '$data_Evento', '$titulo_Evento', '$texto_Evento', '$imagem_Evento', '$link_Evento', '$likes')";
+
+          if (mysqli_query($conn, $insereEvento)) {
+            echo "Evento inserido";
+          } else {
+            echo "Error: " . $insereEvento . "<br>" . mysqli_error($conn);
+          }
+
+        }
+      }
+
+      $sql = "SELECT * FROM posts ORDER BY id_Post DESC";
+      $result = mysqli_query($conn, $sql);
+
+      if (mysqli_num_rows($result) > 0) {
+          // output data of each row
+          while ($row = mysqli_fetch_assoc($result)) {
+
+              $idP = $row["id"];
+              $id_Post = $row["id_Post"];
+              $fotoP = $row["foto"];
+              $nomeP = $row["nome"];
+              $sobrenomeP = $row["sobrenome"];
+              $profissaoP = $row["profissao"];
+              $data_Post = $row["data_Post"];
+              $texto_Post = $row["texto_Post"];
+              $imagem_Post = $row["imagem_Post"];
+              $likesP = $row["likes_Post"];
+              $comentarios = $row["comentarios_Post"];
+
+            echo "Post";
+
+      ?>
       <h1>Evento</h1>
       <section class="container__post">
         <h2>Título do Evento</h2>
