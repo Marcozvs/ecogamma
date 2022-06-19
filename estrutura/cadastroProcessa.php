@@ -39,13 +39,16 @@
 
     $row = mysqli_num_rows($resultado);
 
+    $foto_Padrao = "perfil_default.svg";
+    $descricao_Padrao = "Eco é agro, Eco é tec, Eco é tudo!";
+
     //se não existir e os dados estiverem colocados corretamente, ele criará a conta
     if ($row == 0) {
         if ($senha == $senhaC) {
             # code...
 
             $sql = "INSERT INTO usuarios (nome, sobrenome, email, senha, senhaC, dataN, genero, numero, estado, cidade, profissao, mdEscuro, foto, descricao, amigos)
-            VALUES ('$nome', '$sobrenome', '$email', '$senha', '$senhaC', '$dataN', '$genero', '$numero', '$estado', '$cidade', '$profissao', '0', '', '', '0')";
+            VALUES ('$nome', '$sobrenome', '$email', '$senha', '$senhaC', '$dataN', '$genero', '$numero', '$estado', '$cidade', '$profissao', '0', '$foto_User', '$descricao_Padrao', '0')";
 
                 if (mysqli_query($conn, $sql)) {
                     echo "

@@ -9,7 +9,7 @@
     <?php include './base/linksGlobais.php' ?>
 </head>
 
-<body>
+<body id="body">
     <?php
     include './administracao/sessao.php';
     if ($_SESSION['logado'] == 0) {
@@ -86,18 +86,64 @@
     <main>
         <div class="container">
             <h1>Notificações</h1>
-            <section class="container__post">
-                <div class="container__post__perfil">
-                    <div class="container__post__perfil__foto">
-                        <img src="../imagens/leandro.jpg" alt="Imagem do Perfil">
-                    </div>
-                    <div class="container__post__perfil__dados">
-                        <p class="container__post__perfil__dados__nome nome__perfil">Leandro</p>
-                        <p class="container__post__perfil__dados__cargo cargo__perfil">Engenheiro de Software</p>
-                    </div>
-                </div>
-                <p>Curtiu seu post</p>
-            </section>
+            <?php
+            $verdadeiro = 1;
+            $falso = 0;
+            $selecionaPendentes = "SELECT * FROM amigos WHERE id_UserAcc = $id AND pendente = $verdadeiro ORDER BY id_Amizade DESC";
+            $resultAmizades = mysqli_query($conn, $selecionaPendentes);
+
+            if (mysqli_num_rows($resultAmizades) > 0) {
+
+                while ($row = mysqli_fetch_assoc($resultAmizades)) {
+                    $id_Amizade = $row['id_Amizade'];
+                    $id_UserAcc = $row['id_UserAcc'];
+                    $id_UserAsk = $row['id_UserAsk'];
+                } //fim do while do if amizade
+
+                $selecionaQuemPediu = "SELECT * FROM usuarios WHERE id = $id_UserAsk";
+                $quemPediu = mysqli_query($conn, $selecionaQuemPediu);
+
+                if (mysqli_num_rows($quemPediu) > 0) {
+
+                    while ($row = mysqli_fetch_assoc($quemPediu)) {
+                        $foto_Ask = $row['foto'];
+                        $nome_Ask = $row["nome"];
+                        $sobrenome_Ask = $row["sobrenome"];
+                        $profissao_Ask = $row["profissao"];
+
+                        echo "
+                        <section class='container__post'>
+                        <form action='./aceitaAmizade.php' method='POST'>
+                        <input type='hidden' value='" . $id_Amizade . "' name='id_Amizade'>
+                        <input type='hidden' value='naoAceito' name='naoAceito'>
+                        <input type='hidden' value='" . $id_UserAcc . "' name='idAcc'>
+                        <input type='submit' class='botao__principal' id='buttonDel' name='naoAceito' value='Recusar '>
+                        </form>
+                            <div class='container__post__perfil'>
+                                <div class='container__post__perfil__foto'>
+                                    <img src='../imagens/" . $foto_Ask . "' alt='Imagem do Perfil'>
+                                </div>
+                                <div class='container__post__perfil__dados'>
+                                    <p class='container__post__perfil__dados__nome nome__perfil'>" . $nome_Ask . " " . $sobrenome_Ask . "</p>
+                                    <p class='container__post__perfil__dados__cargo cargo__perfil'>" . $profissao_Ask . "</p>
+                                </div>
+                            </div>
+
+                            <form action='./aceitaAmizade.php' method='POST'>
+                            <input type='hidden' value='" . $id_Amizade . "' name='id_Amizade'>
+                            <input type='hidden' value='" . $id_UserAcc . "' name='idAcc'>
+                            <input type='submit' class='botao__principal' id='buttonAcc' name='Aceito' value='Aceitar'>
+                            </form>
+
+                        </section>";
+                    }
+                }
+                //fim do if amizade
+            } else { // else do if amizade
+                echo "sem pedidos de amizade";
+            }
+            ?>
+
         </div>
     </main>
     <script src="../manipulacao/manuLateral.js"></script>
