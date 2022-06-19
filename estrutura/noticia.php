@@ -85,30 +85,88 @@
     </section>
     <main>
         <div class="container">
-            <h1>Notícia</h1>
-            <section class="container__post">
-                <h2>Título da Notícia</h2>
-                <div class="container__post__conteudo">
-                    <p class="container__post__conteudo__texto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos dolor ab qui temporibus, cupiditate animi nesciunt praesentium dolorum soluta quas nihil vitae ullam facilis ut iusto pariatur perspiciatis at explicabo?</p>
-                    <img src="../imagens/feed_imagem.jpg" alt="imagem do conteúdo" class="container__post__conteudo__imagem">
+        <?php
+      //AQUI É PARA OS ADM POSTAREM
+      if ($token == 1) {
+                echo"
+        <section class='container__postagem'>
+            <form action='./noticia.php' class='container__postagem__formulario' method='POST'>
+              <input type='text' placeholder='Insira o título...' maxlength='150' minlength='1' required id='titulo' name='titulo'>
+                <textarea cols='15' rows='4' placeholder='Escreva seu post aqui...' maxlength='200' minlength='1' id='texto' name='texto' required></textarea>
+                <div class='container__postagem__formulario__botoes'>
+                    <label for='imagem' class='container__postagem__formulario__botoes__label label-botao' id='upload'>Enviar imagem</label>
+                    <input type='file' accept='image/*' id='imagem' name='imagem' class='container__postagem__formulario__botoes__input'>
+                    <input type='submit' value='Postar' class='botao__principal' name='submit' id='submit'>
                 </div>
-                <div class="container__post__interacoes">
-                    <ul class="container__post__interacoes__lista">
-                        <li class="container__post__interacoes__lista__item">
-                            <span class="material-symbols-outlined container__menu__icone span--azul">&#xe87d;</span>
-                            <p>32</p>
-                        </li>
-                        <li class="container__post__interacoes__lista__item">
-                            <span class="material-symbols-outlined container__menu__icone span--azul">&#xe0b9;</span>
-                            <p>32</p>
-                        </li>
-                        <li class="container__post__interacoes__lista__item">
-                            <span class="material-symbols-outlined container__menu__icone span--azul">&#xe163;</span>
-                            <p>32</p>
-                        </li>
-                    </ul>
-                </div>
-            </section>
+            </form>
+            <hr>
+        </section>";
+        if (isset($_POST['texto']) && isset($_POST['titulo'])) {
+
+          $data_Noticia = date("Y-m-d");
+          $titulo_Noticia = $_POST['titulo'];
+          $texto_Noticia = $_POST['texto'];
+          if (isset($_POST['imagem'])) {
+            $imagem_Noticia = $_POST['imagem'];
+          } else {
+            $imagem_Noticia = "naoTem";
+          }
+          $likes = 0;
+
+          include './administracao/conexao.php';
+
+          //INSERINDO DADOS 
+
+          $insereNoticia = "INSERT INTO noticias (id, data_Noticia, foto, nome, sobrenome, profissao, titulo_Noticia, texto_Noticia, imagem_Noticia, likes_Noticia)
+            VALUES ('$id', '$data_Noticia', '$foto', '$nome', '$sobrenome', '$profissao', '$titulo_Noticia', '$texto_Noticia', '$imagem_Noticia', '$likes')";
+
+          if (mysqli_query($conn, $insereNoticia)) {
+            // echo "Noticia inserido";
+          } else {
+            // echo "Error: " . $insereNoticia . "<br>" . mysqli_error($conn);
+          }
+
+        }
+      }
+
+      $selecionaNoticias = "SELECT * FROM noticias ORDER BY id_Noticia DESC";
+      $result = mysqli_query($conn, $selecionaNoticias);
+
+      if (mysqli_num_rows($result) > 0) {
+          // output data of each row
+          while ($row = mysqli_fetch_assoc($result)) {
+
+              $id_Noticia = $row["id_Noticia"];
+              $id_User = $row["id"];
+              $data_Noticia = $row["data_Noticia"];
+              $titulo_Noticia = $row["titulo_Noticia"];
+              $texto_Noticia = $row["texto_Noticia"];
+              $imagem_Noticia = $row["imagem_Noticia"];
+              $likes_Noticia = $row["likes_Noticia"];
+
+            echo "<section class='container__post'>
+            <h2>" . $titulo_Noticia . "</h2>
+            <div class='container__post__conteudo'>
+              <p class='container__post__conteudo__texto'>" . $texto_Noticia . "</p>
+              <img src='../imagens/feed_imagem.jpg' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
+            </div>
+            <div class='container__post__interacoes'>
+              <ul class='container__post__interacoes__lista'>
+                <li class='container__post__interacoes__lista__item'>
+                  <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe87d;</span>
+                  <p>" . $likes_Noticia . "</p>
+                </li>
+                <li class='container__post__interacoes__lista__item'>
+                  <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe163;</span>
+                  <p>32</p>
+                </li>
+              </ul>
+            </div>
+          </section>";
+          }
+        }
+      ?>
+            
         </div>
     </main>
     <script src="../manipulacao/manuLateral.js"></script>
