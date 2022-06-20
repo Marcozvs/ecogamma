@@ -125,6 +125,9 @@ textarea {
   color: #fefefe;
   margin: 0.5rem 0rem;
 }
+.botao__principal:active {
+  background-color: #34B132;
+}
 
 .botao__secundario {
   background-color: #fefefe;
@@ -157,6 +160,10 @@ textarea {
   text-align: center;
   color: #5570FF;
   padding: 1rem;
+}
+.label-botao:active {
+  border: 2px solid #34B132;
+  color: #34B132;
 }
 
 .label_select {

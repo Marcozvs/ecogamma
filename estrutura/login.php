@@ -82,7 +82,7 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'falha') {
             <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe73c;</span>
             <input type="password" placeholder="Insira sua senha..." maxlength="100" minlength="1" required id="senha" name="senha">
           </div>
-          <input type="submit" value="Entrar" class="botao__principal" onclick="botao()">
+          <input type="submit" value="Entrar" class="botao__principal">
         </form>
         <a href="cadastro.php">Cadastre-se</a>
         <br>
@@ -108,7 +108,6 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'falha') {
     </div>
 </footer>
   <script src="../manipulacao/manuLateral.js"></script>
-  <script src="../manipulacao/botao.js"></script>
 </body>
 
 </html>
