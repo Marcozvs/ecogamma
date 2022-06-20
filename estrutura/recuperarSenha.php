@@ -54,7 +54,7 @@
     </section>
 <main>
   <h1 class="titulo-sombra">Reperar a Senha</h1>
-  <p class="paragrafo-sombra">Insira seu email abaixo para recuperar a senha</p>
+  <p class="paragrafo-sombra p--subtitulo">Insira seu email abaixo para recuperar a senha</p>
   <form action="recuperarSenhaProcessa">
     <label for="email">Email</label>
       <div class="input-icones">

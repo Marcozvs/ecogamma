@@ -69,7 +69,7 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'email') {
     <main>
     <div class="container">
       <h1 class="titulo-sombra">Cadastro</h1>
-      <p class="paragrafo-sombra">Para se cadastrar preencha o formulário abaixo</p>
+      <p class="paragrafo-sombra p--subtitulo">Para se cadastrar preencha o formulário abaixo</p>
       <div class="container__formLogin">
         <form action="./cadastroProcessa.php" class="container__formLogin__form" method="POST">
 

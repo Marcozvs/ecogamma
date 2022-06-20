@@ -69,7 +69,7 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'falha') {
     <main>
     <div class="container">
       <h1 class="titulo-sombra">Login</h1>
-      <p class="paragrafo-sombra">Venha fazer parte da comunidade e nos ajudar a cuidar do nosso lar, o planeta!</p>
+      <p class="paragrafo-sombra p--subtitulo">Venha fazer parte da comunidade e nos ajudar a cuidar do nosso lar, o planeta!</p>
       <div class="container__formLogin">
         <form action="./loginProcessa.php" class="container__formLogin__form" method="POST">
           <label for="email">Email</label>

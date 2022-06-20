@@ -55,7 +55,7 @@
     <main>
         <div class="container">
             <h1 class="titulo-sombra">Comunidade</h1>
-            <p class="paragrafo-sombra">Nossa comunidade é impulsionada por pessoas motivadas em preservar o meio ambiente</p>
+            <p class="paragrafo-sombra p--subtitulo">Nossa comunidade é impulsionada por pessoas motivadas em preservar o meio ambiente</p>
             <div class="container__cartao">
                 <div class="container__cartao__dados">
                     <div class="container__cartao__dados__foto">

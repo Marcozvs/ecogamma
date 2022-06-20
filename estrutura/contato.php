@@ -55,7 +55,7 @@
   <main>
     <div class="container">
       <h1 class="titulo-sombra">Contato</h1>
-      <p class="paragrafo-sombra">Para entrar em contato com a gente preencha o formulário abaixo</p>
+      <p class="paragrafo-sombra p--subtitulo">Para entrar em contato com a gente preencha o formulário abaixo</p>
       <div class="container__formLogin">
         <form action="" class="container__formLogin__form">
         <label for="nome">Nome</label>
