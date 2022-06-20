@@ -72,14 +72,14 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'falha') {
       <p class="paragrafo-sombra p--subtitulo">Venha fazer parte da comunidade e nos ajudar a cuidar do nosso lar, o planeta!</p>
       <div class="container__formLogin">
         <form action="./loginProcessa.php" class="container__formLogin__form" method="POST">
-          <label for="email">Email</label>
-          <div class="input-icones">
-            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe158;</span>
+          <label for="email" id="label-icones-email">Email</label>
+          <div class="input-icones" id="input-icones-email" onclick="inputIconesEmail()">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-email-span">&#xe158;</span>
             <input type="email" placeholder="Insira seu email..." maxlength="100" minlength="1" required id="email" name="email">
           </div>
-          <label for="senha">Senha</label>
-          <div class="input-icones">
-            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe73c;</span>
+          <label for="senha" id="label-icones-senha">Senha</label>
+          <div class="input-icones" id="input-icones-senha" onclick="inputIconesSenha()">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-senha-span">&#xe73c;</span>
             <input type="password" placeholder="Insira sua senha..." maxlength="100" minlength="1" required id="senha" name="senha">
           </div>
           <input type="submit" value="Entrar" class="botao__principal">
@@ -108,6 +108,7 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'falha') {
     </div>
 </footer>
   <script src="../manipulacao/manuLateral.js"></script>
+  <script src="../manipulacao/inputIcones.js"></script>
 </body>
 
 </html>
