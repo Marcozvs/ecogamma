@@ -177,3 +177,16 @@ function inputIconesProfissao(){
     inputIconesProfissaoSpan.style.color = "#34B132";
     inputIconesProfissaoLetra.style.color = "#34B132";
 }
+
+//Interação no mensagem
+function inputIconesMensagem(){
+    //Selecionando elementos do mensagem no formulário do login
+    const labelIconesMensagem = document.getElementById("label-icones-mensagem");
+    const inputIconesMensagemLetra = document.getElementById("mensagem");
+
+    //Deixando os elementos do input mensagem verdes
+
+    labelIconesMensagem.style.color = "#34B132";
+    inputIconesMensagemLetra.style.color = "#34B132";
+    inputIconesMensagemLetra.style.border = "2px solid #34B132";
+}

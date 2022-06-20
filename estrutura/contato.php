@@ -58,32 +58,32 @@
       <p class="paragrafo-sombra p--subtitulo">Para entrar em contato com a gente preencha o formulário abaixo</p>
       <div class="container__formLogin">
         <form action="" class="container__formLogin__form">
-        <label for="nome">Nome</label>
-          <div class="input-icones">
-            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe7fd;</span>
+          <label for="nome" id="label-icones-nome" class="label-icones">Nome</label>
+          <div class="input-icones" id="input-icones-nome" onclick="inputIconesNome()">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-nome-span">&#xe7fd;</span>
             <input type="nome" placeholder="Insira seu nome..." maxlength="150" minlength="1" required id="nome" name="nome">
           </div>
 
-          <label for="sobrenome">Sobrenome</label>
-          <div class="input-icones">
-            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe7fd;</span>
+          <label for="sobrenome" id="label-icones-sobrenome" class="label-icones">Sobrenome</label>
+          <div class="input-icones" id="input-icones-sobrenome" onclick="inputIconesSobrenome()">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-sobrenome-span">&#xe7fd;</span>
             <input type="text" placeholder="Insira seu sobrenome..." maxlength="150" minlength="1" required id="sobrenome" name="sobrenome">
           </div>
 
-          <label for="email">Email</label>
-          <div class="input-icones">
-            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe158;</span>
-            <input type="email" placeholder="Insira seu email..." maxlength="150" minlength="1" required id="email" name="email">
+          <label for="email" id="label-icones-email" class="label-icones">Email</label>
+          <div class="input-icones" id="input-icones-email" onclick="inputIconesEmail()">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-email-span">&#xe158;</span>
+            <input type="email" placeholder="Insira seu email..." maxlength="100" minlength="1" required id="email" name="email">
           </div>
 
-          <label for="telefone">Telefone / Celular</label>
-          <div class="input-icones">
-            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe0b0;</span>
-            <input type="tel" placeholder="Insira seu número..." maxlength="150" minlength="1" required id="celular" name="celular">
+          <label for="telefone" id="label-icones-telefone" class="label-icones">Telefone / Celular</label>
+          <div class="input-icones" id="input-icones-telefone" onclick="inputIconesTelefone()">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-telefone-span">&#xe0b0;</span>
+            <input type="tel" placeholder="Insira seu número..." maxlength="150" minlength="1" required id="telefone" name="numero">
           </div>
 
-          <label for="mensagem">Mensagem</label>
-          <textarea name="mensagem" id="mensagem" cols="30" rows="10" placeholder="Escreva sua mensagem aqui..."></textarea>
+          <label for="mensagem" id="label-icones-mensagem" class="label-icones">Mensagem</label>
+          <textarea name="mensagem" id="mensagem" cols="30" rows="10" placeholder="Escreva sua mensagem aqui..." onclick="inputIconesMensagem()"></textarea>
         
           <input type="submit" value="Enviar" class="botao__principal">
         </form>
@@ -91,6 +91,7 @@
     </div>
   </main>
   <script src="../manipulacao/manuLateral.js"></script>
+  <script src="../manipulacao/inputIconesCadastro.js"></script>
 </body>
 
 </html>
