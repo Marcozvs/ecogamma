@@ -56,11 +56,11 @@
   <h1 class="titulo-sombra">Reperar a Senha</h1>
   <p class="paragrafo-sombra p--subtitulo">Insira seu email abaixo para recuperar a senha</p>
   <form action="recuperarSenhaProcessa">
-    <label for="email">Email</label>
-      <div class="input-icones">
-        <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe158;</span>
-        <input type="email" placeholder="Insira seu email..." maxlength="100" minlength="1" required id="email" name="email">
-      </div>
+    <label for="email" id="label-icones-email" class="label-icones">Email</label>
+    <div class="input-icones" id="input-icones-email" onclick="inputIconesEmail()">
+      <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-email-span">&#xe158;</span>
+      <input type="email" placeholder="Insira seu email..." maxlength="100" minlength="1" required id="email" name="email">
+    </div>
     <input type="submit" value="Enviar" class="botao__principal">
   </form>
 </main>
@@ -82,5 +82,6 @@
     </div>
 </footer>
 <script src="../manipulacao/manuLateral.js"></script>
+<script src="../manipulacao/inputIconesCadastro.js"></script>
 </body>
 </html>
