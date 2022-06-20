@@ -170,11 +170,7 @@
               <p>" . $descricao . "</p>
             </li>
             <li class='container__perfil__dados__lista__item'>
-              <p>Seguidores:</p>
-              <p>" . $amigos . "</p>
-            </li>
-            <li class='container__perfil__dados__lista__item'>
-              <p>Seguindo:</p>
+              <p>Amigos:</p>
               <p>" . $amigos . "</p>
             </li>
           </ul>
