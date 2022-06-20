@@ -73,51 +73,51 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'email') {
       <div class="container__formLogin">
         <form action="./cadastroProcessa.php" class="container__formLogin__form" method="POST">
 
-          <label for="nome">Nome</label>
-          <div class="input-icones">
-            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe7fd;</span>
+          <label for="nome" id="label-icones-nome" class="label-icones">Nome</label>
+          <div class="input-icones" id="input-icones-nome" onclick="inputIconesNome()">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-nome-span">&#xe7fd;</span>
             <input type="nome" placeholder="Insira seu nome..." maxlength="150" minlength="1" required id="nome" name="nome">
           </div>
 
-          <label for="sobrenome">Sobrenome</label>
-          <div class="input-icones">
-            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe7fd;</span>
+          <label for="sobrenome" id="label-icones-sobrenome" class="label-icones">Sobrenome</label>
+          <div class="input-icones" id="input-icones-sobrenome" onclick="inputIconesSobrenome()">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-sobrenome-span">&#xe7fd;</span>
             <input type="text" placeholder="Insira seu sobrenome..." maxlength="150" minlength="1" required id="sobrenome" name="sobrenome">
           </div>
 
-          <label for="email">Email</label>
-          <div class="input-icones">
-            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe158;</span>
-            <input type="email" placeholder="Insira seu email..." maxlength="150" minlength="1" required id="email" name="email">
+          <label for="email" id="label-icones-email" class="label-icones">Email</label>
+          <div class="input-icones" id="input-icones-email" onclick="inputIconesEmail()">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-email-span">&#xe158;</span>
+            <input type="email" placeholder="Insira seu email..." maxlength="100" minlength="1" required id="email" name="email">
           </div>
 
-          <label for="telefone">Telefone / Celular</label>
-          <div class="input-icones">
-            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe0b0;</span>
-            <input type="tel" placeholder="Insira seu número..." maxlength="150" minlength="1" required id="numero" name="numero">
+          <label for="telefone" id="label-icones-telefone" class="label-icones">Telefone / Celular</label>
+          <div class="input-icones" id="input-icones-telefone" onclick="inputIconesTelefone()">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-telefone-span">&#xe0b0;</span>
+            <input type="tel" placeholder="Insira seu número..." maxlength="150" minlength="1" required id="telefone" name="numero">
           </div>
 
-          <label for="senha">Senha</label>
-          <div class="input-icones">
-            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe63f;</span>
+          <label for="senha" id="label-icones-senha" class="label-icones">Senha</label>
+          <div class="input-icones" id="input-icones-senha" onclick="inputIconesSenha()">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-senha-span">&#xe63f;</span>
             <input type="password" placeholder="Insira sua senha..." maxlength="80" minlength="1" required id="senha" name="senha">
           </div>
           
-          <label for="senha">Confirmação da senha</label>
-          <div class="input-icones">
-            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe63f;</span>
+          <label for="senha" id="label-icones-confirmacao" class="label-icones">Confirmação da senha</label>
+          <div class="input-icones" id="input-icones-confirmacao" onclick="inputIconesConfirmacao()">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-confirmacao-span">&#xe63f;</span>
             <input type="password" placeholder="Repita sua senha..." maxlength="80" minlength="1" required id="senhaC" name="senhaC">
           </div>
           
-          <label for="nascimento">Data de Nascimento</label>
-          <div class="input-icones">
-            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe935;</span>
+          <label for="nascimento" id="label-icones-nascimento" class="label-icones">Data de Nascimento</label>
+          <div class="input-icones" id="input-icones-nascimento" onclick="inputIconesNascimento()">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-nascimento-span">&#xe935;</span>
             <input type="date" required id="dataN" name="dataN">
           </div>
 
-          <label for="genero">Genero</label>
-          <div class="input-icones">
-            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe63d;</span>
+          <label for="genero" id="label-icones-genero" class="label-icones">Genero</label>
+          <div class="input-icones" id="input-icones-genero" onclick="inputIconesGenero()">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-genero-span">&#xe63d;</span>
             <select name="genero" id="genero" name="genero">
               <option value="masculinoCisgênero">Masculino</option>
               <option value="transgenero">Feminino</option>
@@ -126,9 +126,9 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'email') {
             </select>
           </div>
 
-          <label for="estado">Estado</label>
-          <div class="input-icones">
-            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe2db;</span>
+          <label for="estado" id="label-icones-estado" class="label-icones">Estado</label>
+          <div class="input-icones" id="input-icones-estado" onclick="inputIconesEstado()">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-estado-span">&#xe2db;</span>
             <select name="estado" id="estado">
             <option value="estado">Selecione o Estado</option>
             <option value="ac">Acre</option>
@@ -161,15 +161,15 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'email') {
           </select>
           </div>
 
-          <label for="cidade">Cidade</label>
-          <div class="input-icones">
-            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe55c;</span>
+          <label for="cidade" id="label-icones-cidade" class="label-icones">Cidade</label>
+          <div class="input-icones" id="input-icones-cidade" onclick="inputIconesCidade()">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-cidade-span">&#xe55c;</span>
             <input type="address" placeholder="Insira sua cidade..." maxlength="100" minlength="1" required id="cidade" name="cidade">
           </div>
 
-          <label for="profissao">Profissao</label>
-          <div class="input-icones">
-            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe8f9;</span>
+          <label for="profissao" id="label-icones-profissao" class="label-icones">Profissao</label>
+          <div class="input-icones" id="input-icones-profissao" onclick="inputIconesProfissao()">
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-profissao-span">&#xe8f9;</span>
             <input type="text" placeholder="Insira seu profissao..." maxlength="150" minlength="1" required id="profissao" name="profissao">
           </div>
 
@@ -199,6 +199,7 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'email') {
     </div>
 </footer>
   <script src="../manipulacao/manuLateral.js"></script>
+  <script src="../manipulacao/inputIconesCadastro.js"></script>
 </body>
 
 </html>

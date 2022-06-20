@@ -72,7 +72,7 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'falha') {
       <p class="paragrafo-sombra p--subtitulo">Venha fazer parte da comunidade e nos ajudar a cuidar do nosso lar, o planeta!</p>
       <div class="container__formLogin">
         <form action="./loginProcessa.php" class="container__formLogin__form" method="POST">
-          <label for="email" id="label-icones-email">Email</label>
+          <label for="email" id="label-icones-email" class="label-icones">Email</label>
           <div class="input-icones" id="input-icones-email" onclick="inputIconesEmail()">
             <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-email-span">&#xe158;</span>
             <input type="email" placeholder="Insira seu email..." maxlength="100" minlength="1" required id="email" name="email">

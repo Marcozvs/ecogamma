@@ -16,6 +16,7 @@ function inputIconesEmail(){
     const inputIconesSenha = document.getElementById("input-icones-senha");
     const inputIconesSenhaSpan = document.getElementById("input-icones-senha-span");
     const inputIconesSenhaLetra = document.getElementById("senha");
+    
     //Deixando os elementos do input email verdes e do input senha azul
     
     labelIconesEmail.style.color = "#34B132";
