@@ -189,6 +189,9 @@
         <div class='container__perfil__foto'>
           <img src='../imagens/" . $fotoUser . "' alt='Fundo do perfil' class='container__perfil__foto__imagem'>
         </div>
+        <form action='./perfilUser.php' method='POST'>
+          <input type='button' value='Adicionar' name='Adicionar'>
+        </form>
         <div class='container__perfil__dados'>
           <ul class='container__perfil__dados__lista'>
             <li class='container__perfil__dados__lista__item'>
@@ -204,12 +207,8 @@
               <p>" . $descricaoUser . "</p>
             </li>
             <li class='container__perfil__dados__lista__item'>
-              <p>Seguidores:</p>
-              <p>" . $amigos . "</p>
-            </li>
-            <li class='container__perfil__dados__lista__item'>
-              <p>Seguindo:</p>
-              <p>" . $amigos . "</p>
+              <p>Amigos:</p>
+              <p>" . $amigosUser . "</p>
             </li>
           </ul>
         </div>
