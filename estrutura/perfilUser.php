@@ -184,16 +184,22 @@
 
 
       //ESTE CÓDIGO É REFERENTE AO SISTEMA DE AMIGOS
-      $selecionaLacos = "SELECT * FROM amigos WHERE id_UserAsk = $id AND id_UserAcc = $id_User";
-      $resultAmizades = mysqli_query($conn, $selecionaLacos);
+      $selecionaLacos = "SELECT * FROM amigos WHERE id_UserAsk = $id AND id_UserAcc = $idUser AND pendente = 0";
+      $resultLacos = mysqli_query($conn, $selecionaLacos);
 
-      if (mysqli_num_rows($resultAmizades) > 0) {
-        $addText = "Amigos";
+      if (mysqli_num_rows($resultLacos) > 0) {
+        $addText = "Amigos"; //Se já forem amigos
       } else {
-        $addText = "Adicionar";
+        $selecionaLacos2 = "SELECT * FROM amigos WHERE id_UserAsk = $id AND id_UserAcc = $idUser";
+        $resultLacos2 = mysqli_query($conn, $selecionaLacos2);
+        if (mysqli_num_rows($resultLacos2) > 0) {
+          $addText = "Pendente"; //se já tiver pedido amizade e ainda não foi aceita
+        } else {
+          $addText = "Adicionar"; // se o pedido para se tornarem amigos não existe ainda
+        }
       }
 
-      if (isset($_POST['id_UserAsk']) && isset($_POST['id_UserAcc']) && $addText != "Amigos") {
+      if (isset($_POST['id_UserAsk']) && isset($_POST['id_UserAcc']) && $addText != "Amigos" && $addText != "Pendente") {
         $pendente = 1;
         $UserAsk = $_POST['id_UserAsk'];
         $UserAcc = $_POST['id_UserAcc'];
@@ -206,6 +212,11 @@
         }
       }
 
+      if ($addText == "Pendente" || $addText == "Amigos") {
+        $type = "button"; // muda o tipo do botão do formulário de pedir amizade para não ficarem clicando sem motivo e atualizando a página se já forem amigos ou se o convite para se tornarem amigos já existir...
+      } else {
+        $type = "submit";
+      }
       // AQUI FICA AS INFORMAÇÕES DO USUÁRIO
       echo "
     <div class='container'>
@@ -216,8 +227,8 @@
     <div class='container__perfil__foto'>
     <img src='../imagens/" . $fotoUser . "' alt='Fundo do perfil' class='container__perfil__foto__imagem'>
     </div>
-    <form action='./perfilUser.php' method='POST'>
-    <input type='button' value='" . $addText . "' name='Adicionar'>
+    <form action='./perfilUser.php?user=" . $idUser . "' method='POST'>
+    <input type='" . $type . "' value='" . $addText . "' name='Adicionar'>
     <input type='hidden' value='" . $id . "' name='id_UserAsk'>
     <input type='hidden' value='" . $idUser . "' name='id_UserAcc'>
     </form>
