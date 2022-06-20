@@ -79,7 +79,7 @@ if (isset($_GET["msg"]) && $_GET["msg"] == 'falha') {
           </div>
           <label for="senha">Senha</label>
           <div class="input-icones">
-            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe897;</span>
+            <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe73c;</span>
             <input type="password" placeholder="Insira sua senha..." maxlength="100" minlength="1" required id="senha" name="senha">
           </div>
           <input type="submit" value="Entrar" class="botao__principal">
