@@ -694,7 +694,7 @@ main .container .container__formLogin a {
 
 #menuLateral .container__menu,
 #menuLateral__interno .container__menu {
-  margin: 9% 0% 0% 87%;
+  margin: 11% 0% 0% 88.5%;
 }
 #menuLateral .container__lista,
 #menuLateral__interno .container__lista {
@@ -704,6 +704,11 @@ main .container .container__formLogin a {
   justify-content: space-around;
 }
 #menuLateral .container__lista .container__lista__item,
+#menuLateral__interno .container__lista .container__lista__item {
+  padding: 0rem 1rem;
+  width: 100%;
+}
+#menuLateral .container__lista .container__lista__item,
 #menuLateral .container__lista .container__lista__item-ativo,
 #menuLateral__interno .container__lista .container__lista__item,
 #menuLateral__interno .container__lista .container__lista__item-ativo {
@@ -711,6 +716,7 @@ main .container .container__formLogin a {
   align-items: center;
   color: #5570FF;
   font-weight: 700;
+  height: 50px;
 }
 #menuLateral .container__lista .container__lista__item .container__lista__item__icone,
 #menuLateral .container__lista .container__lista__item .container__lista__item__icone-ativo,
@@ -723,12 +729,25 @@ main .container .container__formLogin a {
   margin-right: 1rem;
   color: #5570FF;
 }
+#menuLateral .container__lista .container__lista__item:active,
+#menuLateral .container__lista .container__lista__item-ativo:active,
+#menuLateral__interno .container__lista .container__lista__item:active,
+#menuLateral__interno .container__lista .container__lista__item-ativo:active {
+  background-color: #34B132;
+  color: #fefefe;
+}
+#menuLateral .container__lista .container__lista__item:active span,
+#menuLateral .container__lista .container__lista__item-ativo:active span,
+#menuLateral__interno .container__lista .container__lista__item:active span,
+#menuLateral__interno .container__lista .container__lista__item-ativo:active span {
+  color: #fefefe;
+}
 #menuLateral .container__lista .container__lista__item-ativo,
 #menuLateral__interno .container__lista .container__lista__item-ativo {
   background-color: #34B132;
   color: #fefefe;
-  padding: 1rem;
-  width: 120%;
+  padding: 0rem 1rem;
+  width: 100%;
 }
 #menuLateral .container__lista .container__lista__item-ativo .container__lista__item__icone-ativo,
 #menuLateral__interno .container__lista .container__lista__item-ativo .container__lista__item__icone-ativo {

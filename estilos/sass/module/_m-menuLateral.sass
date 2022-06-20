@@ -3,26 +3,35 @@
 #menuLateral,
 #menuLateral__interno
         .container__menu
-            margin: 9% 0% 0% 87%
+            margin: 11% 0% 0% 88.5%
         .container__lista
             display: flex
             flex-direction: column
             height: 90%
             justify-content: space-around
+            .container__lista__item
+                padding: 0rem 1rem
+                width: 100%
             .container__lista__item,
             .container__lista__item-ativo
                 display: flex
                 align-items: center
                 color: variaveis.$primeira-cor
                 font-weight: 700
+                height: 50px
                 .container__lista__item__icone,
                 .container__lista__item__icone-ativo
                     margin-right: 1rem
                     color: variaveis.$primeira-cor
+                &:active
+                    background-color: variaveis.$segunda-cor
+                    color: variaveis.$branco
+                    span
+                        color: variaveis.$branco
             .container__lista__item-ativo
                 background-color: variaveis.$segunda-cor
                 color: variaveis.$branco
-                padding: 1rem
-                width: 120%
+                padding: 0rem 1rem
+                width: 100%
                 .container__lista__item__icone-ativo
                     color: variaveis.$branco
