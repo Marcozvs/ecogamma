@@ -181,6 +181,9 @@ a {
   text-decoration: none;
   font-weight: 700;
 }
+a:active {
+  font-size: 1.25rem;
+}
 
 span {
   color: #5570FF;
