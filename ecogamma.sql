@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 16-Jun-2022 às 04:29
+-- Tempo de geração: 20-Jun-2022 às 00:47
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -29,11 +29,33 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `amigos`;
 CREATE TABLE IF NOT EXISTS `amigos` (
-  `id_Amizade` int(11) NOT NULL COMMENT 'id da amizade, só serve como identificador',
+  `id_Amizade` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id da amizade, só serve como identificador',
   `id_UserAsk` int(11) NOT NULL COMMENT 'id do usuário que enviou o pedido',
   `id_UserAcc` int(11) NOT NULL COMMENT 'id do usuário que aceitou o pedido',
-  `pendente` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'aceitação pendente (true/false)'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `pendente` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'aceitação pendente (true/false)',
+  PRIMARY KEY (`id_Amizade`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `amigos`
+--
+
+INSERT INTO `amigos` (`id_Amizade`, `id_UserAsk`, `id_UserAcc`, `pendente`) VALUES
+(4, 15, 14, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `chat`
+--
+
+DROP TABLE IF EXISTS `chat`;
+CREATE TABLE IF NOT EXISTS `chat` (
+  `id_Mensagem` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id da mensagem para identificação',
+  `id_User` int(11) NOT NULL COMMENT 'id do usuário que enviou a mensagem',
+  `Mensagem` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'mensagem que foi envida',
+  PRIMARY KEY (`id_Mensagem`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -53,18 +75,7 @@ CREATE TABLE IF NOT EXISTS `comentarios` (
   `texto_Comentario` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'texto do comentario',
   `likes_Comentario` int(11) NOT NULL DEFAULT '0' COMMENT 'likes/curtidas do comentario',
   PRIMARY KEY (`id_Comentario`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Extraindo dados da tabela `comentarios`
---
-
-INSERT INTO `comentarios` (`id_Comentario`, `id_Post`, `id_User`, `data_Comentario`, `nome_User`, `sobrenome_User`, `profissao_User`, `texto_Comentario`, `likes_Comentario`) VALUES
-(1, 35, 14, '2022-06-16', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', 'Enviar', 0),
-(2, 35, 14, '2022-06-16', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', 'golfe2', 0),
-(3, 35, 14, '2022-06-16', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', 'golfe2', 0),
-(4, 35, 14, '2022-06-16', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', 'golfe2', 0),
-(5, 36, 14, '2022-06-16', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', 'golfe', 0);
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -78,7 +89,15 @@ CREATE TABLE IF NOT EXISTS `curtidas` (
   `id_Elemento` int(11) NOT NULL,
   `id_User` int(11) NOT NULL,
   PRIMARY KEY (`id_Curtida`)
-) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `curtidas`
+--
+
+INSERT INTO `curtidas` (`id_Curtida`, `id_Elemento`, `id_User`) VALUES
+(2, 36, 14),
+(3, 125, 14);
 
 -- --------------------------------------------------------
 
@@ -90,13 +109,14 @@ DROP TABLE IF EXISTS `eventos`;
 CREATE TABLE IF NOT EXISTS `eventos` (
   `id_Evento` int(11) NOT NULL AUTO_INCREMENT,
   `id` int(11) NOT NULL,
+  `data_Evento` date NOT NULL COMMENT 'data de publicação',
   `titulo_Evento` varchar(35) COLLATE utf8_unicode_ci NOT NULL,
   `texto_Evento` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `imagem_Evento` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `link_Evento` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `likes_Evento` int(20) NOT NULL,
   PRIMARY KEY (`id_Evento`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -108,6 +128,7 @@ DROP TABLE IF EXISTS `noticias`;
 CREATE TABLE IF NOT EXISTS `noticias` (
   `id_Noticia` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id próprio da notícia',
   `id` int(11) NOT NULL COMMENT 'id do usuário que postou',
+  `data_Noticia` date NOT NULL,
   `foto` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `nome` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
   `sobrenome` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
@@ -117,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `noticias` (
   `imagem_Noticia` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `likes_Noticia` int(20) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_Noticia`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -140,17 +161,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `comentarios_Post` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_Post`),
   KEY `user_post` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Extraindo dados da tabela `posts`
---
-
-INSERT INTO `posts` (`id_Post`, `id`, `foto`, `nome`, `sobrenome`, `profissao`, `data_Post`, `texto_Post`, `imagem_Post`, `likes_Post`, `comentarios_Post`) VALUES
-(33, 14, 'perfil_default.svg', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', '2022-06-16', 'teste', '', 0, 0),
-(34, 14, 'perfil_default.svg', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', '2022-06-16', 'teste', '', 0, 0),
-(35, 14, 'perfil_default.svg', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', '2022-06-16', 'teste', '', 0, 0),
-(36, 14, 'perfil_default.svg', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', '2022-06-16', 'O texto dos comentÃ¡rios tÃ¡ incomodando? Fiz um novo menu no banir :D', '', 0, 0);
+) ENGINE=InnoDB AUTO_INCREMENT=139 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -199,9 +210,9 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `token`, `nome`, `sobrenome`, `email`, `senha`, `senhaC`, `dataN`, `genero`, `numero`, `estado`, `cidade`, `profissao`, `mdEscuro`, `foto`, `descricao`, `amigos`) VALUES
-(14, 1, 'Marcos', 'Vinicius', 'teste@gmail.com', '123', '123', '2023-11-16', 'masculinoCisgÃªnero', '', 'am', 'Caieras', 'Estudante de Medicina na USP', 0, '', '', 0),
-(15, 0, 'Leandro', 'Silva', 'leandrosdc@outlook.com', 'leandro1', 'leandro1', '2004-11-13', 'masculinoCisgÃªnero', '11979609142', 'sp', 'SÃ£o Paulo', 'Staff Ecogamma', 0, '', '', 0),
-(17, 0, 'Mandanga', 'SebastiÃ£o', 'mandanga@gmail.com', '123', '123', '2005-03-23', 'masculinoCisgÃªnero', '111111111', 'rj', 'Rio de Janeiro', 'Jogador de Futebol', 0, '', '', 0);
+(14, 1, 'Marcos', 'Vinicius', 'teste@gmail.com', '123', '123', '2023-11-16', 'masculinoCisgÃªnero', '', 'am', 'Caieras', 'Estudante de Medicina na USP', 0, 'perfil_default.svg', '', 30),
+(15, 0, 'Leandro', 'Silva', 'leandrosdc@outlook.com', 'leandro1', 'leandro1', '2004-11-13', 'masculinoCisgÃªnero', '11979609142', 'sp', 'SÃ£o Paulo', 'Staff Ecogamma', 0, 'perfil_default.svg', '', 0),
+(17, 0, 'Mandanga', 'SebastiÃ£o', 'mandanga@gmail.com', '123', '123', '2005-03-23', 'masculinoCisgÃªnero', '111111111', 'rj', 'Rio de Janeiro', 'Jogador de Futebol', 0, 'perfil_default.svg', '', 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
