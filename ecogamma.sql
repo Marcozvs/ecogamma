@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 20-Jun-2022 às 00:47
+-- Tempo de geração: 20-Jun-2022 às 19:41
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -34,14 +34,15 @@ CREATE TABLE IF NOT EXISTS `amigos` (
   `id_UserAcc` int(11) NOT NULL COMMENT 'id do usuário que aceitou o pedido',
   `pendente` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'aceitação pendente (true/false)',
   PRIMARY KEY (`id_Amizade`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Extraindo dados da tabela `amigos`
 --
 
 INSERT INTO `amigos` (`id_Amizade`, `id_UserAsk`, `id_UserAcc`, `pendente`) VALUES
-(4, 15, 14, 0);
+(4, 15, 14, 0),
+(8, 17, 14, 1);
 
 -- --------------------------------------------------------
 
@@ -75,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `comentarios` (
   `texto_Comentario` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'texto do comentario',
   `likes_Comentario` int(11) NOT NULL DEFAULT '0' COMMENT 'likes/curtidas do comentario',
   PRIMARY KEY (`id_Comentario`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -116,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `eventos` (
   `link_Evento` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `likes_Evento` int(20) NOT NULL,
   PRIMARY KEY (`id_Evento`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -138,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `noticias` (
   `imagem_Noticia` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `likes_Noticia` int(20) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_Noticia`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -161,7 +162,15 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `comentarios_Post` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_Post`),
   KEY `user_post` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=139 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `posts`
+--
+
+INSERT INTO `posts` (`id_Post`, `id`, `foto`, `nome`, `sobrenome`, `profissao`, `data_Post`, `texto_Post`, `imagem_Post`, `likes_Post`, `comentarios_Post`) VALUES
+(1, 14, 'perfil_default.svg', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', '2022-06-20', 'teste', '', 0, 0),
+(2, 17, 'perfil_default.svg', 'Mandanga', 'SebastiÃ£o', 'Jogador de Futebol', '2022-06-20', 'oba', '', 0, 0);
 
 -- --------------------------------------------------------
 
