@@ -77,12 +77,12 @@ label {
   border: 2px solid #5570FF;
   border-radius: 5px;
   height: 20px;
-  padding: 0.5rem;
+  padding: 0.5rem 0rem;
   color: #5570FF;
   margin-bottom: 1rem;
 }
 .input-icones span {
-  margin-right: 1rem;
+  margin-left: 0.5rem;
   color: #5570FF;
 }
 .input-icones input {
