@@ -89,109 +89,138 @@
   </section>
   <main>
     <?php
-    $idUser = $_GET['user'];
+    if ($_GET['user'] != $id) {
+      # code...
+      $idUser = $_GET['user'];
 
-    $sql = "SELECT token, nome, sobrenome, email, dataN, genero, numero, estado, cidade, profissao,
+      $sql = "SELECT token, nome, sobrenome, email, dataN, genero, numero, estado, cidade, profissao,
     foto, descricao, amigos FROM usuarios WHERE id = '$idUser'";
 
-    $result = mysqli_query($conn, $sql);
+      $result = mysqli_query($conn, $sql);
 
-    if (mysqli_num_rows($result) > 0) {
-      // output data of each row
-      while ($row = mysqli_fetch_assoc($result)) {
-        $tokenUser = $row["token"];
-        $nomeUser = $row["nome"];
-        $sobrenomeUser = $row["sobrenome"];
-        $emailUser = $row["email"];
-        $dataNUser = $row["dataN"];
-        $generoUser = $row["genero"];
-        $numeroUser = $row["numero"];
-        $estadoUser = $row["estado"];
-        $cidadeUser = $row["cidade"];
-        $fotoUser = $row["foto"];
-        $profissaoUser = $row["profissao"];
-        if (empty($fotoUser)) {
-          $fotoUser = 'perfil_default.svg';
+      if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        while ($row = mysqli_fetch_assoc($result)) {
+          $tokenUser = $row["token"];
+          $nomeUser = $row["nome"];
+          $sobrenomeUser = $row["sobrenome"];
+          $emailUser = $row["email"];
+          $dataNUser = $row["dataN"];
+          $generoUser = $row["genero"];
+          $numeroUser = $row["numero"];
+          $estadoUser = $row["estado"];
+          $cidadeUser = $row["cidade"];
+          $fotoUser = $row["foto"];
+          $profissaoUser = $row["profissao"];
+          if (empty($fotoUser)) {
+            $fotoUser = 'perfil_default.svg';
+          }
+          $descricaoUser = $row["descricao"];
+          if (empty($descricaoUser)) {
+            $descricaoUser = 'Eco é agro, Eco é tec, Eco é tudo!';
+          }
+          $amigosUser = $row["amigos"];
         }
-        $descricaoUser = $row["descricao"];
-        if (empty($descricaoUser)) {
-          $descricaoUser = 'Eco é agro, Eco é tec, Eco é tudo!';
-        }
-        $amigosUser = $row["amigos"];
+      } else {
+        echo "0 results";
       }
-    } else {
-      echo "0 results";
-    }
 
 
-    if ($estadoUser == 'ac') {
-      $fundoUser = 'ac.jpg';
-    } elseif ($estadoUser == 'al') {
-      $fundoUser = 'al.jpg';
-    } elseif ($estadoUser == 'am') {
-      $fundoUser = 'am.jpeg';
-    } elseif ($estadoUser == 'ap') {
-      $fundoUser = 'ap.jpg';
-    } elseif ($estadoUser == 'ba') {
-      $fundoUser = 'ba.jpg';
-    } elseif ($estadoUser == 'ce') {
-      $fundoUser = 'ce.jpg';
-    } elseif ($estadoUser == 'df') {
-      $fundoUser = 'df.jpg';
-    } elseif ($estadoUser == 'es') {
-      $fundoUser = 'es.png';
-    } elseif ($estadoUser == 'go') {
-      $fundoUser = 'go.jpg';
-    } elseif ($estadoUser == 'ma') {
-      $fundoUser = 'ma.jpg';
-    } elseif ($estadoUser == 'mt') {
-      $fundoUser = 'mt.jpg';
-    } elseif ($estadoUser == 'ms') {
-      $fundoUser = 'ms.jpg';
-    } elseif ($estadoUser == 'mg') {
-      $fundoUser = 'mg.jpg';
-    } elseif ($estadoUser == 'pa') {
-      $fundoUser = 'pa.jpg';
-    } elseif ($estadoUser == 'pb') {
-      $fundoUser = 'pb.jpg';
-    } elseif ($estadoUser == 'pr') {
-      $fundoUser = 'pr.jpg';
-    } elseif ($estadoUser == 'pe') {
-      $fundoUser = 'pe.jpg';
-    } elseif ($estadoUser == 'pi') {
-      $fundoUser = 'pi.jpg';
-    } elseif ($estadoUser == 'rj') {
-      $fundoUser = 'rj.jpg';
-    } elseif ($estadoUser == 'rn') {
-      $fundoUser = 'rn.jpg';
-    } elseif ($estadoUser == 'ro') {
-      $fundoUser = 'ro.jpg';
-    } elseif ($estadoUser == 'rs') {
-      $fundoUser = 'rr.jpg';
-    } elseif ($estadoUser == 'rr') {
-      $fundoUser = 'rr.jpg';
-    } elseif ($estadoUser == 'sc') {
-      $fundoUser = 'sc.jpg';
-    } elseif ($estadoUser == 'se') {
-      $fundoUser = 'se.jpg';
-    } elseif ($estadoUser == 'sp') {
-      $fundoUser = 'sp.jpg';
-    } elseif ($estadoUser == 'to') {
-      $fundoUser = 'to.jpg';
-    }
-// AQUI FICA AS INFORMAÇÕES DO USUÁRIO
-    echo "
+      if ($estadoUser == 'ac') {
+        $fundoUser = 'ac.jpg';
+      } elseif ($estadoUser == 'al') {
+        $fundoUser = 'al.jpg';
+      } elseif ($estadoUser == 'am') {
+        $fundoUser = 'am.jpeg';
+      } elseif ($estadoUser == 'ap') {
+        $fundoUser = 'ap.jpg';
+      } elseif ($estadoUser == 'ba') {
+        $fundoUser = 'ba.jpg';
+      } elseif ($estadoUser == 'ce') {
+        $fundoUser = 'ce.jpg';
+      } elseif ($estadoUser == 'df') {
+        $fundoUser = 'df.jpg';
+      } elseif ($estadoUser == 'es') {
+        $fundoUser = 'es.png';
+      } elseif ($estadoUser == 'go') {
+        $fundoUser = 'go.jpg';
+      } elseif ($estadoUser == 'ma') {
+        $fundoUser = 'ma.jpg';
+      } elseif ($estadoUser == 'mt') {
+        $fundoUser = 'mt.jpg';
+      } elseif ($estadoUser == 'ms') {
+        $fundoUser = 'ms.jpg';
+      } elseif ($estadoUser == 'mg') {
+        $fundoUser = 'mg.jpg';
+      } elseif ($estadoUser == 'pa') {
+        $fundoUser = 'pa.jpg';
+      } elseif ($estadoUser == 'pb') {
+        $fundoUser = 'pb.jpg';
+      } elseif ($estadoUser == 'pr') {
+        $fundoUser = 'pr.jpg';
+      } elseif ($estadoUser == 'pe') {
+        $fundoUser = 'pe.jpg';
+      } elseif ($estadoUser == 'pi') {
+        $fundoUser = 'pi.jpg';
+      } elseif ($estadoUser == 'rj') {
+        $fundoUser = 'rj.jpg';
+      } elseif ($estadoUser == 'rn') {
+        $fundoUser = 'rn.jpg';
+      } elseif ($estadoUser == 'ro') {
+        $fundoUser = 'ro.jpg';
+      } elseif ($estadoUser == 'rs') {
+        $fundoUser = 'rr.jpg';
+      } elseif ($estadoUser == 'rr') {
+        $fundoUser = 'rr.jpg';
+      } elseif ($estadoUser == 'sc') {
+        $fundoUser = 'sc.jpg';
+      } elseif ($estadoUser == 'se') {
+        $fundoUser = 'se.jpg';
+      } elseif ($estadoUser == 'sp') {
+        $fundoUser = 'sp.jpg';
+      } elseif ($estadoUser == 'to') {
+        $fundoUser = 'to.jpg';
+      }
+
+
+      //ESTE CÓDIGO É REFERENTE AO SISTEMA DE AMIGOS
+      $selecionaLacos = "SELECT * FROM amigos WHERE id_UserAsk = $id AND id_UserAcc = $id_User";
+      $resultAmizades = mysqli_query($conn, $selecionaLacos);
+
+      if (mysqli_num_rows($resultAmizades) > 0) {
+        $addText = "Amigos";
+      } else {
+        $addText = "Adicionar";
+      }
+
+      if (isset($_POST['id_UserAsk']) && isset($_POST['id_UserAcc']) && $addText != "Amigos") {
+        $pendente = 1;
+        $UserAsk = $_POST['id_UserAsk'];
+        $UserAcc = $_POST['id_UserAcc'];
+
+        $inserePedido = "INSERT INTO amigos (id_UserAsk, id_UserAcc, pendente)
+            VALUES ('$UserAsk', '$UserAcc', '$pendente')";
+
+        if (mysqli_query($conn, $inserePedido)) {
+          echo "pedido realizado";
+        }
+      }
+
+      // AQUI FICA AS INFORMAÇÕES DO USUÁRIO
+      echo "
     <div class='container'>
-      <div class='container__perfil'>
-        <div class='container__perfil__capa'>
-          <img src='../imagens/fundos/" . $fundoUser . "' alt='Fundo do perfil' class='container__perfil__capa__imagem'>
-        </div>
-        <div class='container__perfil__foto'>
-          <img src='../imagens/" . $fotoUser . "' alt='Fundo do perfil' class='container__perfil__foto__imagem'>
-        </div>
-        <form action='./perfilUser.php' method='POST'>
-          <input type='button' value='Adicionar' name='Adicionar'>
-        </form>
+    <div class='container__perfil'>
+    <div class='container__perfil__capa'>
+    <img src='../imagens/fundos/" . $fundoUser . "' alt='Fundo do perfil' class='container__perfil__capa__imagem'>
+    </div>
+    <div class='container__perfil__foto'>
+    <img src='../imagens/" . $fotoUser . "' alt='Fundo do perfil' class='container__perfil__foto__imagem'>
+    </div>
+    <form action='./perfilUser.php' method='POST'>
+    <input type='button' value='" . $addText . "' name='Adicionar'>
+    <input type='hidden' value='" . $id . "' name='id_UserAsk'>
+    <input type='hidden' value='" . $idUser . "' name='id_UserAcc'>
+    </form>
         <div class='container__perfil__dados'>
           <ul class='container__perfil__dados__lista'>
             <li class='container__perfil__dados__lista__item'>
@@ -199,24 +228,21 @@
               <p>" . $nomeUser . " " . $sobrenomeUser . "</p>
             </li>
             <li class='container__perfil__dados__lista__item'>
-              <p>Cargo:</p>
-              <p>" . $profissaoUser . "</p>
+            <p>Cargo:</p>
+            <p>" . $profissaoUser . "</p>
             </li>
             <li class='container__perfil__dados__lista__item'>
-              <p>Descrição:</p>
+            <p>Descrição:</p>
               <p>" . $descricaoUser . "</p>
-            </li>
+              </li>
             <li class='container__perfil__dados__lista__item'>
               <p>Amigos:</p>
               <p>" . $amigosUser . "</p>
-            </li>
+              </li>
           </ul>
         </div>
-      </div>";
-    ?>
+        </div>";
 
-
-      <?php
       $sql = "SELECT * FROM posts WHERE id = '$idUser' ORDER BY id_Post DESC";
 
       $result = mysqli_query($conn, $sql);
@@ -236,14 +262,14 @@
           $likesP = $row["likes_Post"];
 
 
-// AQUI FICA OS POSTS DO USUÁRIO
+          // AQUI FICA OS POSTS DO USUÁRIO
           echo "
           <section class='container__post--perfil'>
-            <div class='container__post__perfil'>
-              <div class='container__post__perfil__foto'>
-                <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
-              </div>
-              <div class='container__post__perfil__dados'>
+          <div class='container__post__perfil'>
+          <div class='container__post__perfil__foto'>
+          <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
+          </div>
+          <div class='container__post__perfil__dados'>
                 <p class='container__post__perfil__dados__nome nome__perfil'>" . $nomeP . " " . $sobrenomeP . "</p>
                 <p class='container__post__perfil__dados__cargo cargo__perfil'>" . $profissaoP . "</p>
               </div>
@@ -254,19 +280,19 @@
               <img src='../imagens/" . $imagem_Post . "' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
             </div>
             <div class='container__post__interacoes'>
-              <ul class='container__post__interacoes__lista'>
+            <ul class='container__post__interacoes__lista'>
                 <li class='container__post__interacoes__lista__item'>
                   <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe87d;</span>
                   <p>" . $likesP . "</p>
                 </li>
                 <li class='container__post__interacoes__lista__item'>
-                  <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe0b9;</span>
+                <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe0b9;</span>
                   <p>32</p>
-                </li>
+                  </li>
                 <li class='container__post__interacoes__lista__item'>
-                  <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe163;</span>
+                <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe163;</span>
                   <p>32</p>
-                </li>
+                  </li>
               </ul>
             </div>
             </section>
@@ -275,8 +301,12 @@
       } else {
         echo "Sem posts ainda...";
       }
-
-      ?>
+    } else {
+      echo "<h1>Erro:</h1>
+      <p>Parece que você tentou acessar o seu perfil pelo lugar errado!</p>
+      <p>Clique <a href='perfil.php'>aqui</a> para acessá-lo corretamente!</p>";
+    }
+    ?>
     </div>
   </main>
   <script src="../manipulacao/manuLateral.js"></script>

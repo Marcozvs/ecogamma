@@ -135,12 +135,12 @@
                     $insereCurtidaLog = "INSERT INTO curtidas (id_Elemento, id_User) VALUES ('$id_PostC','$id')"; // Ele vai inserir na tabela curtidas um log dizendo que o usuário curtiu tal coisa
                     $insereCurtida = "UPDATE posts SET likes_Post = likes_Post + '$soma' WHERE id_Post = '$id_PostC'";
                     if (mysqli_query($conn, $insereCurtidaLog)) {
-                        echo "<h1>Curtiu em logs</h1>";
+                        // echo "<h1>Curtiu em logs</h1>";
                         if (mysqli_query($conn, $insereCurtida)) {
-                            echo "<h1>inserido em posts</h1>";
-                            echo "<h1>pnc do marcos</h1>";
+                            // echo "<h1>inserido em posts</h1>";
+                            // echo "<h1>pnc do marcos</h1>";
                         } else {
-                            echo "<h1>Error no curtir: </h1>" . mysqli_error($conn);
+                            // echo "<h1>Error no curtir: </h1>" . mysqli_error($conn);
                         }
                     }
                 } elseif ($verifica === 1) { //se a curtida existir vai cair aqui, provavelmente...
@@ -150,15 +150,15 @@
                     $diminuiCurtida = "UPDATE posts SET likes_Post = likes_Post - '$soma' WHERE id_Post = '$id_PostC'";
 
                     if (mysqli_query($conn, $deletaCurtida)) {
-                        echo "<h1>descoisado de curtidas</h1>";
+                        // echo "<h1>descoisado de curtidas</h1>";
                     } else {
-                        echo "<h1>Erro no delete: </h1>" . mysqli_error($conn);
+                        // echo "<h1>Erro no delete: </h1>" . mysqli_error($conn);
                     }
 
                     if (mysqli_query($conn, $diminuiCurtida)) {
-                        echo "<h1>descoisado de posts</h1>";
+                        // echo "<h1>descoisado de posts</h1>";
                     } else {
-                        echo "<h1>Erro no diminuir: </h1>" . mysqli_error($conn);
+                        // echo "<h1>Erro no diminuir: </h1>" . mysqli_error($conn);
                     }
                 }
             }
