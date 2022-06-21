@@ -33,7 +33,7 @@
                     <script>
                         Swal.fire({
                         icon: 'success',
-                        title: 'Cadastrado!',
+                        title: 'Volte sempre!',
                         showConfirmButton: false,
                         timer: 1500
                         })

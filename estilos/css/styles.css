@@ -31,8 +31,7 @@ h3 {
   color: #8325E0;
 }
 
-p,
-.p--alternativo {
+p {
   line-height: 1.5rem;
   text-align: justify;
   color: #111111;
@@ -381,6 +380,7 @@ main .container {
 .container__cartao .container__cartao__dados div .container__cartao__dados__cargo {
   color: #34B132;
   font-weight: 700;
+  text-align: left;
 }
 .container__cartao .container__cartao__texto {
   color: #111111;
