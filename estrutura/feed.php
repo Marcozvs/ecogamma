@@ -350,7 +350,12 @@
         function compartilhar() {
             document.getElementById("btn-compartilhar").select();
             document.execCommand("copy");
-            swal("Link Copiado!", "Compartilhe com seus amigos!", "success");
+            Swal.fire({
+                icon: 'success',
+                title: 'Link copiado!',
+                showConfirmButton: false,
+                timer: 1500
+            })
         }
     </script>
     <script src="../manipulacao/rolagem.js"></script>
