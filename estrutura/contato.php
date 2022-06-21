@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ecogamma | Início</title>
+  <script src="../manipulacao/sweetalert.js"></script>
   <?php include './base/linksGlobais.php' ?>
 </head>
 
@@ -85,13 +86,24 @@
           <label for="mensagem" id="label-icones-mensagem" class="label-icones">Mensagem</label>
           <textarea name="mensagem" id="mensagem" cols="30" rows="10" placeholder="Escreva sua mensagem aqui..." onclick="inputIconesMensagem()"></textarea>
         
-          <input type="submit" value="Enviar" class="botao__principal">
+          <input type="submit" value="Enviar" class="botao__principal" id="botao-contato" onclick="contato()">
+
         </form>
       </div>
     </div>
   </main>
   <script src="../manipulacao/manuLateral.js"></script>
   <script src="../manipulacao/inputIconesCadastro.js"></script>
+  <script>
+    function contato(){
+      Swal.fire({
+        icon: 'success',
+        title: 'Contato enviado',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    }
+  </script>
 </body>
 
 </html>

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecogamma | Feed</title>
+    <script src="../manipulacao/sweetalert.js"></script>
     <?php include './base/linksGlobais.php' ?>
 </head>
 
@@ -29,6 +30,14 @@
                     session_destroy();
                     include_once './administracao/sessao.php';
                     echo "
+                    <script>
+                        Swal.fire({
+                        icon: 'success',
+                        title: 'Cadastrado!',
+                        showConfirmButton: false,
+                        timer: 1500
+                        })
+                    </script>
                     <h1>
                         Sua conta foi desconectada com sucesso!
                     </h1>

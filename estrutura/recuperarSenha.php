@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ecogamma | Sobre Nós</title>
+  <script src="../manipulacao/sweetalert.js"></script>
   <?php include './base/linksGlobais.php' ?>
 </head>
 
@@ -53,7 +54,7 @@
         </div>
     </section>
 <main>
-  <h1 class="titulo-sombra">Reperar a Senha</h1>
+  <h1 class="titulo-sombra">Recuperar a Senha</h1>
   <p class="paragrafo-sombra p--subtitulo">Insira seu email abaixo para recuperar a senha</p>
   <form action="recuperarSenhaProcessa">
     <label for="email" id="label-icones-email" class="label-icones">Email</label>
@@ -61,7 +62,7 @@
       <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-email-span">&#xe158;</span>
       <input type="email" placeholder="Insira seu email..." maxlength="100" minlength="1" required id="email" name="email">
     </div>
-    <input type="submit" value="Enviar" class="botao__principal">
+    <input type="submit" value="Enviar" class="botao__principal" id="botao-recuperar" onclick="recuperar()">
   </form>
 </main>
 <footer class="footer-recuperarSenha">
@@ -83,5 +84,15 @@
 </footer>
 <script src="../manipulacao/manuLateral.js"></script>
 <script src="../manipulacao/inputIconesCadastro.js"></script>
+<script>
+    function recuperar(){
+      Swal.fire({
+        icon: 'success',
+        title: 'Recuperação enviada',
+        text: 'Verifique no seu email para recuperar sua senha',
+        showConfirmButton: true
+      })
+    }
+  </script>
 </body>
 </html>

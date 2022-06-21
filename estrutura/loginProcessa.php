@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../manipulacao/sweetalert.js"></script>
     <?php include './base/linksGlobais.php' ?>
 </head>
 
@@ -40,8 +41,16 @@
     if ($row == 1) {
         echo "
         <main>
+            <script>
+                Swal.fire({
+                icon: 'success',
+                title: 'Logado!',
+                showConfirmButton: false,
+                timer: 1500
+                })
+            </script>
             <div class='container'>
-                <div class='container__logout'><h1>Logado!</h1>
+                <div class='container__logout'><h2>A mudança acontece com pequenas atitudes</h2>
                     <a href='feed.php'>
                         <button class='botao__principal'>
                             Iniciar
