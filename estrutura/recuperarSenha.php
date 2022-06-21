@@ -57,7 +57,7 @@
   <h1 class="titulo-sombra">Recuperar a Senha</h1>
   <p class="paragrafo-sombra p--subtitulo">Insira seu email abaixo para recuperar a senha</p>
   <form action="recuperarSenhaProcessa">
-    <label for="email" id="label-icones-email" class="label-icones">Email</label>
+    <label for="email" id="label-icones-email" class="label-icones"  style="margin-top: 1rem">Email</label>
     <div class="input-icones" id="input-icones-email" onclick="inputIconesEmail()">
       <span class="material-symbols-outlined container__lista__item__icone  icone-alternativo" id="input-icones-email-span">&#xe158;</span>
       <input type="email" placeholder="Insira seu email..." maxlength="100" minlength="1" required id="email" name="email">
