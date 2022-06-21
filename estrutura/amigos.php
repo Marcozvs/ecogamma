@@ -33,6 +33,14 @@
                 <span class="material-symbols-outlined container__menu__icone span--azul">&#xeffd;</span>
             </a>
         </nav>
+        <div>
+            <button id="botao__noite" onclick="modoEscuro()">
+                <span class="material-symbols-outlined container__menu__icone span--azul">&#xf159;</span>
+            </button>
+            <button id="botao__dia" onclick="modoClaro()">
+                <span class="material-symbols-outlined container__menu__icone span--azul">&#xe518;</span>
+            </button>
+        </div>
         <div id="container__menu" onclick="menuLateralInternoOpen()">
             <span class="material-symbols-outlined container__menu__icone span--azul">&#xe5d2;</span>
         </div>
@@ -155,6 +163,7 @@
     </div>
   </main>
   <script src="../manipulacao/manuLateral.js"></script>
+  <script src="../manipulacao/modoEscuroClaro.js"></script>
 </body>
 
 </html>

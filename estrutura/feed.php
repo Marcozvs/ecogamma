@@ -272,7 +272,7 @@
                             <span class='material-symbols-outlined container__menu__icone'>&#xe163;</span>
                             <input type='text' id='btn-compartilhar'value='" . $_SERVER['PHP_SELF'] . "?" . $id_Post . "'>
                         </li>
-                        <li class='container__post__interacoes__lista__item' onclick='salvar()' id='salvo'>
+                        <li class='container__post__interacoes__lista__item' onclick='salvar()'>
                             <span class='material-symbols-outlined container__menu__icone'>&#xe866;</span>
                             <input type='text' id='btn-salvar'value='" . $_SERVER['PHP_SELF'] . "?" . $id_Post . "'>
                         </li>
