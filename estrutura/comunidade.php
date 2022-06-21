@@ -56,7 +56,7 @@
         <div class="container">
             <h1 class="titulo-sombra">Comunidade</h1>
             <p class="paragrafo-sombra p--subtitulo">Nossa comunidade é impulsionada por pessoas motivadas em preservar o meio ambiente</p>
-            <div class="container__cartao">
+            <div class="container__cartao" data-anime="left">
                 <div class="container__cartao__dados">
                     <div class="container__cartao__dados__foto">
                         <img src="../imagens/marcos.jpg" alt="foto de perfil">
@@ -68,7 +68,7 @@
                 </div>
                 <p class="container__cartao__texto">Claro que é importante debatermos assuntos como consumo de energia, entrentanto devemos também pensar na poluição gerada pelos materiais dos smartphones e outros dispositivos que são descartados diariamente!</p>
             </div>
-            <div class="container__cartao">
+            <div class="container__cartao" data-anime="left">
                 <div class="container__cartao__dados">
                     <div class="container__cartao__dados__foto">
                         <img src="../imagens/leandro.jpg" alt="foto de perfil">
@@ -80,7 +80,7 @@
                 </div>
                 <p class="container__cartao__texto">Hoje validamos um projeto de melhoria no sistema de energia em alguns setores da empresa graças ao nosso novo software #TECHLINS #MEIO AMBIENTE</p>
             </div>
-            <div class="container__cartao">
+            <div class="container__cartao" data-anime="left">
                 <div class="container__cartao__dados">
                     <div class="container__cartao__dados__foto">
                         <img src="../imagens/Mandanga.jpg" alt="foto de perfil">
@@ -92,7 +92,7 @@
                 </div>
                 <p class="container__cartao__texto">No Estádio Nilton Santos, do Botafogo, iniciou uma parceria com a empresa MeuCopo Eco para reduzir a quantidade de copos descartados no estádio</p>
             </div>
-            <div class="container__cartao">
+            <div class="container__cartao" data-anime="left">
                 <div class="container__cartao__dados">
                     <div class="container__cartao__dados__foto">
                         <img src="../imagens/Rafael.jpg" alt="foto de perfil">
@@ -107,7 +107,7 @@
                     <img src="../imagens/rafaelEmpresa.jpg" alt="Foto do publicação">
                 </div>
             </div>
-            <div class="container__cartao">
+            <div class="container__cartao" data-anime="left">
                 <div class="container__cartao__dados">
                     <div class="container__cartao__dados__foto">
                         <img src="../imagens/Vanessa.jpg" alt="foto de perfil">
@@ -119,7 +119,7 @@
                 </div>
                 <p class="container__cartao__texto">A educação ambiental é o primeiro passo que precisamos dar, sem ela não podemos ter certeza de que o próximo entende o que está e jogo #LutaPelaEducaçãoAmbiental</p>
             </div>
-            <div class="container__cartao">
+            <div class="container__cartao" data-anime="left">
                 <div class="container__cartao__dados">
                     <div class="container__cartao__dados__foto">
                         <img src="../imagens/samyra.jpg" alt="foto de perfil">
@@ -134,7 +134,7 @@
                     <img src="../imagens/tirinha.jpg" alt="Foto do publicação">
                 </div>
             </div>
-            <div class="container__cartao">
+            <div class="container__cartao" data-anime="left">
                 <div class="container__cartao__dados">
                     <div class="container__cartao__dados__foto">
                         <img src="../imagens/richard.jpg" alt="foto de perfil">
@@ -166,6 +166,7 @@
     </div>
 </footer>
     <script src="../manipulacao/manuLateral.js"></script>
+    <script src="../manipulacao/rolagem.js"></script>
 </body>
 
 </html>
