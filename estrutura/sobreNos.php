@@ -65,8 +65,8 @@
                 </div>
             </div>
             <div id="chat">
-                <p class="robo">Prazer em conhecê-lo, meu nome é <strong>Ecobot</strong>! Sou o responsável por ajudar os amigos da natureza a se encontrarem dentro do nosso website de forma amigável e intuitiva! ♥</p>
-                <p class="robo">Tire suas dúvidas comigo! Tente digitar <strong>olá</strong> no meu chat!</p>
+                <p class="robo" data-anime="left">Prazer em conhecê-lo, meu nome é <strong>Ecobot</strong>! Sou o responsável por ajudar os amigos da natureza a se encontrarem dentro do nosso website de forma amigável e intuitiva! ♥</p>
+                <p class="robo" data-anime="left">Tire suas dúvidas comigo! Tente digitar <strong>olá</strong> no meu chat!</p>
             </div>
             <div class="chat__form">
                 <input type="text" name="" id="escrever" autocomplete="off" placeholder="Dica: Pressione ENTER para enviar uma mensagem já escrita">
@@ -77,6 +77,7 @@
     <script src = "../manipulacao/bot.js"></script>
   </main>
   <script src="../manipulacao/manuLateral.js"></script>
+  <script src="../manipulacao/rolagem.js"></script>
 </body>
 
 </html>

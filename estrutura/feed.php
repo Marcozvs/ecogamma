@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecogamma | Feed</title>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../manipulacao/sweetalert.js"></script>
     <?php include './base/linksGlobais.php' ?>
     <style>
         .botao__principal {
@@ -236,7 +237,7 @@
                     $comentarios = $row["comentarios_Post"];
 
                     echo "
-    <section class='container__post' id='post'>
+    <section class='container__post' id='post' data-anime='left'>
                 <div class='container__post__perfil'>
                     <div class='container__post__perfil__foto'>
                         <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
@@ -278,8 +279,7 @@
                         <input type='submit' name='submit__comentario' id='submit__comentario' class='botao__principal'>
                     </form>
                     </div>
-                </div>
-            </section>";
+                </div>";
             //aqui é pra carregar os comentários
                 $comentarioSeleciona = "SELECT * FROM comentarios WHERE id_Post = '$id_Post' ORDER BY id_Comentario DESC";
                 $resultComentario = mysqli_query($conn, $comentarioSeleciona);
@@ -296,11 +296,34 @@
                             $texto_Comentario = $row["texto_Comentario"];
                             $likes_Comentario = $row["likes_Comentario"];
 
-                            echo "<section><br><p>Só estilizar essa bagaça, e não sei se tu viu mas, o botãozinho de comentário só tá funcionando no primeiro post e também tem que... tirar o efeito de like do comentário, ele tá aumentando o número quando a gente clica no botão pra aparecer o input</p>"
+                            echo "<br>
+                            <h3>Comentários</h3>
+                            <div class='container__comentario' data-anime='left'>
+                                <div class='container__post__perfil'>
+                                    <div class='container__post__perfil__foto'>
+                                        <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
+                                    </div>
+                                    <div class='container__post__perfil__dados'>
+                                        <a href='./perfilUser.php?user=" . $idP . "'<p class='container__post__perfil__dados__nome nome__perfil'>" . $nome_User_Comentario . " " . $sobrenome_User_Comentario . "</p></a>
+                                        <p class='container__post__perfil__dados__cargo cargo__perfil'>" . $profissao_User_Comentario . "</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class='data__post'><span class='material-symbols-outlined container__menu__icone span--azul'>&#xe425;</span>" . $data_Comentario . "</p>
+                                </div>
+                                <br>
+                                <div>
+                                    <p>" . $texto_Comentario . "</p>
+                                </div>
+                            </div>
+                            </section>";
+                            /*
+                             echo "<section><br><p>Só estilizar essa bagaça, e não sei se tu viu mas, o botãozinho de comentário só tá funcionando no primeiro post e também tem que... tirar o efeito de like do comentário, ele tá aumentando o número quando a gente clica no botão pra aparecer o input</p>"
                              . $id_Post_Comentario . "<br>" . $id_User_Comentario . "<br>"
                              . $data_Comentario . "<br>" . $nome_User_Comentario . "<br>"
                              . $sobrenome_User_Comentario . "<br>" . $profissao_User_Comentario . "<br>"
                              . $texto_Comentario . "<br>" . $likes_Comentario . "</section>";
+                            */
                     } //fim do while do if comentarios
 
                 //fim do if comentarios
@@ -330,6 +353,7 @@
             swal("Link Copiado!", "Compartilhe com seus amigos!", "success");
         }
     </script>
+    <script src="../manipulacao/rolagem.js"></script>
 </body>
 
 </html>

@@ -347,7 +347,7 @@ main .container {
 
 [data-anime] {
   opacity: 0;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 [data-anime=left] {
@@ -499,6 +499,17 @@ main .container .container__postagem .container__postagem__formulario .container
 .container__post .container__post__comentarios .container__post__conteudo__imagem,
 .container__post--perfil .container__post__comentarios .container__post__conteudo__imagem {
   border-radius: 25px;
+}
+
+.data__post {
+  display: flex;
+  align-items: center;
+}
+
+.container__comentario {
+  border-left: 2px solid #c4c4c4;
+  padding-left: 1rem;
+  margin-top: 1rem;
 }
 
 .container .container__logout a {

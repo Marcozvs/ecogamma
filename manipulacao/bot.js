@@ -22,7 +22,7 @@ function conversar() {
         chat.innerHTML += `<p class="robo">Olá, de qual informação você precisa? Digite o número da informação que precisa:<br>1. Como me cadastro no site?<br>2. Quais os meios de doação?<br>3. Posso usar o site para prover a minha empresa?<br>4. Quem está por trás do Ecogamma?<br> 5. Esqueci a minha senha, e agora?<br><br>Lembre-se de que é possível mudar o tema da página digitando <strong>escuro</strong> ou <strong>claro</strong> </p>`;
     } else if (mensagem == "1") {
         chat.innerHTML += `<p class="usuario">${mensagem}</p>`;
-        chat.innerHTML += `<p class="robo">Para se cadastrar no site e efetivar a sua conta é necessário realizar o cadastro, a página de cadastro pode ser acessada <a href='./cadastro.php' style='text-decoration:none;color: white; font-weight:bolder;'>clicando aqui</a>.</p>`;
+        chat.innerHTML += `<p class="robo" data-anime="left">Para se cadastrar no site e efetivar a sua conta é necessário realizar o cadastro, a página de cadastro pode ser acessada <a href='./cadastro.php' style='text-decoration:none;color: white; font-weight:bolder;'>clicando aqui</a>.</p>`;
     } else if (mensagem == "2") {
         chat.innerHTML += `<p class="usuario">${mensagem}</p>`;
         chat.innerHTML += `<p class="robo">Aceitamos cartões de crédito, débito, pix, paypal e pagamento via boleto bancário.</p>`;
