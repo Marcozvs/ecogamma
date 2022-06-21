@@ -272,6 +272,10 @@
                             <span class='material-symbols-outlined container__menu__icone'>&#xe163;</span>
                             <input type='text' id='btn-compartilhar'value='" . $_SERVER['PHP_SELF'] . "?" . $id_Post . "'>
                         </li>
+                        <li class='container__post__interacoes__lista__item' onclick='salvar()' id='salvo'>
+                            <span class='material-symbols-outlined container__menu__icone'>&#xe866;</span>
+                            <input type='text' id='btn-salvar'value='" . $_SERVER['PHP_SELF'] . "?" . $id_Post . "'>
+                        </li>
                     </ul>
                     <div id='caixa__comentario'>
                     <form action='./feed.php?id_Post_Comentario=" . $id_Post . "' method='POST' id='form__comentario'>
@@ -353,6 +357,14 @@
             Swal.fire({
                 icon: 'success',
                 title: 'Link copiado!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
+        function salvar() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Post Salvo!',
                 showConfirmButton: false,
                 timer: 1500
             })

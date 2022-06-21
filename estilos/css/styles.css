@@ -264,11 +264,17 @@ span {
   border-bottom-left-radius: 0px;
 }
 
+#btn-salvar,
 #btn-compartilhar {
   display: flex;
   color: white;
   border: none;
   width: 1px;
+}
+
+#salvo {
+  position: relative;
+  right: 20px;
 }
 
 select#gender option[value=claro] {
