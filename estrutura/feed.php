@@ -237,53 +237,55 @@
                     $comentarios = $row["comentarios_Post"];
 
                     echo "
-    <section class='container__post' id='post' data-anime='left'>
-                <div class='container__post__perfil'>
-                    <div class='container__post__perfil__foto'>
-                        <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
-                    </div>
-                    <div class='container__post__perfil__dados'>
-                        <a href='./perfilUser.php?user=" . $idP . "'<p class='container__post__perfil__dados__nome nome__perfil'>" . $nomeP . " " . $sobrenomeP . "</p></a>
-                        <p class='container__post__perfil__dados__cargo cargo__perfil'>" . $profissaoP . "</p>
-                    </div>
-                </div>
-                <div class='container__post__conteudo'>
-                    <p class='container__post__conteudo__data' id='container__post__conteudo__data'>" . $data_Post . "</p>
-                    <p class='container__post__conteudo__texto' id='container__post__conteudo__texto'>" . $texto_Post . "</p>
-                    <img src='../imagens/" . $imagem_Post . "' class='container__post__conteudo__imagem'>
-                </div>
-                <div class='container__post__interacoes'>
-                    <ul class='container__post__interacoes__lista'>
-                        
-                        <form action='./feed.php' id='likeForm' method='POST'>
-                            <input type='checkbox' name='like' value='True' id='checkbox__curtir'>
-                            <input type='submit' value = '" . $id_Post . "' name='enviaLike' onclick='curtir()' id='btn__funcao__curtir'>
-                            <span class='material-symbols-outlined container__menu__icone' id='btn__curtir'>&#xe87d;</span>
-                        </form>
-                            <p id='valor__curtir'>" . $likesP . "</p>
-                        
-                        <li class='container__post__interacoes__lista__item' onclick='comentar()'>
-                            <input type='submit' value = 'comentar' name='comentar' onclick='comentar()' id='btn__funcao__comentar'>
-                            <input type='checkbox' name='comentar' id='checkbox__comentar'>
-                            <span class='material-symbols-outlined container__menu__icone' id='btn__comentar'>&#xe0b9;</span>
-                            <p id='valor__comentar'>" . $comentarios . "</p>
-                        </li>
-                        <li class='container__post__interacoes__lista__item' onclick='compartilhar()'>
-                            <span class='material-symbols-outlined container__menu__icone'>&#xe163;</span>
-                            <input type='text' id='btn-compartilhar'value='" . $_SERVER['PHP_SELF'] . "?" . $id_Post . "'>
-                        </li>
-                        <li class='container__post__interacoes__lista__item' onclick='salvar()'>
-                            <span class='material-symbols-outlined container__menu__icone'>&#xe866;</span>
-                            <input type='text' id='btn-salvar'value='" . $_SERVER['PHP_SELF'] . "?" . $id_Post . "'>
-                        </li>
-                    </ul>
-                    <div id='caixa__comentario'>
-                    <form action='./feed.php?id_Post_Comentario=" . $id_Post . "' method='POST' id='form__comentario'>
-                        <textarea name='texto__comentario' id='texto__comentario' placeholder='Insira seu comentário aqui' wrap='hard'></textarea>
-                        <input type='submit' name='submit__comentario' id='submit__comentario' class='botao__principal'>
-                    </form>
-                    </div>
-                </div>";
+                        <br>
+                        <section class='container__post' id='post' data-anime='left'>
+                            <div class='container__post__perfil'>
+                                <div class='container__post__perfil__foto'>
+                                    <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
+                                </div>
+                                <div class='container__post__perfil__dados'>
+                                    <a href='./perfilUser.php?user=" . $idP . "'<p class='container__post__perfil__dados__nome nome__perfil'>" . $nomeP . " " . $sobrenomeP . "</p></a>
+                                    <p class='container__post__perfil__dados__cargo cargo__perfil'>" . $profissaoP . "</p>
+                                </div>
+                            </div>
+                            <div class='container__post__conteudo'>
+                                <p class='container__post__conteudo__data' id='container__post__conteudo__data'>" . $data_Post . "</p>
+                                <p class='container__post__conteudo__texto' id='container__post__conteudo__texto'>" . $texto_Post . "</p>
+                                <img src='../imagens/" . $imagem_Post . "' class='container__post__conteudo__imagem'>
+                            </div>
+                            <div class='container__post__interacoes'>
+                                <ul class='container__post__interacoes__lista'>
+                                    
+                                    <form action='./feed.php' id='likeForm' method='POST'>
+                                        <input type='checkbox' name='like' value='True' id='checkbox__curtir'>
+                                        <input type='submit' value = '" . $id_Post . "' name='enviaLike' onclick='curtir()' id='btn__funcao__curtir'>
+                                        <span class='material-symbols-outlined container__menu__icone' id='btn__curtir'>&#xe87d;</span>
+                                    </form>
+                                        <p id='valor__curtir'>" . $likesP . "</p>
+                                    
+                                    <li class='container__post__interacoes__lista__item' onclick='comentar()'>
+                                        <input type='submit' value = 'comentar' name='comentar' onclick='comentar()' id='btn__funcao__comentar'>
+                                        <input type='checkbox' name='comentar' id='checkbox__comentar'>
+                                        <span class='material-symbols-outlined container__menu__icone' id='btn__comentar'>&#xe0b9;</span>
+                                        <p id='valor__comentar'>" . $comentarios . "</p>
+                                    </li>
+                                    <li class='container__post__interacoes__lista__item' onclick='compartilhar()'>
+                                        <span class='material-symbols-outlined container__menu__icone'>&#xe163;</span>
+                                        <input type='text' id='btn-compartilhar'value='" . $_SERVER['PHP_SELF'] . "?" . $id_Post . "'>
+                                    </li>
+                                    <li class='container__post__interacoes__lista__item' onclick='salvar()'>
+                                        <span class='material-symbols-outlined container__menu__icone'>&#xe866;</span>
+                                        <input type='text' id='btn-salvar'value='" . $_SERVER['PHP_SELF'] . "?" . $id_Post . "'>
+                                    </li>
+                                </ul>
+                                <div id='caixa__comentario'>
+                                <form action='./feed.php?id_Post_Comentario=" . $id_Post . "' method='POST' id='form__comentario'>
+                                    <textarea name='texto__comentario' id='texto__comentario' placeholder='Insira seu comentário aqui' wrap='hard'></textarea>
+                                    <input type='submit' name='submit__comentario' id='submit__comentario' class='botao__principal'>
+                                </form>
+                                </div>
+                            </div>
+                            <h3>Comentários</h3>";
             //aqui é pra carregar os comentários
                 $comentarioSeleciona = "SELECT * FROM comentarios WHERE id_Post = '$id_Post' ORDER BY id_Comentario DESC";
                 $resultComentario = mysqli_query($conn, $comentarioSeleciona);
@@ -301,26 +303,24 @@
                             $likes_Comentario = $row["likes_Comentario"];
 
                             echo "<br>
-                            <h3>Comentários</h3>
-                            <div class='container__comentario' data-anime='left'>
-                                <div class='container__post__perfil'>
-                                    <div class='container__post__perfil__foto'>
-                                        <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
+                                <div class='container__comentario' data-anime='left'>
+                                    <div class='container__post__perfil'>
+                                        <div class='container__post__perfil__foto'>
+                                            <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
+                                        </div>
+                                        <div class='container__post__perfil__dados'>
+                                            <a href='./perfilUser.php?user=" . $idP . "'<p class='container__post__perfil__dados__nome nome__perfil'>" . $nome_User_Comentario . " " . $sobrenome_User_Comentario . "</p></a>
+                                            <p class='container__post__perfil__dados__cargo cargo__perfil'>" . $profissao_User_Comentario . "</p>
+                                        </div>
                                     </div>
-                                    <div class='container__post__perfil__dados'>
-                                        <a href='./perfilUser.php?user=" . $idP . "'<p class='container__post__perfil__dados__nome nome__perfil'>" . $nome_User_Comentario . " " . $sobrenome_User_Comentario . "</p></a>
-                                        <p class='container__post__perfil__dados__cargo cargo__perfil'>" . $profissao_User_Comentario . "</p>
+                                    <div>
+                                        <p class='data__post'><span class='material-symbols-outlined container__menu__icone span--azul'>&#xe425;</span>" . $data_Comentario . "</p>
                                     </div>
-                                </div>
-                                <div>
-                                    <p class='data__post'><span class='material-symbols-outlined container__menu__icone span--azul'>&#xe425;</span>" . $data_Comentario . "</p>
-                                </div>
-                                <br>
-                                <div>
-                                    <p>" . $texto_Comentario . "</p>
-                                </div>
-                            </div>
-                            </section>";
+                                    <br>
+                                    <div>
+                                        <p>" . $texto_Comentario . "</p>
+                                    </div>
+                                </div>";
                             /*
                              echo "<section><br><p>Só estilizar essa bagaça, e não sei se tu viu mas, o botãozinho de comentário só tá funcionando no primeiro post e também tem que... tirar o efeito de like do comentário, ele tá aumentando o número quando a gente clica no botão pra aparecer o input</p>"
                              . $id_Post_Comentario . "<br>" . $id_User_Comentario . "<br>"
@@ -334,15 +334,15 @@
                 } else {// else do if comentarios
                     echo "sem comentários";
                 } 
-                
+                    echo
+                        "</section>";  
             } // fim do while posts
 
         // fim do if posts  
         } else { //else do if posts
                 echo "0 Posts";
             }
-            ?>
-
+        ?>
         </div>
     </main>
             <!-- umas script de js -->
