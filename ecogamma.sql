@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 20-Jun-2022 às 19:41
+-- Tempo de geração: 22-Jun-2022 às 19:59
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `amigos` (
 
 INSERT INTO `amigos` (`id_Amizade`, `id_UserAsk`, `id_UserAcc`, `pendente`) VALUES
 (4, 15, 14, 0),
-(8, 17, 14, 1);
+(8, 17, 14, 0);
 
 -- --------------------------------------------------------
 
@@ -117,6 +117,25 @@ CREATE TABLE IF NOT EXISTS `eventos` (
   `link_Evento` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `likes_Evento` int(20) NOT NULL,
   PRIMARY KEY (`id_Evento`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `imagens`
+--
+
+DROP TABLE IF EXISTS `imagens`;
+CREATE TABLE IF NOT EXISTS `imagens` (
+  `id_Imagem` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo_Elemento` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `id_Elemento` int(11) NOT NULL,
+  `id_User` int(11) NOT NULL,
+  `imagem` longblob NOT NULL,
+  `imagem_Nome` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `imagem_Tipo` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `imagem_Tamanho` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id_Imagem`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -219,7 +238,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `token`, `nome`, `sobrenome`, `email`, `senha`, `senhaC`, `dataN`, `genero`, `numero`, `estado`, `cidade`, `profissao`, `mdEscuro`, `foto`, `descricao`, `amigos`) VALUES
-(14, 1, 'Marcos', 'Vinicius', 'teste@gmail.com', '123', '123', '2023-11-16', 'masculinoCisgÃªnero', '', 'am', 'Caieras', 'Estudante de Medicina na USP', 0, 'perfil_default.svg', '', 30),
+(14, 1, 'Marcos', 'Vinicius', 'teste@gmail.com', '123', '123', '2023-11-16', 'masculinoCisgÃªnero', '', 'am', 'Caieras', 'Estudante de Medicina na USP', 0, 'perfil_default.svg', '', 31),
 (15, 0, 'Leandro', 'Silva', 'leandrosdc@outlook.com', 'leandro1', 'leandro1', '2004-11-13', 'masculinoCisgÃªnero', '11979609142', 'sp', 'SÃ£o Paulo', 'Staff Ecogamma', 0, 'perfil_default.svg', '', 0),
 (17, 0, 'Mandanga', 'SebastiÃ£o', 'mandanga@gmail.com', '123', '123', '2005-03-23', 'masculinoCisgÃªnero', '111111111', 'rj', 'Rio de Janeiro', 'Jogador de Futebol', 0, 'perfil_default.svg', '', 0);
 COMMIT;

@@ -111,6 +111,7 @@
                     <div class="container__postagem__formulario__botoes">
                         <label for="imagem" class="container__postagem__formulario__botoes__label label-botao" id="upload">Enviar imagem</label>
                         <input type="file" accept="image/*" id="imagem" name="imagem" class="container__postagem__formulario__botoes__input">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="99999999" />
                         <input type="submit" value="Postar" class="botao__principal" name="submit" id="submit">
                     </div>
                 </form>
@@ -145,7 +146,7 @@
                         }
                     }
                 } elseif ($verifica === 1) { //se a curtida existir vai cair aqui, provavelmente...
-                    
+
                     $deletaCurtida = "DELETE FROM curtidas WHERE id_Elemento = '$id_PostC'";
 
                     $diminuiCurtida = "UPDATE posts SET likes_Post = likes_Post - '$soma' WHERE id_Post = '$id_PostC'";
@@ -163,7 +164,7 @@
                     }
                 }
             }
-            
+
             //Aqui é pra comentar
             if (isset($_GET['id_Post_Comentario'])) {
                 # code...
@@ -183,7 +184,6 @@
                 } else {
                     // echo "Erro né pae: " . $insereComentarios . "<br>" . mysqli_error($conn);
                 }
-
             } //fim if do post de comentarios
 
 
@@ -198,10 +198,25 @@
                 // $profissaoP = $profissao;
                 $data_Post = date("Y-m-d");
                 $texto_Post = $_POST['texto'];
-                $imagem_Post = $_POST['imagem'];
                 $likes = 0;
+                $imagem_Post = $_FILES['imagem']['tmp_name'];
+                $tamanho = $_FILES['imagem']['size'];
+                $tipo = $_FILES['imagem']['type'];
+                $nome_Imagem = $_FILES['imagem']['name'];
 
-                include './administracao/conexao.php';
+                if ($imagem_Post != "none") {
+                    $fp = fopen($imagem, "rb");
+                    $conteudo = fread($fp, $tamanho);
+                    $conteudo = addslashes($conteudo);
+                    fclose($fp);
+
+                    $queryInsercao = "INSERT INTO imagens (tipo_Elemento, id_Elemento, id_User, imagem, imagem_Nome, imagem_Tipo, imagem_Tamanho) VALUES ('$tipo','$???','$nome','$tamanho', '$tipo','$conteudo')";
+                    if (mysqli_query($conn, $queryInsercao)) {
+                        echo "New record created successfully";
+                    } else {
+                        echo "Error: " . $queryInsercao . "<br>" . mysqli_error($conn);
+                    }
+                }
 
                 //INSERINDO DADOS 
 
@@ -286,12 +301,12 @@
                                 </div>
                             </div>
                             <h3>Comentários</h3>";
-            //aqui é pra carregar os comentários
-                $comentarioSeleciona = "SELECT * FROM comentarios WHERE id_Post = '$id_Post' ORDER BY id_Comentario DESC";
-                $resultComentario = mysqli_query($conn, $comentarioSeleciona);
+                    //aqui é pra carregar os comentários
+                    $comentarioSeleciona = "SELECT * FROM comentarios WHERE id_Post = '$id_Post' ORDER BY id_Comentario DESC";
+                    $resultComentario = mysqli_query($conn, $comentarioSeleciona);
 
-                if (mysqli_num_rows($resultComentario) > 0) {
-                        
+                    if (mysqli_num_rows($resultComentario) > 0) {
+
                         while ($row = mysqli_fetch_assoc($resultComentario)) {
                             $id_Post_Comentario = $row["id_Post"];
                             $id_User_Comentario = $row["id_User"];
@@ -328,24 +343,24 @@
                              . $sobrenome_User_Comentario . "<br>" . $profissao_User_Comentario . "<br>"
                              . $texto_Comentario . "<br>" . $likes_Comentario . "</section>";
                             */
-                    } //fim do while do if comentarios
+                        } //fim do while do if comentarios
 
-                //fim do if comentarios
-                } else {// else do if comentarios
-                    echo "sem comentários";
-                } 
+                        //fim do if comentarios
+                    } else { // else do if comentarios
+                        echo "sem comentários";
+                    }
                     echo
-                        "</section>";  
-            } // fim do while posts
+                    "</section>";
+                } // fim do while posts
 
-        // fim do if posts  
-        } else { //else do if posts
+                // fim do if posts  
+            } else { //else do if posts
                 echo "0 Posts";
             }
-        ?>
+            ?>
         </div>
     </main>
-            <!-- umas script de js -->
+    <!-- umas script de js -->
     <script src="../manipulacao/manuLateral.js"></script>
     <script src="../manipulacao/modoEscuroClaro.js"></script>
     <script src="../manipulacao/curtirdoPHP.js"></script>
@@ -361,6 +376,7 @@
                 timer: 1500
             })
         }
+
         function salvar() {
             Swal.fire({
                 icon: 'success',
