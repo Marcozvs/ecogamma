@@ -113,6 +113,7 @@ if (mysqli_num_rows($result) > 0) {
         $texto_Post = $row["texto_Post"];
         $imagem_Post = $row["imagem_Post"];
         $likesP = $row["likes_Post"];
+        $comentarios = $row['comentarios_Post'];
 
 
     echo "
@@ -139,11 +140,7 @@ if (mysqli_num_rows($result) > 0) {
                         </li>
                         <li class='container__post__interacoes__lista__item'>
                             <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe0b9;</span>
-                            <p>32</p>
-                        </li>
-                        <li class='container__post__interacoes__lista__item'>
-                            <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe163;</span>
-                            <p>32</p>
+                            <p>" . $comentarios . "</p>
                         </li>
                     </ul>
                 </div>
