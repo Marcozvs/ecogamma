@@ -176,10 +176,13 @@
                 $profissao_User_Comentario = $profissao;
                 $texto_Comentario = $_POST['texto__comentario'];
                 $likes_Comentario = 0;
+                $soma = 1;
 
                 $insereComentarios = "INSERT INTO comentarios (id_Post, id_User, data_Comentario, nome_User, sobrenome_User, profissao_User, texto_Comentario, likes_Comentario) VALUES ('$id_Post_Comentario','$id_User_Comentario','$data_Comentario','$nome_User_Comentario','$sobrenome_User_Comentario','$profissao_User_Comentario','$texto_Comentario','$likes_Comentario')";
 
-                if (mysqli_query($conn, $insereComentarios)) {
+                $updateValor = "UPDATE posts SET comentarios_Post = comentarios_Post + '$soma' WHERE id_Post = '$id_Post_Comentario'";
+
+                if (mysqli_query($conn, $updateValor)) {
                     // echo "<h1>Comentou irmão!</h1>";
                 } else {
                     // echo "Erro né pae: " . $insereComentarios . "<br>" . mysqli_error($conn);
@@ -196,6 +199,7 @@
                 // $nomeP = $nome;
                 // $sobrenomeP = $sobrenome;
                 // $profissaoP = $profissao;
+                $imagem_Post = $_POST['imagem'];
                 $data_Post = date("Y-m-d");
                 $texto_Post = $_POST['texto'];
                 $likes = 0;
