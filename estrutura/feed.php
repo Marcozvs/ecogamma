@@ -199,24 +199,24 @@
                 $data_Post = date("Y-m-d");
                 $texto_Post = $_POST['texto'];
                 $likes = 0;
-                $imagem_Post = $_FILES['imagem']['tmp_name'];
-                $tamanho = $_FILES['imagem']['size'];
-                $tipo = $_FILES['imagem']['type'];
-                $nome_Imagem = $_FILES['imagem']['name'];
+                // $imagem_Post = $_FILES['imagem']['tmp_name'];
+                // $tamanho = $_FILES['imagem']['size'];
+                // $tipo = $_FILES['imagem']['type'];
+                // $nome_Imagem = $_FILES['imagem']['name'];
 
-                if ($imagem_Post != "none") {
-                    $fp = fopen($imagem, "rb");
-                    $conteudo = fread($fp, $tamanho);
-                    $conteudo = addslashes($conteudo);
-                    fclose($fp);
+                // if ($imagem_Post != "none") {
+                //     $fp = fopen($imagem, "rb");
+                //     $conteudo = fread($fp, $tamanho);
+                //     $conteudo = addslashes($conteudo);
+                //     fclose($fp);
 
-                    $queryInsercao = "INSERT INTO imagens (tipo_Elemento, id_Elemento, id_User, imagem, imagem_Nome, imagem_Tipo, imagem_Tamanho) VALUES ('$tipo','$???','$nome','$tamanho', '$tipo','$conteudo')";
-                    if (mysqli_query($conn, $queryInsercao)) {
-                        echo "New record created successfully";
-                    } else {
-                        echo "Error: " . $queryInsercao . "<br>" . mysqli_error($conn);
-                    }
-                }
+                //     $queryInsercao = "INSERT INTO imagens (tipo_Elemento, id_Elemento, id_User, imagem, imagem_Nome, imagem_Tipo, imagem_Tamanho) VALUES ('$tipo','$???','','', '','')";
+                //     if (mysqli_query($conn, $queryInsercao)) {
+                //         echo "New record created successfully";
+                //     } else {
+                //         echo "Error: " . $queryInsercao . "<br>" . mysqli_error($conn);
+                //     }
+                // }
 
                 //INSERINDO DADOS 
 
@@ -266,7 +266,7 @@
                             <div class='container__post__conteudo'>
                                 <p class='container__post__conteudo__data' id='container__post__conteudo__data'>" . $data_Post . "</p>
                                 <p class='container__post__conteudo__texto' id='container__post__conteudo__texto'>" . $texto_Post . "</p>
-                                <img src='../imagens/" . $imagem_Post . "' class='container__post__conteudo__imagem'>
+                                <img src='../imagens/' class='container__post__conteudo__imagem'>
                             </div>
                             <div class='container__post__interacoes'>
                                 <ul class='container__post__interacoes__lista'>
