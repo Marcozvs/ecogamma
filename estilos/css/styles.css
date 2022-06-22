@@ -425,7 +425,6 @@ main .container .container__postagem .container__postagem__formulario .container
   width: 40%;
   padding: 1rem;
 }
-
 .container__post,
 .container__post--perfil {
   display: flex;
@@ -594,10 +593,6 @@ main .container .container__perfil {
   display: flex;
   flex-direction: column;
   position: absolute;
-}
-main .container .container__post--perfil {
-  position: absolute;
-  top: 800px;
 }
 
 .container__pontosDeColeta {
@@ -819,7 +814,7 @@ main .container .container__perfil .container__perfil__dados {
   padding: 2.5vh 2.5vw;
   position: absolute;
   border-bottom: 5px dotted #5570FF;
-  top: 350px;
+  top: 250px;
   width: 95vw;
 }
 main .container .container__perfil .container__perfil__dados .container__perfil__dados__lista {
@@ -871,6 +866,13 @@ main .container .container__perfil .container__perfil__dados .container__perfil_
 
 #botao__dia {
   display: none;
+}
+#postsPerfil{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 625px;
+  width: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */

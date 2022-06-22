@@ -175,9 +175,9 @@
             </li>
           </ul>
         </div>
-      </div>"
+      </div>";
        ?>
-
+      <section id="postsPerfil">
 <?php
       $selecionaUserInfo = "SELECT * FROM posts WHERE id = '$id' ORDER BY id_Post DESC";
 
@@ -196,11 +196,12 @@
           $texto_Post = $row["texto_Post"];
           $imagem_Post = $row["imagem_Post"];
           $likesP = $row["likes_Post"];
+          $comentarios = $row["comentarios_Post"];
 
 
 // AQUI FICA OS POSTS DO USUÁRIO
           echo "
-          <section class='container__post--perfil'>
+          <section class='container__post--perfil' data-anime='left'>
             <div class='container__post__perfil'>
               <div class='container__post__perfil__foto'>
                 <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
@@ -215,32 +216,49 @@
               <p class='container__post__conteudo__texto'>" . $texto_Post . "</p>
               <img src='../imagens/" . $imagem_Post . "' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
             </div>
-            <div class='container__post__interacoes'>
-              <ul class='container__post__interacoes__lista'>
-                <li class='container__post__interacoes__lista__item'>
-                  <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe87d;</span>
-                  <p>" . $likesP . "</p>
-                </li>
-                <li class='container__post__interacoes__lista__item'>
-                  <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe0b9;</span>
-                  <p>32</p>
-                </li>
-                <li class='container__post__interacoes__lista__item'>
-                  <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe163;</span>
-                  <p>32</p>
-                </li>
-              </ul>
-            </div>
+              <div class='container__post__interacoes'>
+                <ul class='container__post__interacoes__lista'>
+                    
+                    <form action='./feed.php' id='likeForm' method='POST'>
+                        <input type='checkbox' name='like' value='True' id='checkbox__curtir'>
+                        <input type='submit' value = '" . $id_Post . "' name='enviaLike' onclick='curtir()' id='btn__funcao__curtir'>
+                        <span class='material-symbols-outlined container__menu__icone' id='btn__curtir'>&#xe87d;</span>
+                    </form>
+                        <p id='valor__curtir'>" . $likesP . "</p>
+                    
+                    <li class='container__post__interacoes__lista__item' onclick='comentar()'>
+                        <input type='submit' value = 'comentar' name='comentar' onclick='comentar()' id='btn__funcao__comentar'>
+                        <input type='checkbox' name='comentar' id='checkbox__comentar'>
+                        <span class='material-symbols-outlined container__menu__icone' id='btn__comentar'>&#xe0b9;</span>
+                        <p id='valor__comentar'>" . $comentarios . "</p>
+                    </li>
+                    <li class='container__post__interacoes__lista__item' onclick='compartilhar()'>
+                        <span class='material-symbols-outlined container__menu__icone'>&#xe163;</span>
+                        <input type='text' id='btn-compartilhar'value='" . $_SERVER['PHP_SELF'] . "?" . $id_Post . "'>
+                    </li>
+                    <li class='container__post__interacoes__lista__item' onclick='salvar()'>
+                        <span class='material-symbols-outlined container__menu__icone'>&#xe866;</span>
+                        <input type='text' id='btn-salvar'value='" . $_SERVER['PHP_SELF'] . "?" . $id_Post . "'>
+                    </li>
+                </ul>
+                <div id='caixa__comentario'>
+                <form action='./feed.php?id_Post_Comentario=" . $id_Post . "' method='POST' id='form__comentario'>
+                    <textarea name='texto__comentario' id='texto__comentario' placeholder='Insira seu comentário aqui' wrap='hard'></textarea>
+                    <input type='submit' name='submit__comentario' id='submit__comentario' class='botao__principal'>
+                </form>
+                </div>
+              </div>
             </section>
           ";
         }
       } else {
         echo "Sem posts ainda...";
       }
-
       ?>
+      </section>
   </main>
   <script src="../manipulacao/manuLateral.js"></script>
+  <script src="../manipulacao/rolagem.js"></script>
 </body>
 
 </html>
