@@ -139,11 +139,13 @@ textarea {
 #botao__noite {
   background-color: #fefefe;
   border: none;
+  margin-bottom: 9px
 }
 
 #botao__dia {
   background-color: #111111;
   border: none;
+  margin-bottom: 9px
 }
 
 .btn-curtido,
