@@ -880,4 +880,8 @@ main .container .container__perfil .container__perfil__dados .container__perfil_
   border-left: 3px solid #5570FF;
 }
 
+.span--branco{
+  color: #fefefe;
+}
+
 /*# sourceMappingURL=styles.css.map */

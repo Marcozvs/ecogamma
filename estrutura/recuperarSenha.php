@@ -69,11 +69,11 @@
     <h1>Contato</h1>
     <ul class="footer__lista">
       <li class="footer__lista__item">
-        <a href="malito:ecogamma.company@gmail.com"><span class="material-symbols-outlined container__menu__icone span">&#xe158;</span>ecogamma.company@gmail.com</a>
+        <a href="malito:ecogamma.company@gmail.com"><span class="material-symbols-outlined container__menu__icone span span--branco">&#xe158;</span>ecogamma.company@gmail.com</a>
       </li>
       <hr>
       <li class="footer__lista__item">
-        <a href="tel:(11)97503-0589"><span class="material-symbols-outlined container__menu__icone span">&#xe61d;</span>(11)97503-0589</a>
+        <a href="tel:(11)97503-0589"><span class="material-symbols-outlined container__menu__icone span span--branco">&#xe61d;</span>(11)97503-0589</a>
       </li>
       <hr>
     </ul>
