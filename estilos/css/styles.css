@@ -875,4 +875,9 @@ main .container .container__perfil .container__perfil__dados .container__perfil_
   width: 100%;
 }
 
+#post{
+  border: 1px dotted #5570FF;
+  border-left: 3px solid #5570FF;
+}
+
 /*# sourceMappingURL=styles.css.map */

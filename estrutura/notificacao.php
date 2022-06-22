@@ -121,12 +121,6 @@
 
                         echo "
                         <section class='container__post'>
-                        <form action='./aceitaAmizade.php' method='POST'>
-                        <input type='hidden' value='" . $id_Amizade . "' name='id_Amizade'>
-                        <input type='hidden' value='naoAceito' name='naoAceito'>
-                        <input type='hidden' value='" . $id_UserAcc . "' name='idAcc'>
-                        <input type='submit' class='botao__principal' id='buttonDel' name='naoAceito' value='Recusar '>
-                        </form>
                             <div class='container__post__perfil'>
                                 <div class='container__post__perfil__foto'>
                                     <img src='../imagens/" . $foto_Ask . "' alt='Imagem do Perfil'>
@@ -138,9 +132,15 @@
                             </div>
 
                             <form action='./aceitaAmizade.php' method='POST'>
-                            <input type='hidden' value='" . $id_Amizade . "' name='id_Amizade'>
-                            <input type='hidden' value='" . $id_UserAcc . "' name='idAcc'>
-                            <input type='submit' class='botao__principal' id='buttonAcc' name='Aceito' value='Aceitar'>
+                                <input type='hidden' value='" . $id_Amizade . "' name='id_Amizade'>
+                                <input type='hidden' value='naoAceito' name='naoAceito'>
+                                <input type='hidden' value='" . $id_UserAcc . "' name='idAcc'>
+                                <input type='submit' class='botao__principal' id='buttonDel' name='naoAceito' value='Recusar '>
+                            </form>
+                            <form action='./aceitaAmizade.php' method='POST'>
+                                <input type='hidden' value='" . $id_Amizade . "' name='id_Amizade'>
+                                <input type='hidden' value='" . $id_UserAcc . "' name='idAcc'>
+                                <input type='submit' class='botao__principal' id='buttonAcc' name='Aceito' value='Aceitar'>
                             </form>
 
                         </section>";

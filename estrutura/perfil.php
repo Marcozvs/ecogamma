@@ -201,7 +201,7 @@
 
 // AQUI FICA OS POSTS DO USUÁRIO
           echo "
-          <section class='container__post--perfil' data-anime='left'>
+          <section class='container__post--perfil' id='post' data-anime='left'>
             <div class='container__post__perfil'>
               <div class='container__post__perfil__foto'>
                 <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
