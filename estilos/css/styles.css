@@ -1122,6 +1122,9 @@ header .container nav{
 main .container .container__perfil .container__perfil__dados{
   width: 90%;
 }
+#donate-button-container{
+  width: 100%;
+}
 }
 
 /*# sourceMappingURL=styles.css.map */
