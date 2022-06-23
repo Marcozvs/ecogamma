@@ -16,6 +16,31 @@
     include 'naoLogado.php';
     die();
   };
+
+  //Inserindo imagens no banco de dados
+
+  $img = false;
+
+  if(isset($_FILES['imagem'])){
+
+      $arquivo = $_FILES['imagem'];
+
+      $extensao = strtolower(substr($_FILES['imagem']['name'], -4));
+      $novo_nome = md5(time()) . $extensao;
+      $diretorio = "../upload/";
+
+      move_uploaded_file($_FILES['imagem']['tmp_name'], $diretorio.$novo_nome);
+
+      /*
+      $sql_code = "INSERT INTO posts (imagem_Post) VALUES('$novo_nome')";
+
+      if(mysqli_query($conn, $sql_code))
+          $msg = "Arquivo enviado com sucesso!";
+      else
+          $msg = "Falha ao enviar o arquivo.";
+      */
+  }
+
   ?>
   <header class="header__interno">
     <div class="container">
@@ -214,7 +239,7 @@
             <div class='container__post__conteudo'>
               <p class='container__post__conteudo__texto'>" . $data_Post . "</p>
               <p class='container__post__conteudo__texto'>" . $texto_Post . "</p>
-              <img src='../imagens/" . $imagem_Post . "' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
+              <img src='../upload/" . $imagem_Post . "' class='container__post__conteudo__imagem'>
             </div>
               <div class='container__post__interacoes'>
                 <ul class='container__post__interacoes__lista'>

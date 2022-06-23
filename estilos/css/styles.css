@@ -886,4 +886,8 @@ main .container .container__perfil .container__perfil__dados .container__perfil_
   color: #fefefe;
 }
 
+.container__post__conteudo__imagem:active {
+  border: 5px solid blue;
+}
+
 /*# sourceMappingURL=styles.css.map */
