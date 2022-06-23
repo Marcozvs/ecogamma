@@ -176,6 +176,19 @@
                         Your browser does not support the video tag.
                     </video>
                 </div>
+            </section>
+                <section class="container__post">
+                    <h2>Novo Vídeo Educacional - TV ZYN</h2>
+                    <div class="container__post__conteudo">
+                        <p class="container__post__conteudo__texto">Na TV ZYN você encontra uma variedade enorme de conteúdos exclusivos que todos nós amamos!
+                            Entrevistas e bastidores que você confere só aqui! Tudo feito para que a sua experiência seja ainda mais divertida!
+                            Está ansioso? Então venha fazer parte do que preparamos para você! É só escolher por qual vídeo começar e dar o play!</p>
+                        <video controls class="container__post__conteudo__imagem">
+                            <source src="../videos/noticiario.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </section>
     </main>
     <div id="menuFixo">
         <ul class="container__lista" id="menuFixo__lista">
