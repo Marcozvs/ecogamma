@@ -35,7 +35,7 @@ h3 {
 
 p {
   line-height: 1.5rem;
-  text-align: justify;
+  text-align: left;
   color: #111111;
 }
 
@@ -1106,6 +1106,22 @@ header .container nav{
     margin-left: 1rem;
     color: #5570FF;
   }
+  .footer-login,
+  .footer-comunidade,
+  .footer-recuperarSenha,
+  .footer-cadastro{
+    width: 90vw;
+    padding: 5vw;
+    left: 0%;
+}
+.footer-recuperarSenha{
+  top: 65%;
+  width: 90vw;
+  padding: 5vw;
+}
+main .container .container__perfil .container__perfil__dados{
+  width: 90%;
+}
 }
 
 /*# sourceMappingURL=styles.css.map */
