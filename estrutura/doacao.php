@@ -95,20 +95,25 @@
             </ul>
         </div>
     </section>
-  <main>
-    <div class="container">
-      <h1>Amigos</h1>
-      <section class="container__post">
-        <div class="container__post__perfil">
-          <div class="container__post__perfil__foto">
-            <img src="../imagens/leandro.jpg" alt="Imagem do Perfil">
-          </div>
-          <div class="container__post__perfil__dados">
-            <p class="container__post__perfil__dados__nome nome__perfil">Leandro</p>
-            <p class="container__post__perfil__dados__cargo cargo__perfil">Engenheiro de Software</p>
-          </div>
-        </div>
-      </section>
+  <main style='top: -50px;'>
+    <h1>Doação</h1>
+    <br>
+    <img src="../imagens/doacao.png" style = 'width: 100%;'>
+    <h2>O dinheiro será destinado para uma ong com o mesmo propósito nosso, preservar o meio ambiente!<h3>
+    <div id="donate-button-container" style = 'width: 100%; display: flex; justify-content: center; margin-top: 3rem;'>
+    <div id="donate-button"></div>
+        <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+        <script>
+            PayPal.Donation.Button({
+            env:'production',
+            hosted_button_id:'5P847ZMKYEUEG',
+            image: {
+            src:'https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif',
+            alt:'Faça doações com o botão do PayPal',
+            title:'PayPal - The safer, easier way to pay online!',
+            }
+            }).render('#donate-button');
+        </script>
     </div>
   </main>
   <div id="menuFixo">

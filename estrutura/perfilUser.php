@@ -227,11 +227,6 @@
     <div class='container__perfil__foto'>
     <img src='../imagens/" . $fotoUser . "' alt='Fundo do perfil' class='container__perfil__foto__imagem'>
     </div>
-    <form action='./perfilUser.php?user=" . $idUser . "' method='POST'>
-    <input type='" . $type . "' value='" . $addText . "' name='Adicionar'>
-    <input type='hidden' value='" . $id . "' name='id_UserAsk'>
-    <input type='hidden' value='" . $idUser . "' name='id_UserAcc'>
-    </form>
         <div class='container__perfil__dados'>
           <ul class='container__perfil__dados__lista'>
             <li class='container__perfil__dados__lista__item'>
@@ -252,7 +247,12 @@
               </li>
           </ul>
         </div>
-        </div>";
+        </div>
+        <form action='./perfilUser.php?user=" . $idUser . "' method='POST' style='position: relative; top: 250px'>
+          <input type='" . $type . "' value='" . $addText . "' name='Adicionar' style='height: 50px'>
+          <input type='hidden' value='" . $id . "' name='id_UserAsk'>
+          <input type='hidden' value='" . $idUser . "' name='id_UserAcc'>
+        </form>";
 
       $sql = "SELECT * FROM posts WHERE id = '$idUser' ORDER BY id_Post DESC";
 
@@ -275,7 +275,7 @@
 
           // AQUI FICA OS POSTS DO USUÁRIO
           echo "
-          <section class='container__post--perfil'>
+          <section class='container__post--perfil' style='position: relative; top: 250px'>
           <div class='container__post__perfil'>
           <div class='container__post__perfil__foto'>
           <img src='../imagens/perfil_default.svg' alt='Imagem do Perfil'>
@@ -320,6 +320,46 @@
     ?>
     </div>
   </main>
+  <div id="menuFixo">
+        <ul class="container__lista" id="menuFixo__lista">
+            <a href="./feed.php">
+                <li class="container__lista__item-ativo"><span class="material-symbols-outlined container__lista__item__icone icone-alternativo container__lista__item__icone-ativo">&#xe761;</span>Feed</li>
+            </a>
+            <a href="./notificacao.php">
+                <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe7f4;</span>Notificação</li>
+            </a>
+            <a href="./salvos.php">
+                <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe865;</span>Salvos</li>
+            </a>
+            <a href="./evento.php">
+                <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe878;</span>Eventos</li>
+            </a>
+            <a href="./noticia.php">
+                <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xeb81;</span>Notícias</li>
+            </a>
+            <a href="./dica.php">
+                <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe0f0;</span>Dicas</li>
+            </a>
+            <a href="./pontosColeta.php">
+                <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe55f;</span>Pontos de Coleta</li>
+            </a>
+            <a href="./configuracoes.php">
+                <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe8b8;</span>Configurações</li>
+            </a>
+            <a href="./ecotrends.php">
+                <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xe80e;</span>Ecotrends</li>
+            </a>
+            <a href="./amigos.php">
+                <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xf8d9;</span>Amigos</li>
+            </a>
+            <a href="./doacao.php">
+                <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone  icone-alternativo">&#xea70;</span>Doação</li>
+            </a>
+            <a href="./sobreNos-interno.php">
+                <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone-ativo icone-alternativo">&#xf8d8;</span>Sobre Nós</li>
+            </a>
+        </ul>
+    </div>
   <script src="../manipulacao/manuLateral.js"></script>
 </body>
 
