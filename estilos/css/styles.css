@@ -1,7 +1,9 @@
 html {
   font-family: "Roboto";
 }
-
+#menuFixo{
+  display: none;
+}
 h1,
 h2,
 h3 {
@@ -1033,4 +1035,48 @@ header .container nav{
   position: relative;
   left: 0%;
 }
+
+/*Desenvolvendo para Desktop*/
+
+@media screen and (min-width: 1024px){
+  .header,
+  .header__interno{
+    width: 100vw;
+    height: 15vh;
+    position: fixed;
+  }
+  .header .container,
+  .header__interno .container{
+    width: 100vw;
+    flex-direction: row;
+    top: 0px;
+  }
+  main{
+    position: relative;
+    width: 50vw;
+    padding: 0px;
+    left: 25vw;
+    margin: 0px;
+    margin-top: 30vh;
+  }
+  #menuFixo{
+    display: flex;
+    width: 18vw;
+    position: fixed;
+    top: 15vh;
+    height: 100vh;
+    border-right: 2px solid #5570FF;
+    padding: 1rem;
+  }
+  #menuFixo__lista{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 0rem 1rem 1rem 1rem;
+    box-sizing: border-box;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */
