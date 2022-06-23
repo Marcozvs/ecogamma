@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 22-Jun-2022 às 19:59
+-- Tempo de geração: 23-Jun-2022 às 12:59
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `comentarios` (
   `texto_Comentario` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'texto do comentario',
   `likes_Comentario` int(11) NOT NULL DEFAULT '0' COMMENT 'likes/curtidas do comentario',
   PRIMARY KEY (`id_Comentario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -90,15 +90,7 @@ CREATE TABLE IF NOT EXISTS `curtidas` (
   `id_Elemento` int(11) NOT NULL,
   `id_User` int(11) NOT NULL,
   PRIMARY KEY (`id_Curtida`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Extraindo dados da tabela `curtidas`
---
-
-INSERT INTO `curtidas` (`id_Curtida`, `id_Elemento`, `id_User`) VALUES
-(2, 36, 14),
-(3, 125, 14);
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -181,15 +173,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `comentarios_Post` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_Post`),
   KEY `user_post` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Extraindo dados da tabela `posts`
---
-
-INSERT INTO `posts` (`id_Post`, `id`, `foto`, `nome`, `sobrenome`, `profissao`, `data_Post`, `texto_Post`, `imagem_Post`, `likes_Post`, `comentarios_Post`) VALUES
-(1, 14, 'perfil_default.svg', 'Marcos', 'Vinicius', 'Estudante de Medicina na USP', '2022-06-20', 'teste', '', 0, 0),
-(2, 17, 'perfil_default.svg', 'Mandanga', 'SebastiÃ£o', 'Jogador de Futebol', '2022-06-20', 'oba', '', 0, 0);
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -231,16 +215,20 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `descricao` varchar(255) NOT NULL COMMENT 'Descricao que aparece no perfil do usuário',
   `amigos` int(20) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `token`, `nome`, `sobrenome`, `email`, `senha`, `senhaC`, `dataN`, `genero`, `numero`, `estado`, `cidade`, `profissao`, `mdEscuro`, `foto`, `descricao`, `amigos`) VALUES
-(14, 1, 'Marcos', 'Vinicius', 'teste@gmail.com', '123', '123', '2023-11-16', 'masculinoCisgÃªnero', '', 'am', 'Caieras', 'Estudante de Medicina na USP', 0, 'perfil_default.svg', '', 31),
-(15, 0, 'Leandro', 'Silva', 'leandrosdc@outlook.com', 'leandro1', 'leandro1', '2004-11-13', 'masculinoCisgÃªnero', '11979609142', 'sp', 'SÃ£o Paulo', 'Staff Ecogamma', 0, 'perfil_default.svg', '', 0),
-(17, 0, 'Mandanga', 'SebastiÃ£o', 'mandanga@gmail.com', '123', '123', '2005-03-23', 'masculinoCisgÃªnero', '111111111', 'rj', 'Rio de Janeiro', 'Jogador de Futebol', 0, 'perfil_default.svg', '', 0);
+(19, 1, 'Marcos', 'Vinicius', 'marcos@gmail.com', '123', '123', '2002-07-23', 'masculinoCisgÃªnero', '1128384724', 'sp', 'Caieiras', '[STAFF] Programador Full-Stack', 0, '', 'Eco Ã© agro, Eco Ã© tec, Eco Ã© tudo!', 0),
+(20, 1, 'Mandanga', 'SebastiÃ£o', 'mandanga@gmail.com', '123', '123', '2004-05-12', 'masculinoCisgÃªnero', '1128384724', 'rj', 'Rio de Janeiro', '[STAFF] Designer', 0, 'perfil_default.svg', 'Eco Ã© agro, Eco Ã© tec, Eco Ã© tudo!', 0),
+(21, 1, 'Leandro', 'Silva', 'leandro@gmail.com', '123', '123', '2004-11-13', 'masculinoCisgÃªnero', '1128384724', 'sp', 'SÃ£o Paulo', '[STAFF] Programador Back-End', 0, 'perfil_default.svg', 'Eco Ã© agro, Eco Ã© tec, Eco Ã© tudo!', 0),
+(22, 1, 'Rafael', 'Lopez', 'rafael@gmail.com', '123', '123', '2003-12-09', 'masculinoCisgÃªnero', '112232323', 'sp', 'Guarulhos', '[STAFF] Designer', 0, 'perfil_default.svg', 'Eco Ã© agro, Eco Ã© tec, Eco Ã© tudo!', 0),
+(23, 1, 'Vanessa', 'Vitoria', 'vanessa@gmail.com', '123', '123', '2002-02-11', 'transgenero', '1128384724', 'sp', 'SÃ£o Paulo', '[STAFF] Pesquisadora Ambiental', 0, 'perfil_default.svg', 'Eco Ã© agro, Eco Ã© tec, Eco Ã© tudo!', 0),
+(24, 1, 'Samyra', 'Elias', 'samyra@gmail.com', '123', '123', '2002-02-11', 'transgenero', '1128384724', 'sp', 'SÃ£o Paulo', '[STAFF] Pesquisadora Ambiental', 0, 'perfil_default.svg', 'Eco Ã© agro, Eco Ã© tec, Eco Ã© tudo!', 0),
+(25, 1, 'Richard', 'Conde', 'richard@gmail.com', '123', '123', '2004-03-01', 'masculinoCisgÃªnero', '1128384724', 'sp', 'SÃ£o Paulo', '[STAFF] Pesquisador Ambiental', 0, 'perfil_default.svg', 'Eco Ã© agro, Eco Ã© tec, Eco Ã© tudo!', 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
