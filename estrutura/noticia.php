@@ -17,22 +17,26 @@
         die();
     };
     ?>
-    <header class="header__interno">
+    <header class="header__interno" id="header__interno">
         <div class="container">
             <div class="container__logo">
                 <a href="feed.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
             </div>
-            <nav class="container__nav">
+            <div class="container__perfil">
                 <a href="perfil.php">
                     <span class="material-symbols-outlined container__menu__icone span--azul">&#xe853;</span>
                 </a>
+            </div>
+            <div class="container__chat">
                 <a href="chat.php">
                     <span class="material-symbols-outlined container__menu__icone span--azul">&#xe8af;</span>
                 </a>
+            </div>
+            <div class="container__logout">
                 <a href="logout.php">
                     <span class="material-symbols-outlined container__menu__icone span--azul">&#xeffd;</span>
                 </a>
-            </nav>
+            </div>
             <div>
                 <button id="botao__noite" onclick="modoEscuro()">
                     <span class="material-symbols-outlined container__menu__icone span--azul">&#xf159;</span>

@@ -130,7 +130,6 @@
     <main>
         <div class="container">
             <h1>Postagem</h1>
-            <?php if($msg != false) echo "<p> $msg </p>"; ?>
             <section class="container__postagem">
                 <form action="./feed.php" class="container__postagem__formulario" method="POST"  enctype="multipart/form-data">
                     <textarea cols="15" rows="4" placeholder="Escreva seu post aqui..." maxlength="200" minlength="1" id="texto" name="texto"></textarea>
@@ -166,7 +165,6 @@
                         // echo "<h1>Curtiu em logs</h1>";
                         if (mysqli_query($conn, $insereCurtida)) {
                             // echo "<h1>inserido em posts</h1>";
-                            // echo "<h1>pnc do marcos</h1>";
                         } else {
                             // echo "<h1>Error no curtir: </h1>" . mysqli_error($conn);
                         }

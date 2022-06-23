@@ -40,35 +40,39 @@
       */
   }
   ?>
-  <header class="header__interno">
-    <div class="container">
-      <div class="container__logo">
-        <a href="feed.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
-      </div>
-      <nav class="container__nav">
-        <a href="perfil.php">
-          <span class="material-symbols-outlined container__menu__icone span--azul">&#xe853;</span>
-        </a>
-        <a href="chat.php">
-          <span class="material-symbols-outlined container__menu__icone span--azul">&#xe8af;</span>
-        </a>
-        <a href="logout.php">
-          <span class="material-symbols-outlined container__menu__icone span--azul">&#xeffd;</span>
-        </a>
-      </nav>
-      <div>
-          <button id="botao__noite" onclick="modoEscuro()">
-              <span class="material-symbols-outlined container__menu__icone span--azul">&#xf159;</span>
-          </button>
-          <button id="botao__dia" onclick="modoClaro()">
-              <span class="material-symbols-outlined container__menu__icone span--azul">&#xe518;</span>
-          </button>
-      </div>
-      <div id="container__menu" onclick="menuLateralInternoOpen()">
-        <span class="material-symbols-outlined container__menu__icone span--azul">&#xe5d2;</span>
-      </div>
-    </div>
-  </header>
+  <header class="header__interno" id="header__interno">
+        <div class="container">
+            <div class="container__logo">
+                <a href="feed.php"><img src="../imagens/logos/logo-principal.png" alt="Logo Principal do Ecogamma" class="container__logo__imagem"></a>
+            </div>
+            <div class="container__perfil">
+                <a href="perfil.php">
+                    <span class="material-symbols-outlined container__menu__icone span--azul">&#xe853;</span>
+                </a>
+            </div>
+            <div class="container__chat">
+                <a href="chat.php">
+                    <span class="material-symbols-outlined container__menu__icone span--azul">&#xe8af;</span>
+                </a>
+            </div>
+            <div class="container__logout">
+                <a href="logout.php">
+                    <span class="material-symbols-outlined container__menu__icone span--azul">&#xeffd;</span>
+                </a>
+            </div>
+            <div>
+                <button id="botao__noite" onclick="modoEscuro()">
+                    <span class="material-symbols-outlined container__menu__icone span--azul">&#xf159;</span>
+                </button>
+                <button id="botao__dia" onclick="modoClaro()">
+                    <span class="material-symbols-outlined container__menu__icone span--azul">&#xe518;</span>
+                </button>
+            </div>
+            <div id="container__menu" onclick="menuLateralInternoOpen()">
+                <span class="material-symbols-outlined container__menu__icone span--azul">&#xe5d2;</span>
+            </div>
+        </div>
+    </header>
   <section id="menuLateral__interno">
     <div class="container">
       <div class="container__menu" onclick="menuLateralInternoClose()">

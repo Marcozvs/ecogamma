@@ -796,6 +796,7 @@ main .container .container__perfil .container__perfil__capa {
 }
 main .container .container__perfil .container__perfil__capa .container__perfil__capa__imagem {
   width: 100vw;
+  border-radius: 5px;
 }
 main .container .container__perfil .container__perfil__foto {
   display: flex;
@@ -847,7 +848,6 @@ main .container .container__perfil .container__perfil__dados .container__perfil_
   padding: 1rem;
   position: fixed;
   flex-direction: row;
-  align-itens: center;
   height: 50px;
   justify-content: space-between;
 }
@@ -890,4 +890,147 @@ main .container .container__perfil .container__perfil__dados .container__perfil_
   border: 5px solid blue;
 }
 
+/*Desenvolvendo para Tablet*/
+
+@media screen and (min-width: 768px){
+  .header,
+  .header__interno{
+    width: 15vw;
+    height: 100vh;
+    position: fixed;
+  }
+  .header .container,
+  .header__interno .container{
+    width: 15vw;
+    flex-direction: column;
+    top: 15px;
+  }
+  .header .container .container__logo__imagem,
+  .header__interno .container .container__logo__imagem{
+    margin-left: 25px;
+  }
+
+  main{
+    width: 75vw;
+    margin-left: 15vw;
+  }
+  .container{
+    position: relative;
+    top: -100px;
+  }
+  .container__post{
+    width: 100%;
+  }
+  #menuLateral__interno .container{
+    left: 0vw;
+  }
+  #menuLateral__interno .container .container__menu{
+    margin: 0px
+  }
+  #menuLateral__interno .container .container__lista{
+    position: relative;
+    top: 50px
+  }
+
+  .container__post .container__post__interacoes .container__post__interacoes__lista, .container__post--perfil .container__post__interacoes .container__post__interacoes__lista{
+    width: 40%;
+  }
+
+  #btn__funcao__curtir{
+    width: 10px;
+  }
+
+  #btn__curtir{
+    width: 25px;
+  }
+
+  #likeForm{
+    width: 25px;
+  }
+  #texto__comentario{
+    width: 85%;
+  }
+  #submit__comentario{
+    width: 15%
+  }
+  #container__comentario{
+    width: 100%;
+  }
+}
+.container__form__chat{
+  width: 82%;
+}
+
+main .container .container__perfil{
+  width: 100%;
+  position: relative;
+}
+
+main .container .container__perfil .container__perfil__foto{
+  width: 30%;
+  top: -105px;
+  left: 35%;
+  padding-left: 0px;
+}
+
+main .container .container__perfil .container__perfil__capa .container__perfil__capa__imagem{
+  width: 80vw;
+  height: 250px;
+}
+
+main .container .container__perfil .container__perfil__dados{
+  width: 70vw;
+}
+
+#postsPerfil{
+  width: 100%;
+  top: 250px;
+}
+
+.container__post, .container__post--perfil{
+  width: 95%;
+}
+
+.container__post .container__post__perfil, .container__post--perfil .container__post__perfil{
+  height: 50px;
+}
+
+.container__post .container__post__perfil .container__post__perfil__foto, .container__post--perfil .container__post__perfil .container__post__perfil__foto{
+  width: 10%;
+}
+.container__post .container__post__perfil .container__post__perfil__dados, .container__post--perfil .container__post__perfil .container__post__perfil__dados{
+  margin-right: 25%;
+}
+header .container nav{
+  flex-direction: column;
+}
+.footer-login,
+.footer-comunidade,
+.footer-recuperarSenha,
+.footer-cadastro{
+  width: 75%;
+  left: 15%;
+}
+.footer-login{
+  top: 80%;
+}
+.footer-cadastro{
+  top: 200%;
+}
+.footer-comunidade{
+  top: 325%;
+}
+.footer-recuperarSenha{
+  top: 60%;
+}
+.container__cartao .container__cartao__dados .container__cartao__dados__foto img{
+  width: 50%;
+}
+.container__cartao .container__cartao__dados .container__cartao__dados__foto{
+  width: 15%;
+}
+.container__cartao .container__cartao__dados div{
+  position: relative;
+  left: 0%;
+}
 /*# sourceMappingURL=styles.css.map */
