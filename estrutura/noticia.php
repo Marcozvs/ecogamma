@@ -98,13 +98,13 @@
       if ($token == 1) {
                 echo"
         <section class='container__postagem'>
-            <form action='./noticia.php' class='container__postagem__formulario' method='POST'>
+            <form action='./noticia.php' class='container__postagem__formulario' method='POST'  style='display: flex; justify-content: space-around; height: 275px;'>
               <input type='text' placeholder='Insira o título...' maxlength='150' minlength='1' required id='titulo' name='titulo'>
                 <textarea cols='15' rows='4' placeholder='Escreva seu post aqui...' maxlength='200' minlength='1' id='texto' name='texto' required></textarea>
                 <div class='container__postagem__formulario__botoes'>
                     <label for='imagem' class='container__postagem__formulario__botoes__label label-botao' id='upload'>Enviar imagem</label>
                     <input type='file' accept='image/*' id='imagem' name='imagem' class='container__postagem__formulario__botoes__input'>
-                    <input type='submit' value='Postar' class='botao__principal' name='submit' id='submit'>
+                    <input type='submit' value='Postar' class='botao__principal' name='submit' id='submit' style='position: relative; top: -9px'>
                 </div>
             </form>
             <hr>
@@ -156,19 +156,7 @@
             <h2>" . $titulo_Noticia . "</h2>
             <div class='container__post__conteudo'>
               <p class='container__post__conteudo__texto'>" . $texto_Noticia . "</p>
-              <img src='../imagens/feed_imagem.jpg' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
-            </div>
-            <div class='container__post__interacoes'>
-              <ul class='container__post__interacoes__lista'>
-                <li class='container__post__interacoes__lista__item'>
-                  <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe87d;</span>
-                  <p>" . $likes_Noticia . "</p>
-                </li>
-                <li class='container__post__interacoes__lista__item'>
-                  <span class='material-symbols-outlined container__menu__icone span--azul'>&#xe163;</span>
-                  <p>32</p>
-                </li>
-              </ul>
+              <img src='../imagens/meioAmbiente.jpg' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
             </div>
           </section>";
           }
