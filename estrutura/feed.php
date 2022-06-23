@@ -23,6 +23,31 @@
         include 'naoLogado.php';
         die();
     };
+
+    //Inserindo imagens no banco de dados
+
+    $img = false;
+
+    if(isset($_FILES['imagem'])){
+
+        $arquivo = $_FILES['imagem'];
+
+        $extensao = strtolower(substr($_FILES['imagem']['name'], -4));
+        $novo_nome = md5(time()) . $extensao;
+        $diretorio = "../upload/";
+
+        move_uploaded_file($_FILES['imagem']['tmp_name'], $diretorio.$novo_nome);
+
+        /*
+        $sql_code = "INSERT INTO posts (imagem_Post) VALUES('$novo_nome')";
+
+        if(mysqli_query($conn, $sql_code))
+            $msg = "Arquivo enviado com sucesso!";
+        else
+            $msg = "Falha ao enviar o arquivo.";
+        */
+    }
+
     ?>
     <header class="header__interno" id="header__interno">
         <div class="container">
@@ -105,12 +130,13 @@
     <main>
         <div class="container">
             <h1>Postagem</h1>
+            <?php if($msg != false) echo "<p> $msg </p>"; ?>
             <section class="container__postagem">
-                <form action="./feed.php" class="container__postagem__formulario" method="POST">
+                <form action="./feed.php" class="container__postagem__formulario" method="POST"  enctype="multipart/form-data">
                     <textarea cols="15" rows="4" placeholder="Escreva seu post aqui..." maxlength="200" minlength="1" id="texto" name="texto"></textarea>
                     <div class="container__postagem__formulario__botoes">
                         <label for="imagem" class="container__postagem__formulario__botoes__label label-botao" id="upload">Enviar imagem</label>
-                        <input type="file" accept="image/*" id="imagem" name="imagem" class="container__postagem__formulario__botoes__input">
+                        <input type="file" id="imagem" name="imagem" class="container__postagem__formulario__botoes__input" accept="image/*">
                         <input type="hidden" name="MAX_FILE_SIZE" value="99999999" />
                         <input type="submit" value="Postar" class="botao__principal" name="submit" id="submit">
                     </div>
@@ -199,7 +225,7 @@
                 // $nomeP = $nome;
                 // $sobrenomeP = $sobrenome;
                 // $profissaoP = $profissao;
-                $imagem_Post = $_POST['imagem'];
+                $imagem_Post = $novo_nome;
                 $data_Post = date("Y-m-d");
                 $texto_Post = $_POST['texto'];
                 $likes = 0;
@@ -270,7 +296,7 @@
                             <div class='container__post__conteudo'>
                                 <p class='container__post__conteudo__data' id='container__post__conteudo__data'>" . $data_Post . "</p>
                                 <p class='container__post__conteudo__texto' id='container__post__conteudo__texto'>" . $texto_Post . "</p>
-                                <img src='../imagens/' class='container__post__conteudo__imagem'>
+                                <img src='../upload/" . $imagem_Post . "' class='container__post__conteudo__imagem'>
                             </div>
                             <div class='container__post__interacoes'>
                                 <ul class='container__post__interacoes__lista'>
