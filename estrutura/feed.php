@@ -28,7 +28,7 @@
 
     $img = false;
 
-    if(isset($_FILES['imagem'])){
+    if (isset($_FILES['imagem'])) {
 
         $arquivo = $_FILES['imagem'];
 
@@ -36,7 +36,7 @@
         $novo_nome = md5(time()) . $extensao;
         $diretorio = "../upload/";
 
-        move_uploaded_file($_FILES['imagem']['tmp_name'], $diretorio.$novo_nome);
+        move_uploaded_file($_FILES['imagem']['tmp_name'], $diretorio . $novo_nome);
 
         /*
         $sql_code = "INSERT INTO posts (imagem_Post) VALUES('$novo_nome')";
@@ -131,7 +131,7 @@
         <div class="container">
             <h1>Postagem</h1>
             <section class="container__postagem">
-                <form action="./feed.php" class="container__postagem__formulario" method="POST"  enctype="multipart/form-data">
+                <form action="./feed.php" class="container__postagem__formulario" method="POST" enctype="multipart/form-data">
                     <textarea cols="15" rows="4" placeholder="Escreva seu post aqui..." maxlength="200" minlength="1" id="texto" name="texto"></textarea>
                     <div class="container__postagem__formulario__botoes">
                         <label for="imagem" class="container__postagem__formulario__botoes__label label-botao" id="upload">Enviar imagem</label>
@@ -151,7 +151,6 @@
                 $id_PostC = $_POST['enviaLike']; // Id do post
                 echo "<h1>" . $teste . "</h1>"; // Aqui é para testar se o submit tá indo, ele pega o valor do submit que não é importante agora...
                 $verSeCurtiuAlgumPost = "SELECT id_Elemento, id_User FROM curtidas WHERE id_Elemento = '$id_PostC' AND id_User = $id";
-                // echo "<h1>" . $verSeCurtiuAlgumPost . "</h1>";
                 $verifica = mysqli_query($conn, $verSeCurtiuAlgumPost);
                 // echo "<h1>" . $verifica . "</h1>";
                 $verifica = mysqli_num_rows($verifica);
@@ -205,11 +204,15 @@
                 $insereComentarios = "INSERT INTO comentarios (id_Post, id_User, data_Comentario, nome_User, sobrenome_User, profissao_User, texto_Comentario, likes_Comentario) VALUES ('$id_Post_Comentario','$id_User_Comentario','$data_Comentario','$nome_User_Comentario','$sobrenome_User_Comentario','$profissao_User_Comentario','$texto_Comentario','$likes_Comentario')";
 
                 $updateValor = "UPDATE posts SET comentarios_Post = comentarios_Post + '$soma' WHERE id_Post = '$id_Post_Comentario'";
-
-                if (mysqli_query($conn, $updateValor)) {
-                    // echo "<h1>Comentou irmão!</h1>";
+                if (mysqli_query($conn, $insereComentarios)) {
+                    echo "<h1>Comentou irmão!</h1>";
+                    if (mysqli_query($conn, $updateValor)) {
+                        echo "<h1>Comentou irmão!</h1>";
+                    } else {
+                        echo "Erro né pae: " . $updateValor . "<br>" . mysqli_error($conn);
+                    }
                 } else {
-                    // echo "Erro né pae: " . $insereComentarios . "<br>" . mysqli_error($conn);
+                    echo "Erro né pae: " . $insereComentarios . "<br>" . mysqli_error($conn);
                 }
             } //fim if do post de comentarios
 
@@ -227,24 +230,6 @@
                 $data_Post = date("Y-m-d");
                 $texto_Post = $_POST['texto'];
                 $likes = 0;
-                // $imagem_Post = $_FILES['imagem']['tmp_name'];
-                // $tamanho = $_FILES['imagem']['size'];
-                // $tipo = $_FILES['imagem']['type'];
-                // $nome_Imagem = $_FILES['imagem']['name'];
-
-                // if ($imagem_Post != "none") {
-                //     $fp = fopen($imagem, "rb");
-                //     $conteudo = fread($fp, $tamanho);
-                //     $conteudo = addslashes($conteudo);
-                //     fclose($fp);
-
-                //     $queryInsercao = "INSERT INTO imagens (tipo_Elemento, id_Elemento, id_User, imagem, imagem_Nome, imagem_Tipo, imagem_Tamanho) VALUES ('$tipo','$???','','', '','')";
-                //     if (mysqli_query($conn, $queryInsercao)) {
-                //         echo "New record created successfully";
-                //     } else {
-                //         echo "Error: " . $queryInsercao . "<br>" . mysqli_error($conn);
-                //     }
-                // }
 
                 //INSERINDO DADOS 
 
@@ -252,9 +237,9 @@
                 VALUES ('$id', '$foto', '$nome', '$sobrenome', '$profissao', '$data_Post', '$texto_Post', '$imagem_Post', '$likes')";
 
                 if (mysqli_query($conn, $sql1)) {
-                    echo "New record created successfully";
+                    // echo "New record created successfully";
                 } else {
-                    echo "Error: " . $sql1 . "<br>" . mysqli_error($conn);
+                    // echo "Error: " . $sql1 . "<br>" . mysqli_error($conn);
                 }
 
                 //PUXANDO DADOS
@@ -314,11 +299,11 @@
                                     </li>
                                     <li class='container__post__interacoes__lista__item' onclick='compartilhar()'>
                                         <span class='material-symbols-outlined container__menu__icone'>&#xe163;</span>
-                                        <input type='text' id='btn-compartilhar'value='" . $_SERVER['PHP_SELF'] . "?" . $id_Post . "'>
+                                        <input type='text' id='btn-compartilhar'value=''>
                                     </li>
                                     <li class='container__post__interacoes__lista__item' onclick='salvar()'>
                                         <span class='material-symbols-outlined container__menu__icone'>&#xe866;</span>
-                                        <input type='text' id='btn-salvar'value='" . $_SERVER['PHP_SELF'] . "?" . $id_Post . "'>
+                                        <input type='text' id='btn-salvar'value=''>
                                     </li>
                                 </ul>
                                 <div id='caixa__comentario'>
