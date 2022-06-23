@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 23-Jun-2022 às 12:59
+-- Tempo de geração: 23-Jun-2022 às 13:51
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -76,7 +76,14 @@ CREATE TABLE IF NOT EXISTS `comentarios` (
   `texto_Comentario` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'texto do comentario',
   `likes_Comentario` int(11) NOT NULL DEFAULT '0' COMMENT 'likes/curtidas do comentario',
   PRIMARY KEY (`id_Comentario`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `comentarios`
+--
+
+INSERT INTO `comentarios` (`id_Comentario`, `id_Post`, `id_User`, `data_Comentario`, `nome_User`, `sobrenome_User`, `profissao_User`, `texto_Comentario`, `likes_Comentario`) VALUES
+(4, 5, 23, '2022-06-23', 'Vanessa', 'Vitoria', '[STAFF] Pesquisadora Ambiental', 'Que legal Marcos!', 0);
 
 -- --------------------------------------------------------
 
@@ -173,7 +180,16 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `comentarios_Post` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_Post`),
   KEY `user_post` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `posts`
+--
+
+INSERT INTO `posts` (`id_Post`, `id`, `foto`, `nome`, `sobrenome`, `profissao`, `data_Post`, `texto_Post`, `imagem_Post`, `likes_Post`, `comentarios_Post`) VALUES
+(5, 19, 'perfil_default.svg', 'Marcos', 'Vinicius', '[STAFF] Programador Full-Stack', '2022-06-23', 'Estamos todos unidos na luta contra a homofobia!', 'dba152a78f7db4f8fb31602e692e8aa1.png', 0, 1),
+(6, 20, 'perfil_default.svg', 'Mandanga', 'SebastiÃ£o', '[STAFF] Designer', '2022-06-23', 'Vamos ajudar o Ecomma a crescer cada vez mais e realizar muito mais aÃ§Ãµes!', '67cb9340315314136515bb59dbb35d4d.png', 0, 0),
+(9, 25, 'perfil_default.svg', 'Richard', 'Conde', '[STAFF] Pesquisador Ambiental', '2022-06-23', 'Eu sempre jogo meu copo descartÃ¡vel no lugar certo, e vocÃªs?', '', 0, 0);
 
 -- --------------------------------------------------------
 

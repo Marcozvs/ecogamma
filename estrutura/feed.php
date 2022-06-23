@@ -27,26 +27,29 @@
     //Inserindo imagens no banco de dados
 
     $img = false;
-
+if (empty($_FILES['imagem'])) {
+    # code...
+} else {
     if (isset($_FILES['imagem'])) {
-
+        
         $arquivo = $_FILES['imagem'];
-
+        
         $extensao = strtolower(substr($_FILES['imagem']['name'], -4));
         $novo_nome = md5(time()) . $extensao;
         $diretorio = "../upload/";
-
+        
         move_uploaded_file($_FILES['imagem']['tmp_name'], $diretorio . $novo_nome);
-
+        
         /*
         $sql_code = "INSERT INTO posts (imagem_Post) VALUES('$novo_nome')";
-
+        
         if(mysqli_query($conn, $sql_code))
-            $msg = "Arquivo enviado com sucesso!";
+        $msg = "Arquivo enviado com sucesso!";
         else
-            $msg = "Falha ao enviar o arquivo.";
+        $msg = "Falha ao enviar o arquivo.";
         */
     }
+}
 
     ?>
     <header class="header__interno" id="header__interno">
@@ -279,9 +282,10 @@
                             <div class='container__post__conteudo'>
                                 <p class='container__post__conteudo__data' id='container__post__conteudo__data'>" . $data_Post . "</p>
                                 <p class='container__post__conteudo__texto' id='container__post__conteudo__texto'>" . $texto_Post . "</p>";
-                                if (isset($imagem_Post)) {
+                                if (empty($imagem_Post)) {
                                     
                                 } else {
+                                    
                                     echo "<img src='../upload/" . $imagem_Post . "' class='container__post__conteudo__imagem'>";
                                 }
                         echo "</div>
