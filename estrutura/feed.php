@@ -278,9 +278,13 @@
                             </div>
                             <div class='container__post__conteudo'>
                                 <p class='container__post__conteudo__data' id='container__post__conteudo__data'>" . $data_Post . "</p>
-                                <p class='container__post__conteudo__texto' id='container__post__conteudo__texto'>" . $texto_Post . "</p>
-                                <img src='../upload/" . $imagem_Post . "' class='container__post__conteudo__imagem'>
-                            </div>
+                                <p class='container__post__conteudo__texto' id='container__post__conteudo__texto'>" . $texto_Post . "</p>";
+                                if (isset($imagem_Post)) {
+                                    
+                                } else {
+                                    echo "<img src='../upload/" . $imagem_Post . "' class='container__post__conteudo__imagem'>";
+                                }
+                        echo "</div>
                             <div class='container__post__interacoes'>
                                 <ul class='container__post__interacoes__lista'>
                                     
