@@ -149,12 +149,12 @@
                 $soma = 1;
                 $teste = $_POST['like']; //esse é o checkbox
                 $id_PostC = $_POST['enviaLike']; // Id do post
-                echo "<h1>" . $teste . "</h1>"; // Aqui é para testar se o submit tá indo, ele pega o valor do submit que não é importante agora...
+                // echo "<h1>" . $teste . "</h1>"; // Aqui é para testar se o submit tá indo, ele pega o valor do submit que não é importante agora...
                 $verSeCurtiuAlgumPost = "SELECT id_Elemento, id_User FROM curtidas WHERE id_Elemento = '$id_PostC' AND id_User = $id";
                 $verifica = mysqli_query($conn, $verSeCurtiuAlgumPost);
                 // echo "<h1>" . $verifica . "</h1>";
                 $verifica = mysqli_num_rows($verifica);
-                echo "<h1>" . $verifica . "</h1>";
+                // echo "<h1>" . $verifica . "</h1>";
 
                 if (empty($verifica)) {
                     // se a curtida não existir:
@@ -205,14 +205,14 @@
 
                 $updateValor = "UPDATE posts SET comentarios_Post = comentarios_Post + '$soma' WHERE id_Post = '$id_Post_Comentario'";
                 if (mysqli_query($conn, $insereComentarios)) {
-                    echo "<h1>Comentou irmão!</h1>";
+                    // echo "<h1>Comentou irmão!</h1>";
                     if (mysqli_query($conn, $updateValor)) {
-                        echo "<h1>Comentou irmão!</h1>";
+                        // echo "<h1>Comentou irmão!</h1>";
                     } else {
-                        echo "Erro né pae: " . $updateValor . "<br>" . mysqli_error($conn);
+                        // echo "Erro né pae: " . $updateValor . "<br>" . mysqli_error($conn);
                     }
                 } else {
-                    echo "Erro né pae: " . $insereComentarios . "<br>" . mysqli_error($conn);
+                    // echo "Erro né pae: " . $insereComentarios . "<br>" . mysqli_error($conn);
                 }
             } //fim if do post de comentarios
 
