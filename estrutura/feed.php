@@ -412,6 +412,73 @@
                 <li class="container__lista__item"><span class="material-symbols-outlined container__lista__item__icone-ativo icone-alternativo">&#xf8d8;</span>Sobre Nós</li>
             </a>
         </ul>
+        <?php
+            $selecionaLacos = "SELECT * FROM amigos WHERE id_UserAsk = $id AND pendente = 0";
+            $resultLacos = mysqli_query($conn, $selecionaLacos);
+            if (mysqli_num_rows($resultLacos) > 0) {
+                while ($row = mysqli_fetch_assoc($resultLacos)) {
+                    $id_UserAcc = $row['id_UserAcc'];
+
+                    $selecionaAmigo = "SELECT * FROM usuarios WHERE id = '$id_UserAcc'";
+                    $resultSelecionaAmigo = mysqli_query($conn, $selecionaAmigo);
+                    if (mysqli_num_rows($resultSelecionaAmigo) > 0) {
+                        while ($row = mysqli_fetch_assoc($resultSelecionaAmigo)) {
+                            $nomeUser = $row["nome"];
+                            $sobrenomeUser = $row["sobrenome"];
+                            $fotoUser = $row["foto"];
+                            $profissaoUser = $row["profissao"];
+
+                            echo "<section class='container__post' class='amigosLateral' style='position: fixed; left: 80vw; width: 15%;'>
+                            <div class='container__post__perfil'>
+                              <div class='container__post__perfil__foto'>
+                                <img src='../imagens/" . $fotoUser . "' alt='Imagem do Perfil'>
+                              </div>
+                              <div class='container__post__perfil__dados'>
+                                <p class='container__post__perfil__dados__nome nome__perfil'>" . $nomeUser . "" . $sobrenomeUser . "</p>
+                                <p class='container__post__perfil__dados__cargo cargo__perfil'>" . $profissaoUser . "</p>
+                              </div>
+                            </div>
+                          </section>";
+                        }
+                    }
+
+                }
+            }
+            $selecionaLacos2 = "SELECT * FROM amigos WHERE id_UserAcc = $id AND pendente = 0";
+            $resultLacos2 = mysqli_query($conn, $selecionaLacos2);
+            if (mysqli_num_rows($resultLacos2) > 0) {
+                while ($row = mysqli_fetch_assoc($resultLacos2)) {
+                    $id_UserAsk = $row['id_UserAsk'];
+
+                    $selecionaAmigo2 = "SELECT * FROM usuarios WHERE id = '$id_UserAsk'";
+                    $resultSelecionaAmigo2 = mysqli_query($conn, $selecionaAmigo2);
+                    if (mysqli_num_rows($resultSelecionaAmigo2) > 0) {
+                        while ($row = mysqli_fetch_assoc($resultSelecionaAmigo2)) {
+
+                            $nomeUser = $row["nome"];
+                            $sobrenomeUser = $row["sobrenome"];
+                            $fotoUser = $row["foto"];
+                            $profissaoUser = $row["profissao"];
+
+                            echo "<section class='container__post'>
+                            <div class='container__post__perfil'>
+                              <div class='container__post__perfil__foto'>
+                                <img src='../imagens/" . $fotoUser . "' alt='Imagem do Perfil'>
+                              </div>
+                              <div class='container__post__perfil__dados'>
+                                <p class='container__post__perfil__dados__nome nome__perfil'>" . $nomeUser . " " . $sobrenomeUser . "</p>
+                                <p class='container__post__perfil__dados__cargo cargo__perfil'>" . $profissaoUser . "</p>
+                              </div>
+                            </div>
+                          </section>";
+                        }
+                    }
+
+                }
+            }
+      ?>
+    </div>
+
     </div>
     <!-- umas script de js -->
     <script src="../manipulacao/manuLateral.js"></script>
