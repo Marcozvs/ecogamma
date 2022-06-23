@@ -96,11 +96,13 @@
         </div>
     </section>
     <main>
+        </div>
+        </section>
         <div class="container">
-        <?php
-      //AQUI É PARA OS ADM POSTAREM
-      if ($token == 1) {
-                echo"
+            <?php
+            //AQUI É PARA OS ADM POSTAREM
+            if ($token == 1) {
+                echo "
         <section class='container__postagem'>
             <form action='./noticia.php' class='container__postagem__formulario' method='POST'  style='display: flex; justify-content: space-around; height: 275px;'>
               <input type='text' placeholder='Insira o título...' maxlength='150' minlength='1' required id='titulo' name='titulo'>
@@ -113,61 +115,67 @@
             </form>
             <hr>
         </section>";
-        if (isset($_POST['texto']) && isset($_POST['titulo'])) {
+                if (isset($_POST['texto']) && isset($_POST['titulo'])) {
 
-          $data_Noticia = date("Y-m-d");
-          $titulo_Noticia = $_POST['titulo'];
-          $texto_Noticia = $_POST['texto'];
-          if (isset($_POST['imagem'])) {
-            $imagem_Noticia = $_POST['imagem'];
-          } else {
-            $imagem_Noticia = "naoTem";
-          }
-          $likes = 0;
+                    $data_Noticia = date("Y-m-d");
+                    $titulo_Noticia = $_POST['titulo'];
+                    $texto_Noticia = $_POST['texto'];
+                    if (isset($_POST['imagem'])) {
+                        $imagem_Noticia = $_POST['imagem'];
+                    } else {
+                        $imagem_Noticia = "naoTem";
+                    }
+                    $likes = 0;
 
-          include './administracao/conexao.php';
+                    include './administracao/conexao.php';
 
-          //INSERINDO DADOS 
+                    //INSERINDO DADOS 
 
-          $insereNoticia = "INSERT INTO noticias (id, data_Noticia, foto, nome, sobrenome, profissao, titulo_Noticia, texto_Noticia, imagem_Noticia, likes_Noticia)
+                    $insereNoticia = "INSERT INTO noticias (id, data_Noticia, foto, nome, sobrenome, profissao, titulo_Noticia, texto_Noticia, imagem_Noticia, likes_Noticia)
             VALUES ('$id', '$data_Noticia', '$foto', '$nome', '$sobrenome', '$profissao', '$titulo_Noticia', '$texto_Noticia', '$imagem_Noticia', '$likes')";
 
-          if (mysqli_query($conn, $insereNoticia)) {
-            // echo "Noticia inserido";
-          } else {
-            // echo "Error: " . $insereNoticia . "<br>" . mysqli_error($conn);
-          }
+                    if (mysqli_query($conn, $insereNoticia)) {
+                        // echo "Noticia inserido";
+                    } else {
+                        // echo "Error: " . $insereNoticia . "<br>" . mysqli_error($conn);
+                    }
+                }
+            }
 
-        }
-      }
+            $selecionaNoticias = "SELECT * FROM noticias ORDER BY id_Noticia DESC";
+            $result = mysqli_query($conn, $selecionaNoticias);
 
-      $selecionaNoticias = "SELECT * FROM noticias ORDER BY id_Noticia DESC";
-      $result = mysqli_query($conn, $selecionaNoticias);
+            if (mysqli_num_rows($result) > 0) {
+                // output data of each row
+                while ($row = mysqli_fetch_assoc($result)) {
 
-      if (mysqli_num_rows($result) > 0) {
-          // output data of each row
-          while ($row = mysqli_fetch_assoc($result)) {
+                    $id_Noticia = $row["id_Noticia"];
+                    $id_User = $row["id"];
+                    $data_Noticia = $row["data_Noticia"];
+                    $titulo_Noticia = $row["titulo_Noticia"];
+                    $texto_Noticia = $row["texto_Noticia"];
+                    $imagem_Noticia = $row["imagem_Noticia"];
+                    $likes_Noticia = $row["likes_Noticia"];
 
-              $id_Noticia = $row["id_Noticia"];
-              $id_User = $row["id"];
-              $data_Noticia = $row["data_Noticia"];
-              $titulo_Noticia = $row["titulo_Noticia"];
-              $texto_Noticia = $row["texto_Noticia"];
-              $imagem_Noticia = $row["imagem_Noticia"];
-              $likes_Noticia = $row["likes_Noticia"];
-
-            echo "<section class='container__post'>
+                    echo "<section class='container__post'>
             <h2>" . $titulo_Noticia . "</h2>
             <div class='container__post__conteudo'>
               <p class='container__post__conteudo__texto'>" . $texto_Noticia . "</p>
               <img src='../imagens/meioAmbiente.jpg' alt='imagem do conteúdo' class='container__post__conteudo__imagem'>
             </div>
           </section>";
-          }
-        }
-      ?>
-            
-        </div>
+                }
+            }
+            ?>
+            <section class="container__post">
+                <h2>Alertas de desmatamento da Floresta Amazônica crescem 61% em 2020</h2>
+                <div class="container__post__conteudo">
+                    <p class="container__post__conteudo__texto">Enquanto as atenções do mundo se voltam para a pandemia do novo coronavírus, a maior floresta tropical do mundo agoniza. Algumas decisões sobre a Floresta Amazônica estão sendo tomadas sem consentimento geral.</p>
+                    <video controls class="container__post__conteudo__imagem">
+                        <source src="../videos/noticiaqueimada.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
     </main>
     <div id="menuFixo">
         <ul class="container__lista" id="menuFixo__lista">
