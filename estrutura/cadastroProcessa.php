@@ -32,6 +32,7 @@
     $cidade = $_POST['cidade'];
     $profissao = $_POST['profissao'];
 
+
     //verifica de já existe um email igual ao colocado no formulário
     $query = "SELECT id, nome from usuarios where email = '$email'";
 
@@ -48,7 +49,7 @@
             # code...
 
             $sql = "INSERT INTO usuarios (nome, sobrenome, email, senha, senhaC, dataN, genero, numero, estado, cidade, profissao, mdEscuro, foto, descricao, amigos)
-            VALUES ('$nome', '$sobrenome', '$email', '$senha', '$senhaC', '$dataN', '$genero', '$numero', '$estado', '$cidade', '$profissao', '0', '$foto_User', '$descricao_Padrao', '0')";
+            VALUES ('$nome', '$sobrenome', '$email', '$senha', '$senhaC', '$dataN', '$genero', '$numero', '$estado', '$cidade', '$profissao', '0', '$foto_Padrao', '$descricao_Padrao', '0')";
 
                 if (mysqli_query($conn, $sql)) {
                     echo "
