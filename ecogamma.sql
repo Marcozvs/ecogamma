@@ -4,7 +4,7 @@
 --
 -- Host: 127.0.0.1:3306
 -- Tempo de geração: 03-Jun-2022 às 19:58
--- Versão do servidor: 8.0.27
+-- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -29,57 +29,33 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `noticia`;
 CREATE TABLE IF NOT EXISTS `noticia` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `data_noticia` date NOT NULL,
-  `texto` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `foto` longblob NOT NULL,
+  `texto` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `foto` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Extraindo dados da tabela `noticia`
 --
 
 INSERT INTO `noticia` (`id`, `titulo`, `data_noticia`, `texto`, `foto`) VALUES
-(1, 'Amazonia', '0000-00-00', 'Inserindo amazonia', 0x6578656d706c6f2e706e67),
-(2, 'Leandro destroi parque publico', '0000-00-00', '<style>background: red;</style>', 0x6578656d706c6f2e706e67),
-(3, 'Mandanga joga lixo na rua', '0000-00-00', 'Suspeito jogou lixo na rua, mandar prender!!!', 0x6578656d706c6f2e706e67),
-(4, 'Gustavo ramela no fut ', '0000-00-00', 'Gustavo chora pra jogar o fute, depois fala que é bom', 0x74656c615f6d6574616c2e504e47),
+(1, 'Amazonia', '0000-00-00', 'Inserindo amazonia', 'barra1.jpg'),
+(2, 'Leandro destroi parque publico', '0000-00-00', '<style>background: red;</style>', 'barra2.jpg'),
+(3, 'Mandanga joga lixo na rua', '0000-00-00', 'Suspeito jogou lixo na rua, mandar prender!!!', 'tela_madeira.PNG'),
+(4, 'Gustavo ramela no fut ', '0000-00-00', 'Gustavo chora pra jogar o fute, depois fala que é bom', 'tela_metal.PNG'),
 (5, 'Julia surta com o video dela', '0000-00-00', 'Ela vem do nada e fala que o video nao rola, \"Eu vou surtaaar\" diz nas palavras dela.', ''),
-(6, 'Julia surta com o video dela', '0000-00-00', 'Ela vem do nada e fala que o video nao rola, \"Eu vou surtaaar\" diz nas palavras dela.', 0x74656c615f6d6574616c2e504e47),
-(7, 'Julia surta com o video dela', '0000-00-00', 'Ela vem do nada e fala que o video nao rola, \"Eu vou surtaaar\" diz nas palavras dela.', 0x74656c615f6d6574616c2e504e47),
-(8, 'Julia surta com o video dela', '0000-00-00', 'Ela vem do nada e fala que o video nao rola, \"Eu vou surtaaar\" diz nas palavras dela.', 0x74656c615f6d6574616c2e504e47),
-(9, 'Julia surta com o video dela', '0000-00-00', 'Ela vem do nada e fala que o video nao rola, \"Eu vou surtaaar\" diz nas palavras dela.', 0x74656c615f6d6574616c2e504e47),
+(6, 'Julia surta com o video dela', '0000-00-00', 'Ela vem do nada e fala que o video nao rola, \"Eu vou surtaaar\" diz nas palavras dela.', 'tela_metal.PNG'),
+(7, 'Julia surta com o video dela', '0000-00-00', 'Ela vem do nada e fala que o video nao rola, \"Eu vou surtaaar\" diz nas palavras dela.', 'tela_metal.PNG'),
+(8, 'Julia surta com o video dela', '0000-00-00', 'Ela vem do nada e fala que o video nao rola, \"Eu vou surtaaar\" diz nas palavras dela.', 'tela_metal.PNG'),
+(9, 'Julia surta com o video dela', '0000-00-00', 'Ela vem do nada e fala que o video nao rola, \"Eu vou surtaaar\" diz nas palavras dela.', 'tela_metal.PNG'),
 (10, 'Mandanga joga lixo na rua', '0000-00-00', 'acsdcasdcadscasdc', ''),
 (11, 'Mandanga joga lixo na rua', '2022-06-01', 'acsdcasdcadscasdc', ''),
 (12, 'badfbvasdvcasdva', '0000-00-00', 'sdvasdvasdv', ''),
 (13, 'Testantdoi', '2022-06-01', 'asdcasdcasdcsadcasd', ''),
-(14, 'Mandanga joga lixo na rua', '2022-06-01', 'dcasdcasdcasdcasdca', ''),
-(15, '', '0000-00-00', '03-06-2022', ''),
-(16, 'Exemplo noticia', '0000-00-00', '03-06-2022', 0x6578656d706c6f2e706e67),
-(17, '', '0000-00-00', '03-06-2022', ''),
-(18, '', '0000-00-00', '03-06-2022', ''),
-(19, '', '0000-00-00', '03-06-2022', ''),
-(20, '', '0000-00-00', '03-06-2022', ''),
-(21, '', '0000-00-00', '03-06-2022', ''),
-(22, '', '0000-00-00', '03-06-2022', ''),
-(23, '', '0000-00-00', '03-06-2022', ''),
-(24, '', '0000-00-00', '03-06-2022', ''),
-(25, '', '0000-00-00', '03-06-2022', ''),
-(26, '', '0000-00-00', '03-06-2022', ''),
-(27, 'scsdcasdc', '0000-00-00', '03-06-2022', 0x6578656d706c6f2e706e67),
-(28, 'Ecsadcasdca23123123', '0000-00-00', '2022-06-03', 0x6578656d706c6f2e706e67),
-(29, 'Ecsadcasdca23123123', '0000-00-00', '2022-06-03', 0x6578656d706c6f2e706e67),
-(30, 'Ecsadcasdca23123123', '0000-00-00', '2022-06-03', 0x6578656d706c6f2e706e67),
-(31, 'Teste124145', '2022-06-03', 'asddacsdca', 0x6578656d706c6f2e706e67),
-(32, 'Teste124145', '2022-06-03', 'asddacsdca', 0x6578656d706c6f2e706e67),
-(33, 'Ecsadcasdca23123123dcas', '2022-06-03', 'asdcasdcasdca', 0x6578656d706c6f2e706e67),
-(34, 'Ecsadcasdca23123123dcas', '2022-06-03', 'asdcasdcasdca', 0x6578656d706c6f2e706e67),
-(35, 'Ecsadcasdca23123123', '2022-06-03', 'sdasdasdasda', 0x6578656d706c6f2e706e67),
-(36, 'Teste124145', '2022-06-03', 'casdcasdcasdcasdc', 0x6578656d706c6f2e706e67),
-(37, 'Imagem', '2022-06-03', 'csdacasdcasdcasdc', ''),
-(38, 'Imagem', '2022-06-03', 'csdacasdcasdcasdc', '');
+(14, 'Mandanga joga lixo na rua', '2022-06-01', 'dcasdcasdcasdcasdca', '');
 
 -- --------------------------------------------------------
 
@@ -89,18 +65,25 @@ INSERT INTO `noticia` (`id`, `titulo`, `data_noticia`, `texto`, `foto`) VALUES
 
 DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `token` tinyint(1) DEFAULT NULL,
-  `nome` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `senha` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `numero` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `perfil` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `foto` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `nome` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `senha` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `numero` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `perfil` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `foto` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `nascimento` date NOT NULL,
-  `profissao` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `profissao` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `token`, `nome`, `senha`, `email`, `numero`, `perfil`, `foto`, `nascimento`, `profissao`) VALUES
+(1, NULL, 'teste', 'teste', 'teste@gmail.com', '1213243543', 'teste', 'naruto.png', '2022-06-15', 'teste');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

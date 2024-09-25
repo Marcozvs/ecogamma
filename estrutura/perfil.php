@@ -18,9 +18,11 @@
     </head>
     <body>
         <div class="container">
-            <?php include './base/cabecalho.php';?>
-            <?php include './base/menuLateral.php';?>
-            <?php include './base/menuDesktop.php';?>
+            <?php 
+             include './base/cabecalho.php';
+             include './base/menuLateral.php';
+             include './base/menuDesktop.php';
+             ?>
             <main class="principal">
                 <div class="perfil">
                     <section class="perfil__dados">

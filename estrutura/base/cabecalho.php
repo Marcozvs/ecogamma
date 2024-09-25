@@ -23,6 +23,11 @@ echo
                                 <span class=\"material-symbols-outlined\">chat</span>
                             </li>
                         </a>
+                        <a href=\"./logout.php\">
+                            <li>
+                                <span class=\"material-symbols-outlined\">logout</span>
+                            </li>
+                        </a>
                         <a onclick=\"menuLateralOpen()\" class=\"menubar\">
                             <li>
                                 <span class=\"material-symbols-outlined\">menu</span>
